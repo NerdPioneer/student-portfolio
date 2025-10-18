@@ -1356,30 +1356,44 @@
         }
         
         /* Medium Card Specific Styling */
-        .notes-card:first-child {
+        .notes-card:nth-child(1) {
             background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
         }
         
-        .notes-card:first-child:hover {
+        .notes-card:nth-child(1):hover {
             background: linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%);
             border-color: rgba(16, 185, 129, 0.3);
         }
         
-        .notes-card:first-child::before {
+        .notes-card:nth-child(1)::before {
             background: linear-gradient(90deg, #10b981, #059669, #047857);
         }
         
+        /* Terminal Card Specific Styling */
+        .notes-card:nth-child(2) {
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+        }
+        
+        .notes-card:nth-child(2):hover {
+            background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
+            border-color: rgba(0, 0, 0, 0.3);
+        }
+        
+        .notes-card:nth-child(2)::before {
+            background: linear-gradient(90deg, #000000, #1f2937, #374151);
+        }
+        
         /* GitHub Card Specific Styling */
-        .notes-card:last-child {
+        .notes-card:nth-child(3) {
             background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
         }
         
-        .notes-card:last-child:hover {
+        .notes-card:nth-child(3):hover {
             background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
             border-color: rgba(31, 41, 55, 0.3);
         }
         
-        .notes-card:last-child::before {
+        .notes-card:nth-child(3)::before {
             background: linear-gradient(90deg, #374151, #1f2937, #111827);
         }
         
@@ -2299,10 +2313,10 @@
             <div class="max-w-6xl mx-auto text-center">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 font-raleway uppercase tracking-wide animate-fade-in">NOTES FROM THE CLIMB</h2>
                 <p class="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
-                    My two platforms for sharing knowledge and code
+                    My three platforms for sharing knowledge and code
                 </p>
                 
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Medium Column -->
                 <div class="notes-card bg-white rounded-2xl p-10 flex flex-col h-full shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 min-h-[400px]">
                     <div class="flex items-start mb-8">
@@ -2319,23 +2333,8 @@
                     
                     <div class="flex-grow mb-8">
                         <p class="text-gray-600 text-left mb-6 leading-relaxed text-base">
-                            Deep-dive write-ups, study notes, and long-form posts about my journey in cloud computing, network engineering, and career growth.
+                            Professional articles and technical deep-dives about cloud computing, network engineering, and career development insights.
                         </p>
-                        
-                        <div class="space-y-3">
-                            <div class="flex items-center text-sm text-gray-500">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                                <span>Technical articles and tutorials</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-500">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                                <span>Career development insights</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-500">
-                                <div class="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                                <span>Learning journey documentation</span>
-                            </div>
-                        </div>
                     </div>
                     
                     <div class="mt-auto">
@@ -2347,6 +2346,49 @@
                             Read My Journey
                             <span class="ml-2 text-xs opacity-75">Latest insights & reflections</span>
                         </a>
+                    </div>
+                </div>
+
+                <!-- Terminal Column -->
+                <div class="notes-card bg-white rounded-2xl p-10 flex flex-col h-full shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 min-h-[400px]">
+                    <div class="flex items-start mb-8">
+                        <div class="w-14 h-14 bg-black rounded-full flex items-center justify-center mr-5 flex-shrink-0">
+                            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2 3h20a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h18V5H3zm2 2h2v2H5V7zm4 0h2v2H9V7zm4 0h2v2h-2V7zm4 0h2v2h-2V7zM5 11h2v2H5v-2zm4 0h2v2H9v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zM5 15h2v2H5v-2zm4 0h2v2H9v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/>
+                            </svg>
+                        </div>
+                        <div class="text-left">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2 font-raleway">Terminal</h3>
+                            <p class="text-sm text-gray-500 uppercase tracking-wider font-medium">PERSONAL NOTES</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-grow mb-8">
+                        <p class="text-gray-600 text-left mb-6 leading-relaxed text-base">
+                            Personal notes and behind-the-scenes thoughts. Raw, unfiltered perspectives and reflections from my journey.
+                        </p>
+                        
+                        <div class="flex items-center justify-center py-8">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg class="w-8 h-8 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-lg font-semibold text-gray-500 mb-2">Coming Soon</p>
+                                <p class="text-sm text-gray-400">Personal notes are being prepared</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-auto">
+                        <div class="inline-flex items-center bg-gray-300 text-gray-500 px-8 py-4 rounded-full font-medium text-sm w-full justify-center cursor-not-allowed">
+                            <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M2 3h20a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h18V5H3zm2 2h2v2H5V7zm4 0h2v2H9V7zm4 0h2v2h-2V7zm4 0h2v2h-2V7zM5 11h2v2H5v-2zm4 0h2v2H9v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zM5 15h2v2H5v-2zm4 0h2v2H9v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/>
+                            </svg>
+                            Coming Soon
+                            <span class="ml-2 text-xs opacity-75">Personal notes in development</span>
+                        </div>
                     </div>
                 </div>
 
@@ -2366,23 +2408,8 @@
                     
                     <div class="flex-grow mb-8">
                         <p class="text-gray-600 text-left mb-6 leading-relaxed text-base">
-                            Source, prototypes, and experiments I'm shipping. From security tools to infrastructure code—see how I solve real-world problems.
+                            Source code, prototypes, and experiments I'm shipping. From security tools to infrastructure code—see how I solve real-world problems.
                         </p>
-                        
-                        <div class="space-y-3">
-                            <div class="flex items-center text-sm text-gray-500">
-                                <div class="w-2 h-2 bg-gray-800 rounded-full mr-3"></div>
-                                <span>Cloud infrastructure projects</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-500">
-                                <div class="w-2 h-2 bg-gray-800 rounded-full mr-3"></div>
-                                <span>Security tools and scripts</span>
-                            </div>
-                            <div class="flex items-center text-sm text-gray-500">
-                                <div class="w-2 h-2 bg-gray-800 rounded-full mr-3"></div>
-                                <span>Open source contributions</span>
-                            </div>
-                        </div>
                     </div>
                     
                     <div class="mt-auto">
