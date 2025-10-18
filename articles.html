@@ -39,183 +39,393 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <style>
-        /* Diary-style customizations */
+        /* Enhanced Diary-style with modern design */
         .diary-container {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-        }
-        
-        .notes-sidebar {
-            background: #ffffff;
-            border-right: 1px solid #e5e7eb;
-            height: calc(100vh - 80px);
-            overflow-y: auto;
-            scrollbar-width: thin;
-            scrollbar-color: #d1d5db #f3f4f6;
-        }
-        
-        .notes-sidebar::-webkit-scrollbar {
-            width: 6px;
-        }
-        
-        .notes-sidebar::-webkit-scrollbar-track {
-            background: #f3f4f6;
-        }
-        
-        .notes-sidebar::-webkit-scrollbar-thumb {
-            background: #d1d5db;
-            border-radius: 3px;
-        }
-        
-        .notes-sidebar::-webkit-scrollbar-thumb:hover {
-            background: #9ca3af;
-        }
-        
-        .note-item {
-            padding: 16px 20px;
-            border-bottom: 1px solid #f3f4f6;
-            cursor: pointer;
-            transition: all 0.2s ease;
             position: relative;
         }
         
-        .note-item:hover {
-            background: #f8fafc;
+        .diary-container::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 200, 255, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
         }
         
-        .note-item.active {
-            background: #eff6ff;
-            border-left: 3px solid #3b82f6;
+        .main-content {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            height: calc(100vh - 120px);
+            display: flex;
         }
         
-        .note-item.active::before {
+        .notes-sidebar {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            border-right: 1px solid rgba(226, 232, 240, 0.8);
+            width: 400px;
+            height: 100%;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e1 #f1f5f9;
+            position: relative;
+        }
+        
+        .notes-sidebar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+        }
+        
+        .notes-sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .notes-sidebar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+        
+        .notes-sidebar::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #cbd5e1, #94a3b8);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .notes-sidebar::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #94a3b8, #64748b);
+        }
+        
+        .sidebar-header {
+            padding: 24px 24px 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sidebar-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .sidebar-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .sidebar-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .notes-count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 8px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .note-item {
+            padding: 20px 24px;
+            border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            background: transparent;
+        }
+        
+        .note-item::before {
             content: '';
             position: absolute;
             left: 0;
             top: 0;
             bottom: 0;
-            width: 3px;
-            background: #3b82f6;
+            width: 0;
+            background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+            transition: width 0.3s ease;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .note-item:hover {
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.05), transparent);
+            transform: translateX(4px);
+        }
+        
+        .note-item:hover::before {
+            width: 4px;
+        }
+        
+        .note-item.active {
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.05));
+            transform: translateX(8px);
+        }
+        
+        .note-item.active::before {
+            width: 6px;
+        }
+        
+        .note-item.active .note-title {
+            color: #1d4ed8;
         }
         
         .note-title {
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 4px;
+            color: #1e293b;
+            margin-bottom: 6px;
             line-height: 1.4;
+            transition: color 0.3s ease;
         }
         
         .note-date {
             font-size: 12px;
-            color: #6b7280;
-            margin-bottom: 6px;
+            color: #64748b;
+            margin-bottom: 8px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .note-date::before {
+            content: '📅';
+            font-size: 10px;
         }
         
         .note-preview {
-            font-size: 13px;
-            color: #6b7280;
-            line-height: 1.4;
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.5;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
         
+        .note-tags {
+            display: flex;
+            gap: 6px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .note-tag {
+            background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+            color: #3730a3;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+        
         .reading-pane {
-            background: #ffffff;
-            height: calc(100vh - 80px);
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            flex: 1;
+            height: 100%;
             overflow-y: auto;
-            padding: 0;
+            position: relative;
+        }
+        
+        .reading-pane::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
         }
         
         .note-content {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 32px;
+            padding: 48px 40px;
             line-height: 1.7;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .note-content h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 8px;
-            line-height: 1.3;
+            font-size: 32px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 12px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #1e293b, #475569);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .note-content .meta {
             font-size: 14px;
-            color: #6b7280;
+            color: #64748b;
             margin-bottom: 32px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid #e5e7eb;
+            padding: 16px 0;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .meta-date {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+        
+        .meta-date::before {
+            content: '📅';
+        }
+        
+        .meta-reading-time {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #3b82f6;
+            font-weight: 500;
+        }
+        
+        .meta-reading-time::before {
+            content: '⏱️';
         }
         
         .note-content h2 {
-            font-size: 22px;
-            font-weight: 600;
-            color: #1f2937;
-            margin: 32px 0 16px 0;
-            line-height: 1.4;
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 40px 0 20px 0;
+            line-height: 1.3;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .note-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+            border-radius: 2px;
         }
         
         .note-content h3 {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 600;
-            color: #374151;
-            margin: 24px 0 12px 0;
+            color: #334155;
+            margin: 32px 0 16px 0;
             line-height: 1.4;
         }
         
         .note-content p {
             font-size: 16px;
-            color: #374151;
-            margin-bottom: 16px;
+            color: #475569;
+            margin-bottom: 20px;
+            text-align: justify;
         }
         
         .note-content ul, .note-content ol {
-            margin: 16px 0;
-            padding-left: 24px;
+            margin: 20px 0;
+            padding-left: 28px;
         }
         
         .note-content li {
             font-size: 16px;
-            color: #374151;
-            margin-bottom: 8px;
+            color: #475569;
+            margin-bottom: 12px;
+            line-height: 1.6;
         }
         
         .note-content blockquote {
             border-left: 4px solid #3b82f6;
-            padding-left: 20px;
+            padding: 20px 24px;
             margin: 24px 0;
             font-style: italic;
             color: #4b5563;
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.05), transparent);
+            border-radius: 0 8px 8px 0;
         }
         
         .note-content code {
-            background: #f3f4f6;
-            padding: 2px 6px;
-            border-radius: 4px;
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            padding: 3px 8px;
+            border-radius: 6px;
             font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
             font-size: 14px;
-            color: #e11d48;
+            color: #dc2626;
+            border: 1px solid #cbd5e1;
         }
         
         .note-content pre {
-            background: #1f2937;
-            color: #f9fafb;
-            padding: 20px;
-            border-radius: 8px;
+            background: linear-gradient(135deg, #1e293b, #334155);
+            color: #f8fafc;
+            padding: 24px;
+            border-radius: 12px;
             overflow-x: auto;
-            margin: 20px 0;
+            margin: 24px 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         
         .note-content pre code {
             background: none;
             padding: 0;
             color: inherit;
+            border: none;
         }
         
         .empty-state {
@@ -224,42 +434,74 @@
             align-items: center;
             justify-content: center;
             height: 100%;
-            color: #6b7280;
+            color: #64748b;
             text-align: center;
+            padding: 40px;
         }
         
         .empty-state i {
-            font-size: 48px;
-            margin-bottom: 16px;
-            opacity: 0.5;
+            font-size: 64px;
+            margin-bottom: 24px;
+            opacity: 0.6;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .empty-state h3 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #374151;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #334155;
         }
         
         .empty-state p {
-            font-size: 14px;
-            max-width: 300px;
+            font-size: 16px;
+            max-width: 400px;
+            line-height: 1.6;
         }
         
         /* Mobile responsive */
-        @media (max-width: 768px) {
-            .diary-container {
+        @media (max-width: 1024px) {
+            .main-content {
                 flex-direction: column;
+                height: calc(100vh - 40px);
+                margin: 10px;
             }
             
             .notes-sidebar {
-                height: 200px;
+                width: 100%;
+                height: 300px;
                 border-right: none;
-                border-bottom: 1px solid #e5e7eb;
+                border-bottom: 1px solid rgba(226, 232, 240, 0.8);
             }
             
             .reading-pane {
-                height: calc(100vh - 280px);
+                height: calc(100% - 300px);
+            }
+            
+            .note-content {
+                padding: 32px 24px;
+            }
+            
+            .note-content h1 {
+                font-size: 28px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                margin: 5px;
+                height: calc(100vh - 10px);
+            }
+            
+            .notes-sidebar {
+                height: 250px;
+            }
+            
+            .reading-pane {
+                height: calc(100% - 250px);
             }
             
             .note-content {
@@ -269,6 +511,39 @@
             .note-content h1 {
                 font-size: 24px;
             }
+            
+            .sidebar-header {
+                padding: 20px 20px 12px;
+            }
+            
+            .note-item {
+                padding: 16px 20px;
+            }
+        }
+        
+        /* Loading animation */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e2e8f0;
+            border-top: 2px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
     </style>
 </head>
@@ -324,12 +599,13 @@
     <section class="spacer-section" style="height:6rem;"></section>
 
     <!-- Main Diary Layout -->
-    <main class="flex h-screen">
+    <main class="main-content">
         <!-- Left Pane: Notes List -->
-        <div class="notes-sidebar w-full lg:w-1/3 xl:w-1/4">
-            <div class="p-4 border-b border-gray-200">
-                <h2 class="text-lg font-semibold text-gray-900">Notes & Tips</h2>
-                <p class="text-sm text-gray-600 mt-1">Simple tips for navigating the online world</p>
+        <div class="notes-sidebar">
+            <div class="sidebar-header">
+                <h2 class="sidebar-title">Notes & Tips</h2>
+                <p class="sidebar-subtitle">Simple tips for navigating the online world</p>
+                <div class="notes-count" id="notes-count">5 notes</div>
             </div>
             
             <div id="notes-list">
@@ -338,7 +614,7 @@
         </div>
         
         <!-- Right Pane: Reading Area -->
-        <div class="reading-pane flex-1">
+        <div class="reading-pane">
             <div id="note-content" class="note-content">
                 <div class="empty-state">
                     <i class="fas fa-book-open"></i>
@@ -352,13 +628,15 @@
     <!-- JavaScript -->
     <script src="src/js/main.js"></script>
     <script>
-        // Notes data - simple markdown-style content
+        // Enhanced notes data with tags and reading time
         const notes = [
             {
                 id: 'online-privacy-basics',
                 title: 'Online Privacy Basics',
                 date: '2025-01-27',
                 preview: 'Essential steps to protect your privacy in the digital world...',
+                tags: ['Privacy', 'Security', 'Basics'],
+                readingTime: '5 min',
                 content: `
 # Online Privacy Basics
 
@@ -411,6 +689,8 @@ When in doubt, don't share it. If something feels too personal or risky, it prob
                 title: 'Password Security Tips',
                 date: '2025-01-26',
                 preview: 'How to create and manage secure passwords without going crazy...',
+                tags: ['Passwords', 'Security', 'Tips'],
+                readingTime: '6 min',
                 content: `
 # Password Security Tips
 
@@ -470,6 +750,8 @@ Ask yourself: "Would I be comfortable if this password was posted on a public bu
                 title: 'Spotting Scams Online',
                 date: '2025-01-25',
                 preview: 'Red flags to watch for when browsing the internet...',
+                tags: ['Scams', 'Safety', 'Awareness'],
+                readingTime: '7 min',
                 content: `
 # Spotting Scams Online
 
@@ -557,6 +839,8 @@ Legitimate companies have professional communications. Typos and bad grammar are
                 title: 'Safe Browsing Habits',
                 date: '2025-01-24',
                 preview: 'Simple habits to keep you safe while browsing the internet...',
+                tags: ['Browsing', 'Safety', 'Habits'],
+                readingTime: '8 min',
                 content: `
 # Safe Browsing Habits
 
@@ -666,6 +950,8 @@ Before you do anything online, ask yourself:
                 title: 'Digital Footprint Awareness',
                 date: '2025-01-23',
                 preview: 'Understanding what information you leave behind online...',
+                tags: ['Privacy', 'Awareness', 'Digital Life'],
+                readingTime: '9 min',
                 content: `
 # Digital Footprint Awareness
 
@@ -795,34 +1081,56 @@ Data collected without your direct input:
             }
         ];
 
-        // Initialize the notes interface
+        // Initialize the enhanced notes interface
         function initNotesInterface() {
             const notesList = document.getElementById('notes-list');
             const noteContent = document.getElementById('note-content');
+            const notesCount = document.getElementById('notes-count');
             
-            // Populate notes list
+            // Update notes count
+            notesCount.textContent = `${notes.length} notes`;
+            
+            // Populate notes list with enhanced styling
             notes.forEach((note, index) => {
                 const noteItem = document.createElement('div');
                 noteItem.className = 'note-item';
                 noteItem.dataset.noteId = note.id;
                 
+                // Create tags HTML
+                const tagsHtml = note.tags.map(tag => `<span class="note-tag">${tag}</span>`).join('');
+                
                 noteItem.innerHTML = `
                     <div class="note-title">${note.title}</div>
                     <div class="note-date">${formatDate(note.date)}</div>
                     <div class="note-preview">${note.preview}</div>
+                    <div class="note-tags">${tagsHtml}</div>
                 `;
                 
-                // Add click handler
+                // Add enhanced click handler with animation
                 noteItem.addEventListener('click', () => {
                     selectNote(note.id);
+                });
+                
+                // Add keyboard support
+                noteItem.setAttribute('tabindex', '0');
+                noteItem.setAttribute('role', 'button');
+                noteItem.setAttribute('aria-label', `Read ${note.title}`);
+                
+                noteItem.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        selectNote(note.id);
+                    }
                 });
                 
                 notesList.appendChild(noteItem);
             });
             
-            // Select first note by default
+            // Select first note by default with animation
             if (notes.length > 0) {
-                selectNote(notes[0].id);
+                setTimeout(() => {
+                    selectNote(notes[0].id);
+                }, 300);
             }
         }
         
@@ -830,19 +1138,33 @@ Data collected without your direct input:
             const note = notes.find(n => n.id === noteId);
             if (!note) return;
             
-            // Update active state
+            // Add loading state
+            const noteContent = document.getElementById('note-content');
+            noteContent.classList.add('loading');
+            
+            // Update active state with smooth transition
             document.querySelectorAll('.note-item').forEach(item => {
                 item.classList.remove('active');
             });
-            document.querySelector(`[data-note-id="${noteId}"]`).classList.add('active');
             
-            // Update content
-            const noteContent = document.getElementById('note-content');
-            noteContent.innerHTML = `
-                <h1>${note.title}</h1>
-                <div class="meta">${formatDate(note.date)}</div>
-                <div class="content">${formatContent(note.content)}</div>
-            `;
+            const activeItem = document.querySelector(`[data-note-id="${noteId}"]`);
+            if (activeItem) {
+                activeItem.classList.add('active');
+                activeItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+            
+            // Update content with enhanced formatting
+            setTimeout(() => {
+                noteContent.innerHTML = `
+                    <h1>${note.title}</h1>
+                    <div class="meta">
+                        <div class="meta-date">${formatDate(note.date)}</div>
+                        <div class="meta-reading-time">${note.readingTime} read</div>
+                    </div>
+                    <div class="content">${formatContent(note.content)}</div>
+                `;
+                noteContent.classList.remove('loading');
+            }, 150);
         }
         
         function formatDate(dateString) {
