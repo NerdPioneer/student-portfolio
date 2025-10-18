@@ -45,7 +45,8 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             position: relative;
-            padding: 20px;
+            padding: 60px 40px;
+            box-sizing: border-box;
         }
         
         .diary-container::before {
@@ -70,10 +71,13 @@
             border-radius: 12px;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
             overflow: hidden;
-            height: calc(100vh - 40px);
+            height: calc(100vh - 120px);
+            max-height: calc(100vh - 120px);
             display: flex;
             flex-direction: column;
             border: 2px solid #000000;
+            margin: 0 auto;
+            max-width: 1400px;
         }
         
         .terminal-header {
@@ -560,11 +564,12 @@
         /* Mobile responsive */
         @media (max-width: 1024px) {
             .diary-container {
-                padding: 10px;
+                padding: 40px 20px;
             }
             
             .terminal-window {
-                height: calc(100vh - 20px);
+                height: calc(100vh - 80px);
+                max-height: calc(100vh - 80px);
             }
             
             .main-content {
@@ -595,11 +600,12 @@
         
         @media (max-width: 768px) {
             .diary-container {
-                padding: 5px;
+                padding: 30px 15px;
             }
             
             .terminal-window {
-                height: calc(100vh - 10px);
+                height: calc(100vh - 60px);
+                max-height: calc(100vh - 60px);
             }
             
             .terminal-header {
@@ -648,6 +654,41 @@
             
             .note-item {
                 padding: 16px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .diary-container {
+                padding: 20px 10px;
+            }
+            
+            .terminal-window {
+                height: calc(100vh - 40px);
+                max-height: calc(100vh - 40px);
+            }
+            
+            .terminal-header {
+                padding: 6px 10px;
+                font-size: 11px;
+            }
+            
+            .terminal-icon {
+                width: 12px;
+                height: 12px;
+                font-size: 7px;
+            }
+            
+            .terminal-button {
+                width: 8px;
+                height: 8px;
+            }
+            
+            .notes-sidebar {
+                height: 200px;
+            }
+            
+            .reading-pane {
+                height: calc(100% - 200px);
             }
         }
         
