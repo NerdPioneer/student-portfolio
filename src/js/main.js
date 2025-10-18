@@ -712,6 +712,14 @@ function initRotatingQuotes() {
         {
             text: "Do you see someone skilled in their work? They will serve before kings; they will not serve before officials of low rank.",
             author: "Proverbs 22:29"
+        },
+        {
+            text: "Whoever can be trusted with very little can also be trusted with much, and whoever is dishonest with very little will also be dishonest with much.",
+            author: "Luke 16:10 (NIV)"
+        },
+        {
+            text: "A good name is more desirable than great riches; to be esteemed is better than silver or gold.",
+            author: "Proverbs 22:1 (NIV)"
         }
     ];
 
