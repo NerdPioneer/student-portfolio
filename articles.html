@@ -558,7 +558,7 @@
             line-height: 1.6;
         }
         
-        /* Mobile responsive */
+        /* Tablet responsive */
         @media (max-width: 1024px) {
             .diary-container {
                 padding: 30px 15px;
@@ -575,13 +575,13 @@
             
             .notes-sidebar {
                 width: 100%;
-                height: 300px;
+                height: 320px;
                 border-right: none;
                 border-bottom: 2px solid #000000;
             }
             
             .reading-pane {
-                height: calc(100% - 300px);
+                height: calc(100% - 320px);
                 border-left: none;
                 border-top: 2px solid #000000;
             }
@@ -595,66 +595,8 @@
             }
         }
         
+        /* Mobile responsive */
         @media (max-width: 768px) {
-            .diary-container {
-                padding: 20px 10px;
-            }
-            
-            .terminal-window {
-                height: calc(100vh - 40px);
-                max-height: calc(100vh - 40px);
-            }
-            
-            .terminal-header {
-                padding: 8px 12px;
-                font-size: 12px;
-            }
-            
-            .terminal-icon {
-                width: 14px;
-                height: 14px;
-                font-size: 8px;
-            }
-            
-            .terminal-button {
-                width: 10px;
-                height: 10px;
-            }
-            
-            .notes-sidebar {
-                height: 250px;
-            }
-            
-            .reading-pane {
-                height: calc(100% - 250px);
-            }
-            
-            .note-content {
-                padding: 24px 20px;
-            }
-            
-            .note-content h1 {
-                font-size: 28px;
-            }
-            
-            .note-content h2 {
-                font-size: 24px;
-            }
-            
-            .note-content h3 {
-                font-size: 20px;
-            }
-            
-            .sidebar-header {
-                padding: 20px 20px 12px;
-            }
-            
-            .note-item {
-                padding: 16px 20px;
-            }
-        }
-        
-        @media (max-width: 480px) {
             .diary-container {
                 padding: 15px 8px;
             }
@@ -662,30 +604,306 @@
             .terminal-window {
                 height: calc(100vh - 30px);
                 max-height: calc(100vh - 30px);
+                border-radius: 8px;
             }
             
             .terminal-header {
-                padding: 6px 10px;
-                font-size: 11px;
+                padding: 10px 12px;
+                font-size: 13px;
             }
             
             .terminal-icon {
-                width: 12px;
-                height: 12px;
-                font-size: 7px;
+                width: 16px;
+                height: 16px;
+                font-size: 10px;
             }
             
             .terminal-button {
-                width: 8px;
-                height: 8px;
+                width: 12px;
+                height: 12px;
+            }
+            
+            .main-content {
+                flex-direction: column;
             }
             
             .notes-sidebar {
-                height: 200px;
+                width: 100%;
+                height: 280px;
+                border-right: none;
+                border-bottom: 2px solid #000000;
             }
             
             .reading-pane {
-                height: calc(100% - 200px);
+                height: calc(100% - 280px);
+                border-left: none;
+                border-top: 2px solid #000000;
+            }
+            
+            .sidebar-header {
+                padding: 16px 16px 12px;
+            }
+            
+            .sidebar-title {
+                font-size: 18px;
+            }
+            
+            .sidebar-subtitle {
+                font-size: 13px;
+            }
+            
+            .note-item {
+                padding: 18px 16px;
+                border-bottom: 1px solid #e5e7eb;
+            }
+            
+            .note-title {
+                font-size: 15px;
+                font-weight: 600;
+            }
+            
+            .note-date {
+                font-size: 12px;
+            }
+            
+            .note-preview {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+            
+            .note-tag {
+                font-size: 10px;
+                padding: 3px 8px;
+            }
+            
+            .note-content {
+                padding: 20px 16px;
+            }
+            
+            .note-content h1 {
+                font-size: 26px;
+                margin-bottom: 12px;
+            }
+            
+            .note-content h2 {
+                font-size: 22px;
+                margin: 36px 0 16px 0;
+            }
+            
+            .note-content h3 {
+                font-size: 18px;
+                margin: 28px 0 14px 0;
+            }
+            
+            .note-content p {
+                font-size: 15px;
+                margin-bottom: 18px;
+                line-height: 1.6;
+            }
+            
+            .note-content li {
+                font-size: 15px;
+                margin-bottom: 12px;
+                line-height: 1.6;
+            }
+            
+            .note-content blockquote {
+                padding: 16px 20px;
+                margin: 24px 0;
+                font-size: 16px;
+            }
+            
+            .note-content code {
+                font-size: 13px;
+                padding: 3px 6px;
+            }
+            
+            .note-content pre {
+                padding: 16px;
+                margin: 24px 0;
+            }
+            
+            .meta {
+                padding: 16px 0;
+                margin-bottom: 24px;
+                gap: 16px;
+            }
+        }
+        
+        /* Small mobile responsive */
+        @media (max-width: 480px) {
+            .diary-container {
+                padding: 10px 5px;
+            }
+            
+            .terminal-window {
+                height: calc(100vh - 20px);
+                max-height: calc(100vh - 20px);
+                border-radius: 6px;
+            }
+            
+            .terminal-header {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+            
+            .terminal-icon {
+                width: 14px;
+                height: 14px;
+                font-size: 9px;
+            }
+            
+            .terminal-button {
+                width: 10px;
+                height: 10px;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .notes-sidebar {
+                width: 100%;
+                height: 240px;
+                border-right: none;
+                border-bottom: 2px solid #000000;
+            }
+            
+            .reading-pane {
+                height: calc(100% - 240px);
+                border-left: none;
+                border-top: 2px solid #000000;
+            }
+            
+            .sidebar-header {
+                padding: 12px 12px 8px;
+            }
+            
+            .sidebar-title {
+                font-size: 16px;
+            }
+            
+            .sidebar-subtitle {
+                font-size: 12px;
+            }
+            
+            .note-item {
+                padding: 14px 12px;
+                border-bottom: 1px solid #e5e7eb;
+            }
+            
+            .note-title {
+                font-size: 14px;
+                font-weight: 600;
+            }
+            
+            .note-date {
+                font-size: 11px;
+            }
+            
+            .note-preview {
+                font-size: 12px;
+                line-height: 1.4;
+            }
+            
+            .note-tag {
+                font-size: 9px;
+                padding: 2px 6px;
+            }
+            
+            .note-content {
+                padding: 16px 12px;
+            }
+            
+            .note-content h1 {
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+            
+            .note-content h2 {
+                font-size: 18px;
+                margin: 28px 0 12px 0;
+            }
+            
+            .note-content h3 {
+                font-size: 16px;
+                margin: 20px 0 10px 0;
+            }
+            
+            .note-content p {
+                font-size: 14px;
+                margin-bottom: 14px;
+                line-height: 1.5;
+            }
+            
+            .note-content li {
+                font-size: 14px;
+                margin-bottom: 10px;
+                line-height: 1.5;
+            }
+            
+            .note-content blockquote {
+                padding: 12px 16px;
+                margin: 18px 0;
+                font-size: 14px;
+            }
+            
+            .note-content code {
+                font-size: 12px;
+                padding: 2px 4px;
+            }
+            
+            .note-content pre {
+                padding: 12px;
+                margin: 18px 0;
+            }
+            
+            .meta {
+                padding: 12px 0;
+                margin-bottom: 18px;
+                gap: 12px;
+            }
+        }
+        
+        /* Mobile touch improvements */
+        @media (max-width: 768px) {
+            .note-item {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+                touch-action: manipulation;
+            }
+            
+            .note-item:active {
+                background: #f3f4f6;
+                transform: translateX(2px);
+            }
+            
+            .terminal-button {
+                -webkit-tap-highlight-color: transparent;
+            }
+            
+            /* Smooth scrolling for mobile */
+            .notes-sidebar,
+            .reading-pane {
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth;
+            }
+            
+            /* Better touch targets */
+            .note-item {
+                min-height: 60px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            /* Mobile-optimized spacing */
+            .note-tags {
+                margin-top: 6px;
+            }
+            
+            .note-tag {
+                margin-right: 4px;
+                margin-bottom: 2px;
             }
         }
         
