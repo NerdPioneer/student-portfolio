@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.1percentnerd.com/sitemap.xml
+Sitemap: https://www.nerdpioneer.com/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
