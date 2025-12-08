@@ -1389,7 +1389,7 @@ html {
   /* Mobile Footer */
   @media (max-width: 768px) {
     .footer {
-      @apply py-6 px-4;
+      @apply pt-6 pb-0 px-4;
     }
     
     .footer p {
