@@ -1,0 +1,7 @@
+{
+  "hints": {
+    "compat-api": {
+      "ignore": ["meta[name=theme-color]"]
+    }
+  }
+}

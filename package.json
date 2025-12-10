@@ -1,0 +1,36 @@
+{
+  "name": "student-portfolio",
+  "version": "1.0.0",
+  "description": "A modern student portfolio website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npm run watch:css & live-server --port=3000",
+    "build": "npm run build:css",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch",
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
+    "start": "live-server --port=3000",
+    "clean": "rm -rf dist/styles.css",
+    "preview": "live-server --port=3000 --entry-file=index.html"
+  },
+  "keywords": [
+    "portfolio",
+    "tailwindcss",
+    "student",
+    "website"
+  ],
+  "author": "NerdPioneer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NerdPioneer/Student-Portfolio.git"
+  },
+  "homepage": "https://www.nerdpioneer.com",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "live-server": "^1.2.0",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6"
+  }
+}

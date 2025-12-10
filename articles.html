@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notes and tips by Ezekiel Obeisun Jr (NerdPioneer) on navigating the online world - simple diary-style articles on technology, cybersecurity, and digital life.">
+    <meta name="keywords" content="notes, tips, online navigation, technology, cybersecurity, digital life, Ezekiel Obeisun, NerdPioneer, diary, articles">
+    <meta name="author" content="Ezekiel Obeisun Jr (NerdPioneer)">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.nerdpioneer.com/articles.html">
+    <meta property="og:title" content="Notes & Tips | Ezekiel Obeisun Jr (NerdPioneer)">
+    <meta property="og:description" content="Simple notes and tips for navigating the online world - diary-style articles on technology and digital life.">
+    <meta property="og:image" content="https://www.nerdpioneer.com/public/images/profile_1.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.nerdpioneer.com/articles.html">
+    <meta property="twitter:title" content="Notes & Tips | Ezekiel Obeisun Jr (NerdPioneer)">
+    <meta property="twitter:description" content="Simple notes and tips for navigating the online world - diary-style articles on technology and digital life.">
+    <meta property="twitter:image" content="https://www.nerdpioneer.com/public/images/profile_1.jpg">
+    
+    <title>Notes & Tips | Ezekiel Obeisun Jr (NerdPioneer)</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='number-grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%232563eb;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%231d4ed8;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23number-grad)' stroke='%23ffffff' stroke-width='2'/%3E%3Ctext x='50' y='70' font-family='Arial Black, sans-serif' font-size='60' font-weight='900' fill='white' text-anchor='middle' dominant-baseline='middle'%3E1%3C/text%3E%3C/svg%3E">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="dist/styles.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        /* Enhanced Diary-style with terminal window design */
+        .diary-container {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            position: relative;
+            padding: 40px 30px;
+            box-sizing: border-box;
+        }
+        
+        .diary-container::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #ffffff;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .terminal-window {
+            position: relative;
+            z-index: 1;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            height: calc(100vh - 80px);
+            max-height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            border: 2px solid #000000;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+        
+        .terminal-header {
+            background: #000000;
+            color: #ffffff;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #000000;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .terminal-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .terminal-icon {
+            width: 16px;
+            height: 16px;
+            background: #ffffff;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #000000;
+        }
+        
+        .terminal-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            cursor: default;
+            transition: opacity 0.2s ease;
+        }
+        
+        .terminal-button:hover {
+            opacity: 0.7;
+        }
+        
+        .terminal-button.close {
+            background: #ff5f57;
+        }
+        
+        .terminal-button.minimize {
+            background: #ffbd2e;
+        }
+        
+        .terminal-button.maximize {
+            background: #28ca42;
+        }
+        
+        .main-content {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+        }
+        
+        .notes-sidebar {
+            background: #ffffff;
+            border-right: 2px solid #000000;
+            width: 400px;
+            height: 100%;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #000000 #f8f9fa;
+            position: relative;
+        }
+        
+        .notes-sidebar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+        }
+        
+        .notes-sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .notes-sidebar::-webkit-scrollbar-track {
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .notes-sidebar::-webkit-scrollbar-thumb {
+            background: #000000;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .notes-sidebar::-webkit-scrollbar-thumb:hover {
+            background: #333333;
+        }
+        
+        .sidebar-header {
+            padding: 24px 24px 16px;
+            background: #000000;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .sidebar-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .sidebar-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .sidebar-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .notes-count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 8px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .note-item {
+            padding: 20px 24px;
+            border-bottom: 1px solid #e5e7eb;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            background: transparent;
+        }
+        
+        .note-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            background: #000000;
+            transition: width 0.3s ease;
+        }
+        
+        .note-item:hover {
+            background: #f8f9fa;
+            transform: translateX(4px);
+        }
+        
+        .note-item:hover::before {
+            width: 4px;
+        }
+        
+        .note-item.active {
+            background: #f1f5f9;
+            transform: translateX(8px);
+        }
+        
+        .note-item.active::before {
+            width: 6px;
+        }
+        
+        .note-item.active .note-title {
+            color: #000000;
+            font-weight: 700;
+        }
+        
+        .note-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 6px;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+        
+        .note-date {
+            font-size: 12px;
+            color: #64748b;
+            margin-bottom: 8px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .note-date::before {
+            content: '📅';
+            font-size: 10px;
+        }
+        
+        .note-preview {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .note-tags {
+            display: flex;
+            gap: 6px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .note-tag {
+            background: #000000;
+            color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        
+        .note-tag:hover {
+            background: #333333;
+            transform: translateY(-1px);
+        }
+        
+        .reading-pane {
+            background: #ffffff;
+            flex: 1;
+            height: 100%;
+            overflow-y: auto;
+            position: relative;
+            border-left: 2px solid #000000;
+        }
+        
+        .reading-pane::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+        }
+        
+        .note-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 48px 40px;
+            line-height: 1.7;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .note-content h1 {
+            font-size: 36px;
+            font-weight: 900;
+            color: #000000;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .note-content .meta {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 2px solid #000000;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .meta-date {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+        
+        .meta-date::before {
+            content: '📅';
+        }
+        
+        .meta-reading-time {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #3b82f6;
+            font-weight: 500;
+        }
+        
+        .meta-reading-time::before {
+            content: '⏱️';
+        }
+        
+        .note-content h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #000000;
+            margin: 48px 0 24px 0;
+            line-height: 1.3;
+            position: relative;
+            padding-left: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .note-content h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 32px;
+            background: #000000;
+        }
+        
+        .note-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #000000;
+            margin: 36px 0 20px 0;
+            line-height: 1.4;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        
+        .note-content p {
+            font-size: 17px;
+            color: #374151;
+            margin-bottom: 24px;
+            text-align: justify;
+            line-height: 1.7;
+        }
+        
+        .note-content ul, .note-content ol {
+            margin: 28px 0;
+            padding-left: 32px;
+        }
+        
+        .note-content li {
+            font-size: 17px;
+            color: #374151;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        
+        .note-content blockquote {
+            border-left: 6px solid #000000;
+            padding: 24px 32px;
+            margin: 32px 0;
+            font-style: italic;
+            color: #000000;
+            background: #f8f9fa;
+            border-radius: 0 8px 8px 0;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        .note-content blockquote::before {
+            content: '"';
+            font-size: 48px;
+            color: #000000;
+            position: absolute;
+            top: -8px;
+            left: 16px;
+            font-family: serif;
+            opacity: 0.3;
+        }
+        
+        .note-content code {
+            background: #000000;
+            color: #ffffff;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .note-content pre {
+            background: #000000;
+            color: #ffffff;
+            padding: 28px;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin: 32px 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 2px solid #000000;
+        }
+        
+        .note-content pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+            border: none;
+        }
+        
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #64748b;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .empty-state i {
+            font-size: 64px;
+            margin-bottom: 24px;
+            opacity: 0.6;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .empty-state h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #334155;
+        }
+        
+        .empty-state p {
+            font-size: 16px;
+            max-width: 400px;
+            line-height: 1.6;
+        }
+        
+        /* Tablet responsive */
+        @media (max-width: 1024px) {
+            .diary-container {
+                padding: 30px 15px;
+            }
+            
+            .terminal-window {
+                height: calc(100vh - 60px);
+                max-height: calc(100vh - 60px);
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .notes-sidebar {
+                width: 100%;
+                height: 320px;
+                border-right: none;
+                border-bottom: 2px solid #000000;
+            }
+            
+            .reading-pane {
+                height: calc(100% - 320px);
+                border-left: none;
+                border-top: 2px solid #000000;
+            }
+            
+            .note-content {
+                padding: 32px 24px;
+            }
+            
+            .note-content h1 {
+                font-size: 32px;
+            }
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .diary-container {
+                padding: 15px 8px;
+            }
+            
+            .terminal-window {
+                height: calc(100vh - 30px);
+                max-height: calc(100vh - 30px);
+                border-radius: 8px;
+            }
+            
+            .terminal-header {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+            
+            .terminal-icon {
+                width: 16px;
+                height: 16px;
+                font-size: 10px;
+            }
+            
+            .terminal-button {
+                width: 12px;
+                height: 12px;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .notes-sidebar {
+                width: 100%;
+                height: 280px;
+                border-right: none;
+                border-bottom: 2px solid #000000;
+            }
+            
+            .reading-pane {
+                height: calc(100% - 280px);
+                border-left: none;
+                border-top: 2px solid #000000;
+            }
+            
+            .sidebar-header {
+                padding: 16px 16px 12px;
+            }
+            
+            .sidebar-title {
+                font-size: 18px;
+            }
+            
+            .sidebar-subtitle {
+                font-size: 13px;
+            }
+            
+            .note-item {
+                padding: 18px 16px;
+                border-bottom: 1px solid #e5e7eb;
+            }
+            
+            .note-title {
+                font-size: 15px;
+                font-weight: 600;
+            }
+            
+            .note-date {
+                font-size: 12px;
+            }
+            
+            .note-preview {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+            
+            .note-tag {
+                font-size: 10px;
+                padding: 3px 8px;
+            }
+            
+            .note-content {
+                padding: 20px 16px;
+            }
+            
+            .note-content h1 {
+                font-size: 26px;
+                margin-bottom: 12px;
+            }
+            
+            .note-content h2 {
+                font-size: 22px;
+                margin: 36px 0 16px 0;
+            }
+            
+            .note-content h3 {
+                font-size: 18px;
+                margin: 28px 0 14px 0;
+            }
+            
+            .note-content p {
+                font-size: 15px;
+                margin-bottom: 18px;
+                line-height: 1.6;
+            }
+            
+            .note-content li {
+                font-size: 15px;
+                margin-bottom: 12px;
+                line-height: 1.6;
+            }
+            
+            .note-content blockquote {
+                padding: 16px 20px;
+                margin: 24px 0;
+                font-size: 16px;
+            }
+            
+            .note-content code {
+                font-size: 13px;
+                padding: 3px 6px;
+            }
+            
+            .note-content pre {
+                padding: 16px;
+                margin: 24px 0;
+            }
+            
+            .meta {
+                padding: 16px 0;
+                margin-bottom: 24px;
+                gap: 16px;
+            }
+        }
+        
+        /* Small mobile responsive */
+        @media (max-width: 480px) {
+            .diary-container {
+                padding: 10px 5px;
+            }
+            
+            .terminal-window {
+                height: calc(100vh - 20px);
+                max-height: calc(100vh - 20px);
+                border-radius: 6px;
+            }
+            
+            .terminal-header {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+            
+            .terminal-icon {
+                width: 14px;
+                height: 14px;
+                font-size: 9px;
+            }
+            
+            .terminal-button {
+                width: 10px;
+                height: 10px;
+            }
+            
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .notes-sidebar {
+                width: 100%;
+                height: 240px;
+                border-right: none;
+                border-bottom: 2px solid #000000;
+            }
+            
+            .reading-pane {
+                height: calc(100% - 240px);
+                border-left: none;
+                border-top: 2px solid #000000;
+            }
+            
+            .sidebar-header {
+                padding: 12px 12px 8px;
+            }
+            
+            .sidebar-title {
+                font-size: 16px;
+            }
+            
+            .sidebar-subtitle {
+                font-size: 12px;
+            }
+            
+            .note-item {
+                padding: 14px 12px;
+                border-bottom: 1px solid #e5e7eb;
+            }
+            
+            .note-title {
+                font-size: 14px;
+                font-weight: 600;
+            }
+            
+            .note-date {
+                font-size: 11px;
+            }
+            
+            .note-preview {
+                font-size: 12px;
+                line-height: 1.4;
+            }
+            
+            .note-tag {
+                font-size: 9px;
+                padding: 2px 6px;
+            }
+            
+            .note-content {
+                padding: 16px 12px;
+            }
+            
+            .note-content h1 {
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+            
+            .note-content h2 {
+                font-size: 18px;
+                margin: 28px 0 12px 0;
+            }
+            
+            .note-content h3 {
+                font-size: 16px;
+                margin: 20px 0 10px 0;
+            }
+            
+            .note-content p {
+                font-size: 14px;
+                margin-bottom: 14px;
+                line-height: 1.5;
+            }
+            
+            .note-content li {
+                font-size: 14px;
+                margin-bottom: 10px;
+                line-height: 1.5;
+            }
+            
+            .note-content blockquote {
+                padding: 12px 16px;
+                margin: 18px 0;
+                font-size: 14px;
+            }
+            
+            .note-content code {
+                font-size: 12px;
+                padding: 2px 4px;
+            }
+            
+            .note-content pre {
+                padding: 12px;
+                margin: 18px 0;
+            }
+            
+            .meta {
+                padding: 12px 0;
+                margin-bottom: 18px;
+                gap: 12px;
+            }
+        }
+        
+        /* Mobile touch improvements */
+        @media (max-width: 768px) {
+            .note-item {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+                touch-action: manipulation;
+            }
+            
+            .note-item:active {
+                background: #f3f4f6;
+                transform: translateX(2px);
+            }
+            
+            .terminal-button {
+                -webkit-tap-highlight-color: transparent;
+            }
+            
+            /* Smooth scrolling for mobile */
+            .notes-sidebar,
+            .reading-pane {
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth;
+            }
+            
+            /* Better touch targets */
+            .note-item {
+                min-height: 60px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            /* Mobile-optimized spacing */
+            .note-tags {
+                margin-top: 6px;
+            }
+            
+            .note-tag {
+                margin-right: 4px;
+                margin-bottom: 2px;
+            }
+        }
+        
+        /* Loading animation */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid #e2e8f0;
+            border-top: 2px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="diary-container">
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav w-full bg-black transition-all duration-300" id="desktop-nav" role="navigation" aria-label="Main navigation">
+        <div class="container mx-auto px-4 lg:px-6">
+            <div class="flex justify-between items-center py-4">
+                <div class="nav-brand">
+                    <a href="index.html" class="flex items-center space-x-2 text-xl md:text-2xl font-bold text-white font-raleway">
+                        <i class="fas fa-brain text-white" aria-label="Portfolio Home"></i>
+                        <span class="hidden sm:inline uppercase tracking-wide">Portfolio</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <ul class="hidden lg:flex space-x-6 xl:space-x-8 nav-links">
+                    <li><a href="index.html" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Home</a></li>
+                    <li><a href="index.html#education" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Education</a></li>
+                    <li><a href="index.html#certifications" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Certifications</a></li>
+                    <li><a href="index.html#projects" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Projects</a></li>
+                    <li><a href="index.html#notes" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Notes</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden nav-toggle p-2 border border-gray-600 rounded-lg bg-black hover:bg-gray-900 transition-colors duration-200" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <div class="w-6 h-6 flex flex-col justify-center">
+                        <span class="hamburger-line block w-full h-0.5 bg-white mb-1 transition-all duration-300"></span>
+                        <span class="hamburger-line block w-full h-0.5 bg-white mb-1 transition-all duration-300"></span>
+                        <span class="hamburger-line block w-full h-0.5 bg-white transition-all duration-300"></span>
+                    </div>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="nav-menu lg:hidden overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+                <div class="border-t border-gray-700 pt-4 pb-4">
+                    <ul class="flex flex-col space-y-1">
+                        <li><a href="index.html" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Home</a></li>
+                        <li><a href="index.html#education" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Education</a></li>
+                        <li><a href="index.html#certifications" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Certifications</a></li>
+                        <li><a href="index.html#projects" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Projects</a></li>
+                        <li><a href="index.html#notes" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Notes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Spacer Section for Navbar Separation -->
+    <section class="spacer-section" style="height:6rem;"></section>
+
+    <!-- Main Diary Layout -->
+    <div class="terminal-window">
+        <!-- Terminal Header -->
+        <div class="terminal-header">
+            <div class="terminal-title">
+                <div class="terminal-icon">📝</div>
+                <span>Notes & Tips Terminal</span>
+            </div>
+            <div class="terminal-buttons">
+                <button class="terminal-button close" title="Close"></button>
+                <button class="terminal-button minimize" title="Minimize"></button>
+                <button class="terminal-button maximize" title="Maximize"></button>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Pane: Notes List -->
+            <div class="notes-sidebar">
+                <div class="sidebar-header">
+                    <h2 class="sidebar-title">Notes & Tips</h2>
+                    <p class="sidebar-subtitle">Simple tips for navigating the online world</p>
+                    <div class="notes-count" id="notes-count">5 notes</div>
+                </div>
+                
+                <div id="notes-list">
+                    <!-- Note items will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Right Pane: Reading Area -->
+            <div class="reading-pane">
+                <div id="note-content" class="note-content">
+                    <div class="empty-state">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Select a Note</h3>
+                        <p>Choose a note from the left panel to start reading</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="src/js/main.js"></script>
+    <script>
+        // Enhanced notes data with tags and reading time
+        const notes = [
+            {
+                id: 'online-privacy-basics',
+                title: 'Online Privacy Basics',
+                date: '2025-01-27',
+                preview: 'Essential steps to protect your privacy in the digital world...',
+                tags: ['Privacy', 'Security', 'Basics'],
+                readingTime: '5 min',
+                content: `
+# Online Privacy Basics
+
+**Date:** January 27, 2025
+
+Navigating the online world safely starts with understanding privacy basics. Here are some simple tips I've learned:
+
+## Use Strong, Unique Passwords
+
+- Create passwords that are at least 12 characters long
+- Use a mix of letters, numbers, and symbols
+- Never reuse passwords across different accounts
+- Consider using a password manager like Bitwarden or 1Password
+
+## Enable Two-Factor Authentication
+
+Two-factor authentication (2FA) adds an extra layer of security:
+
+- Enable 2FA on all important accounts
+- Use authenticator apps instead of SMS when possible
+- Keep backup codes in a safe place
+
+## Be Careful with Personal Information
+
+- Think twice before sharing personal details online
+- Be cautious about what you post on social media
+- Remember that once something is online, it's hard to remove completely
+
+## Use HTTPS Websites
+
+Always look for the lock icon in your browser's address bar. This means the connection is encrypted and secure.
+
+## Regular Software Updates
+
+Keep your devices and software updated:
+
+- Enable automatic updates when possible
+- Update your operating system regularly
+- Keep your apps and browsers current
+
+## Simple Rule
+
+When in doubt, don't share it. If something feels too personal or risky, it probably is.
+
+*Remember: Privacy is not about hiding something wrong - it's about protecting what's yours.*
+                `
+            },
+            {
+                id: 'password-security-tips',
+                title: 'Password Security Tips',
+                date: '2025-01-26',
+                preview: 'How to create and manage secure passwords without going crazy...',
+                tags: ['Passwords', 'Security', 'Tips'],
+                readingTime: '6 min',
+                content: `
+# Password Security Tips
+
+**Date:** January 26, 2025
+
+Passwords are like the keys to your digital life. Here's how to make them work for you:
+
+## The Password Problem
+
+Most people use weak passwords because they're easier to remember. But weak passwords are like leaving your house key under the doormat.
+
+## Creating Strong Passwords
+
+### Method 1: Passphrase Approach
+Instead of a complex password, use a passphrase:
+- "CoffeeMakesMeHappy2025!"
+- "MyDogLovesBeachWalks!"
+- "ReadingBooksIsAwesome!"
+
+### Method 2: The Sentence Method
+Take a sentence and use the first letters:
+- "I love to read books every Sunday morning" → "Iltrbesm2025!"
+- "My favorite color is blue like the ocean" → "Mfciblto2025!"
+
+## Password Manager Benefits
+
+Using a password manager solves the "too many passwords" problem:
+
+- Generate unique passwords for each site
+- Store them securely
+- Auto-fill when you need them
+- Sync across all your devices
+
+## Common Password Mistakes
+
+❌ Using personal information (birthday, name, pet's name)
+❌ Reusing passwords across multiple sites
+❌ Using simple patterns like "123456" or "password"
+❌ Not changing default passwords
+
+## What to Do Instead
+
+✅ Use unique passwords for each account
+✅ Make them long and complex
+✅ Store them in a password manager
+✅ Enable 2FA whenever possible
+
+## Quick Check
+
+Ask yourself: "Would I be comfortable if this password was posted on a public bulletin board?" If the answer is no, you're on the right track.
+
+*Security doesn't have to be complicated - it just has to be consistent.*
+                `
+            },
+            {
+                id: 'spotting-scams-online',
+                title: 'Spotting Scams Online',
+                date: '2025-01-25',
+                preview: 'Red flags to watch for when browsing the internet...',
+                tags: ['Scams', 'Safety', 'Awareness'],
+                readingTime: '7 min',
+                content: `
+# Spotting Scams Online
+
+**Date:** January 25, 2025
+
+The internet is amazing, but it's also full of people trying to take advantage of others. Here's how to spot the red flags:
+
+## Common Red Flags
+
+### Urgency Tactics
+- "Act now or lose your account!"
+- "Limited time offer!"
+- "Your account will be closed in 24 hours!"
+
+**Real companies don't pressure you like this.**
+
+### Too Good to Be True
+- "Make $1000 a day working from home!"
+- "Free iPhone for everyone!"
+- "You've won a prize you never entered!"
+
+**If it sounds too good to be true, it probably is.**
+
+### Suspicious Links
+- Links that don't match the company name
+- Shortened URLs (bit.ly, tinyurl.com) from unknown sources
+- Links in unexpected emails or messages
+
+## Email Scam Signs
+
+### Poor Grammar and Spelling
+Legitimate companies have professional communications. Typos and bad grammar are red flags.
+
+### Generic Greetings
+- "Dear Customer" instead of your name
+- "Dear Sir/Madam"
+- No personalization at all
+
+### Suspicious Senders
+- Email addresses that don't match the company
+- Senders claiming to be from companies you don't use
+- Requests for personal information via email
+
+## Website Red Flags
+
+### Missing Security Indicators
+- No lock icon in the address bar
+- "Not secure" warnings
+- HTTP instead of HTTPS
+
+### Poor Design
+- Broken images
+- Spelling errors
+- Looks unprofessional
+- Missing contact information
+
+## Social Media Scams
+
+### Fake Profiles
+- New accounts with few posts
+- Stock photo profile pictures
+- Generic or copied content
+
+### Investment Scams
+- Promises of guaranteed returns
+- Pressure to invest quickly
+- Requests for money upfront
+
+## What to Do
+
+1. **Slow down** - Scammers want you to act quickly
+2. **Verify** - Check official websites and phone numbers
+3. **Ask questions** - Legitimate businesses welcome questions
+4. **Trust your instincts** - If something feels wrong, it probably is
+
+## Quick Rule
+
+**When in doubt, don't click, don't respond, don't send money.**
+
+*The best defense against scams is a healthy dose of skepticism.*
+                `
+            },
+            {
+                id: 'safe-browsing-habits',
+                title: 'Safe Browsing Habits',
+                date: '2025-01-24',
+                preview: 'Simple habits to keep you safe while browsing the internet...',
+                tags: ['Browsing', 'Safety', 'Habits'],
+                readingTime: '8 min',
+                content: `
+# Safe Browsing Habits
+
+**Date:** January 24, 2025
+
+The internet is a wonderful place, but like any public space, it pays to be aware of your surroundings. Here are some simple habits to keep you safe:
+
+## Before You Click
+
+### Check the URL
+- Look at the address bar before clicking
+- Make sure you're on the right website
+- Watch for typos in domain names (gooogle.com vs google.com)
+
+### Look for HTTPS
+- The lock icon means the connection is encrypted
+- Never enter sensitive information on HTTP sites
+- Be extra careful on public WiFi
+
+## While You Browse
+
+### Keep Your Software Updated
+- Update your browser regularly
+- Install security patches promptly
+- Enable automatic updates when possible
+
+### Use Ad Blockers
+- Block malicious ads and trackers
+- Reduce the risk of malvertising
+- Improve page loading speeds
+
+### Be Cautious with Downloads
+- Only download from trusted sources
+- Scan files with antivirus software
+- Avoid pirated software and media
+
+## Social Media Safety
+
+### Privacy Settings
+- Review your privacy settings regularly
+- Limit who can see your posts
+- Be careful about location sharing
+
+### Think Before You Post
+- Once it's online, it's hard to remove
+- Consider how it might look to future employers
+- Remember that screenshots last forever
+
+### Friend Requests
+- Only accept requests from people you know
+- Be suspicious of mutual friends you don't recognize
+- Report fake profiles
+
+## Email Safety
+
+### Don't Click Suspicious Links
+- Hover over links to see the real destination
+- Be wary of unexpected attachments
+- Verify requests through official channels
+
+### Use Different Email Addresses
+- Separate personal and professional emails
+- Use throwaway emails for signups
+- Consider using email aliases
+
+## Shopping Online
+
+### Stick to Reputable Sites
+- Use well-known retailers
+- Check for customer reviews
+- Look for secure payment options
+
+### Use Credit Cards
+- Credit cards offer better fraud protection
+- Avoid using debit cards online
+- Consider virtual credit cards for online purchases
+
+## Mobile Browsing
+
+### Use Official App Stores
+- Download apps only from official stores
+- Read app permissions carefully
+- Keep apps updated
+
+### Be Careful with Public WiFi
+- Avoid sensitive activities on public networks
+- Use VPN when possible
+- Turn off auto-connect to WiFi
+
+## Quick Safety Checklist
+
+Before you do anything online, ask yourself:
+- Does this make sense?
+- Am I being rushed?
+- Is this too good to be true?
+- Would I do this in person?
+
+## Remember
+
+**The internet is a tool. Like any tool, it's most effective when used safely and responsibly.**
+
+*Good habits online are just like good habits offline - they protect you and make life easier.*
+                `
+            },
+            {
+                id: 'digital-footprint-awareness',
+                title: 'Digital Footprint Awareness',
+                date: '2025-01-23',
+                preview: 'Understanding what information you leave behind online...',
+                tags: ['Privacy', 'Awareness', 'Digital Life'],
+                readingTime: '9 min',
+                content: `
+# Digital Footprint Awareness
+
+**Date:** January 23, 2025
+
+Everything you do online leaves a trail. Understanding your digital footprint helps you make better decisions about your online presence.
+
+## What is a Digital Footprint?
+
+Your digital footprint is the trail of data you leave behind when using the internet. It includes:
+
+- Websites you visit
+- Posts you make on social media
+- Photos you upload
+- Comments you leave
+- Information you share in forms
+- Apps you download
+
+## Types of Digital Footprints
+
+### Active Footprint
+Things you intentionally put online:
+- Social media posts
+- Comments and reviews
+- Photos and videos you upload
+- Blog posts or articles
+
+### Passive Footprint
+Data collected without your direct input:
+- Website tracking cookies
+- Location data from your phone
+- Search history
+- Purchase history
+- App usage data
+
+## Why It Matters
+
+### Professional Impact
+- Employers often check social media profiles
+- Your online presence affects your reputation
+- Past posts can come back to haunt you
+
+### Privacy Concerns
+- Companies collect data about your habits
+- Your information might be sold to third parties
+- Targeted advertising based on your behavior
+
+### Security Risks
+- Cybercriminals can use your information for attacks
+- Personal details help with identity theft
+- Location data can reveal your patterns
+
+## Managing Your Digital Footprint
+
+### Regular Cleanup
+- Delete old social media posts
+- Remove unused accounts
+- Clean up your browser history
+- Unsubscribe from unnecessary emails
+
+### Privacy Settings
+- Review privacy settings on all platforms
+- Limit who can see your information
+- Turn off location tracking when not needed
+- Use private browsing when appropriate
+
+### Think Before You Share
+- Consider the long-term implications
+- Ask "Would I want my grandmother to see this?"
+- Remember that screenshots can be taken
+- Be mindful of your audience
+
+## Protecting Your Information
+
+### Use Strong Privacy Settings
+- Make profiles private when possible
+- Limit data sharing with apps
+- Turn off unnecessary permissions
+- Use two-factor authentication
+
+### Be Selective About Apps
+- Only download apps you actually need
+- Read privacy policies before installing
+- Delete apps you no longer use
+- Check app permissions regularly
+
+### Monitor Your Presence
+- Google yourself regularly
+- Set up Google Alerts for your name
+- Check what information is publicly available
+- Request data deletion when possible
+
+## Building a Positive Digital Footprint
+
+### Share Valuable Content
+- Post helpful information
+- Share your expertise
+- Contribute to meaningful discussions
+- Showcase your professional skills
+
+### Be Authentic
+- Be yourself, but be your best self
+- Share your genuine interests
+- Engage thoughtfully with others
+- Build real relationships
+
+### Professional Presence
+- Keep professional and personal separate
+- Use LinkedIn for career-related content
+- Maintain a professional email address
+- Create a personal website or portfolio
+
+## Quick Tips
+
+1. **Google yourself** - See what others can find
+2. **Set reminders** - Check your privacy settings monthly
+3. **Be consistent** - Use the same name across platforms
+4. **Stay current** - Keep your information up to date
+5. **Think long-term** - Consider how posts will look in 5 years
+
+## Remember
+
+**Your digital footprint is permanent, but you have control over what it contains.**
+
+*Every click, post, and share is a choice. Make choices that reflect who you want to be.*
+                `
+            }
+        ];
+
+        // Initialize the enhanced notes interface
+        function initNotesInterface() {
+            const notesList = document.getElementById('notes-list');
+            const noteContent = document.getElementById('note-content');
+            const notesCount = document.getElementById('notes-count');
+            
+            // Update notes count
+            notesCount.textContent = `${notes.length} notes`;
+            
+            // Populate notes list with enhanced styling
+            notes.forEach((note, index) => {
+                const noteItem = document.createElement('div');
+                noteItem.className = 'note-item';
+                noteItem.dataset.noteId = note.id;
+                
+                // Create tags HTML
+                const tagsHtml = note.tags.map(tag => `<span class="note-tag">${tag}</span>`).join('');
+                
+                noteItem.innerHTML = `
+                    <div class="note-title">${note.title}</div>
+                    <div class="note-date">${formatDate(note.date)}</div>
+                    <div class="note-preview">${note.preview}</div>
+                    <div class="note-tags">${tagsHtml}</div>
+                `;
+                
+                // Add enhanced click handler with animation
+                noteItem.addEventListener('click', () => {
+                    selectNote(note.id);
+                });
+                
+                // Add keyboard support
+                noteItem.setAttribute('tabindex', '0');
+                noteItem.setAttribute('role', 'button');
+                noteItem.setAttribute('aria-label', `Read ${note.title}`);
+                
+                noteItem.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        selectNote(note.id);
+                    }
+                });
+                
+                notesList.appendChild(noteItem);
+            });
+            
+            // Select first note by default with animation
+            if (notes.length > 0) {
+                setTimeout(() => {
+                    selectNote(notes[0].id);
+                }, 300);
+            }
+        }
+        
+        function selectNote(noteId) {
+            const note = notes.find(n => n.id === noteId);
+            if (!note) return;
+            
+            // Add loading state
+            const noteContent = document.getElementById('note-content');
+            noteContent.classList.add('loading');
+            
+            // Update active state with smooth transition
+            document.querySelectorAll('.note-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            const activeItem = document.querySelector(`[data-note-id="${noteId}"]`);
+            if (activeItem) {
+                activeItem.classList.add('active');
+                activeItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+            
+            // Update content with enhanced formatting
+            setTimeout(() => {
+                noteContent.innerHTML = `
+                    <h1>${note.title}</h1>
+                    <div class="meta">
+                        <div class="meta-date">${formatDate(note.date)}</div>
+                        <div class="meta-reading-time">${note.readingTime} read</div>
+                    </div>
+                    <div class="content">${formatContent(note.content)}</div>
+                `;
+                noteContent.classList.remove('loading');
+            }, 150);
+        }
+        
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+        
+        function formatContent(content) {
+            // Simple markdown-like formatting
+            return content
+                .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                .replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/gim, '<em>$1</em>')
+                .replace(/^\- (.*$)/gim, '<li>$1</li>')
+                .replace(/^✅ (.*$)/gim, '<li style="color: #10b981;">✅ $1</li>')
+                .replace(/^❌ (.*$)/gim, '<li style="color: #ef4444;">❌ $1</li>')
+                .replace(/`(.*?)`/gim, '<code>$1</code>')
+                .replace(/\n\n/gim, '</p><p>')
+                .replace(/^(?!<[h|l])/gim, '<p>')
+                .replace(/(<li>.*<\/li>)/gims, '<ul>$1</ul>')
+                .replace(/<\/ul>\s*<ul>/gims, '')
+                .replace(/<p><\/p>/gim, '');
+        }
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initNotesInterface);
+    </script>
+</body>
+</html>
