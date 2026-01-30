@@ -1526,6 +1526,24 @@
             animation-delay: 0.2s;
         }
         
+        /* Project Cards - Condensed Layout */
+        .projects-grid .project-card {
+            min-width: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .projects-grid {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .projects-grid .project-card {
+                width: 100% !important;
+                height: auto !important;
+                min-height: 400px;
+            }
+        }
+        
         /* Mobile Optimizations */
         @media (max-width: 768px) {
             .notes-card:hover {
@@ -2077,145 +2095,145 @@
                 <h2 class="section-title text-4xl md:text-5xl font-black text-gray-900 mb-4 font-raleway uppercase glitch-effect" data-text="PROJECTS">
                     <span data-text="PROJECTS">PROJECTS</span>
                 </h2>
-                <p class="projects-tagline text-lg text-gray-500 max-w-3xl mx-auto">Hands-on projects demonstrating programming skills, problem-solving abilities, and continuous learning in modern web technologies.</p>
+                <p class="projects-tagline text-lg text-gray-500 max-w-3xl mx-auto">Hands-on projects demonstrating technical skills and business impact in modern cloud and automation technologies.</p>
             </div>
             
-            <div class="projects-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div class="projects-grid flex flex-col md:flex-row gap-[2%] max-w-7xl mx-auto">
                 <!-- Project Card 1 -->
-                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100" data-category="web-development">
-                    <div class="project-header p-6 pb-4">
-                        <div class="flex items-center mb-4">
-                            <div class="project-image w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fab fa-aws text-orange-600 text-xl"></i>
+                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col" data-category="web-development" style="width: 32%; height: 480px;">
+                    <div class="project-header p-4 pb-3 flex-shrink-0">
+                        <div class="flex items-center mb-3">
+                            <div class="project-image w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fab fa-aws text-orange-600 text-lg"></i>
                             </div>
-                            <div class="project-title-section">
-                                <div class="project-category text-sm text-orange-600 font-medium uppercase tracking-wide">AWS Networking</div>
-                                <h3 class="text-xl font-semibold text-gray-900 mt-1">AWS Networking Guide: Robust VPN Setup</h3>
+                            <div class="project-title-section flex-1">
+                                <div class="project-category text-xs text-orange-600 font-medium uppercase tracking-wide mb-1">AWS NETWORKING</div>
+                                <h3 class="text-lg font-bold text-gray-900 leading-tight">AWS VPN Setup with Active Directory</h3>
                             </div>
                         </div>
                     </div>
-                    <div class="project-content px-6 pb-6">
-                        <div class="project-content-main mb-4">
-                            <p class="text-gray-600">A step-by-step guide on setting up a secure VPN using WireGuard and Tailscale on AWS EC2. I break down the network design, the security decisions behind it, and what it takes to run a reliable remote-access setup in the cloud.</p>
+                    <div class="project-content px-4 pb-4 flex-1 flex flex-col overflow-y-auto">
+                        <div class="project-content-main mb-3 flex-1">
+                            <p class="text-sm text-gray-600 mb-3 leading-relaxed">Built secure AWS Client VPN connecting remote users to cloud resources using WireGuard and Tailscale. Configured Active Directory authentication, SSL/TLS certificates, and proper routing to enable encrypted remote access—demonstrating how enterprises protect cloud infrastructure while supporting flexible work environments.</p>
+                            <div class="mb-3">
+                                <p class="text-xs font-semibold text-gray-900 mb-1">Technical Implementation:</p>
+                                <ul class="text-xs text-gray-600 space-y-0.5 list-disc list-inside">
+                                    <li>Deployed Active Directory for centralized authentication</li>
+                                    <li>Generated SSL/TLS certificates via AWS CLI for secure client connections</li>
+                                    <li>Configured VPN endpoint with security groups and network associations</li>
+                                    <li>Tested connectivity and validated encrypted tunnel establishment</li>
+                                </ul>
+                            </div>
+                            <p class="text-xs italic text-gray-600 mb-3">🏢 <strong>Business Value:</strong> Enables secure remote workforce access to cloud resources while maintaining enterprise-grade security controls.</p>
                         </div>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
-                                <i class="fab fa-aws mr-1"></i>AWS EC2
-                            </span>
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                                <i class="fas fa-network-wired mr-1"></i>WireGuard
-                            </span>
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
-                                <i class="fas fa-shield-alt mr-1"></i>Tailscale
-                            </span>
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                                <i class="fas fa-cloud mr-1"></i>Cloud Networking
-                            </span>
+                        <div class="flex flex-wrap gap-1.5 mb-3 flex-shrink-0">
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">AWS</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">AD</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">VPN</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">PKI</span>
                         </div>
-                        <div class="project-actions flex gap-3">
+                        <div class="project-actions flex gap-2 flex-shrink-0">
                             <a href="https://medium.com/@nerdpioneer/aws-networking-guide-setting-up-your-own-robust-vpn-with-wireguard-and-tailscale-on-aws-ec2-4cf43eb00fe7" 
                                target="_blank" 
                                rel="noopener noreferrer" 
-                               class="flex items-center text-orange-600 hover:text-orange-700 font-medium text-sm">
-                                <i class="fab fa-medium mr-2"></i>Read Article
+                               class="flex items-center text-orange-600 hover:text-orange-700 font-medium text-xs">
+                                📖 Read Article
                             </a>
                             <a href="https://github.com/NerdPioneer" 
                                target="_blank" 
                                rel="noopener noreferrer" 
-                               class="flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm">
-                                <i class="fab fa-github mr-2"></i>GitHub
+                               class="flex items-center text-primary-600 hover:text-primary-700 font-medium text-xs">
+                                💻 GitHub
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project Card 2 -->
-                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100" data-category="automation">
-                    <div class="project-header p-6 pb-4">
-                        <div class="flex items-center mb-4">
-                            <div class="project-image w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fab fa-microsoft text-purple-600 text-xl"></i>
+                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col" data-category="automation" style="width: 32%; height: 480px;">
+                    <div class="project-header p-4 pb-3 flex-shrink-0">
+                        <div class="flex items-center mb-3">
+                            <div class="project-image w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fab fa-microsoft text-purple-600 text-lg"></i>
                             </div>
                             <div class="project-title-section flex-1">
                                 <div class="flex items-center gap-2 mb-1">
-                                    <div class="project-category text-sm text-purple-600 font-medium uppercase tracking-wide">Systems Administration</div>
-                                    <img src="./public/icons/wgu-logo.png" alt="Western Governors University logo" class="h-4 w-auto object-contain" loading="lazy">
+                                    <div class="project-category text-xs text-purple-600 font-medium uppercase tracking-wide">SYSTEMS ADMIN</div>
+                                    <img src="./public/icons/wgu-logo.png" alt="Western Governors University logo" class="h-3 w-auto object-contain" loading="lazy">
+                                    <span class="text-xs">🎓</span>
                                 </div>
-                                <h3 class="text-xl font-semibold text-gray-900 mt-1">PowerShell Systems Administration Automation Tool</h3>
-                                <p class="text-xs text-gray-500 mt-1">Associated with Western Governors University</p>
+                                <h3 class="text-lg font-bold text-gray-900 leading-tight">PowerShell Automation Tool</h3>
                             </div>
                         </div>
                     </div>
-                    <div class="project-content px-6 pb-6">
-                        <div class="project-content-main mb-4">
-                            <p class="text-gray-600 mb-4">Developed a menu-driven PowerShell automation script to streamline routine IT operations and empower junior administrators with self-service system management capabilities.</p>
-                            <div class="mb-4">
-                                <p class="text-sm font-semibold text-gray-900 mb-2">Technical Implementation:</p>
-                                <ul class="text-sm text-gray-600 space-y-1 list-disc list-inside">
-                                    <li>Built interactive menu system using PowerShell control structures (switch statements, loops) for intuitive navigation</li>
-                                    <li>Automated file system reporting: log file discovery, folder inventory generation, and file size analysis</li>
-                                    <li>Implemented real-time process monitoring and system resource checks (CPU, memory utilization)</li>
-                                    <li>Designed reusable, repeatable task execution without requiring script modification</li>
-                                    <li>Applied PowerShell best practices: descriptive variable naming, inline documentation, and error handling</li>
-                                    <li>Created maintainable codebase to support knowledge transfer and future enhancements</li>
+                    <div class="project-content px-4 pb-4 flex-1 flex flex-col overflow-y-auto">
+                        <div class="project-content-main mb-3 flex-1">
+                            <p class="text-sm text-gray-600 mb-3 leading-relaxed">Developed a menu-driven PowerShell script that streamlines IT operations by automating routine system administration tasks. This tool empowers junior administrators to perform essential checks safely while reducing manual errors and improving team efficiency.</p>
+                            <div class="mb-3">
+                                <p class="text-xs font-semibold text-gray-900 mb-1">Technical Implementation:</p>
+                                <ul class="text-xs text-gray-600 space-y-0.5 list-disc list-inside">
+                                    <li>Built interactive menu using PowerShell control structures (switch, loops)</li>
+                                    <li>Automated file system reporting, log discovery, and system resource monitoring</li>
+                                    <li>Implemented real-time process checks (CPU, memory utilization)</li>
+                                    <li>Applied PowerShell best practices: error handling, descriptive variable naming, inline documentation</li>
+                                    <li>Created maintainable code supporting knowledge transfer and future enhancements</li>
                                 </ul>
                             </div>
-                            <p class="text-gray-600">This tool reduced repetitive manual tasks for IT staff while providing junior administrators a safe, structured way to perform essential system checks improving team efficiency and reducing the risk of human error in routine operations.</p>
+                            <p class="text-xs italic text-gray-600 mb-3">🏢 <strong>Business Value:</strong> Reduces repetitive manual work for IT staff, improves operational consistency, and provides junior administrators a safe framework for essential system tasks.</p>
                         </div>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
-                                <i class="fab fa-microsoft mr-1"></i>PowerShell
-                            </span>
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                                <i class="fas fa-cogs mr-1"></i>Automation
-                            </span>
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                                <i class="fas fa-server mr-1"></i>Systems Administration
-                            </span>
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
-                                <i class="fas fa-file-alt mr-1"></i>File System Management
-                            </span>
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
-                                <i class="fas fa-chart-line mr-1"></i>Process Monitoring
-                            </span>
+                        <div class="flex flex-wrap gap-1.5 mb-3 flex-shrink-0">
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">PowerShell</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">Automation</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">Systems Admin</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">File System</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">Monitoring</span>
                         </div>
-                        <div class="project-actions flex gap-3">
-                            <a href="#" class="flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm">
-                                <i class="fab fa-github mr-2"></i>Code
+                        <div class="project-actions flex gap-2 flex-shrink-0">
+                            <a href="#" class="flex items-center text-primary-600 hover:text-primary-700 font-medium text-xs">
+                                💻 Code
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project Card 3 -->
-                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden border border-gray-100" data-category="networking">
-                    <div class="project-header p-6 pb-4">
-                        <div class="flex items-center mb-4">
-                            <div class="project-image w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-sitemap text-purple-600 text-xl"></i>
+                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col" data-category="networking" style="width: 32%; height: 480px;">
+                    <div class="project-header p-4 pb-3 flex-shrink-0">
+                        <div class="flex items-center mb-3">
+                            <div class="project-image w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-sitemap text-blue-600 text-lg"></i>
                             </div>
-                            <div class="project-title-section">
-                                <div class="project-category text-sm text-purple-600 font-medium uppercase tracking-wide">Network Design</div>
-                                <h3 class="text-xl font-semibold text-gray-900 mt-1">Small Office Network with VLAN Segmentation</h3>
+                            <div class="project-title-section flex-1">
+                                <div class="project-category text-xs text-blue-600 font-medium uppercase tracking-wide mb-1">NETWORK DESIGN</div>
+                                <h3 class="text-lg font-bold text-gray-900 leading-tight">Small Office VLAN Network</h3>
                             </div>
                         </div>
                     </div>
-                    <div class="project-content px-6 pb-6">
-                        <div class="project-content-main mb-4">
-                            <p class="text-gray-600">Designed a small office network in Cisco Packet Tracer with VLANs for different departments. Configured inter-VLAN routing, assigned subnet ranges, and set up basic services to keep traffic organized and secure. A practical introduction to real-world network design.</p>
+                    <div class="project-content px-4 pb-4 flex-1 flex flex-col overflow-y-auto">
+                        <div class="project-content-main mb-3 flex-1">
+                            <p class="text-sm text-gray-600 mb-3 leading-relaxed">Designed a small office network in Cisco Packet Tracer using VLANs to separate departments. Configured inter-VLAN routing, subnet ranges, and basic security services—demonstrating practical network segmentation for organized, secure traffic flow.</p>
+                            <div class="mb-3">
+                                <p class="text-xs font-semibold text-gray-900 mb-1">Technical Implementation:</p>
+                                <ul class="text-xs text-gray-600 space-y-0.5 list-disc list-inside">
+                                    <li>Segmented network by department using VLANs</li>
+                                    <li>Configured inter-VLAN routing and subnet addressing</li>
+                                    <li>Implemented DHCP for automated IP assignment</li>
+                                    <li>Set up basic network services (Switch CLI, VLANs, DHCP)</li>
+                                </ul>
+                            </div>
+                            <p class="text-xs italic text-gray-600 mb-3">🏢 <strong>Business Value:</strong> Shows how proper network design keeps departmental traffic organized and secure while maintaining connectivity across the organization.</p>
                         </div>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">Cisco Packet Tracer</span>
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">Switch CLI</span>
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">VLANs</span>
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">DHCP</span>
+                        <div class="flex flex-wrap gap-1.5 mb-3 flex-shrink-0">
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">Cisco</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">VLANs</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">DHCP</span>
                         </div>
-                        <div class="project-actions flex gap-3">
-                            <a href="#" class="flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm">
-                                Code
+                        <div class="project-actions flex gap-2 flex-shrink-0">
+                            <a href="#" class="flex items-center text-primary-600 hover:text-primary-700 font-medium text-xs">
+                                💻 Code
                             </a>
-                            <a href="#" class="flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm">
-                                <i class="fas fa-external-link-alt mr-2"></i> Demo
+                            <a href="#" class="flex items-center text-primary-600 hover:text-primary-700 font-medium text-xs">
+                                🔗 Demo
                             </a>
                         </div>
                     </div>
@@ -2404,4 +2422,5 @@
     </script>
 </body>
 </html>
+
 
