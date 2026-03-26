@@ -33,10 +33,6 @@
     <meta name="msapplication-navbutton-color" content="#ffffff">
     <meta name="msapplication-TileColor" content="#ffffff">
     
-    <!-- Performance and Caching Headers -->
-    <meta http-equiv="Content-Encoding" content="gzip, br">
-    <meta http-equiv="Cache-Control" content="public, max-age=3600, must-revalidate">
-    
     <title>Ezekiel A. Obeisun Jr | Cloud Computing Professional & Cybersecurity Specialist | NerdPioneer</title>
     <meta name="description" content="Ezekiel A. Obeisun Jr - Cloud Computing professional and Cybersecurity specialist at Western Governors University. Expert in AWS, Azure, cloud infrastructure, and network engineering. Explore projects, certifications, and technical insights.">
     <meta name="keywords" content="Ezekiel A. Obeisun Jr, Ezekiel A Obeisun Jr, Ezekiel Obeisun Jr, Ezekiel Obeisun, Ezekiel Akin Obeisun, Akin Obeisun, NerdPioneer, Cloud Computing Professional, Cloud Computing Graduate, Recent Graduate, WGU Graduate, Cybersecurity Specialist, Network Engineer, WGU, Western Governors University, AWS Certified, Azure Certified, Cloud Infrastructure, IT Operations, Professional Portfolio, AWS, Azure, Linux, Python, DevOps, Cloud Security, Entry Level, Job Seeking, Tech Professional">
@@ -356,36 +352,10 @@
     <style>
         :root{--primary-color:#2563eb;--primary-600:#2563eb}
         
-        /* Professional zoom level - 90% zoom out for optimal balance */
-        html {
-            zoom: 0.9;
-            -moz-transform: scale(0.9);
-            -moz-transform-origin: 0 0;
-            -webkit-transform: scale(0.9);
-            -webkit-transform-origin: 0 0;
-            transform: scale(0.9);
-            transform-origin: 0 0;
-        }
-        
-        /* Adjust body height to compensate for zoom */
-        body {
-            height: 100%; /* Fixed: was 111.11% causing extra space */
-            width: 111.11%;
-        }
-        
-        /* Mobile-specific zoom adjustments for navbar */
-        @media (max-width: 1023px) {
-            html {
-                zoom: 1.0; /* Reset zoom on mobile for proper navbar functionality */
-                -moz-transform: scale(1.0);
-                -webkit-transform: scale(1.0);
-                transform: scale(1.0);
-            }
-            
-            body {
-                height: 100%;
-                width: 100%;
-            }
+        /* Keep document scaling at default to avoid scroll/whitespace artifacts */
+        html, body {
+            width: 100%;
+            height: auto;
         }
         
         /* Safari and cross-browser normalization */
@@ -532,7 +502,6 @@
         }
         @media (min-width:1024px){
             .hero{padding-top:7rem}
-        }
         }
         
         /* Glitch Effect */
@@ -1786,9 +1755,7 @@
                 <div class="prose prose-gray max-w-none text-gray-700 leading-relaxed space-y-4">
                     <p>I grew up around computers — Windows Vista machines that crashed constantly, and MacBooks that just worked. That contrast taught me something early: using technology is easy. Understanding why it works — or fails — is what actually matters.</p>
                     <p>That curiosity led me to Western Governors University, where I earned my B.S. in Cloud Computing in January 2026. But somewhere along the way, networking became my focus — not as a checkbox, but as a foundation I wanted to own. How data moves, where systems break, how to design infrastructure that degrades gracefully instead of catastrophically. That's the work that pulls me in.</p>
-                    <p><strong><em>I'm currently pursuing my CCNA, working through Wendell Odom's Official Cert Guide volumes 1 and 2 and supplementing with video walkthroughs along the way</em></strong> — building VLANs, configuring inter-VLAN routing, and studying how enterprise networks actually scale under pressure. I complement that with Python: automating configurations, validating network states, and writing scripts that make systems more consistent and less dependent on whoever happened to be on shift.</p>
-                    <p>My cert stack was built with intention, not collection. CompTIA's core four (A+, Network+, Security+, CySA+), ITIL 4, and three AWS credentials — Developer Associate, Solutions Architect, and Security Specialty — each a deliberate step deeper into the infrastructure layer beneath everything else. An early experience through the <a href="https://www.youtube.com/watch?v=__yvh7Vc8EE" target="_blank" rel="noopener noreferrer" class="font-bold text-orange-600 hover:text-orange-700 underline transition-colors duration-200">Trend Micro CPITS Program</a> confirmed what I already suspected: weak design gets exposed fast, and solid fundamentals aren't optional.</p>
-                    <p>My target is clear: Network Engineer, growing toward Network Architect. I'm drawn to Cisco-aligned environments, data center infrastructure, and roles where design decisions carry real consequences.</p>
+                    <p>I'm currently pursuing my CCNA, working through Wendell Odom's Official Cert Guide and building in the lab — VLANs, inter-VLAN routing, and studying how enterprise networks actually scale under pressure. I complement that with Python: automating configurations, validating network states, and writing scripts that make systems more consistent and less dependent on whoever happened to be on shift.</p>
                     <p>The philosophy behind everything I do here is simple: 1% better every day. Not dramatic pivots or shortcut chasing — consistent, intentional growth that compounds over time. This site documents that work: projects, notes, and progress, built in public.</p>
                     <p>Connect with me!</p>
                 </div>
@@ -2074,44 +2041,43 @@
                 <h2 class="section-title text-4xl md:text-5xl font-black text-gray-900 mb-4 font-raleway uppercase glitch-effect" data-text="PROJECTS">
                     <span data-text="PROJECTS">PROJECTS</span>
                 </h2>
-                <p class="projects-tagline text-lg text-gray-500 max-w-3xl mx-auto">Hands-on projects demonstrating technical skills and business impact in modern cloud and automation technologies.</p>
+                <p class="projects-tagline text-lg text-gray-500 max-w-3xl mx-auto">Hands-on projects focused on network engineering, automation, and resilient infrastructure design.</p>
             </div>
             
             <div class="projects-grid flex flex-col md:flex-row gap-6 max-w-7xl mx-auto">
                 <!-- Project Card 1 -->
-                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col w-full md:w-1/3 min-h-[480px]" data-category="web-development">
+                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 border-l-4 border-l-orange-500 flex flex-col w-full md:w-1/3" data-category="networking">
                     <div class="project-header p-4 pb-3 flex-shrink-0">
                         <div class="flex items-center mb-3">
                             <div class="project-image w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
                                 <i class="fab fa-aws text-orange-600 text-lg"></i>
                             </div>
                             <div class="project-title-section flex-1">
-                                <div class="project-category text-xs text-orange-600 font-medium uppercase tracking-wide mb-1">AWS NETWORKING</div>
+                                <div class="project-category text-[11px] text-gray-500 font-medium uppercase tracking-widest mb-1">AWS Networking</div>
                                 <h3 class="text-lg font-bold text-gray-900 leading-tight">AWS VPN Setup with Active Directory</h3>
                             </div>
                         </div>
                     </div>
-                    <div class="project-content px-4 pb-4 flex-1 flex flex-col overflow-y-auto">
+                    <div class="project-content px-4 pb-4 flex-1 flex flex-col">
                         <div class="project-content-main mb-3 flex-1">
-                            <p class="text-sm text-gray-600 mb-3 leading-relaxed">Built secure AWS Client VPN connecting remote users to cloud resources using WireGuard and Tailscale. Configured Active Directory authentication, SSL/TLS certificates, and proper routing to enable encrypted remote access—demonstrating how enterprises protect cloud infrastructure while supporting flexible work environments.</p>
+                            <p class="text-sm text-gray-600 mb-3 leading-relaxed">Built a secure remote access solution on AWS using Client VPN with WireGuard and Tailscale for encrypted tunneling. Integrated Active Directory for centralized user authentication, provisioned SSL/TLS certificates via AWS CLI, and configured security groups and routing rules to enforce least-privilege network access — replicating the kind of identity-aware perimeter controls enterprises rely on for distributed workforces.</p>
                             <div class="mb-3">
-                                <p class="text-xs font-semibold text-gray-900 mb-1">Technical Implementation:</p>
+                                <p class="text-xs text-gray-900 mb-1">Technical Implementation:</p>
                                 <ul class="text-xs text-gray-600 space-y-0.5 list-disc list-inside">
-                                    <li>Deployed Active Directory for centralized authentication</li>
-                                    <li>Generated SSL/TLS certificates via AWS CLI for secure client connections</li>
-                                    <li>Configured VPN endpoint with security groups and network associations</li>
-                                    <li>Tested connectivity and validated encrypted tunnel establishment</li>
+                                    <li>Deployed Active Directory for centralized authentication and user policy enforcement</li>
+                                    <li>Generated and managed SSL/TLS certificates through AWS CLI</li>
+                                    <li>Configured VPN endpoint, security groups, and network associations</li>
+                                    <li>Validated encrypted tunnel establishment and end-to-end connectivity</li>
                                 </ul>
                             </div>
-                            <p class="text-xs italic text-gray-600 mb-3">🏢 <strong>Business Value:</strong> Enables secure remote workforce access to cloud resources while maintaining enterprise-grade security controls.</p>
                         </div>
                         <div class="flex flex-wrap gap-1.5 mb-3 flex-shrink-0">
-                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">AWS</span>
-                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">AD</span>
-                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">VPN</span>
-                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">PKI</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">AWS</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">AD</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">VPN</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">PKI</span>
                         </div>
-                        <div class="project-actions flex gap-2 flex-shrink-0">
+                        <div class="project-actions flex gap-2 flex-shrink-0 mt-5">
                             <a href="https://medium.com/@nerdpioneer/aws-networking-guide-setting-up-your-own-robust-vpn-with-wireguard-and-tailscale-on-aws-ec2-4cf43eb00fe7" 
                                target="_blank" 
                                rel="noopener noreferrer" 
@@ -2129,91 +2095,86 @@
                 </div>
 
                 <!-- Project Card 2 -->
-                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col w-full md:w-1/3 min-h-[480px]" data-category="automation">
+                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 border-l-4 border-l-purple-500 flex flex-col w-full md:w-1/3" data-category="automation">
                     <div class="project-header p-4 pb-3 flex-shrink-0">
                         <div class="flex items-center mb-3">
                             <div class="project-image w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
                                 <i class="fab fa-microsoft text-purple-600 text-lg"></i>
                             </div>
                             <div class="project-title-section flex-1">
-                                <div class="flex items-center gap-2 mb-1">
-                                    <div class="project-category text-xs text-purple-600 font-medium uppercase tracking-wide">SYSTEMS ADMIN</div>
-                                    <img src="./public/icons/wgu-logo.png" alt="Western Governors University logo" class="h-3 w-auto object-contain" loading="lazy">
-                                    <span class="text-xs">🎓</span>
-                                </div>
+                                <div class="project-category text-[11px] text-gray-500 font-medium uppercase tracking-widest mb-1">Automation</div>
                                 <h3 class="text-lg font-bold text-gray-900 leading-tight">PowerShell Automation Tool</h3>
                             </div>
                         </div>
                     </div>
-                    <div class="project-content px-4 pb-4 flex-1 flex flex-col overflow-y-auto">
+                    <div class="project-content px-4 pb-4 flex-1 flex flex-col">
                         <div class="project-content-main mb-3 flex-1">
-                            <p class="text-sm text-gray-600 mb-3 leading-relaxed">Developed a menu-driven PowerShell script that streamlines IT operations by automating routine system administration tasks. This tool empowers junior administrators to perform essential checks safely while reducing manual errors and improving team efficiency.</p>
+                            <p class="text-sm text-gray-600 mb-3 leading-relaxed">Built a menu-driven PowerShell tool to automate repetitive infrastructure checks — CPU, memory, file system health, and log discovery — reducing manual overhead and operator error. Designed with junior engineers in mind: structured error handling, descriptive variable naming, and inline documentation make it safe to run and easy to hand off. A practical example of how scripting discipline makes teams less dependent on tribal knowledge.</p>
                             <div class="mb-3">
-                                <p class="text-xs font-semibold text-gray-900 mb-1">Technical Implementation:</p>
+                                <p class="text-xs text-gray-900 mb-1">Technical Implementation:</p>
                                 <ul class="text-xs text-gray-600 space-y-0.5 list-disc list-inside">
-                                    <li>Built interactive menu using PowerShell control structures (switch, loops)</li>
-                                    <li>Automated file system reporting, log discovery, and system resource monitoring</li>
-                                    <li>Implemented real-time process checks (CPU, memory utilization)</li>
-                                    <li>Applied PowerShell best practices: error handling, descriptive variable naming, inline documentation</li>
-                                    <li>Created maintainable code supporting knowledge transfer and future enhancements</li>
+                                    <li>Built interactive menu using PowerShell control structures</li>
+                                    <li>Automated system resource monitoring and log discovery</li>
+                                    <li>Implemented real-time process checks with error handling</li>
+                                    <li>Wrote maintainable, documented code built for knowledge transfer</li>
                                 </ul>
                             </div>
-                            <p class="text-xs italic text-gray-600 mb-3">🏢 <strong>Business Value:</strong> Reduces repetitive manual work for IT staff, improves operational consistency, and provides junior administrators a safe framework for essential system tasks.</p>
                         </div>
                         <div class="flex flex-wrap gap-1.5 mb-3 flex-shrink-0">
-                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">PowerShell</span>
-                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">Automation</span>
-                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">Systems Admin</span>
-                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">File System</span>
-                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">Monitoring</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">PowerShell</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">Automation</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">Monitoring</span>
                         </div>
-                        <div class="project-actions flex gap-2 flex-shrink-0">
-                            <span class="flex items-center text-gray-400 font-medium text-xs cursor-not-allowed" aria-disabled="true" title="Link coming soon">
-                                💻 Code (coming soon)
-                            </span>
+                        <div class="project-actions flex gap-2 flex-shrink-0 mt-5">
+                            <a href="https://github.com/NerdPioneer" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="flex items-center text-primary-600 hover:text-primary-700 font-medium text-xs">
+                                💻 GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project Card 3 -->
-                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col w-full md:w-1/3 min-h-[480px]" data-category="networking">
+                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 border-l-4 border-l-blue-500 flex flex-col w-full md:w-1/3" data-category="networking">
                     <div class="project-header p-4 pb-3 flex-shrink-0">
                         <div class="flex items-center mb-3">
                             <div class="project-image w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
                                 <i class="fas fa-sitemap text-blue-600 text-lg"></i>
                             </div>
                             <div class="project-title-section flex-1">
-                                <div class="project-category text-xs text-blue-600 font-medium uppercase tracking-wide mb-1">NETWORK DESIGN</div>
-                                <h3 class="text-lg font-bold text-gray-900 leading-tight">Small Office VLAN Network</h3>
+                                <div class="project-category text-[11px] text-gray-500 font-medium uppercase tracking-widest mb-1">Network Design</div>
+                                <h3 class="text-lg font-bold text-gray-900 leading-tight">Enterprise VLAN Network Design</h3>
                             </div>
                         </div>
                     </div>
-                    <div class="project-content px-4 pb-4 flex-1 flex flex-col overflow-y-auto">
+                    <div class="project-content px-4 pb-4 flex-1 flex flex-col">
                         <div class="project-content-main mb-3 flex-1">
-                            <p class="text-sm text-gray-600 mb-3 leading-relaxed">Designed a small office network in Cisco Packet Tracer using VLANs to separate departments. Configured inter-VLAN routing, subnet ranges, and basic security services—demonstrating practical network segmentation for organized, secure traffic flow.</p>
+                            <p class="text-sm text-gray-600 mb-3 leading-relaxed">Designed and deployed a segmented enterprise network in GNS3, separating departmental traffic across VLANs with inter-VLAN routing, DHCP automation, and access control at the switch layer. Focused on traffic isolation, organized subnet addressing, and graceful scalability — the same design principles that apply whether you're building for 20 users or 2,000. Demonstrates practical fluency in Cisco CLI and Layer 2/3 network architecture.</p>
                             <div class="mb-3">
-                                <p class="text-xs font-semibold text-gray-900 mb-1">Technical Implementation:</p>
+                                <p class="text-xs text-gray-900 mb-1">Technical Implementation:</p>
                                 <ul class="text-xs text-gray-600 space-y-0.5 list-disc list-inside">
-                                    <li>Segmented network by department using VLANs</li>
-                                    <li>Configured inter-VLAN routing and subnet addressing</li>
-                                    <li>Implemented DHCP for automated IP assignment</li>
-                                    <li>Set up basic network services (Switch CLI, VLANs, DHCP)</li>
+                                    <li>Segmented network by department using VLANs and access/trunk port configuration</li>
+                                    <li>Configured inter-VLAN routing via router-on-a-stick</li>
+                                    <li>Implemented DHCP for automated IP assignment per segment</li>
+                                    <li>Enforced traffic isolation and basic security at the switch CLI level</li>
                                 </ul>
                             </div>
-                            <p class="text-xs italic text-gray-600 mb-3">🏢 <strong>Business Value:</strong> Shows how proper network design keeps departmental traffic organized and secure while maintaining connectivity across the organization.</p>
                         </div>
                         <div class="flex flex-wrap gap-1.5 mb-3 flex-shrink-0">
-                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">Cisco</span>
-                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">VLANs</span>
-                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">DHCP</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">Cisco</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">VLANs</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">DHCP</span>
+                            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">GNS3</span>
                         </div>
-                        <div class="project-actions flex gap-2 flex-shrink-0">
-                            <span class="flex items-center text-gray-400 font-medium text-xs cursor-not-allowed" aria-disabled="true" title="Link coming soon">
-                                💻 Code (coming soon)
-                            </span>
-                            <span class="flex items-center text-gray-400 font-medium text-xs cursor-not-allowed" aria-disabled="true" title="Link coming soon">
-                                🔗 Demo (coming soon)
-                            </span>
+                        <div class="project-actions flex gap-2 flex-shrink-0 mt-5">
+                            <a href="https://github.com/NerdPioneer" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="flex items-center text-primary-600 hover:text-primary-700 font-medium text-xs">
+                                💻 GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -2371,16 +2332,6 @@
         <div class="container mx-auto px-6">
             <div class="text-center">
                 <p class="text-gray-700 font-montserrat font-medium uppercase tracking-wider">&copy; 2025 NerdPioneer (Ezekiel A. Obeisun Jr) All rights reserved.</p>
-                <!-- Hidden SEO content for name variations -->
-                <div style="display: none; visibility: hidden; height: 0; overflow: hidden;">
-                    <h1>Ezekiel A. Obeisun Jr</h1>
-                    <p>Ezekiel A. Obeisun Jr portfolio, Cloud Computing Professional, Cybersecurity Specialist, NerdPioneer</p>
-                    <p>Ezekiel A. Obeisun Jr - Cloud Computing Professional & Cybersecurity Specialist</p>
-                    <span>Portfolio</span>
-                    <span>Ezekiel A. Obeisun Jr, Ezekiel A Obeisun Jr, Ezekiel Obeisun Jr, Ezekiel Obeisun, Ezekiel Akin Obeisun, Akin Obeisun, NerdPioneer, Obeisun</span>
-                    <span>Cloud Computing Professional, Cloud Computing Graduate, Recent Graduate, WGU Graduate, Cybersecurity Specialist, Cybersecurity Professional, Network Engineer, Project Manager</span>
-                    <span>Western Governors University, WGU, CompTIA Certified, Microsoft Certified, AWS Certified</span>
-                </div>
             </div>
         </div>
     </footer>
