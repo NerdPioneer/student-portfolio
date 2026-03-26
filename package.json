@@ -9,7 +9,7 @@
     "watch:css": "tailwindcss -i ./src/input.css -o ./dist/styles.css --watch",
     "build:css": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
     "start": "live-server --port=3000",
-    "clean": "rm -rf dist/styles.css",
+    "clean": "node -e \"require('fs').rmSync('dist/styles.css',{force:true})\"",
     "preview": "live-server --port=3000 --entry-file=index.html"
   },
   "keywords": [

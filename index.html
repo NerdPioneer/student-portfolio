@@ -43,10 +43,7 @@
     <meta name="author" content="Ezekiel A. Obeisun Jr, Ezekiel A Obeisun Jr, Ezekiel Obeisun Jr, Ezekiel Obeisun, Ezekiel Akin Obeisun, Akin Obeisun, NerdPioneer">
     <meta name="robots" content="index, follow">
     
-    <!-- Security Headers -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <!-- Security policy note: enforce security headers at the web server/CDN level -->
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     
     <!-- Enhanced favicon - "1% Better Everyday" themed -->
@@ -86,15 +83,6 @@
     <!-- Geographic SEO -->
     <meta name="geo.region" content="US">
     <meta name="geo.placename" content="United States">
-    
-    <!-- Student Portfolio Specific SEO -->
-    <meta name="student-status" content="Recent Graduate">
-    <meta name="academic-focus" content="Cloud Computing, Cybersecurity, Network Engineering">
-    <meta name="project-showcase" content="Yes">
-    <meta name="certification-progress" content="In Progress">
-    <meta name="learning-journey" content="Documented">
-    <meta name="career-goals" content="Cloud Computing Engineer, Cybersecurity Specialist, Network Engineer">
-    <meta name="portfolio-purpose" content="Career Development, Job Search, Professional Branding">
     
     <!-- Professional Identity Tags -->
     <meta name="profession" content="Cloud Computing Engineer">
@@ -136,8 +124,6 @@
     <meta name="education-level" content="Bachelor's Degree">
     <meta name="field-of-study" content="Cloud Computing">
     <meta name="institution" content="Western Governors University">
-    <meta name="graduation-year" content="2026">
-    <meta name="job-seeking" content="Yes">
     <meta name="job-title" content="Cloud Computing Engineer">
     <meta name="skills" content="AWS, Azure, Cybersecurity, Network Engineering, Linux, Python">
     <meta name="certifications" content="Microsoft Certified, CompTIA A+, CompTIA Network+, CompTIA Security+, CompTIA CySA+, CompTIA Project+">
@@ -238,17 +224,8 @@
       "nationality": "American",
       "gender": "Male",
       "seeks": {
-        "@type": "JobPosting",
-        "title": "Cloud Computing Engineer",
-        "description": "Seeking opportunities in cloud computing, cybersecurity, and network engineering roles",
-        "employmentType": "Full-time",
-        "jobLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressCountry": "US"
-          }
-        }
+        "@type": "Role",
+        "roleName": "Network Engineer"
       }
     }
     </script>
@@ -326,35 +303,38 @@
     }
     </script>
     
-    <!-- Job Search Intent Schema -->
+    <!-- Profile Page Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "JobPosting",
-      "title": "Cloud Computing Engineer",
-      "description": "Seeking full-time opportunities in cloud computing, cybersecurity, and network engineering roles. Currently pursuing Cloud Computing Bachelor's degree at Western Governors University with hands-on experience in AWS, Azure, and security operations.",
-      "employmentType": "Full-time",
-      "datePosted": "2024-01-01",
-      "validThrough": "2025-12-31",
-      "applicantLocationRequirements": {
-        "@type": "Country",
-        "name": "United States"
+      "@type": "ProfilePage",
+      "name": "Ezekiel A. Obeisun Jr Portfolio Profile",
+      "url": "https://www.nerdpioneer.com/",
+      "description": "Professional portfolio profile for Ezekiel A. Obeisun Jr, focused on network engineering, cloud infrastructure, and cybersecurity.",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Ezekiel A. Obeisun Jr",
+        "alternateName": "NerdPioneer",
+        "jobTitle": "Aspiring Network Engineer",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Western Governors University"
+        },
+        "knowsAbout": [
+          "Network Engineering",
+          "Cloud Infrastructure",
+          "Cybersecurity",
+          "AWS",
+          "Cisco Networking",
+          "Python Automation"
+        ],
+        "url": "https://www.nerdpioneer.com/"
       },
-      "qualifications": [
-        "B.S. Cloud Computing from WGU",
-        "Cybersecurity experience",
-        "Network Engineering skills",
-        "AWS and Azure knowledge",
-        "Linux Administration",
-        "Python Programming"
-      ],
-      "responsibilities": [
-        "Cloud infrastructure management",
-        "Security implementation and monitoring",
-        "Network design and maintenance",
-        "System administration",
-        "DevOps practices"
-      ]
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "NerdPioneer - Portfolio",
+        "url": "https://www.nerdpioneer.com/"
+      }
     }
     </script>
     
@@ -1568,7 +1548,7 @@
     
     <!-- Vanta.js dependencies - Loaded asynchronously for better performance -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.globe.min.js" defer></script>
     
     <!-- Umami Analytics - Privacy-first analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="8b3ba511-c136-4ad6-a865-e52377204787"></script>
@@ -1629,8 +1609,6 @@
     </nav>
     
     <main id="main-content">
-    <!-- Spacer Section for Navbar Separation -->
-    <section class="spacer-section" style="height:6rem;"></section>
     <!-- Hero Section -->
     <section id="home" class="hero navbar-spacing min-h-[100dvh] md:min-h-screen flex items-center relative pt-8 md:pt-20 lg:pt-32 bg-gray-50 overflow-hidden" role="banner">
         <!-- Floating Technology Icons Background -->
@@ -1805,13 +1783,14 @@
          <div class="container mx-auto px-6 max-w-6xl">
              <div class="w-16 h-1 bg-white mx-auto mb-6"></div>
              <div class="bg-white rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100 p-5 md:p-8">
-                 <div class="prose prose-gray max-w-none text-gray-700 leading-relaxed space-y-4">
-                    <p>I grew up around computers—Windows Vista machines that crashed constantly, and MacBooks that just worked. That contrast taught me something early: using tech is easy. Understanding why it works (or fails) is what matters.</p>
-                    <p>Cloud computing made my direction clear because it's not just "another IT topic." It changes how systems are built, shipped, and scaled. I didn't want a career built on copying tutorials. I wanted to understand the fundamentals well enough to build, troubleshoot, and improve real systems.</p>
-                    <p>That's why I chose Western Governors University for a B.S. in Cloud Computing. My focus is networking and infrastructure: how data moves, where systems break, and how to design so failures don't turn into outages. I practice networking in Cisco Packet Tracer, then reinforce it with Python—automating small tasks, validating configs, and building scripts that make systems more consistent.</p>
-                    <p>I also work intentionally across data fundamentals—learning when relational databases make sense, when NoSQL is the better fit, and what you give up in each tradeoff. Security stays in the loop throughout, because reliability without security is fake reliability.</p>
-                    <p>An early internship at <a href="https://www.youtube.com/watch?v=__yvh7Vc8EE" target="_blank" rel="noopener noreferrer" class="font-bold text-orange-600 hover:text-orange-700 underline transition-colors duration-200">Trend Micro CPITS Program</a> made the lesson obvious: weak design gets exposed fast. Since then, I've treated every project like training—clear work, solid basics, and steady improvement.</p>
-                    <p>This site is where I document that work: projects, notes, and progress. If you want to understand how I think and what I can do, start with the projects.</p>
+                <div class="prose prose-gray max-w-none text-gray-700 leading-relaxed space-y-4">
+                    <p>I grew up around computers — Windows Vista machines that crashed constantly, and MacBooks that just worked. That contrast taught me something early: using technology is easy. Understanding why it works — or fails — is what actually matters.</p>
+                    <p>That curiosity led me to Western Governors University, where I earned my B.S. in Cloud Computing in January 2026. But somewhere along the way, networking became my focus — not as a checkbox, but as a foundation I wanted to own. How data moves, where systems break, how to design infrastructure that degrades gracefully instead of catastrophically. That's the work that pulls me in.</p>
+                    <p><strong><em>I'm currently pursuing my CCNA, working through Wendell Odom's Official Cert Guide volumes 1 and 2 and supplementing with video walkthroughs along the way</em></strong> — building VLANs, configuring inter-VLAN routing, and studying how enterprise networks actually scale under pressure. I complement that with Python: automating configurations, validating network states, and writing scripts that make systems more consistent and less dependent on whoever happened to be on shift.</p>
+                    <p>My cert stack was built with intention, not collection. CompTIA's core four (A+, Network+, Security+, CySA+), ITIL 4, and three AWS credentials — Developer Associate, Solutions Architect, and Security Specialty — each a deliberate step deeper into the infrastructure layer beneath everything else. An early experience through the <a href="https://www.youtube.com/watch?v=__yvh7Vc8EE" target="_blank" rel="noopener noreferrer" class="font-bold text-orange-600 hover:text-orange-700 underline transition-colors duration-200">Trend Micro CPITS Program</a> confirmed what I already suspected: weak design gets exposed fast, and solid fundamentals aren't optional.</p>
+                    <p>My target is clear: Network Engineer, growing toward Network Architect. I'm drawn to Cisco-aligned environments, data center infrastructure, and roles where design decisions carry real consequences.</p>
+                    <p>The philosophy behind everything I do here is simple: 1% better every day. Not dramatic pivots or shortcut chasing — consistent, intentional growth that compounds over time. This site documents that work: projects, notes, and progress, built in public.</p>
+                    <p>Connect with me!</p>
                 </div>
              </div>
          </div>
@@ -2098,9 +2077,9 @@
                 <p class="projects-tagline text-lg text-gray-500 max-w-3xl mx-auto">Hands-on projects demonstrating technical skills and business impact in modern cloud and automation technologies.</p>
             </div>
             
-            <div class="projects-grid flex flex-col md:flex-row gap-[2%] max-w-7xl mx-auto">
+            <div class="projects-grid flex flex-col md:flex-row gap-6 max-w-7xl mx-auto">
                 <!-- Project Card 1 -->
-                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col" data-category="web-development" style="width: 32%; height: 480px;">
+                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col w-full md:w-1/3 min-h-[480px]" data-category="web-development">
                     <div class="project-header p-4 pb-3 flex-shrink-0">
                         <div class="flex items-center mb-3">
                             <div class="project-image w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
@@ -2150,7 +2129,7 @@
                 </div>
 
                 <!-- Project Card 2 -->
-                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col" data-category="automation" style="width: 32%; height: 480px;">
+                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col w-full md:w-1/3 min-h-[480px]" data-category="automation">
                     <div class="project-header p-4 pb-3 flex-shrink-0">
                         <div class="flex items-center mb-3">
                             <div class="project-image w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-3">
@@ -2189,15 +2168,15 @@
                             <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">Monitoring</span>
                         </div>
                         <div class="project-actions flex gap-2 flex-shrink-0">
-                            <a href="#" class="flex items-center text-primary-600 hover:text-primary-700 font-medium text-xs">
-                                💻 Code
-                            </a>
+                            <span class="flex items-center text-gray-400 font-medium text-xs cursor-not-allowed" aria-disabled="true" title="Link coming soon">
+                                💻 Code (coming soon)
+                            </span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project Card 3 -->
-                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col" data-category="networking" style="width: 32%; height: 480px;">
+                <div class="project-card bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col w-full md:w-1/3 min-h-[480px]" data-category="networking">
                     <div class="project-header p-4 pb-3 flex-shrink-0">
                         <div class="flex items-center mb-3">
                             <div class="project-image w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
@@ -2229,12 +2208,12 @@
                             <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">DHCP</span>
                         </div>
                         <div class="project-actions flex gap-2 flex-shrink-0">
-                            <a href="#" class="flex items-center text-primary-600 hover:text-primary-700 font-medium text-xs">
-                                💻 Code
-                            </a>
-                            <a href="#" class="flex items-center text-primary-600 hover:text-primary-700 font-medium text-xs">
-                                🔗 Demo
-                            </a>
+                            <span class="flex items-center text-gray-400 font-medium text-xs cursor-not-allowed" aria-disabled="true" title="Link coming soon">
+                                💻 Code (coming soon)
+                            </span>
+                            <span class="flex items-center text-gray-400 font-medium text-xs cursor-not-allowed" aria-disabled="true" title="Link coming soon">
+                                🔗 Demo (coming soon)
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -2246,7 +2225,7 @@
     <section id="notes" class="section py-12 md:py-20 lg:py-24 bg-gray-50 mt-8 md:mt-12 lg:mt-16">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto text-center">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-gray-900 font-raleway uppercase tracking-wide animate-fade-in glitch-effect whitespace-nowrap" data-text="NOTES FROM THE CLIMB">NOTES FROM THE CLIMB</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-gray-900 font-raleway uppercase tracking-wide animate-fade-in glitch-effect break-words" data-text="NOTES FROM THE CLIMB">NOTES FROM THE CLIMB</h2>
                 <p class="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
                     My three platforms for sharing knowledge and code
                 </p>
