@@ -927,21 +927,18 @@ function initRotatingQuotes() {
         let touchStartTime = 0;
         let touchMoved = false;
         
-        quotesContainer.addEventListener('touchstart', (e) => {
+        quotesContainer.addEventListener('touchstart', () => {
             touchStartTime = Date.now();
             touchMoved = false;
             isHovered = true;
             stopAutoRotate();
-            
-            // Prevent default to avoid scrolling issues
-            e.preventDefault();
         });
         
         quotesContainer.addEventListener('touchmove', () => {
             touchMoved = true;
         });
         
-        quotesContainer.addEventListener('touchend', (e) => {
+        quotesContainer.addEventListener('touchend', () => {
             const touchDuration = Date.now() - touchStartTime;
             
             // If it was a quick tap (not a scroll), don't resume immediately
@@ -961,8 +958,6 @@ function initRotatingQuotes() {
                     }
                 }, 1500);
             }
-            
-            e.preventDefault();
         });
         
         // Handle touch cancellation
@@ -1058,17 +1053,8 @@ function initMobileHeightFixes() {
         setTimeout(setMobileHeight, 100);
     });
     
-    // Update on scroll (for mobile browsers with dynamic toolbars)
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                setMobileHeight();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
+    // Avoid scroll-bound updates here; frequent style writes can cause
+    // stutter near page end on mobile browsers with dynamic toolbars.
 }
 
 // Skills Toggle Function
