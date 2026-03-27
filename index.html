@@ -337,7 +337,7 @@
     <!-- Enhanced Resource Hints -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Preload critical resources -->
@@ -1512,7 +1512,7 @@
     </style>
     
     <link rel="stylesheet" href="./dist/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
     <!-- Vanta.js dependencies - Loaded asynchronously for better performance -->
@@ -1706,7 +1706,7 @@
             <div class="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center min-h-[80dvh] lg:min-h-[70vh]">
                 <!-- LEFT SIDE: Content -->
                 <div class="hero-left order-2 lg:order-1 relative z-30 flex flex-col justify-center">
-                    <h1 class="hero-title text-center lg:text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 leading-tight mb-4 md:mb-6 glitch-effect" data-text="NAVIGATE THE DIGITAL LANDSCAPE WITH CONFIDENCE">
+                    <h1 class="hero-title font-raleway text-center lg:text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-black tracking-tight leading-tight mb-4 md:mb-6 glitch-effect" data-text="NAVIGATE THE DIGITAL LANDSCAPE WITH CONFIDENCE">
                         NAVIGATE THE DIGITAL LANDSCAPE WITH CONFIDENCE
                     </h1>
                     <h2 class="hero-subtitle text-center lg:text-left text-base sm:text-lg md:text-xl text-black mb-6 md:mb-8 font-medium font-montserrat uppercase tracking-wider">
@@ -1768,7 +1768,7 @@
                 <div class="prose prose-gray max-w-none text-gray-700 leading-relaxed space-y-4">
                     <p>I grew up around computers — Windows Vista machines that crashed constantly, and MacBooks that just worked. That contrast taught me something early: using technology is easy. Understanding why it works — or fails — is what actually matters.</p>
                     <p>That curiosity led me to Western Governors University, where I earned my B.S. in Cloud Computing in January 2026. But somewhere along the way, networking became my focus — not as a checkbox, but as a foundation I wanted to own. How data moves, where systems break, how to design infrastructure that degrades gracefully instead of catastrophically. That's the work that pulls me in.</p>
-                    <p>I'm currently pursuing my CCNA, working through Wendell Odom's Official Cert Guide and building in the lab — VLANs, inter-VLAN routing, and studying how enterprise networks actually scale under pressure. I complement that with Python: automating configurations, validating network states, and writing scripts that make systems more consistent and less dependent on whoever happened to be on shift.</p>
+                    <p><strong><em>I'm currently pursuing my CCNA (Cisco Certified Network Associate), an internationally recognized certification from Cisco that confirms practical networking knowledge for roles like network specialist, network administrator, and network engineer.</em></strong> I'm working through Wendell Odom's Official Cert Guide and building in the lab — setting up VLANs, configuring inter-VLAN routing, and learning how enterprise networks scale under pressure. I complement that with Python: automating configurations, validating network states, and writing scripts that make systems more consistent and less dependent on whoever happened to be on shift.</p>
                     <p>The philosophy behind everything I do here is simple: 1% better every day. Not dramatic pivots or shortcut chasing — consistent, intentional growth that compounds over time. This site documents that work: projects, notes, and progress, built in public.</p>
                     <p><strong><em>Connect with me!</em></strong></p>
                 </div>
@@ -2084,8 +2084,8 @@
                         <div class="project-content-main mb-3 flex-1">
                             <p class="text-sm text-gray-600 mb-3 leading-relaxed">Built a secure remote access solution on AWS using Client VPN with WireGuard and Tailscale for encrypted tunneling. Integrated Active Directory for centralized user authentication, provisioned SSL/TLS certificates via AWS CLI, and configured security groups and routing rules to enforce least-privilege network access — replicating the kind of identity-aware perimeter controls enterprises rely on for distributed workforces.</p>
                             <div class="mb-3">
-                                <p class="text-xs text-gray-900 mb-1">Technical Implementation:</p>
-                                <ul class="text-xs text-gray-600 space-y-0.5 list-disc list-inside">
+                                <p class="technical-implementation-label text-xs text-gray-900 mb-1">Technical Implementation:</p>
+                                <ul class="technical-implementation-list text-xs text-gray-600 space-y-0.5 list-disc list-inside">
                                     <li>Deployed Active Directory for centralized authentication and user policy enforcement</li>
                                     <li>Generated and managed SSL/TLS certificates through AWS CLI</li>
                                     <li>Configured VPN endpoint, security groups, and network associations</li>
@@ -2133,8 +2133,8 @@
                         <div class="project-content-main mb-3 flex-1">
                             <p class="text-sm text-gray-600 mb-3 leading-relaxed">Built a menu-driven PowerShell tool to automate repetitive infrastructure checks — CPU, memory, file system health, and log discovery — reducing manual overhead and operator error. Designed with junior engineers in mind: structured error handling, descriptive variable naming, and inline documentation make it safe to run and easy to hand off. A practical example of how scripting discipline makes teams less dependent on tribal knowledge.</p>
                             <div class="mb-3">
-                                <p class="text-xs text-gray-900 mb-1">Technical Implementation:</p>
-                                <ul class="text-xs text-gray-600 space-y-0.5 list-disc list-inside">
+                                <p class="technical-implementation-label text-xs text-gray-900 mb-1">Technical Implementation:</p>
+                                <ul class="technical-implementation-list text-xs text-gray-600 space-y-0.5 list-disc list-inside">
                                     <li>Built interactive menu using PowerShell control structures</li>
                                     <li>Automated system resource monitoring and log discovery</li>
                                     <li>Implemented real-time process checks with error handling</li>
@@ -2175,8 +2175,8 @@
                         <div class="project-content-main mb-3 flex-1">
                             <p class="text-sm text-gray-600 mb-3 leading-relaxed">Designed and deployed a segmented enterprise network in GNS3, separating departmental traffic across VLANs with inter-VLAN routing, DHCP automation, and access control at the switch layer. Focused on traffic isolation, organized subnet addressing, and graceful scalability — the same design principles that apply whether you're building for 20 users or 2,000. Demonstrates practical fluency in Cisco CLI and Layer 2/3 network architecture.</p>
                             <div class="mb-3">
-                                <p class="text-xs text-gray-900 mb-1">Technical Implementation:</p>
-                                <ul class="text-xs text-gray-600 space-y-0.5 list-disc list-inside">
+                                <p class="technical-implementation-label text-xs text-gray-900 mb-1">Technical Implementation:</p>
+                                <ul class="technical-implementation-list text-xs text-gray-600 space-y-0.5 list-disc list-inside">
                                     <li>Segmented network by department using VLANs and access/trunk port configuration</li>
                                     <li>Configured inter-VLAN routing via router-on-a-stick</li>
                                     <li>Implemented DHCP for automated IP assignment per segment</li>

@@ -35,9 +35,9 @@ module.exports = {
       },
       fontFamily: {
         'sans': ['Inter', 'system-ui', 'sans-serif'],
-        'body': ['Poppins', 'system-ui', 'sans-serif'],
-        'raleway': ['Raleway', 'system-ui', 'sans-serif'],
-        'montserrat': ['Montserrat', 'system-ui', 'sans-serif'],
+        'body': ['Inter', 'system-ui', 'sans-serif'],
+        'raleway': ['Sora', 'Inter', 'system-ui', 'sans-serif'],
+        'montserrat': ['Sora', 'Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

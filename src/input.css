@@ -1565,3 +1565,90 @@ section[id] {
     min-height: auto;
   }
 }
+
+/* Typography refresh: Inter body + Sora headings */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Projects cards typography spec */
+#projects .project-card h3,
+#projects .project-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+#projects .project-card p,
+#projects .project-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+#projects .project-category {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+#projects .project-content-main > div > p {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#projects .technical-implementation-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+  letter-spacing: normal !important;
+}
+
+#projects .project-card li {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+#projects .technical-implementation-list,
+#projects .technical-implementation-list li {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+}
+
+#projects .project-card .flex.flex-wrap > span {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+#projects .project-actions a {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* Apply font family system to other card-based sections */
+.certification-card h3,
+.course-card h4,
+.notes-card h3 {
+  font-family: 'Sora', sans-serif;
+}
+
+.certification-card p,
+.course-card p,
+.course-card li,
+.notes-card p,
+.notes-card a,
+.certification-card span {
+  font-family: 'Inter', sans-serif;
+}
