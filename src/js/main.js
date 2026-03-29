@@ -681,7 +681,7 @@ function initIntersectionObserver() {
 }
 
 // ==============================================
-// MOBILE MENU TOGGLE (for articles pages)
+// MOBILE MENU TOGGLE
 // ==============================================
 
 function toggleMobileMenu() {
