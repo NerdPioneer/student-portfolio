@@ -584,6 +584,20 @@
             transform: scale(1.1);
         }
         
+        /* Hero headline — reads heavier than font-black alone (Sora maxes at 900) */
+        .hero-title {
+            font-weight: 900 !important;
+            letter-spacing: -0.035em;
+            -webkit-font-smoothing: antialiased;
+            text-shadow:
+                0.65px 0 0 currentColor,
+                -0.65px 0 0 currentColor,
+                0 0.5px 0 currentColor,
+                0 -0.5px 0 currentColor,
+                1px 0 0 currentColor,
+                -1px 0 0 currentColor;
+        }
+        
         /* Responsive Grid Fixes */
         @media (max-width: 768px) {
             .hero-buttons {
@@ -595,9 +609,7 @@
             }
             .hero-title {
                 line-height: 1.1;
-                font-weight: 900 !important;
-                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-                letter-spacing: -0.02em;
+                letter-spacing: -0.03em;
             }
             .hero-description {
                 font-size: 0.95rem;
