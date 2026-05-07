@@ -1772,6 +1772,37 @@
         .credential-accent-governance { border-left: 4px solid #10b981; }
         .credential-accent-progress { border-left: 4px solid #3b82f6; }
 
+        /* High-contrast category badges (light mode) */
+        .badge-comptia {
+            background: #fee8e0 !important;
+            color: #92260a !important;
+            border-color: #fbc9b9 !important;
+        }
+
+        .badge-aws {
+            background: #fef3c7 !important;
+            color: #78350f !important;
+            border-color: #f6dd8e !important;
+        }
+
+        .badge-governance {
+            background: #d1fae5 !important;
+            color: #064e3b !important;
+            border-color: #99efc9 !important;
+        }
+
+        .badge-progress {
+            background: #dbeafe !important;
+            color: #1e3a5f !important;
+            border-color: #b9d6fc !important;
+        }
+
+        .badge-iam {
+            background: #ede9fe !important;
+            color: #3b1d8a !important;
+            border-color: #d6cdfb !important;
+        }
+
         @media (max-width: 480px) {
             #certifications .credential-card {
                 padding: 1.1rem !important;
@@ -2238,152 +2269,138 @@
          </div>
      </section>
 
-     <!-- Education Section -->
-    <section id="education" class="section py-12 md:py-20 lg:py-24 bg-white mt-8 md:mt-12 lg:mt-16">
-        <div class="container mx-auto px-6">
-            <div class="section-header text-center mb-16">
-                <div class="section-accent-line w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
-                <h2 class="section-title text-4xl md:text-5xl font-black text-gray-900 mb-4 font-raleway uppercase glitch-effect" data-text="EDUCATION">EDUCATION</h2>
-                <p class="section-subtitle text-xl text-gray-600 max-w-3xl mx-auto">Cloud computing and AWS depth, security-first coursework, and networking fundamentals that support modern defense-in-depth.</p>
-            </div>
-            
-            <!-- Full-Width Education & Skills Card -->
-            <div class="max-w-7xl mx-auto">
-                <div class="education-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-10 border border-gray-100">
-            <!-- Golden Degree Ribbon - Centerpiece -->
-            <div class="degree-ribbon mb-12">
-                <div class="degree-ribbon-content">
-                    <div class="degree-ribbon-badge">
-                        <h4 class="degree-ribbon-title">Bachelor of Science in Cloud Computing</h4>
-                        <p class="degree-ribbon-subtitle">Bachelor of Science in Cloud Computing (Completed January 2026)</p>
-                        <div class="degree-ribbon-university">
-                            <img src="./public/icons/wgu-logo.png" alt="Western Governors University logo" class="h-6 w-auto object-contain" loading="lazy">
-                            <span>Western Governors University</span>
-                        </div>
-                            </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Coursework Description -->
-                        <p class="text-gray-600 text-center max-w-3xl mx-auto text-base leading-relaxed italic" style="padding-top: 20px; padding-bottom: 24px;">
-                            My coursework focused on how computer systems connect and communicate, and how cloud platforms like <span style="color: #ff9900; font-weight: 600;">Amazon Web Services</span> and <span style="color: #00a4ef; font-weight: 600;">Microsoft Azure</span> support real businesses. I learned the essentials of building reliable networks, protecting data, and creating cloud environments that keep modern applications running without interruption.
-                        </p>
-                </div>
-            </div>
-            
-            <!-- GitHub Activity Card -->
-            <div class="github-activity-section" style="margin-top: 48px;">
-                <div class="max-w-4xl mx-auto">
-                    <div class="education-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-6 border border-gray-100">
-                        <div class="card-header flex items-center mb-6">
-                            <div class="card-icon w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fab fa-github text-primary-600 text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="card-title text-xl font-semibold text-gray-900">GitHub Activity</h4>
-                                <p class="card-subtitle text-gray-600">Development contributions and coding activity</p>
-                            </div>
-                        </div>
-                        
-                        <div class="github-contribution">
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-sm font-medium text-gray-700">Recent Activity</span>
-                                <span class="text-xs text-gray-500">Last 365 days</span>
-                            </div>
-                            
-                            <!-- GitHub Contribution Chart -->
-                            <div class="github-chart-container">
-                                <img src="https://ghchart.rshah.org/NerdPioneer" 
-                                     alt="GitHub contribution chart for NerdPioneer" 
-                                     class="w-full h-auto rounded-lg border border-gray-200"
-                                     loading="lazy"
-                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                
-                                <!-- Fallback content if image fails to load -->
-                                <div class="fallback-content text-center py-12" style="display: none;">
-                                    <i class="fab fa-github text-5xl text-gray-400 mb-4"></i>
-                                    <p class="text-lg text-gray-600 mb-2">GitHub activity chart</p>
-                                    <p class="text-sm text-gray-500">View on <a href="https://github.com/NerdPioneer" target="_blank" class="text-primary-600 hover:underline">GitHub</a></p>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-4 flex items-center justify-between text-sm text-gray-600">
-                                <span class="font-medium">150+ contributions in the last year</span>
-                                <a href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer" 
-                                   class="text-primary-600 hover:text-primary-700 font-medium flex items-center">
-                                    View Profile <i class="fas fa-external-link-alt ml-1"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Highlighted Courses -->
-            <div class="highlighted-courses mt-20">
-                <div class="text-center mb-8">
-                    <h3 class="text-4xl md:text-5xl font-black text-gray-900 font-raleway uppercase glitch-effect inline-block" data-text="HIGHLIGHTED COURSES">HIGHLIGHTED COURSES</h3>
-                </div>
-                <div class="flex flex-col gap-6 max-w-2xl mx-auto">
-                    <!-- Course 1 -->
-                    <div class="course-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-6 border border-gray-100 w-full">
-                        <div class="course-header mb-4">
-                            <h4 class="text-lg font-bold text-gray-900 mb-2">Introduction to Cryptography</h4>
-                            <p class="text-sm text-gray-600 mb-2">Academic Course - Western Governors University</p>
-                            <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">PASSED</span>
-                        </div>
-                        <div class="course-description">
-                            <blockquote class="border-l-4 border-blue-500 pl-4 italic text-gray-700 text-sm bg-gray-50 p-3 rounded-r-lg">
-                                "Learned the basics of how digital security works, including how information is protected when it's stored or sent online, and what makes encryption reliable."
-                            </blockquote>
-                        </div>
-                    </div>
+    <!-- Education Section -->
+   <section id="education" class="section py-12 md:py-20 lg:py-24 bg-white mt-8 md:mt-12 lg:mt-16">
+       <div class="container mx-auto px-6">
+           <div class="section-header text-center mb-12">
+               <div class="section-accent-line w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
+               <h2 class="section-title text-4xl md:text-5xl font-black text-gray-900 mb-4 font-raleway uppercase glitch-effect" data-text="EDUCATION">EDUCATION</h2>
+               <p class="section-subtitle text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Cloud computing and AWS depth, security-first coursework, and networking fundamentals.</p>
+           </div>
 
-                    <!-- Course 2 -->
-                    <div class="course-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-6 border border-gray-100 w-full">
-                        <div class="course-header mb-4">
-                            <h4 class="text-lg font-bold text-gray-900 mb-2">Python for IT Automation</h4>
-                            <p class="text-sm text-gray-600 mb-2">Academic Course - Western Governors University</p>
-                            <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">PASSED</span>
-                        </div>
-                        <div class="course-description">
-                            <blockquote class="border-l-4 border-blue-500 pl-4 italic text-gray-700 text-sm bg-gray-50 p-3 rounded-r-lg">
-                                "Built Python scripts to automate repetitive IT tasks, work with files and structured data, and connect to online services to improve efficiency and consistency."
-                            </blockquote>
-                        </div>
-                    </div>
+           <div class="max-w-6xl mx-auto">
+               <!-- Degree + Study Summary -->
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-10">
+                   <div class="relative rounded-2xl p-6 md:p-8 overflow-hidden border border-amber-300/60 shadow-lg"
+                        style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);">
+                       <div class="absolute -top-8 -right-8 w-28 h-28 rounded-full bg-white/12"></div>
+                       <div class="relative z-10">
+                           <div class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-white/15 border border-white/20 text-white font-semibold text-sm mb-8">
+                               <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                               Western Governors University
+                           </div>
+                           <h4 class="text-3xl md:text-4xl font-black text-white font-raleway leading-tight mb-2">Bachelor of Science in Cloud Computing</h4>
+                           <p class="text-white/90 text-base mb-6">B.S. Cloud Computing</p>
+                           <div class="inline-flex items-center px-3 py-1.5 rounded-full bg-white/20 border border-white/30 text-white text-sm font-semibold uppercase tracking-wider">
+                               <i class="fas fa-check mr-2" aria-hidden="true"></i>
+                               Completed January 2026
+                           </div>
+                       </div>
+                   </div>
 
-                    <!-- Course 3 -->
-                    <div class="course-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-6 border border-gray-100 w-full">
-                        <div class="course-header mb-4">
-                            <h4 class="text-lg font-bold text-gray-900 mb-2">Network and Security Foundations</h4>
-                            <p class="text-sm text-gray-600 mb-2">Academic Course - Western Governors University</p>
-                            <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">PASSED</span>
-                        </div>
-                        <div class="course-description">
-                            <blockquote class="border-l-4 border-blue-500 pl-4 italic text-gray-700 text-sm bg-gray-50 p-3 rounded-r-lg">
-                                "Learned how computer networks function and how organizations manage security risk, including common threats, baseline controls, and practical security best practices."
-                            </blockquote>
-                        </div>
-                    </div>
+                   <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 md:p-8">
+                       <p class="text-xs font-bold uppercase tracking-[0.2em] text-gray-600 mb-4">What I Studied</p>
+                       <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                           Coursework focused on how computer systems connect and communicate, and how cloud platforms like
+                           <span class="font-semibold text-gray-900">Amazon Web Services</span> and
+                           <span class="font-semibold text-gray-900">Microsoft Azure</span> support real businesses.
+                           I learned the essentials of building reliable networks, protecting data, and creating cloud environments
+                           that keep modern applications running without interruption.
+                       </p>
+                   </div>
+               </div>
 
-                    <!-- Course 4 -->
-                    <div class="course-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-6 border border-gray-100 w-full">
-                        <div class="course-header mb-4">
-                            <h4 class="text-lg font-bold text-gray-900 mb-2">Scripting and Automation (PowerShell)</h4>
-                            <p class="text-sm text-gray-600 mb-2">Academic Course - Western Governors University</p>
-                            <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">PASSED</span>
-                        </div>
-                        <div class="course-description">
-                            <blockquote class="border-l-4 border-blue-500 pl-4 italic text-gray-700 text-sm bg-gray-50 p-3 rounded-r-lg">
-                                "Developed PowerShell scripts to automate routine system tasks, validate inputs, handle failures cleanly, and generate clear output so work is repeatable and easy to audit."
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+               <!-- Highlighted Courses -->
+               <div class="mb-10">
+                   <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-gray-500 mb-4">Highlighted Courses</h3>
+                   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                       <div class="course-card bg-white rounded-xl border border-gray-200 border-l-4 border-l-[#ff5b00] shadow-sm p-5">
+                           <div class="flex items-start justify-between gap-3 mb-3">
+                               <div>
+                                   <h4 class="text-2xl font-black text-gray-900 leading-tight mb-1">Introduction to Cryptography</h4>
+                                   <p class="text-sm text-gray-500">Academic Course - WGU</p>
+                               </div>
+                               <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-green-100 text-green-800">PASSED</span>
+                           </div>
+                           <blockquote class="border-l-2 border-gray-200 pl-3 italic text-gray-600 text-sm leading-relaxed bg-gray-50 rounded-r-md py-2">
+                               Learned the basics of how digital security works, including how information is protected when stored or sent, and what makes encryption reliable.
+                           </blockquote>
+                       </div>
+
+                       <div class="course-card bg-white rounded-xl border border-gray-200 border-l-4 border-l-[#ff5b00] shadow-sm p-5">
+                           <div class="flex items-start justify-between gap-3 mb-3">
+                               <div>
+                                   <h4 class="text-2xl font-black text-gray-900 leading-tight mb-1">Python for IT Automation</h4>
+                                   <p class="text-sm text-gray-500">Academic Course - WGU</p>
+                               </div>
+                               <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-green-100 text-green-800">PASSED</span>
+                           </div>
+                           <blockquote class="border-l-2 border-gray-200 pl-3 italic text-gray-600 text-sm leading-relaxed bg-gray-50 rounded-r-md py-2">
+                               Built Python scripts to automate repetitive IT tasks, work with files and structured data, and connect to online services to improve efficiency and consistency.
+                           </blockquote>
+                       </div>
+
+                       <div class="course-card bg-white rounded-xl border border-gray-200 border-l-4 border-l-[#ff5b00] shadow-sm p-5">
+                           <div class="flex items-start justify-between gap-3 mb-3">
+                               <div>
+                                   <h4 class="text-2xl font-black text-gray-900 leading-tight mb-1">Network and Security Foundations</h4>
+                                   <p class="text-sm text-gray-500">Academic Course - WGU</p>
+                               </div>
+                               <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-green-100 text-green-800">PASSED</span>
+                           </div>
+                           <blockquote class="border-l-2 border-gray-200 pl-3 italic text-gray-600 text-sm leading-relaxed bg-gray-50 rounded-r-md py-2">
+                               Learned how computer networks function and how organizations manage security risk, including common threats, baseline controls, and practical security best practices.
+                           </blockquote>
+                       </div>
+
+                       <div class="course-card bg-white rounded-xl border border-gray-200 border-l-4 border-l-[#ff5b00] shadow-sm p-5">
+                           <div class="flex items-start justify-between gap-3 mb-3">
+                               <div>
+                                   <h4 class="text-2xl font-black text-gray-900 leading-tight mb-1">Scripting and Automation (PowerShell)</h4>
+                                   <p class="text-sm text-gray-500">Academic Course - WGU</p>
+                               </div>
+                               <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-green-100 text-green-800">PASSED</span>
+                           </div>
+                           <blockquote class="border-l-2 border-gray-200 pl-3 italic text-gray-600 text-sm leading-relaxed bg-gray-50 rounded-r-md py-2">
+                               Developed PowerShell scripts to automate routine system tasks, validate inputs, handle failures cleanly, and generate clear output so work is repeatable and easy to audit.
+                           </blockquote>
+                       </div>
+                   </div>
+               </div>
+
+               <!-- Slim GitHub strip -->
+               <div class="rounded-2xl px-5 md:px-7 py-5 border border-slate-800 bg-gradient-to-r from-[#0b1220] to-[#111827] text-slate-200">
+                   <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                       <div class="flex items-center gap-3">
+                           <div class="w-11 h-11 rounded-xl border border-slate-700 bg-slate-900/80 flex items-center justify-center">
+                               <i class="fab fa-github text-slate-200 text-lg"></i>
+                           </div>
+                           <div>
+                               <p class="text-2xl font-semibold text-white">GitHub Activity</p>
+                               <p class="text-sm text-slate-400">Development contributions and coding activity</p>
+                           </div>
+                       </div>
+                       <div class="flex items-center gap-6 text-center">
+                           <div>
+                               <p class="text-3xl font-black text-white">150+</p>
+                               <p class="text-xs uppercase tracking-wider text-slate-400">Contributions</p>
+                           </div>
+                           <div class="h-10 w-px bg-slate-700"></div>
+                           <div>
+                               <p class="text-3xl font-black text-white">365</p>
+                               <p class="text-xs uppercase tracking-wider text-slate-400">Days Tracked</p>
+                           </div>
+                           <a href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer"
+                              class="inline-flex items-center px-5 py-2.5 rounded-full border border-slate-600 text-slate-200 hover:bg-slate-700/60 transition duration-300">
+                               <i class="fab fa-github mr-2"></i>
+                               View Profile
+                           </a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
 
     <!-- Certifications Section -->
     <section id="certifications" class="section py-12 md:py-20 lg:py-24 mt-8 md:mt-12 lg:mt-16">
@@ -2404,7 +2421,7 @@
 
                 <!-- COMPTIA -->
                 <div class="mb-10">
-                    <div class="text-xs font-semibold uppercase tracking-[0.25em] text-orange-300 mb-4">CompTIA</div>
+                    <div class="inline-flex items-center px-3 py-1 rounded-md border text-xs font-semibold uppercase tracking-[0.25em] mb-4 badge-comptia">CompTIA</div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="credential-card credential-accent-comptia rounded-2xl p-5">
                             <div class="text-white font-semibold">A+</div>
@@ -2441,7 +2458,7 @@
 
                 <!-- AMAZON WEB SERVICES -->
                 <div class="mb-10">
-                    <div class="text-xs font-semibold uppercase tracking-[0.25em] text-amber-300 mb-4">Amazon Web Services</div>
+                    <div class="inline-flex items-center px-3 py-1 rounded-md border text-xs font-semibold uppercase tracking-[0.25em] mb-4 badge-aws">Amazon Web Services</div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="credential-card credential-accent-aws rounded-2xl p-5">
                             <div class="text-white font-semibold">Developer Associate</div>
@@ -2463,7 +2480,7 @@
 
                 <!-- GOVERNANCE & OPERATIONS -->
                 <div class="mb-10">
-                    <div class="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-300 mb-4">Governance &amp; Operations</div>
+                    <div class="inline-flex items-center px-3 py-1 rounded-md border text-xs font-semibold uppercase tracking-[0.25em] mb-4 badge-governance">Governance &amp; Operations</div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="credential-card credential-accent-governance rounded-2xl p-5">
                             <div class="text-white font-semibold">ITIL 4 Foundation</div>
@@ -2480,7 +2497,7 @@
 
                 <!-- IN PROGRESS -->
                 <div>
-                    <div class="text-xs font-semibold uppercase tracking-[0.25em] text-blue-300 mb-4">In Progress</div>
+                    <div class="inline-flex items-center px-3 py-1 rounded-md border text-xs font-semibold uppercase tracking-[0.25em] mb-4 badge-progress">In Progress</div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div class="credential-card credential-accent-progress rounded-2xl p-5 md:col-span-1">
                             <div class="text-white font-semibold">CCNA</div>
@@ -2514,7 +2531,7 @@
                     <details class="project-case project-accent-blue rounded-2xl" open>
                         <summary>
                             <div class="flex items-start justify-between gap-3 mb-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-wider bg-blue-500/20 text-blue-300 border border-blue-500/30">Security Operations</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-md border text-[11px] font-semibold uppercase tracking-wider badge-comptia">Security Operations</span>
                                 <span class="inline-flex items-center text-slate-300 text-sm">Details <i class="project-open-icon fas fa-chevron-down ml-2 text-xs"></i></span>
                             </div>
                             <h3 class="text-xl md:text-2xl font-black text-white mb-2">Python Security Triage &amp; Analytics Tool</h3>
@@ -2540,7 +2557,7 @@
                     <details class="project-case project-accent-amber rounded-2xl">
                         <summary>
                             <div class="flex items-start justify-between gap-3 mb-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-wider bg-amber-500/20 text-amber-300 border border-amber-500/30">Cloud Security</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-md border text-[11px] font-semibold uppercase tracking-wider badge-aws">Cloud Security</span>
                                 <span class="inline-flex items-center text-slate-300 text-sm">Details <i class="project-open-icon fas fa-chevron-down ml-2 text-xs"></i></span>
                             </div>
                             <h3 class="text-xl md:text-2xl font-black text-white mb-2">AWS EC2 Cloud Security Hardening</h3>
@@ -2566,7 +2583,7 @@
                     <details class="project-case project-accent-green rounded-2xl">
                         <summary>
                             <div class="flex items-start justify-between gap-3 mb-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-md text-[11px] font-semibold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">SOC Capstone - IAM</span>
+                                <span class="inline-flex items-center px-3 py-1 rounded-md border text-[11px] font-semibold uppercase tracking-wider badge-iam">SOC Capstone - IAM</span>
                                 <span class="inline-flex items-center text-slate-300 text-sm">Details <i class="project-open-icon fas fa-chevron-down ml-2 text-xs"></i></span>
                             </div>
                             <h3 class="text-xl md:text-2xl font-black text-white mb-2">PowerShell IAM Capstone Project</h3>
