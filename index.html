@@ -18,8 +18,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Ezekiel A. Obeisun Jr">
-    <meta name="theme-color" content="#000000">
-    <meta name="msapplication-navbutton-color" content="#000000">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-navbutton-color" content="#ffffff">
     
     <!-- Safari-specific meta tags -->
     <meta name="apple-touch-fullscreen" content="yes">
@@ -37,9 +37,8 @@
     
     <!-- Theme Color: Progressive enhancement for supported browsers (Chrome, Safari, Edge) -->
     <!-- Note: Firefox/Opera don't support theme-color, but it's beneficial for browsers that do -->
-    <meta name="theme-color" content="#ffffff">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ffffff">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#020617">
     <script>
         (function() {
             try {
@@ -57,7 +56,6 @@
             } catch (e) {}
         })();
     </script>
-    <meta name="msapplication-navbutton-color" content="#ffffff">
     <meta name="msapplication-TileColor" content="#ffffff">
     
     <title>Ezekiel A. Obeisun Jr | Security Analyst | AWS Community Builder | NerdPioneer</title>
@@ -406,6 +404,10 @@
             overscroll-behavior:none;
             -webkit-overscroll-behavior:none;
             -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Sora', sans-serif;
         }
         
         html{
@@ -1430,7 +1432,7 @@
             overflow: hidden;
             background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
             border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
             backdrop-filter: blur(10px);
         }
         
@@ -1443,7 +1445,7 @@
             height: 4px;
             background: linear-gradient(90deg, #10b981, #059669, #047857);
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.2s ease;
         }
         
         .notes-card:hover::before {
@@ -1501,7 +1503,7 @@
         /* Icon Container Enhancements */
         .notes-card .w-14 {
             position: relative;
-            transition: all 0.3s ease;
+            transition: transform 0.2s ease;
         }
         
         .notes-card:hover .w-14 {
@@ -1518,7 +1520,7 @@
             border-radius: 50%;
             background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.2s ease;
         }
         
         .notes-card:hover .w-14::after {
@@ -1529,7 +1531,7 @@
         .notes-card .space-y-3 > div {
             position: relative;
             padding-left: 1rem;
-            transition: all 0.2s ease;
+            transition: transform 0.15s ease, color 0.15s ease;
         }
         
         .notes-card .space-y-3 > div:hover {
@@ -1538,7 +1540,7 @@
         }
         
         .notes-card .space-y-3 > div .w-2 {
-            transition: all 0.2s ease;
+            transition: transform 0.15s ease;
         }
         
         .notes-card:hover .space-y-3 > div .w-2 {
@@ -1549,7 +1551,7 @@
         .notes-card a {
             position: relative;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
         }
         
         .notes-card a::before {
@@ -1560,7 +1562,7 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
+            transition: left 0.2s ease;
         }
         
         .notes-card a:hover::before {
@@ -1578,7 +1580,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            transition: all 0.3s ease;
+            transition: background 0.2s ease;
         }
         
         .notes-card:hover h3 {
@@ -1609,7 +1611,7 @@
         }
 
         .substack-cta-button {
-            transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
         }
 
         .substack-cta-button:hover {
@@ -1719,6 +1721,32 @@
             border-left: 3px solid #ff5b00 !important;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
+        }
+
+        .substack-banner-layout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .substack-banner-content {
+            flex: 1 1 auto;
+            min-width: 0;
+        }
+
+        .substack-banner-cta {
+            flex: 0 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .substack-banner-layout {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .substack-banner-cta a {
+                width: 100%;
+            }
         }
 
         /* Credentials (dark grouped layout) */
@@ -1952,23 +1980,23 @@
         <div class="container mx-auto px-4 lg:px-6">
             <div class="flex justify-between items-center py-4">
                 <div class="nav-brand">
-                    <a href="#home" class="flex items-center space-x-2 text-xl md:text-2xl font-bold text-white font-raleway">
+                    <a href="#home" class="flex items-center space-x-2 text-xl md:text-2xl font-bold text-white">
                         <i class="fas fa-brain text-white" aria-label="Portfolio Home"></i>
                     </a>
                 </div>
                 
                 <!-- Desktop Menu -->
                 <ul class="hidden lg:flex space-x-6 xl:space-x-8 nav-links">
-                    <li><a href="#home" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Home</a></li>
-                    <li><a href="#education" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Education</a></li>
-                    <li><a href="#certifications" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Certifications</a></li>
-                    <li><a href="#projects" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Projects</a></li>
-                    <li><a href="#notes" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Notes</a></li>
+                    <li><a href="#home" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Home</a></li>
+                    <li><a href="#education" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Education</a></li>
+                    <li><a href="#certifications" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Certifications</a></li>
+                    <li><a href="#projects" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Projects</a></li>
+                    <li><a href="#notes" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Notes</a></li>
                 </ul>
 
                 <!-- Desktop LinkedIn CTA -->
                 <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer"
-                   class="hidden lg:inline-flex items-center px-4 py-2 rounded-lg bg-white text-black hover:bg-gray-200 transition duration-300 font-montserrat font-semibold uppercase tracking-wider text-xs ml-4">
+                   class="hidden lg:inline-flex items-center px-4 py-2 rounded-lg bg-white text-black hover:bg-gray-200 transition duration-300 font-semibold uppercase tracking-wider text-xs ml-4">
                     VISIT LINKEDIN
                 </a>
 
@@ -2005,14 +2033,14 @@
             <div class="nav-menu lg:hidden overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
                 <div class="border-t border-gray-700 pt-4 pb-4">
                     <ul class="flex flex-col space-y-1">
-                        <li><a href="#home" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Home</a></li>
-                        <li><a href="#education" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Education</a></li>
-                        <li><a href="#certifications" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Certifications</a></li>
-                        <li><a href="#projects" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Projects</a></li>
-                        <li><a href="#notes" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-montserrat font-medium uppercase tracking-wider text-sm">Notes</a></li>
+                        <li><a href="#home" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Home</a></li>
+                        <li><a href="#education" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Education</a></li>
+                        <li><a href="#certifications" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Certifications</a></li>
+                        <li><a href="#projects" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Projects</a></li>
+                        <li><a href="#notes" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Notes</a></li>
                         <li class="pt-2">
                             <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer"
-                               class="nav-link block text-center px-4 py-3 rounded-lg font-montserrat font-semibold uppercase tracking-wider text-sm"
+                               class="nav-link block text-center px-4 py-3 rounded-lg font-semibold uppercase tracking-wider text-sm"
                                style="background-color: #ffffff; color: #000000;">
                                 VISIT LINKEDIN
                             </a>
@@ -2149,10 +2177,10 @@
             <div class="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center min-h-[80dvh] lg:min-h-[70vh]">
                 <!-- LEFT SIDE: Content -->
                 <div class="hero-left order-2 lg:order-1 relative z-30 flex flex-col justify-center">
-                    <h1 class="hero-title font-raleway text-center lg:text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-black tracking-tight leading-tight mb-4 md:mb-6 glitch-effect" data-text="NAVIGATE THE DIGITAL LANDSCAPE WITH CONFIDENCE">
+                    <h1 class="hero-title text-center lg:text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-black tracking-tight leading-tight mb-4 md:mb-6 glitch-effect" data-text="NAVIGATE THE DIGITAL LANDSCAPE WITH CONFIDENCE">
                         NAVIGATE THE DIGITAL LANDSCAPE WITH CONFIDENCE
                     </h1>
-                    <h2 class="hero-subtitle text-center lg:text-left text-base sm:text-lg md:text-xl text-black mb-6 md:mb-8 font-medium font-montserrat uppercase tracking-wider">
+                    <h2 class="hero-subtitle text-center lg:text-left text-base sm:text-lg md:text-xl text-black mb-6 md:mb-8 font-medium uppercase tracking-wider">
                         EZEKIEL A. OBEISUN JR<br><span class="normal-case">CLOUD COMPUTING GRADUATE</span>
                     </h2>
                     <!-- CTAs removed per request -->
@@ -2212,7 +2240,7 @@
                     <aside class="about-identity">
                         <div>
                             <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl border border-slate-700 bg-slate-900 text-[#ff5b00] text-2xl font-black mb-4">EO</div>
-                            <h3 class="text-3xl font-black text-white font-raleway mb-2">Ezekiel A. Obeisun Jr.</h3>
+                            <h3 class="text-3xl font-black text-white mb-2">Ezekiel A. Obeisun Jr.</h3>
                             <p class="text-sm uppercase tracking-[0.12em] text-slate-300 mb-6">Cybersecurity Professional<br>Cloud &amp; Security Analyst</p>
 
                             <ul class="space-y-3 text-sm">
@@ -2224,7 +2252,7 @@
 
                         <div class="pt-5 border-t border-slate-700">
                             <p class="about-mono-label mb-2">Personal Operating Principle</p>
-                            <p class="text-lg font-black text-[#ff5b00] font-raleway">1% Better Every Day</p>
+                            <p class="text-lg font-black text-[#ff5b00]">1% Better Every Day</p>
                         </div>
                     </aside>
 
@@ -2235,7 +2263,7 @@
                             <p>The technical side matters to me, but so do the people. I want to be someone my team can actually count on. Someone who shows up, helps figure things out, and makes the people around them better. I am at my best when I am around people who take their growth seriously.</p>
                         </div>
 
-                        <blockquote class="about-quote-block italic text-gray-700 font-montserrat text-base md:text-lg mt-8">
+                        <blockquote class="about-quote-block italic text-gray-700 text-base md:text-lg mt-8">
                             &ldquo;As iron sharpens iron, so one person sharpens another.&rdquo;<br>
                             <span class="not-italic font-medium">— Proverbs 27:17</span>
                         </blockquote>
@@ -2263,7 +2291,7 @@
          <div class="container mx-auto px-6 max-w-4xl">
              <div class="bg-white rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100 p-5 md:p-8">
                  <div class="prose prose-gray max-w-none text-gray-700 leading-relaxed text-center">
-                     <p class="italic text-gray-700 font-montserrat">"Do you see someone skilled in their work? They will serve before kings; they will not serve before officials of low rank." — Proverbs 22:29</p>
+                     <p class="italic text-gray-700">"Do you see someone skilled in their work? They will serve before kings; they will not serve before officials of low rank." — Proverbs 22:29</p>
                  </div>
              </div>
          </div>
@@ -2274,7 +2302,7 @@
        <div class="container mx-auto px-6">
            <div class="section-header text-center mb-12">
                <div class="section-accent-line w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
-               <h2 class="section-title text-4xl md:text-5xl font-black text-gray-900 mb-4 font-raleway uppercase glitch-effect" data-text="EDUCATION">EDUCATION</h2>
+               <h2 class="section-title text-4xl md:text-5xl font-black text-gray-900 mb-4 uppercase glitch-effect" data-text="EDUCATION">EDUCATION</h2>
                <p class="section-subtitle text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Cloud computing and AWS depth, security-first coursework, and networking fundamentals.</p>
            </div>
 
@@ -2289,7 +2317,7 @@
                                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                                Western Governors University
                            </div>
-                           <h4 class="text-3xl md:text-4xl font-black text-white font-raleway leading-tight mb-2">Bachelor of Science in Cloud Computing</h4>
+                           <h4 class="text-3xl md:text-4xl font-black text-white leading-tight mb-2">Bachelor of Science in Cloud Computing</h4>
                            <p class="text-white/90 text-base mb-6">B.S. Cloud Computing</p>
                            <div class="inline-flex items-center px-3 py-1.5 rounded-full bg-white/20 border border-white/30 text-white text-sm font-semibold uppercase tracking-wider">
                                <i class="fas fa-check mr-2" aria-hidden="true"></i>
@@ -2398,6 +2426,20 @@
                        </div>
                    </div>
                </div>
+
+               <!-- GitHub contribution chart (visual activity timeline) -->
+               <div class="mt-4 bg-white rounded-xl border border-gray-200 p-3 md:p-4">
+                   <img src="https://ghchart.rshah.org/NerdPioneer"
+                        alt="GitHub contribution chart for NerdPioneer"
+                        class="w-full h-auto rounded-lg border border-gray-200"
+                        loading="lazy"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                   <div class="text-center py-10" style="display:none;">
+                       <i class="fab fa-github text-4xl text-gray-400 mb-3"></i>
+                       <p class="text-gray-600 mb-1">GitHub activity chart unavailable right now.</p>
+                       <a href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:underline text-sm">View activity on GitHub</a>
+                   </div>
+               </div>
            </div>
        </div>
    </section>
@@ -2408,7 +2450,7 @@
             <div class="credentials-surface rounded-3xl p-6 md:p-10 lg:p-12 max-w-6xl mx-auto">
                 <div class="flex flex-col items-center text-center mb-10">
                     <div class="flex items-center gap-4 mb-2">
-                        <h2 class="text-3xl md:text-4xl font-black text-white font-raleway uppercase tracking-wide">Credentials</h2>
+                        <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-wide">Credentials</h2>
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-slate-200 text-xs">
                             <span class="font-semibold text-white">10</span>
                             <span class="uppercase tracking-wider">Active</span>
@@ -2523,7 +2565,7 @@
         <div class="container mx-auto px-6">
             <div class="projects-surface rounded-3xl p-6 md:p-10 lg:p-12 max-w-6xl mx-auto">
                 <div class="text-center mb-10">
-                    <h2 class="text-3xl md:text-4xl font-black text-white mb-3 font-raleway uppercase tracking-wide">Projects</h2>
+                    <h2 class="text-3xl md:text-4xl font-black text-white mb-3 uppercase tracking-wide">Projects</h2>
                     <p class="text-base md:text-lg text-slate-300 max-w-3xl mx-auto">Hands-on work built to solve real problems - not just to fill a portfolio.</p>
                 </div>
 
@@ -2614,9 +2656,9 @@
     <section id="notes" class="section py-12 md:py-20 lg:py-24 bg-gray-50 mt-8 md:mt-12 lg:mt-16">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto text-center">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-gray-900 font-raleway uppercase tracking-wide animate-fade-in glitch-effect break-words" data-text="NOTES FROM THE CLIMB">NOTES FROM THE CLIMB</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-gray-900 uppercase tracking-wide animate-fade-in glitch-effect break-words" data-text="NOTES FROM THE CLIMB">NOTES FROM THE CLIMB</h2>
                 <p class="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
-                    My three platforms for sharing knowledge and code
+                    Where I think out loud - writing, code, and everything in between.
                 </p>
                 
                 <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -2629,24 +2671,25 @@
                             </svg>
                         </div>
                         <div class="text-left">
-                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2 font-raleway">Medium</h3>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Medium</h3>
                             <p class="text-sm text-gray-500 tracking-wider font-medium">Writing & Insights</p>
                         </div>
                     </div>
                     
                     <div class="flex-grow mb-8">
                         <p class="text-gray-600 text-left mb-6 leading-relaxed text-sm md:text-base">
-                            Reflections on security, cloud, networking, and career development. I break down what I'm studying, what I'm building, and what I'm learning along the way.
+                            <strong>Security breakdowns</strong>, <strong>cloud deep-dives</strong>, and <strong>career lessons</strong> I had to learn the hard way. Written for people actually doing the work - not just reading about it.
                         </p>
                     </div>
                     
                     <div class="mt-auto">
                         <a href="https://medium.com/@nerdpioneer" target="_blank" rel="noopener noreferrer" 
-                           class="inline-flex items-center bg-green-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-medium hover:bg-green-600 transition duration-300 text-sm w-full justify-center">
+                           class="inline-flex items-center text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-medium transition duration-300 text-sm w-full justify-center"
+                           style="background-color:#16A34A;">
                             <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
                             </svg>
-                            Read My Journey
+                            Read My Writing
                         </a>
                     </div>
                 </div>
@@ -2660,25 +2703,19 @@
                             </svg>
                         </div>
                         <div class="text-left">
-                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2 font-raleway">Terminal</h3>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Terminal</h3>
                             <p class="text-sm text-gray-500 uppercase tracking-wider font-medium">PERSONAL NOTES</p>
                         </div>
                     </div>
                     
                     <div class="flex-grow mb-8">
                         <p class="text-gray-600 text-left mb-6 leading-relaxed text-sm md:text-base">
-                            Personal notes and behind-the-scenes thoughts. Raw, unfiltered perspectives and reflections from my journey.
+                            <strong>Raw notes from the lab.</strong> What broke, what worked, and what I'd tell myself before I started. Unfiltered - no polish, no spin.
                         </p>
                         
-                        <div class="flex items-center justify-center py-8">
-                            <div class="text-center">
-                                <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <svg class="w-8 h-8 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                                    </svg>
-                                </div>
-                                <p class="text-lg font-semibold text-gray-500 mb-2">Coming Soon</p>
-                            </div>
+                        <div class="flex items-center py-8 text-gray-400">
+                            <i class="far fa-clock mr-2" aria-hidden="true"></i>
+                            <p class="text-lg font-semibold">Coming Soon</p>
                         </div>
                     </div>
                 </div>
@@ -2692,14 +2729,14 @@
                             </svg>
                         </div>
                         <div class="text-left">
-                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2 font-raleway">GitHub</h3>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">GitHub</h3>
                             <p class="text-sm text-gray-500 tracking-wider font-medium">Code & Projects</p>
                         </div>
                     </div>
                     
                     <div class="flex-grow mb-8">
                         <p class="text-gray-600 text-left mb-6 leading-relaxed text-sm md:text-base">
-                            Hands-on experiments and small projects I build as I learn networking and cloud fundamentals. This is where I explore new concepts and sharpen real-world skills.
+                            <strong>Hands-on builds</strong> - Python triage tools, AWS hardening scripts, IAM automation. Code that actually runs, not just portfolio pieces.
                         </p>
                     </div>
                     
@@ -2718,22 +2755,23 @@
 
             <div class="mt-8 md:mt-10 max-w-6xl mx-auto">
                 <div class="education-card substack-accent-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-6 md:p-10 border border-gray-100 text-left">
-                    <div>
-                        <div class="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" style="background-color:#fff0e8;color:#ff5b00;border:1px solid #ffd1bd;">
-                            <i class="fas fa-newspaper" aria-hidden="true"></i>
-                            Substack Newsletter
+                    <div class="substack-banner-layout">
+                        <div class="substack-banner-content">
+                            <div class="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" style="background-color:#fff0e8;color:#ff5b00;border:1px solid #ffd1bd;">
+                                <i class="fas fa-newspaper" aria-hidden="true"></i>
+                                Substack Newsletter
+                            </div>
+                            <h3 class="text-2xl md:text-3xl font-black text-gray-900 mb-3 tracking-tight">
+                                NerdPioneer on Substack
+                            </h3>
+                            <p class="substack-copy text-sm md:text-base text-gray-700 leading-relaxed max-w-4xl mb-0">
+                                I don't write on a schedule. I write when something clicks - a career lesson, a security concept, a mistake worth sharing. If you're building in tech and tired of polished takes, this is for that.
+                            </p>
                         </div>
-                        <h3 class="text-2xl md:text-3xl font-black text-gray-900 mb-3 font-raleway tracking-tight">
-                            NerdPioneer on Substack
-                        </h3>
-                        <p class="substack-copy text-sm md:text-base text-gray-700 leading-relaxed max-w-4xl mb-6">
-                            I do not write on a schedule. I publish when something clicks - a <strong>career lesson</strong>, a <strong>security concept</strong>, or a <strong>mistake worth sharing</strong>. If you are building in tech and tired of polished takes, this is for you.
-                        </p>
 
-                        <div>
+                        <div class="substack-banner-cta">
                             <a href="https://substack.com/@nerdpioneer?utm_source=global-search" target="_blank" rel="noopener noreferrer"
-                               class="substack-cta-button inline-flex items-center justify-center px-6 py-3.5 min-h-[48px] rounded-full text-white font-semibold text-sm md:text-base w-full sm:w-auto" style="background-color:#ff5b00;">
-                                <i class="fas fa-user-plus mr-2" aria-hidden="true"></i>
+                               class="substack-cta-button inline-flex items-center justify-center px-6 py-3.5 min-h-[48px] rounded-full text-white font-semibold text-sm md:text-base w-full sm:w-auto whitespace-nowrap" style="background-color:#ff5b00;">
                                 Follow on Substack
                             </a>
                         </div>
@@ -2783,7 +2821,7 @@
     <footer class="footer bg-gray-50 text-gray-900 pt-4 pb-0 border-t border-gray-200 mb-0" role="contentinfo">
         <div class="container mx-auto px-6">
             <div class="text-center">
-                <p class="text-gray-700 font-montserrat font-medium uppercase tracking-wider">&copy; 2025 NerdPioneer (Ezekiel A. Obeisun Jr) All rights reserved.</p>
+                <p class="text-gray-700 font-medium uppercase tracking-wider">&copy; 2025 NerdPioneer (Ezekiel A. Obeisun Jr) All rights reserved.</p>
             </div>
         </div>
     </footer>

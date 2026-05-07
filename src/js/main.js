@@ -33,8 +33,8 @@ function initAnalytics() {
         });
     });
     
-    // Track project card interactions
-    document.querySelectorAll('.project-card').forEach(card => {
+    // Track project interactions (legacy and current layouts)
+    document.querySelectorAll('.project-card, .project-case').forEach(card => {
         card.addEventListener('click', (e) => {
             const projectTitle = card.querySelector('h3')?.textContent || 'Unknown Project';
             trackEvent('project_interaction', {
@@ -564,7 +564,7 @@ function toggleBackToTop() {
 
 function initIntersectionObserver() {
     // Elements to animate on scroll
-    const animatedElements = document.querySelectorAll('.section, .project-card, .education-card, .skill-group');
+    const animatedElements = document.querySelectorAll('.section, .project-card, .project-case, .education-card, .skill-group');
     
     if (animatedElements.length === 0) {
         return;
@@ -745,17 +745,6 @@ function initIntersectionObserver() {
         }
     `;
     document.head.appendChild(style);
-}
-
-// ==============================================
-// MOBILE MENU TOGGLE
-// ==============================================
-
-function toggleMobileMenu() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenu) {
-        mobileMenu.classList.toggle('hidden');
-    }
 }
 
 // ==============================================
