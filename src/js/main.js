@@ -249,73 +249,6 @@ function initNavbar() {
 }
 
 // ==============================================
-// THEME TOGGLE FUNCTIONALITY
-// ==============================================
-function initThemeToggle() {
-    const themeButtons = document.querySelectorAll('[data-theme-toggle]');
-    const root = document.documentElement;
-    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-
-    if (!themeButtons.length) return;
-
-    function isDark() {
-        return root.classList.contains('theme-dark');
-    }
-
-    function updateThemeUI() {
-        const darkMode = isDark();
-        themeButtons.forEach((button) => {
-            const icon = button.querySelector('i');
-            const label = button.querySelector('[data-theme-label]');
-
-            button.setAttribute('aria-pressed', darkMode ? 'true' : 'false');
-            if (icon) {
-                icon.className = darkMode ? 'fas fa-sun' : 'fas fa-moon';
-            }
-            if (label) {
-                label.textContent = darkMode ? 'Light (Testing)' : 'Dark (Testing)';
-            }
-        });
-
-        if (themeColorMeta) {
-            themeColorMeta.setAttribute('content', darkMode ? '#020617' : '#ffffff');
-        }
-    }
-
-    function applyTheme(theme) {
-        if (theme === 'dark') {
-            root.classList.add('theme-dark');
-        } else {
-            root.classList.remove('theme-dark');
-        }
-        try {
-            localStorage.setItem('site-theme', theme);
-        } catch (e) {}
-        updateThemeUI();
-    }
-
-    // Respect system preference only when no stored value exists.
-    let storedTheme = null;
-    try {
-        storedTheme = localStorage.getItem('site-theme');
-    } catch (e) {}
-    if (!storedTheme) {
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (prefersDark) {
-            root.classList.add('theme-dark');
-        }
-    }
-    updateThemeUI();
-
-    themeButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-            applyTheme(isDark() ? 'light' : 'dark');
-            trackEvent('theme_toggled', { theme: isDark() ? 'dark' : 'light' });
-        });
-    });
-}
-
-// ==============================================
 // PHOTO CAROUSEL FUNCTIONALITY
 // ==============================================
 
@@ -1136,7 +1069,6 @@ function toggleMoreSkills() {
 function initializeApp() {
     try {
         // Initialize enhanced components
-        initThemeToggle();
         initNavbar();
         initCarousel();
         initSmoothScrolling();
