@@ -273,7 +273,7 @@ function initThemeToggle() {
                 icon.className = darkMode ? 'fas fa-sun' : 'fas fa-moon';
             }
             if (label) {
-                label.textContent = darkMode ? 'Light' : 'Dark';
+                label.textContent = darkMode ? 'Light (Testing)' : 'Dark (Testing)';
             }
         });
 
