@@ -630,40 +630,54 @@
                 -0.65px 0 0 currentColor;
         }
 
-        /* About split layout */
+        /* About single-card layout */
         .about-shell {
             background: #ffffff;
             border: 1px solid #e5e7eb;
             border-radius: 1rem;
             box-shadow: 0 20px 45px -30px rgba(15, 23, 42, 0.35);
-            overflow: hidden;
+            padding: 1.25rem 1.25rem 1.5rem;
         }
 
-        .about-split {
-            display: grid;
-            grid-template-columns: minmax(240px, 280px) 1fr;
-        }
-
-        .about-identity {
-            background: #0b1220;
-            border-right: 3px solid #ff5b00;
-            color: #cbd5e1;
-            padding: 1.5rem;
+        .about-header {
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: space-between;
-            gap: 1.25rem;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid #e5e7eb;
         }
 
-        .about-mono-label {
-            font-size: 0.68rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: #94a3b8;
+        .about-identity-anchor {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            min-width: 0;
         }
 
-        .about-story {
-            padding: 1.5rem 1.5rem 1.75rem;
+        .about-eo-badge {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #0b1220;
+            border: 1px solid #111827;
+            color: #ff5b00;
+            font-weight: 900;
+            font-size: 1.3rem;
+        }
+
+        .about-meta-pill {
+            border: 1px solid #d1d5db;
+            background: #f8fafc;
+            color: #4b5563;
+            border-radius: 9999px;
+            padding: 0.45rem 0.9rem;
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
 
         .about-quote-block {
@@ -685,19 +699,20 @@
         }
 
         @media (max-width: 900px) {
-            .about-split {
-                grid-template-columns: 1fr;
+            .about-header {
+                flex-direction: column;
+                align-items: flex-start;
             }
 
-            .about-identity {
-                border-right: none;
-                border-bottom: 3px solid #ff5b00;
-                padding: 1rem 1.15rem;
-                gap: 0.9rem;
+            .about-shell {
+                padding: 1rem;
             }
 
-            .about-story {
-                padding: 1.15rem;
+            .about-meta-row {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
             }
         }
         
@@ -2236,51 +2251,42 @@
          <div class="container mx-auto px-6 max-w-6xl">
              <div class="w-16 h-1 bg-primary-600 mx-auto mb-6 rounded-full"></div>
             <div class="about-shell">
-                <div class="about-split">
-                    <aside class="about-identity">
+                <div class="about-header">
+                    <div class="about-identity-anchor">
+                        <div class="about-eo-badge">EO</div>
                         <div>
-                            <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl border border-slate-700 bg-slate-900 text-[#ff5b00] text-2xl font-black mb-4">EO</div>
-                            <h3 class="text-3xl font-black text-white mb-2">Ezekiel A. Obeisun Jr.</h3>
-                            <p class="text-sm uppercase tracking-[0.12em] text-slate-300 mb-6">Cybersecurity Professional<br>Cloud &amp; Security Analyst</p>
-
-                            <ul class="space-y-3 text-sm">
-                                <li class="flex items-start gap-2"><i class="fas fa-map-marker-alt text-slate-400 mt-0.5"></i><span>Dallas, TX</span></li>
-                                <li class="flex items-start gap-2"><i class="fas fa-graduation-cap text-slate-400 mt-0.5"></i><span>WGU - Cloud Computing</span></li>
-                                <li class="flex items-start gap-2"><i class="fas fa-shield-alt text-slate-400 mt-0.5"></i><span>CySA+ - Security+ - AWS</span></li>
-                            </ul>
-                        </div>
-
-                        <div class="pt-5 border-t border-slate-700">
-                            <p class="about-mono-label mb-2">Personal Operating Principle</p>
-                            <p class="text-lg font-black text-[#ff5b00]">1% Better Every Day</p>
-                        </div>
-                    </aside>
-
-                    <div class="about-story">
-                        <div class="prose prose-gray prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
-                            <p>I grew up around computers. Windows Vista machines that crashed every other day, and MacBooks that just worked. At some point I stopped just clicking around and started wondering why — why one thing breaks, why another doesn't, what's actually happening underneath. That question never really went away.</p>
-                            <p>I am a Cloud Computing Graduate from Western Governors University, class of January 2026. I love to build things, break things, and figure out how they work. Put me in a lab with a problem to solve and I am in my element. I learn by doing, not by watching — and I document the process so other people can follow along or skip the mistakes I already made.</p>
-                            <p>The technical side matters to me, but so do the people. I want to be someone my team can actually count on. Someone who shows up, helps figure things out, and makes the people around them better. I am at my best when I am around people who take their growth seriously.</p>
-                        </div>
-
-                        <blockquote class="about-quote-block italic text-gray-700 text-base md:text-lg mt-8">
-                            &ldquo;As iron sharpens iron, so one person sharpens another.&rdquo;<br>
-                            <span class="not-italic font-medium">— Proverbs 27:17</span>
-                        </blockquote>
-
-                        <div class="mt-8 pt-6 border-t border-gray-200 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-                            <a href="mailto:nerdpioneer@gmail.com"
-                               class="about-connect-btn inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-base">
-                                <i class="fas fa-envelope mr-2" aria-hidden="true"></i>
-                                Let&apos;s Connect
-                            </a>
-                            <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer"
-                               class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-gray-300 text-gray-600 hover:text-gray-900 hover:border-gray-400 transition duration-300 text-sm">
-                                <i class="fab fa-linkedin mr-2" aria-hidden="true"></i>
-                                linkedin.com/in/ezekiel-obeisun
-                            </a>
+                            <h3 class="text-2xl md:text-3xl font-black text-gray-900 leading-tight">Ezekiel A. Obeisun Jr.</h3>
+                            <p class="text-sm md:text-base text-gray-400 uppercase tracking-[0.08em]">Cybersecurity · Cloud · Security Analyst</p>
                         </div>
                     </div>
+                    <div class="about-meta-row">
+                        <span class="about-meta-pill"><i class="fas fa-graduation-cap mr-2 text-gray-400"></i>WGU - Cloud Computing</span>
+                        <span class="about-meta-pill"><i class="fas fa-map-marker-alt mr-2 text-gray-400"></i>Dallas, TX</span>
+                    </div>
+                </div>
+
+                <div class="prose prose-gray prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
+                    <p>I grew up around computers. Windows Vista machines that crashed every other day, and MacBooks that just worked. At some point I stopped just clicking around and started wondering why — why one thing breaks, why another doesn't, what's actually happening underneath. That question never really went away.</p>
+                    <p>I am a Cloud Computing graduate from Western Governors University, class of January 2026. Put me in a lab with a problem to solve and I am in my element. I learn by doing, not by watching — and I document the process so other people can follow along or skip the mistakes I already made.</p>
+                    <p>The technical side matters to me, but so do the people. I want to be someone my team can actually count on. Someone who shows up, helps figure things out, and makes the people around them better. I am at my best when I am around people who take their growth seriously.</p>
+                </div>
+
+                <blockquote class="about-quote-block italic text-gray-700 text-base md:text-lg mt-8">
+                    &ldquo;As iron sharpens iron, so one person sharpens another.&rdquo;<br>
+                    <span class="not-italic font-medium">— Proverbs 27:17</span>
+                </blockquote>
+
+                <div class="mt-8 pt-6 border-t border-gray-200 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+                    <a href="mailto:nerdpioneer@gmail.com"
+                       class="about-connect-btn inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-base">
+                        <i class="fas fa-envelope mr-2" aria-hidden="true"></i>
+                        Let&apos;s Connect
+                    </a>
+                    <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center px-6 py-3 rounded-full border border-gray-300 text-gray-600 hover:text-gray-900 hover:border-gray-400 transition duration-300 text-sm">
+                        <i class="fab fa-linkedin mr-2" aria-hidden="true"></i>
+                        linkedin.com/in/ezekiel-obeisun
+                    </a>
                 </div>
             </div>
          </div>
