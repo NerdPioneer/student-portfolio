@@ -1,7 +1,7 @@
-<!-- Placeholder for project images -->
-<!-- Add your project screenshots here:
+Placeholder for project images.
+
+Add project screenshots to this folder (example names):
 - project1.jpg
 - project2.jpg
 - project3.jpg
 - project-placeholder.jpg
--->

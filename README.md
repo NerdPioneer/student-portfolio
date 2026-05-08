@@ -1,78 +1,64 @@
 # Student Portfolio
 
-A clean, modern portfolio website showcasing my journey as a CLOUD COMPUTING GRADUATE.
+Public portfolio site for **Ezekiel A. Obeisun Jr** (NerdPioneer).
 
-## About This Project
+This repo is intentionally simple: one `index.html`, a Tailwind build for CSS, and a lightweight local dev server.
 
-This portfolio demonstrates my skills in web development while providing a professional online presence. It's built to be easy to update and maintain as I grow in my career.
+## What this site highlights
 
-## Features
+- **Projects**: hands-on security + cloud work with clear outcomes
+- **Credentials & education**: the timeline and proof points
+- **Writing & code links**: Medium + GitHub
 
-- **Responsive Design** - Works perfectly on all devices
-- **Photo Carousel** - Showcases multiple profile images
-- **Smooth Animations** - Professional interactions and transitions
-- **Modern UI** - Clean, professional appearance with optimized zoom level
-- **Professional Layout** - Centered Medium and GitHub integration cards
-
-## Getting Started
+## Run it locally
 
 ### Prerequisites
-- Node.js installed on your computer
 
-### Installation
+- Node.js (any recent LTS is fine)
+
+### Install + start
+
 ```bash
-# Clone the repository
 git clone https://github.com/NerdPioneer/Student-Portfolio.git
 cd Student-Portfolio
-
-# Install dependencies
 npm install
-
-# Build the CSS
 npm run build:css
-
-# Start local server
 npm start
 ```
 
-Open your browser to see the site running locally!
+Then open the URL printed in your terminal (defaults to `http://localhost:3000`).
 
-## Project Structure
+## Common commands
+
+```bash
+# Rebuild production CSS (writes to dist/styles.css)
+npm run build:css
+
+# Watch CSS changes while editing (Tailwind --watch)
+npm run watch:css
+
+# Local server only (no CSS watch)
+npm start
+```
+
+## Repo layout (quick map)
 
 ```
-├── index.html          # Main portfolio page
-├── src/
-│   ├── input.css       # CSS source files
-│   ├── styles.css      # Compiled CSS
-│   └── js/main.js      # JavaScript functionality
-├── public/images/      # Images and graphics
-├── dist/styles.css     # Production CSS build
-└── package.json        # Project configuration
+index.html          # Main site (content + small scoped CSS)
+src/input.css       # Tailwind input (source)
+src/js/main.js      # Client-side interactions
+dist/styles.css     # Built CSS output (used by the site)
+public/images/      # Images and graphics
 ```
-
-## Technologies Used
-
-- **HTML5** - Structure
-- **Tailwind CSS** - Styling
-- **JavaScript** - Interactivity
-- **GitHub Pages** - Hosting
 
 ## Analytics
 
-This site uses [Umami](https://umami.is) for privacy-first analytics to monitor visitor traffic and site performance. It's free, open-source, and doesn't collect personal data - just basic metrics to understand how the site is being used.
+Uses [Umami](https://umami.is) for privacy-first analytics (no personal data collection—just basic traffic metrics).
 
 ## Deployment
 
-This site is automatically deployed via GitHub Pages. Simply push changes to the main branch and they'll be live within minutes.
-
-## Contributing
-
-This is a personal portfolio project, but feedback and suggestions are always welcome!
+Hosted on GitHub Pages. Pushing to `main` publishes updates automatically.
 
 ## License
 
-MIT License - feel free to use this code for your own projects.
-
----
-
-*"1% Better Everyday" - James Clear, Atomic Habits*
+MIT — feel free to reuse with attribution.
