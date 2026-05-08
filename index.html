@@ -1647,6 +1647,38 @@
             text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
         }
 
+        /* GitHub contribution chart — do not rely on Tailwind responsive display utilities here:
+           compiled dist/styles.css may omit md:block, leaving hidden forever. */
+        .github-chart-card {
+            margin-top: 1rem;
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 100%;
+            min-width: 0;
+            background: #ffffff;
+            border-radius: 0.75rem;
+            border: 1px solid #e5e7eb;
+            padding: 0.75rem;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        @media (min-width: 768px) {
+            .github-chart-card {
+                padding: 1rem;
+            }
+        }
+
+        .github-chart-card img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            border: 1px solid #e5e7eb;
+        }
+
         .substack-accent-card {
             border-color: rgba(255, 91, 0, 0.35) !important;
             background: linear-gradient(135deg, #ffffff 0%, #fff4ee 100%);
@@ -2317,11 +2349,11 @@
                </div>
 
                <!-- GitHub contribution chart (visual activity timeline) -->
-               <div class="hidden md:block mt-4 bg-white rounded-xl border border-gray-200 p-3 md:p-4 overflow-x-auto">
+               <div class="github-chart-card" role="region" aria-label="GitHub contribution activity chart">
                    <img src="https://ghchart.rshah.org/NerdPioneer"
                         alt="GitHub contribution chart for NerdPioneer"
-                        class="w-[760px] max-w-none md:w-full md:max-w-full h-auto rounded-lg border border-gray-200"
                         loading="lazy"
+                        decoding="async"
                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                    <div class="text-center py-10" style="display:none;">
                        <i class="fab fa-github text-4xl text-gray-400 mb-3"></i>
