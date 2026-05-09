@@ -769,6 +769,12 @@
             flex-wrap: wrap;
             gap: 10px;
         }
+        .news-linkedin {
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
         .news-cta {
             display: inline-flex;
             align-items: center;
@@ -797,6 +803,10 @@
             padding: 9px 14px;
             border-radius: 999px;
             transition: border-color 0.2s, color 0.2s;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
         .news-linkedin:hover {
             border-color: #111318;
@@ -807,12 +817,32 @@
         @media (max-width: 560px) {
             .news-columns {
                 grid-template-columns: 1fr;
+                gap: 14px;
             }
             .news-full {
                 grid-column: 1;
             }
             .news-body {
-                padding: 1.25rem 1rem;
+                padding: 1.1rem 1rem 1.25rem;
+            }
+            .news-top-bar {
+                padding: 8px 16px;
+            }
+            .news-footer {
+                padding: 12px 16px;
+            }
+            .news-linkedin {
+                font-size: 11px;
+                padding: 8px 12px;
+            }
+            .news-cta {
+                padding: 9px 18px;
+                font-size: 12.5px;
+            }
+            .news-byline {
+                gap: 6px;
+                font-size: 10px;
+                margin: 8px 0 14px;
             }
         }
         
@@ -2288,7 +2318,7 @@
     </section>
      
      <!-- About Section (Newspaper Editorial) -->
-     <section id="about" class="section py-12 md:py-16 lg:py-20 bg-white" aria-label="About Ezekiel Obeisun">
+     <section id="about" class="section py-8 md:py-14 lg:py-16 bg-white" aria-label="About Ezekiel Obeisun">
          <div class="container mx-auto px-6 max-w-4xl">
              <div class="newspaper">
 
@@ -2365,19 +2395,8 @@
          </div>
      </section>
 
-     <!-- Inspirational Quote Section -->
-     <section class="py-10 md:py-12 bg-white">
-         <div class="container mx-auto px-6 max-w-4xl">
-             <div class="bg-white rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100 p-5 md:p-8">
-                 <div class="prose prose-gray max-w-none text-gray-700 leading-relaxed text-center">
-                     <p class="italic text-gray-700">"Do you see someone skilled in their work? They will serve before kings; they will not serve before officials of low rank." — Proverbs 22:29</p>
-                 </div>
-             </div>
-         </div>
-     </section>
-
     <!-- Education Section -->
-   <section id="education" class="section py-10 md:py-16 lg:py-20 bg-white mt-2 md:mt-4 lg:mt-6">
+   <section id="education" class="section py-8 md:py-14 lg:py-20 bg-white">
        <div class="container mx-auto px-6">
           <div class="section-header text-center mb-8 md:mb-10">
                <h2 class="section-title section-header-strong text-4xl md:text-5xl text-gray-900 mb-4 uppercase glitch-effect" data-text="EDUCATION">EDUCATION</h2>
@@ -2523,7 +2542,7 @@
    </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="section py-12 md:py-20 lg:py-24 mt-8 md:mt-12 lg:mt-16">
+    <section id="certifications" class="section py-10 md:py-16 lg:py-20 md:mt-6 lg:mt-10">
         <div class="container mx-auto px-6">
             <div class="credentials-surface rounded-3xl p-6 md:p-10 lg:p-12 max-w-6xl mx-auto">
                 <div class="flex flex-col items-center text-center mb-10">
@@ -2627,7 +2646,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section projects py-12 md:py-20 lg:py-24 mt-8 md:mt-12 lg:mt-16">
+    <section id="projects" class="section projects py-10 md:py-16 lg:py-20 md:mt-6 lg:mt-10">
         <div class="container mx-auto px-6">
             <div class="projects-surface rounded-3xl p-6 md:p-10 lg:p-12 max-w-6xl mx-auto">
                 <div class="text-center mb-10">
@@ -2719,7 +2738,7 @@
     </section>
 
     <!-- Notes Section -->
-    <section id="notes" class="section py-12 md:py-20 lg:py-24 bg-gray-50 mt-8 md:mt-12 lg:mt-16">
+    <section id="notes" class="section py-10 md:py-16 lg:py-20 bg-gray-50 md:mt-6 lg:mt-10">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto text-center">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-gray-900 uppercase tracking-wide animate-fade-in glitch-effect break-words" data-text="NOTES FROM THE CLIMB">NOTES FROM THE CLIMB</h2>
@@ -2846,10 +2865,10 @@
             </div>
 
             <!-- Inspirational Quote Section - Centered -->
-            <div class="w-full flex justify-center mt-8 mb-4">
+            <div class="w-full flex justify-center mt-6 md:mt-8 mb-0">
                 <div class="max-w-2xl px-4">
                     <!-- Decorative line above quote -->
-                    <div class="w-16 h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent mx-auto mb-6"></div>
+                    <div class="w-16 h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent mx-auto mb-4 md:mb-6"></div>
                     
                     <div class="rotating-quotes-container bg-gray-50 rounded-lg p-6 border-l-4 border-blue-600 relative overflow-hidden">
                         <!-- Quote content with smooth transitions -->
