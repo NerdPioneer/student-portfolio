@@ -610,89 +610,209 @@
                 -0.65px 0 0 currentColor;
         }
 
-        /* About single-card layout */
-        .about-shell {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 1rem;
+        /* ── ABOUT — NEWSPAPER ── */
+        .newspaper {
+            background: #fff;
+            border: 0.5px solid #E4E4E7;
+            border-radius: 16px;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
             box-shadow: 0 20px 45px -30px rgba(15, 23, 42, 0.35);
-            padding: 1.25rem 1.25rem 1.5rem;
         }
 
-        .about-header {
+        /* Masthead bar */
+        .news-top-bar {
+            background: #000;
+            padding: 9px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 1rem;
-            padding-bottom: 1rem;
-            margin-bottom: 1.25rem;
-            border-bottom: 1px solid #e5e7eb;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        .news-masthead {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(10px, 2vw, 12px);
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+        .news-date {
+            font-size: 11px;
+            color: #6B7280;
         }
 
-        .about-identity-anchor {
+        /* Body */
+        .news-body {
+            padding: 1.75rem 2rem;
+        }
+
+        /* Headline */
+        .news-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(24px, 4vw, 36px);
+            font-weight: 900;
+            color: #111318;
+            line-height: 1.1;
+            margin-bottom: 12px;
+            border-bottom: 3px solid #E8440A;
+            padding-bottom: 12px;
+        }
+        .news-headline span {
+            font-style: italic;
+            color: #E8440A;
+        }
+
+        /* Byline */
+        .news-byline {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            margin: 10px 0 16px;
+            font-size: 11px;
+            color: #9CA3AF;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+        }
+        .news-byline-dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: #D1D5DB;
+        }
+
+        /* Two column grid */
+        .news-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            border-top: 0.5px solid #E4E4E7;
+            padding-top: 16px;
+        }
+        .news-col p {
+            font-size: 13.5px;
+            color: #374151;
+            line-height: 1.8;
+        }
+        .news-col p + p {
+            margin-top: 12px;
+        }
+        .news-col p em {
+            font-style: normal;
+            font-weight: 600;
+            color: #111318;
+        }
+
+        /* Full width column — spans both columns */
+        .news-full {
+            grid-column: 1 / -1;
+        }
+
+        /* Scripture quote */
+        .news-pull {
+            border-left: 3px solid #E8440A;
+            padding: 10px 0 10px 14px;
+            margin-top: 16px;
+        }
+        .news-pull p {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            font-style: italic;
+            color: #374151;
+            line-height: 1.65;
+            margin: 0;
+        }
+        .news-pull span {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            color: #E8440A;
+            display: block;
+            margin-top: 6px;
+            font-style: normal;
+        }
+
+        /* Cert tags */
+        .news-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 16px;
+            padding-top: 12px;
+            border-top: 0.5px solid #F3F4F6;
+        }
+        .news-tag {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: #F3F4F6;
+            color: #6B7280;
+            padding: 3px 10px;
+            border-radius: 999px;
+        }
+        .news-tag.orange {
+            background: #FEE8E0;
+            color: #92260A;
+        }
+
+        /* Footer */
+        .news-footer {
+            padding: 14px 20px;
+            background: #FAFAFA;
+            border-top: 0.5px solid #F3F4F6;
             display: flex;
             align-items: center;
-            gap: 0.85rem;
-            min-width: 0;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-
-        .about-eo-badge {
-            width: 3.5rem;
-            height: 3.5rem;
-            border-radius: 0.9rem;
+        .news-cta {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            background: #0b1220;
-            border: 1px solid #111827;
-            color: #ff5b00;
-            font-weight: 900;
-            font-size: 1.3rem;
+            gap: 7px;
+            background: #000;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 10px 22px;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: background 0.15s, transform 0.1s;
         }
-
-        .about-meta-pill {
-            border: 1px solid #d1d5db;
-            background: #f8fafc;
-            color: #4b5563;
-            border-radius: 9999px;
-            padding: 0.45rem 0.9rem;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-
-        .about-quote-block {
-            border-left: 3px solid #ff5b00;
-            background: #fff8f2;
-            padding: 0.9rem 1rem;
-            border-radius: 0.2rem;
-        }
-
-        .about-connect-btn {
-            background: #0b1220;
-            color: #ffffff;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-        }
-
-        .about-connect-btn:hover {
-            background: #ff5b00;
+        .news-cta:hover {
+            background: #E8440A;
             transform: translateY(-1px);
         }
+        .news-linkedin {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #9CA3AF;
+            text-decoration: none;
+            border: 0.5px solid #E4E4E7;
+            padding: 9px 14px;
+            border-radius: 999px;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .news-linkedin:hover {
+            border-color: #111318;
+            color: #111318;
+        }
 
-        @media (max-width: 900px) {
-            .about-header {
-                flex-direction: column;
-                align-items: flex-start;
+        /* ── MOBILE RESPONSIVE ── */
+        @media (max-width: 560px) {
+            .news-columns {
+                grid-template-columns: 1fr;
             }
-
-            .about-shell {
-                padding: 1rem;
+            .news-full {
+                grid-column: 1;
             }
-
-            .about-meta-row {
-                width: 100%;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
+            .news-body {
+                padding: 1.25rem 1rem;
             }
         }
         
@@ -1620,7 +1740,6 @@
         }
 
         @media (max-width: 640px) {
-            #about .about-shell,
             #certifications .credentials-surface,
             #projects .projects-surface {
                 border-radius: 0.85rem;
@@ -1918,7 +2037,7 @@
     </style>
     
     <link rel="stylesheet" href="./dist/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
     <!-- Vanta.js dependencies - Loaded asynchronously for better performance -->
@@ -2168,43 +2287,81 @@
         </div>
     </section>
      
-     <!-- About Section (Professional Bio) -->
-     <section id="about" class="section py-12 md:py-16 lg:py-20 bg-white">
-         <div class="container mx-auto px-6 max-w-6xl">
-             <div class="w-16 h-1 bg-primary-600 mx-auto mb-6 rounded-full"></div>
-            <div class="about-shell">
-                <div class="about-header">
-                    <div class="about-identity-anchor">
-                        <div class="about-eo-badge">EO</div>
-                        <div>
-                            <h3 class="text-2xl md:text-3xl font-black text-gray-900 leading-tight">Ezekiel A. Obeisun Jr.</h3>
-                            <p class="text-sm md:text-base text-gray-400 uppercase tracking-[0.08em]">Cybersecurity · Cloud · Security Analyst</p>
-                        </div>
-                    </div>
-                    <div class="about-meta-row">
-                        <span class="about-meta-pill"><i class="fas fa-graduation-cap mr-2 text-gray-400"></i>WGU - Cloud Computing</span>
-                    </div>
-                </div>
+     <!-- About Section (Newspaper Editorial) -->
+     <section id="about" class="section py-12 md:py-16 lg:py-20 bg-white" aria-label="About Ezekiel Obeisun">
+         <div class="container mx-auto px-6 max-w-4xl">
+             <div class="newspaper">
 
-                <div class="prose prose-gray prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
-                    <p>I grew up around computers. Windows Vista machines that crashed every other day, and MacBooks that just worked. At some point I stopped just clicking around and started wondering why — why one thing breaks, why another doesn't, what's actually happening underneath. That question never really went away.</p>
-                    <p>I'm a Cloud Computing graduate from Western Governors University, class of January 2026. I love to build things, break things, and figure out how they work. Put me in a lab with a problem to solve and I'm in my element. I learn by doing, not by watching — and I document the process so other people can follow along or skip the mistakes I already made.</p>
-                    <p>The technical side is what gets me in the door. But I stay because of the people. I want to be in a room where everyone is trying to get better — and I want to be part of what makes that happen. Not the loudest, not the most senior. Just someone you can actually rely on.</p>
-                </div>
+                 <!-- MASTHEAD BAR -->
+                 <div class="news-top-bar">
+                     <span class="news-masthead">The NerdPioneer Chronicle</span>
+                     <span class="news-date">Class of January 2026 · Dallas, TX</span>
+                 </div>
 
-                <blockquote class="about-quote-block italic text-gray-700 text-base md:text-lg mt-8">
-                    &ldquo;As iron sharpens iron, so one person sharpens another.&rdquo;<br>
-                    <span class="not-italic font-medium">— Proverbs 27:17</span>
-                </blockquote>
+                 <!-- BODY -->
+                 <div class="news-body">
 
-                <div class="mt-8 pt-6 border-t border-gray-200 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-start">
-                    <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer"
-                       class="about-connect-btn inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold text-base">
-                        <i class="fab fa-linkedin mr-2" aria-hidden="true"></i>
-                        Let&apos;s Connect
-                    </a>
-                </div>
-            </div>
+                     <!-- HEADLINE -->
+                     <h2 class="news-headline">
+                         The Builder Who Asks<br>
+                         <span>Why Things Break</span>
+                     </h2>
+
+                     <!-- BYLINE -->
+                     <div class="news-byline">
+                         <span>Ezekiel A. Obeisun Jr.</span>
+                         <div class="news-byline-dot"></div>
+                         <span>Cybersecurity Professional</span>
+                         <div class="news-byline-dot"></div>
+                         <span>WGU · Cloud Computing</span>
+                     </div>
+
+                     <!-- TWO COLUMN STORY -->
+                     <div class="news-columns">
+
+                         <div class="news-col">
+                             <p>I grew up around computers. Windows Vista machines that crashed every other day, and MacBooks that just worked. At some point I stopped just clicking around and started wondering <em>why</em> &mdash; why one thing breaks, why another doesn&apos;t, what&apos;s actually happening underneath. That question never really went away.</p>
+                         </div>
+
+                         <div class="news-col">
+                             <p>I&apos;m a Cloud Computing graduate from Western Governors University, class of January 2026. I love to build things, break things, and figure out how they work. <em>Put me in a lab with a problem to solve</em> and I&apos;m in my element. I learn by doing, not by watching &mdash; and I document the process so other people can follow along or skip the mistakes I already made.</p>
+                         </div>
+
+                         <!-- FULL WIDTH PARAGRAPH -->
+                         <div class="news-col news-full">
+                             <p>The technical side is what gets me in the door. But I stay because of the people. I want to be in a room where <em>everyone is trying to get better</em> &mdash; and I want to be part of what makes that happen. Not the loudest, not the most senior. <em>Just someone you can actually rely on.</em></p>
+                         </div>
+
+                     </div>
+
+                     <!-- SCRIPTURE QUOTE -->
+                     <div class="news-pull">
+                         <p>As iron sharpens iron, so one person sharpens another.</p>
+                         <span>&mdash; Proverbs 27:17</span>
+                     </div>
+
+                     <!-- CERT TAGS -->
+                     <div class="news-tags">
+                         <span class="news-tag orange">CySA+</span>
+                         <span class="news-tag orange">Security+</span>
+                         <span class="news-tag orange">AWS Security</span>
+                         <span class="news-tag">CCNA &mdash; Q3 2026</span>
+                     </div>
+
+                 </div>
+
+                 <!-- FOOTER -->
+                 <div class="news-footer">
+                     <a class="news-cta" href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer">
+                         <i class="fab fa-linkedin" aria-hidden="true"></i>
+                         Let&apos;s Connect
+                     </a>
+                     <a class="news-linkedin" href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer">
+                         linkedin.com/in/ezekielobeisun
+                     </a>
+                 </div>
+
+             </div>
          </div>
      </section>
 
