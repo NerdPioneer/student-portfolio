@@ -1050,19 +1050,15 @@
                 font-size: 1.5rem !important;
             }
             
-            /* Move some icons to better positions on mobile */
+            /* Pin a few icons to predictable corner positions on mobile.
+               Only target the first 6 children — beyond that we let the
+               desktop positions ride so additions/removals don't desync. */
             .floating-icons div:nth-child(1) { top: 10% !important; left: 15% !important; }
             .floating-icons div:nth-child(2) { top: 20% !important; right: 10% !important; }
             .floating-icons div:nth-child(3) { top: 75% !important; left: 10% !important; }
             .floating-icons div:nth-child(4) { top: 80% !important; right: 15% !important; }
             .floating-icons div:nth-child(5) { top: 30% !important; right: 5% !important; }
             .floating-icons div:nth-child(6) { top: 85% !important; left: 20% !important; }
-            
-            /* Position new tech stack icons on mobile */
-            .floating-icons div:nth-child(25) { top: 18% !important; left: 45% !important; } /* Ubuntu */
-            .floating-icons div:nth-child(26) { top: 65% !important; left: 55% !important; } /* Ansible */
-            .floating-icons div:nth-child(27) { top: 22% !important; right: 45% !important; } /* Cisco */
-            .floating-icons div:nth-child(28) { top: 78% !important; left: 65% !important; } /* VMware */
         }
         
         /* Browser-specific theme color fallbacks */
@@ -2256,6 +2252,23 @@
             <div class="floating-icon absolute text-gray-600 opacity-20" style="top: 88%; right: 8%; animation-delay: 22s;">
                 <i class="fas fa-shield-alt text-lg md:text-xl"></i>
             </div>
+
+            <!-- Security Analyst / SOC identity -->
+            <div class="floating-icon absolute text-gray-600 opacity-21" style="top: 5%; right: 22%; animation-delay: 23s;">
+                <i class="fas fa-user-shield text-lg md:text-xl"></i>
+            </div>
+            <!-- Security hardening / lock -->
+            <div class="floating-icon absolute text-gray-600 opacity-20" style="top: 70%; right: 12%; animation-delay: 24s;">
+                <i class="fas fa-lock text-lg md:text-xl"></i>
+            </div>
+            <!-- Network / system architecture -->
+            <div class="floating-icon absolute text-gray-600 opacity-21" style="top: 25%; left: 20%; animation-delay: 25s;">
+                <i class="fas fa-diagram-project text-lg md:text-xl"></i>
+            </div>
+            <!-- Triage / analysis / investigation -->
+            <div class="floating-icon absolute text-gray-600 opacity-20" style="top: 92%; left: 50%; animation-delay: 26s;">
+                <i class="fas fa-magnifying-glass-chart text-lg md:text-xl"></i>
+            </div>
         </div>
 
         <!-- Hero Content -->
@@ -2375,7 +2388,7 @@
                          <span class="news-tag orange">CySA+</span>
                          <span class="news-tag orange">Security+</span>
                          <span class="news-tag orange">AWS Security</span>
-                         <span class="news-tag">CCNA &mdash; Q3 2026</span>
+                         <span class="news-tag">CompTIA Network+</span>
                      </div>
 
                  </div>
