@@ -1995,6 +1995,226 @@
                 height: 1.5rem;
             }
         }
+
+        /* ── Masters Degree (Locked / Future Goal) ── */
+        .masters-card {
+            background: #0A0A0A;
+            border: 1.5px dashed #2A2D35;
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .masters-card:hover {
+            border-color: rgba(255, 91, 0, 0.45);
+        }
+
+        /* diagonal stripe texture */
+        .masters-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 6px,
+                rgba(255, 255, 255, 0.012) 6px,
+                rgba(255, 255, 255, 0.012) 12px
+            );
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        /* subtle corner glow on hover */
+        .masters-card::after {
+            content: '';
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #ff5b00;
+            opacity: 0.05;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .masters-card:hover::after {
+            opacity: 0.12;
+        }
+
+        .masters-lock-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: #1C1F26;
+            border: 0.5px solid #2A2D35;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4B5563;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .masters-body {
+            flex: 1;
+            min-width: 0;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .masters-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: #1C1F26;
+            border: 0.5px solid #2A2D35;
+            color: #6B7280;
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 3px 9px;
+            border-radius: 999px;
+            width: fit-content;
+        }
+
+        .masters-title {
+            font-family: 'Sora', 'Inter', system-ui, sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #F4F4F5;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .masters-sub {
+            font-size: 12px;
+            color: #6B7280;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .masters-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+
+        .masters-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #1C1F26;
+            border: 0.5px solid #2A2D35;
+            color: #9CA3AF;
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+
+        .masters-pulse-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #ff5b00;
+            animation: mastersPulse 2s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes mastersPulse {
+            0%, 100% { opacity: 1; }
+            50%      { opacity: 0.3; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .masters-pulse-dot { animation: none; }
+        }
+
+        .masters-progress-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 3px;
+        }
+
+        .masters-progress-label {
+            font-size: 9px;
+            color: #4B5563;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .masters-progress-bar {
+            width: 80px;
+            height: 3px;
+            background: #1C1F26;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .masters-progress-fill {
+            height: 100%;
+            width: 30%;
+            background: #ff5b00;
+            border-radius: 2px;
+        }
+
+        /* Tablet / phone — stack the right column under the body */
+        @media (max-width: 640px) {
+            .masters-card {
+                flex-wrap: wrap;
+                padding: 1rem 1.25rem;
+                gap: 12px;
+            }
+            .masters-lock-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 10px;
+            }
+            .masters-body {
+                flex: 1 1 calc(100% - 52px);
+            }
+            .masters-right {
+                flex: 1 1 100%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+            }
+            .masters-progress-wrap {
+                align-items: flex-end;
+            }
+            .masters-title {
+                font-size: 14px;
+            }
+            .masters-sub {
+                font-size: 11px;
+            }
+            .masters-progress-bar {
+                width: 90px;
+            }
+        }
     </style>
     
     <link rel="stylesheet" href="./dist/styles.css">
@@ -2388,6 +2608,45 @@
                            I learned the essentials of building reliable networks, protecting data, and creating cloud environments
                            that keep modern applications running without interruption.
                        </p>
+                   </div>
+               </div>
+
+               <!-- Masters Degree (Locked / Future Goal) -->
+               <div class="masters-card" role="group" aria-label="Master's Degree — future goal, locked">
+                   <div class="masters-lock-icon" aria-hidden="true">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                           <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                           <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                       </svg>
+                   </div>
+
+                   <div class="masters-body">
+                       <div class="masters-eyebrow">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                               <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                           </svg>
+                           Next Level — Locked
+                       </div>
+                       <p class="masters-title">Master's Degree</p>
+                       <p class="masters-sub">Graduate school — a future goal. Fully committed to the work in front of me right now.</p>
+                   </div>
+
+                   <div class="masters-right">
+                       <span class="masters-status">
+                           <span class="masters-pulse-dot" aria-hidden="true"></span>
+                           In Progress
+                       </span>
+                       <div class="masters-progress-wrap">
+                           <span class="masters-progress-label">Journey</span>
+                           <div class="masters-progress-bar" role="progressbar" aria-label="Master's journey progress" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                               <div class="masters-progress-fill"></div>
+                           </div>
+                       </div>
                    </div>
                </div>
 
