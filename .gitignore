@@ -12,3 +12,6 @@ yarn-error.log*
 Thumbs.db
 .vscode/
 
+# Local helper files
+.commitmsg.tmp
+
