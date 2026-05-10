@@ -60,7 +60,9 @@
     <meta property="og:description" content="Security Analyst portfolio: SOC & GRC experience, B.S. Cloud Computing, AWS Community Builder. CySA+, Security+, AWS Security Specialty; hands-on cloud security projects and CCNA networking depth.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.nerdpioneer.com/">
-    <meta property="og:image" content="https://www.nerdpioneer.com/public/images/profile_1.jpg">
+    <meta property="og:image" content="https://www.nerdpioneer.com/public/images/og-card.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Ezekiel A. Obeisun Jr - NerdPioneer portfolio image">
     <meta property="og:site_name" content="NerdPioneer - Portfolio">
     <meta property="og:locale" content="en_US">
@@ -71,7 +73,7 @@
     <meta name="twitter:creator" content="@nerdpioneer">
     <meta name="twitter:title" content="Ezekiel A. Obeisun Jr | Security Analyst | AWS Community Builder | NerdPioneer">
     <meta name="twitter:description" content="Security Analyst portfolio: SOC & GRC experience, B.S. Cloud Computing, AWS Community Builder. CySA+, Security+, AWS Security Specialty; hands-on cloud security projects and CCNA networking depth.">
-    <meta name="twitter:image" content="https://www.nerdpioneer.com/public/images/profile_1.jpg">
+    <meta name="twitter:image" content="https://www.nerdpioneer.com/public/images/og-card.jpg">
     <meta name="twitter:image:alt" content="Ezekiel A. Obeisun Jr - NerdPioneer portfolio image">
 
     <!-- LinkedIn / Profile metadata -->
@@ -285,10 +287,7 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="./dist/styles.css" as="style">
     <link rel="preload" href="./src/js/main.js" as="script">
-    <link rel="preload" href="./public/images/profile_1.jpg" as="image">
-    <link rel="preload" href="./public/images/profile_2.jpg" as="image">
-    <link rel="preload" href="./public/images/profile_3.jpg" as="image">
-    <link rel="preload" href="./public/images/profile_4.jpg" as="image">
+    <link rel="preload" href="./public/images/profile_1.webp" as="image" type="image/webp">
     
     <!-- Critical CSS -->
     <style>
@@ -2002,10 +2001,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
-    <!-- Vanta.js dependencies - Loaded asynchronously for better performance -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.globe.min.js" defer></script>
-    
     <!-- Umami Analytics - Privacy-first analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="8b3ba511-c136-4ad6-a865-e52377204787"></script>
 </head>
@@ -2232,19 +2227,31 @@
                                 <!-- Profile Images -->
                                 <div class="carousel-slides relative w-full h-full">
                                     <div class="carousel-slide active absolute inset-0 w-full h-full">
-                                        <img src="./public/images/profile_1.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 1" class="w-full h-full object-cover object-center bg-white" loading="eager">
+                                        <picture>
+                                            <source srcset="./public/images/profile_1.webp" type="image/webp">
+                                            <img src="./public/images/profile_1.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 1" class="w-full h-full object-cover object-center bg-white" width="600" height="600" loading="eager" fetchpriority="high">
+                                        </picture>
                                         <div class="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent"></div>
                                     </div>
                                     <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
-                                        <img src="./public/images/profile_2.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 2" class="w-full h-full object-cover object-center bg-white" loading="lazy">
+                                        <picture>
+                                            <source srcset="./public/images/profile_2.webp" type="image/webp">
+                                            <img src="./public/images/profile_2.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 2" class="w-full h-full object-cover object-center bg-white" width="600" height="600" loading="lazy">
+                                        </picture>
                                         <div class="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent"></div>
                                     </div>
                                     <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
-                                        <img src="./public/images/profile_3.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 3" class="w-full h-full object-cover object-center bg-white" loading="lazy">
+                                        <picture>
+                                            <source srcset="./public/images/profile_3.webp" type="image/webp">
+                                            <img src="./public/images/profile_3.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 3" class="w-full h-full object-cover object-center bg-white" width="600" height="600" loading="lazy">
+                                        </picture>
                                         <div class="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent"></div>
                                     </div>
                                     <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
-                                        <img src="./public/images/profile_4.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 4" class="w-full h-full object-cover object-center bg-white" loading="lazy">
+                                        <picture>
+                                            <source srcset="./public/images/profile_4.webp" type="image/webp">
+                                            <img src="./public/images/profile_4.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 4" class="w-full h-full object-cover object-center bg-white" width="600" height="600" loading="lazy">
+                                        </picture>
                                         <div class="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent"></div>
                                     </div>
                                 </div>
@@ -2855,25 +2862,12 @@
     <footer class="footer bg-gray-50 text-gray-900 pt-4 pb-0 border-t border-gray-200 mb-0" role="contentinfo">
         <div class="container mx-auto px-6">
             <div class="text-center">
-                <p class="text-gray-700 font-medium uppercase tracking-wider">&copy; 2025 NerdPioneer (Ezekiel A. Obeisun Jr) All rights reserved.</p>
+                <p class="text-gray-700 font-medium uppercase tracking-wider">&copy; <span id="copyright-year">2026</span> NerdPioneer (Ezekiel A. Obeisun Jr) All rights reserved.</p>
+                <script>document.getElementById('copyright-year').textContent=new Date().getFullYear();</script>
             </div>
         </div>
     </footer>
     <script src="./src/js/main.js" defer></script>
-    <!-- Service Worker for advanced caching -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(function(registration) {
-                        console.log('SW registered: ', registration);
-                    })
-                    .catch(function(registrationError) {
-                        console.log('SW registration failed: ', registrationError);
-                    });
-            });
-        }
-    </script>
 </body>
 </html>
 
