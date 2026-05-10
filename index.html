@@ -2011,8 +2011,13 @@
             transition: border-color 0.3s ease;
         }
 
-        .masters-card:hover {
-            border-color: rgba(255, 91, 0, 0.45);
+        @media (hover: hover) {
+            .masters-card:hover {
+                border-color: rgba(255, 91, 0, 0.45);
+            }
+            .masters-card:hover::after {
+                opacity: 0.12;
+            }
         }
 
         /* diagonal stripe texture */
@@ -2044,10 +2049,6 @@
             opacity: 0.05;
             transition: opacity 0.3s ease;
             pointer-events: none;
-        }
-
-        .masters-card:hover::after {
-            opacity: 0.12;
         }
 
         .masters-lock-icon {
