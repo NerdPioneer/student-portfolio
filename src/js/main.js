@@ -79,58 +79,46 @@ function initAnalytics() {
 }
 
 // ==============================================
+// BODY SCROLL LOCK HELPERS (used by mobile menu)
+// ==============================================
+//
+// On iOS Safari, plain `overflow: hidden` on <body> does not actually lock
+// scroll. The standard fix is `position: fixed`, but that loses the
+// scroll position. We capture window.scrollY before locking, write it as a
+// negative `top` so the page visually stays put, then jump back to that
+// position when we unlock. The position/width/overflow rules live in CSS
+// (body.menu-open), so the JS only manages the dynamic top + the class.
+
+function lockBodyScroll() {
+    if (document.body.classList.contains('menu-open')) return;
+    const y = window.scrollY || window.pageYOffset || 0;
+    document.body.dataset.scrollY = String(y);
+    document.body.style.top = `-${y}px`;
+    document.body.classList.add('menu-open');
+}
+
+function unlockBodyScroll() {
+    if (!document.body.classList.contains('menu-open')) return;
+    const y = parseInt(document.body.dataset.scrollY || '0', 10);
+    document.body.classList.remove('menu-open');
+    document.body.style.top = '';
+    delete document.body.dataset.scrollY;
+    window.scrollTo(0, y);
+}
+
+// ==============================================
 // NAVBAR FUNCTIONALITY
 // ==============================================
 
 function initNavbar() {
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
     const hamburgerLines = document.querySelectorAll('.hamburger-line');
-    const navbar = document.querySelector('.desktop-nav');
-    
+
     if (!navToggle || !navMenu) {
         return;
     }
 
-    // Match the actual layout breakpoint (lg: in Tailwind = 1024px) instead of UA sniffing
-    const mobileQuery = window.matchMedia('(max-width: 1023px)');
-    const isMobile = mobileQuery.matches;
-    
-    // Enhanced navbar scroll effect
-    let lastScrollTop = 0;
-    function handleNavbarScroll() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (navbar) {
-            if (scrollTop > 100) {
-                navbar.classList.add('scrolled');
-                if (scrollTop > lastScrollTop && scrollTop > 200) {
-                    navbar.classList.add('hidden');
-                } else {
-                    navbar.classList.remove('hidden');
-                }
-            } else {
-                navbar.classList.remove('scrolled', 'hidden');
-            }
-        }
-        lastScrollTop = scrollTop;
-    }
-    
-    // Throttled scroll handler for better performance
-    let ticking = false;
-    function throttledScrollHandler() {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                handleNavbarScroll();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }
-    
-    window.addEventListener('scroll', throttledScrollHandler, { passive: true });
-    
     // Toggle mobile menu with enhanced animations
     function toggleMobileMenu(e) {
         e.preventDefault();
@@ -156,11 +144,8 @@ function initNavbar() {
                 line.style.transform = '';
                 line.style.opacity = '';
             });
-            
-            if (isMobile) {
-                document.body.style.overflow = '';
-                document.body.style.position = '';
-            }
+
+            unlockBodyScroll();
         } else {
             // Enhanced open animation
             navMenu.style.display = 'block';
@@ -195,11 +180,7 @@ function initNavbar() {
                 }
             });
             
-            if (isMobile) {
-                document.body.style.overflow = 'hidden';
-                document.body.style.position = 'fixed';
-                document.body.style.width = '100%';
-            }
+            lockBodyScroll();
         }
     }
     
@@ -239,12 +220,8 @@ function initNavbar() {
                     line.style.transform = '';
                     line.style.opacity = '';
                 });
-                
-                if (isMobile) {
-                    document.body.style.overflow = '';
-                    document.body.style.position = '';
-                    document.body.style.width = '';
-                }
+
+                unlockBodyScroll();
             }
         }, 250);
     });
@@ -397,13 +374,8 @@ function initSmoothScrolling() {
                     navMenu.style.opacity = '0';
                     navMenu.style.transform = 'translateY(-10px)';
                     
-                    // Reset body styles for mobile
-                    if (isMobile) {
-                        document.body.style.overflow = '';
-                        document.body.style.position = '';
-                        document.body.style.width = '';
-                    }
-                    
+                    unlockBodyScroll();
+
                     // Wait for menu to close, then scroll
                     setTimeout(() => {
                         // Recalculate position after menu closes
