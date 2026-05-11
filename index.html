@@ -1996,6 +1996,17 @@
             }
         }
 
+        /* ── Active nav link (current section) ── */
+        .nav-link.active {
+            color: #ff5b00;
+        }
+        /* Mobile drawer items get a softer background fill so the active state
+           reads at a glance even without color contrast assistance. */
+        .nav-menu .nav-link.active {
+            background-color: rgba(255, 91, 0, 0.10);
+            color: #ff5b00;
+        }
+
         /* ── Masters Degree (Locked / Future Goal) ── */
         .masters-card {
             background: #0A0A0A;
@@ -2241,8 +2252,8 @@
         <div class="container mx-auto px-4 lg:px-6">
             <div class="flex justify-between items-center py-4">
                 <div class="nav-brand">
-                    <a href="#home" class="flex items-center space-x-2 text-xl md:text-2xl font-bold text-white">
-                        <i class="fas fa-brain text-white" aria-label="Portfolio Home"></i>
+                    <a href="#home" class="flex items-center space-x-2 text-xl md:text-2xl font-bold text-white" aria-label="NerdPioneer — back to top">
+                        <i class="fas fa-brain text-white" aria-hidden="true"></i>
                     </a>
                 </div>
                 
@@ -2263,7 +2274,7 @@
                 
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden flex items-center gap-2">
-                    <button class="nav-toggle p-2 border border-gray-600 rounded-lg bg-black hover:bg-gray-900 transition-colors duration-200" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <button class="nav-toggle p-3 border border-gray-600 rounded-lg bg-black hover:bg-gray-900 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
                     <div class="w-6 h-6 flex flex-col justify-center">
                         <span class="hamburger-line block w-full h-0.5 bg-white mb-1 transition-all duration-300"></span>
                         <span class="hamburger-line block w-full h-0.5 bg-white mb-1 transition-all duration-300"></span>
@@ -2274,7 +2285,7 @@
             </div>
             
             <!-- Mobile Menu -->
-            <div class="nav-menu lg:hidden overflow-hidden transition-all duration-300 ease-in-out" style="max-height: 0;">
+            <div class="nav-menu lg:hidden overflow-hidden transition-all duration-300 ease-in-out" id="primary-navigation" style="max-height: 0;">
                 <div class="border-t border-gray-700 pt-4 pb-4">
                     <ul class="flex flex-col space-y-1">
                         <li><a href="#home" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Home</a></li>

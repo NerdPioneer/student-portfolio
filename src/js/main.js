@@ -92,8 +92,10 @@ function initNavbar() {
     if (!navToggle || !navMenu) {
         return;
     }
-    
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    // Match the actual layout breakpoint (lg: in Tailwind = 1024px) instead of UA sniffing
+    const mobileQuery = window.matchMedia('(max-width: 1023px)');
+    const isMobile = mobileQuery.matches;
     
     // Enhanced navbar scroll effect
     let lastScrollTop = 0;
@@ -1066,10 +1068,89 @@ function toggleMoreSkills() {
     }
 }
 
+// ==============================================
+// ACTIVE NAV-LINK HIGHLIGHTING
+// ==============================================
+//
+// Toggles `.active` + aria-current="location" on the nav link whose
+// href="#section-id" matches the section currently most visible in the
+// viewport. Uses one IntersectionObserver shared across desktop + mobile
+// menu items.
+
+function initActiveSection() {
+    const sectionIds = ['home', 'education', 'certifications', 'projects', 'notes'];
+    const sections = sectionIds
+        .map((id) => document.getElementById(id))
+        .filter(Boolean);
+    if (sections.length === 0) return;
+
+    // Group nav links by the hash they point to (works for both desktop and mobile menus)
+    const linksByTarget = new Map();
+    document.querySelectorAll('.nav-link[href^="#"]').forEach((link) => {
+        const id = link.getAttribute('href').slice(1);
+        if (!linksByTarget.has(id)) linksByTarget.set(id, []);
+        linksByTarget.get(id).push(link);
+    });
+    if (linksByTarget.size === 0) return;
+
+    // Track each section's current intersection ratio so we can pick the most-visible one
+    const ratios = new Map(sections.map((s) => [s.id, 0]));
+    let currentActive = null;
+
+    function setActive(id) {
+        if (id === currentActive) return;
+        currentActive = id;
+        linksByTarget.forEach((links, targetId) => {
+            const isActive = targetId === id;
+            links.forEach((link) => {
+                link.classList.toggle('active', isActive);
+                if (isActive) {
+                    link.setAttribute('aria-current', 'location');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+        });
+    }
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                ratios.set(entry.target.id, entry.intersectionRatio);
+            });
+            // Pick the section with the highest visible ratio (ties broken by document order)
+            let bestId = null;
+            let bestRatio = 0;
+            for (const id of sectionIds) {
+                const r = ratios.get(id) || 0;
+                if (r > bestRatio) {
+                    bestRatio = r;
+                    bestId = id;
+                }
+            }
+            if (bestId && bestRatio > 0.05) setActive(bestId);
+        },
+        {
+            // Multiple thresholds so we re-evaluate as sections scroll through
+            threshold: [0, 0.15, 0.35, 0.55, 0.75, 1],
+            // Discount the top 80px (where the navbar visually lives) so a section
+            // counts as "active" when its body fills the viewport, not when its
+            // top edge is hidden under future sticky-nav chrome.
+            rootMargin: '-80px 0px -40% 0px',
+        }
+    );
+
+    sections.forEach((s) => observer.observe(s));
+
+    // Default to "home" on initial load if nothing else has fired yet
+    setActive('home');
+}
+
 function initializeApp() {
     try {
         // Initialize enhanced components
         initNavbar();
+        initActiveSection();
         initCarousel();
         initSmoothScrolling();
         initHeroDropdown();
