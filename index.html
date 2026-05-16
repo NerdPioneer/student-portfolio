@@ -492,6 +492,18 @@
             2% { transform: translate(-1px, 2px); }
             3% { transform: translate(0); }
         }
+
+        /* Respect system motion preference — chromatic glitch is decorative */
+        @media (prefers-reduced-motion: reduce) {
+            .glitch-effect {
+                animation: none !important;
+            }
+            .glitch-effect::before,
+            .glitch-effect::after {
+                content: none !important;
+                display: none !important;
+            }
+        }
         
         /* Carousel Auto-rotation */
         .carousel-slide {
@@ -525,7 +537,6 @@
             letter-spacing: -0.035em;
             -webkit-font-smoothing: antialiased;
             text-shadow: none;
-            isolation: isolate;
         }
         
         /* About closing tagline — smaller type, extra visual weight */
@@ -888,13 +899,10 @@
             }
             
             .hero-title {
-                font-size: 1.5rem !important;
-                line-height: 1.2 !important;
                 margin-bottom: 1rem !important;
             }
             
             .hero-subtitle {
-                font-size: 0.875rem !important;
                 margin-bottom: 1.5rem !important;
             }
             
@@ -2438,7 +2446,7 @@
             <div class="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center min-h-[80dvh] lg:min-h-[70vh]">
                 <!-- LEFT SIDE: Content -->
                 <div class="hero-left order-2 lg:order-1 relative z-30 flex min-w-0 flex-col justify-center">
-                    <h1 class="hero-title text-center lg:text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-black tracking-tight leading-tight mb-4 md:mb-6 text-balance">
+                    <h1 class="hero-title text-center lg:text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-black tracking-tight leading-tight mb-4 md:mb-6 text-balance">
                         NAVIGATE THE DIGITAL LANDSCAPE<br class="md:hidden" aria-hidden="true"> WITH CONFIDENCE
                     </h1>
                     <h2 class="hero-subtitle text-center lg:text-left text-base sm:text-lg md:text-xl text-black mb-6 md:mb-8 font-medium uppercase tracking-wider">
