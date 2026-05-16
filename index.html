@@ -518,18 +518,14 @@
             transform: scale(1.1);
         }
         
-        /* Hero headline — reads heavier than font-black alone (Sora maxes at 900) */
+        /* Hero headline — weight from font-black; avoid multi-offset text-shadow
+           at large sizes (can read as horizontal “cuts” on some displays). */
         .hero-title {
             font-weight: 900 !important;
             letter-spacing: -0.035em;
             -webkit-font-smoothing: antialiased;
-            text-shadow:
-                0.65px 0 0 currentColor,
-                -0.65px 0 0 currentColor,
-                0 0.5px 0 currentColor,
-                0 -0.5px 0 currentColor,
-                1px 0 0 currentColor,
-                -1px 0 0 currentColor;
+            text-shadow: none;
+            isolation: isolate;
         }
         
         /* About closing tagline — smaller type, extra visual weight */
@@ -791,8 +787,9 @@
                 max-width: 280px;
             }
             .hero-title {
-                line-height: 1.1;
-                letter-spacing: -0.03em;
+                line-height: 1.12;
+                letter-spacing: -0.02em;
+                text-wrap: balance;
             }
             .hero-description {
                 font-size: 0.95rem;
@@ -811,6 +808,8 @@
             }
             .hero-title {
                 margin-bottom: 0.5rem !important;
+                letter-spacing: -0.015em;
+                text-wrap: balance;
             }
             .hero-subtitle {
                 margin-bottom: 0.75rem !important;
@@ -2438,9 +2437,9 @@
         <div class="container mx-auto px-4 md:px-6 relative z-20">
             <div class="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center min-h-[80dvh] lg:min-h-[70vh]">
                 <!-- LEFT SIDE: Content -->
-                <div class="hero-left order-2 lg:order-1 relative z-30 flex flex-col justify-center">
-                    <h1 class="hero-title text-center lg:text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-black tracking-tight leading-tight mb-4 md:mb-6 glitch-effect" data-text="NAVIGATE THE DIGITAL LANDSCAPE WITH CONFIDENCE">
-                        NAVIGATE THE DIGITAL LANDSCAPE WITH CONFIDENCE
+                <div class="hero-left order-2 lg:order-1 relative z-30 flex min-w-0 flex-col justify-center">
+                    <h1 class="hero-title text-center lg:text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-black tracking-tight leading-tight mb-4 md:mb-6 text-balance">
+                        NAVIGATE THE DIGITAL LANDSCAPE<br class="md:hidden" aria-hidden="true"> WITH CONFIDENCE
                     </h1>
                     <h2 class="hero-subtitle text-center lg:text-left text-base sm:text-lg md:text-xl text-black mb-6 md:mb-8 font-medium uppercase tracking-wider">
                         EZEKIEL A. OBEISUN JR
