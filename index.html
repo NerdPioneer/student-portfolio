@@ -1958,6 +1958,55 @@
     <link rel="stylesheet" href="./dist/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Hero layout must load after Tailwind so mobile padding/alignment win over utility classes -->
+    <style>
+        .hero {
+            align-items: center;
+            padding-top: 6rem;
+        }
+        @media (min-width: 768px) {
+            .hero { padding-top: 5.5rem; }
+        }
+        @media (min-width: 1024px) {
+            .hero { padding-top: 7rem; }
+        }
+        @media (max-width: 1023px) {
+            .hero {
+                align-items: flex-start !important;
+                padding-top: 8.5rem !important;
+                padding-bottom: 2.5rem !important;
+            }
+            .hero-grid {
+                min-height: 0 !important;
+                padding-top: 0.75rem;
+                gap: 1.5rem !important;
+            }
+            .carousel-container {
+                width: 100% !important;
+                max-width: 260px !important;
+                height: auto !important;
+                aspect-ratio: 1 / 1 !important;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        @media (max-width: 640px) {
+            .hero {
+                padding-top: 8.25rem !important;
+            }
+            .carousel-container {
+                max-width: 236px !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero {
+                padding-top: 8rem !important;
+            }
+            .carousel-container {
+                max-width: 220px !important;
+            }
+        }
+    </style>
     
     <!-- Umami Analytics - Privacy-first analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="8b3ba511-c136-4ad6-a865-e52377204787"></script>
@@ -2034,7 +2083,7 @@
     
     <main id="main-content">
     <!-- Hero Section -->
-    <section id="home" class="hero min-h-[100dvh] md:min-h-screen flex items-center relative pt-28 md:pt-20 lg:pt-32 bg-gray-50 overflow-hidden" role="banner">
+    <section id="home" class="hero min-h-[100dvh] md:min-h-screen flex relative bg-gray-50 overflow-hidden" role="banner">
         <!-- Floating Technology Icons Background -->
         <div class="floating-icons absolute inset-0 z-0 pointer-events-none">
             <!-- AWS -->
