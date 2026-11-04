@@ -593,8 +593,8 @@
         /* Mobile hero: clear fixed nav, keep photo fully visible and centered */
         @media (max-width: 1023px) {
             .hero {
-                /* Nav is fixed (~4.5–5rem). Pad enough that the photo never sits under it. */
-                padding-top: 6rem;
+                /* Nav is fixed (~4.5–5rem). Extra air so the photo is clearly below it. */
+                padding-top: 7.25rem;
                 padding-bottom: 2.5rem;
                 align-items: flex-start;
                 justify-content: flex-start;
@@ -602,8 +602,8 @@
             .hero-grid {
                 min-height: auto;
                 width: 100%;
-                gap: 1.25rem !important;
-                padding-top: 0.75rem;
+                gap: 1.5rem !important;
+                padding-top: 0.25rem;
             }
             .hero-left, .hero-right {
                 position: relative;
@@ -660,12 +660,12 @@
 
         @media (max-width: 640px) {
             .hero {
-                padding-top: 5.75rem;
+                padding-top: 7rem;
                 padding-bottom: 2rem;
             }
             .hero-grid {
-                gap: 1rem !important;
-                padding-top: 0.5rem;
+                gap: 1.25rem !important;
+                padding-top: 0.25rem;
             }
             .carousel-container {
                 max-width: 240px;
@@ -678,7 +678,7 @@
         
         @media (max-width: 480px) {
             .hero {
-                padding-top: 5.5rem;
+                padding-top: 6.75rem;
                 min-height: 100dvh;
             }
             
@@ -2034,7 +2034,7 @@
     
     <main id="main-content">
     <!-- Hero Section -->
-    <section id="home" class="hero min-h-[100dvh] md:min-h-screen flex items-center relative pt-24 md:pt-20 lg:pt-32 bg-gray-50 overflow-hidden" role="banner">
+    <section id="home" class="hero min-h-[100dvh] md:min-h-screen flex items-center relative pt-28 md:pt-20 lg:pt-32 bg-gray-50 overflow-hidden" role="banner">
         <!-- Floating Technology Icons Background -->
         <div class="floating-icons absolute inset-0 z-0 pointer-events-none">
             <!-- AWS -->
