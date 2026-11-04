@@ -1050,7 +1050,7 @@ function toggleMoreSkills() {
 // menu items.
 
 function initActiveSection() {
-    const sectionIds = ['home', 'education', 'certifications', 'projects', 'notes'];
+    const sectionIds = ['home', 'about', 'inquiry', 'work', 'notes', 'education', 'credentials'];
     const sections = sectionIds
         .map((id) => document.getElementById(id))
         .filter(Boolean);
@@ -1129,16 +1129,9 @@ function initializeApp() {
         initMobileHeightFixes();
         initIntersectionObserver();
         initBackToTop();
-        initRotatingQuotes();
-        
+
         // Initialize analytics tracking
         initAnalytics();
-        
-        // Initialize skills toggle
-        const toggle = document.querySelector('.more-skills-toggle');
-        if (toggle) {
-            toggle.addEventListener('click', toggleMoreSkills);
-        }
     } catch (error) {
         console.error('Error during initialization:', error);
     }

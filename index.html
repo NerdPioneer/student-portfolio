@@ -3,2088 +3,870 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <!-- Force HTTPS on production (LinkedIn / mobile WebViews respect the final URL; this fixes legacy http:// bookmarks). Dev: localhost unchanged. -->
     <script>
     (function () {
       if (location.protocol === 'https:' || location.protocol === 'file:') return;
       var h = location.hostname;
       if (h === 'localhost' || h === '127.0.0.1' || h === '[::1]') return;
-      if (!/(^|\.)nerdpioneer\.com$/i.test(h)) return;
+      if (!/(^|\.)(nerdpioneer\.com|1percentnerd\.com)$/i.test(h)) return;
       location.replace('https://' + h + location.pathname + location.search + location.hash);
     })();
     </script>
     <meta name="format-detection" content="telephone=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Ezekiel A. Obeisun Jr">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="msapplication-navbutton-color" content="#ffffff">
-    
-    <!-- Safari-specific meta tags -->
-    <meta name="apple-touch-fullscreen" content="yes">
-    <meta name="apple-mobile-web-app-orientations" content="portrait">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    
-    <!-- Additional Safari compatibility -->
-    <meta http-equiv="cleartype" content="on">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- PWA Support for Safari -->
-    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='number-grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%232563eb;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%231d4ed8;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23number-grad)' stroke='%23ffffff' stroke-width='2'/%3E%3Ctext x='50' y='70' font-family='Arial Black, sans-serif' font-size='60' font-weight='900' fill='white' text-anchor='middle' dominant-baseline='middle'%3E1%3C/text%3E%3C/svg%3E">
-    <link rel="mask-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='black'/%3E%3Ctext x='50' y='70' font-family='Arial Black, sans-serif' font-size='60' font-weight='900' fill='white' text-anchor='middle' dominant-baseline='middle'%3E1%3C/text%3E%3C/svg%3E" color="#2563eb">
-    
-    <!-- Theme color for browser UI chrome -->
-    <meta name="msapplication-TileColor" content="#2563eb">
-
-    <title>Ezekiel A. Obeisun Jr | Cybersecurity Professional | NerdPioneer</title>
-    <meta name="description" content="Ezekiel A. Obeisun Jr (NerdPioneer): Cybersecurity professional. B.S. Cloud Computing (WGU). Accepted to Georgia Tech M.S. in Cybersecurity, policy track (Spring 2027). Focus: security operations, cloud security, and IAM.">
-    <meta name="author" content="Ezekiel A. Obeisun Jr">
-    <meta name="application-name" content="NerdPioneer Portfolio">
+    <meta name="theme-color" content="#0B1F3A">
+    <title>Ezekiel A. Obeisun Jr. | Cybersecurity, Policy and Risk</title>
+    <meta name="description" content="Cybersecurity professional admitted to Georgia Tech M.S. in Cybersecurity, Policy track (spring 2027). B.S. Cloud Computing; independent technical work and writing on security, policy and risk.">
+    <meta name="author" content="Ezekiel A. Obeisun Jr.">
     <meta name="robots" content="index, follow">
-
-    <!-- Security headers (also configure HTTP→HTTPS redirect + HSTS at the host) -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://www.nerdpioneer.com/">
-    <link rel="alternate" href="https://www.nerdpioneer.com/" hreflang="en" />
-
-    <!-- Favicon - "1% Better Every Day" themed -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='number-grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%232563eb;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%231d4ed8;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23number-grad)' stroke='%23ffffff' stroke-width='2'/%3E%3Ctext x='50' y='70' font-family='Arial Black, sans-serif' font-size='60' font-weight='900' fill='white' text-anchor='middle' dominant-baseline='middle'%3E1%3C/text%3E%3C/svg%3E">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Ezekiel A. Obeisun Jr | Cybersecurity Professional | NerdPioneer">
-    <meta property="og:description" content="Cybersecurity professional. B.S. Cloud Computing (WGU). Accepted to Georgia Tech M.S. in Cybersecurity (Spring 2027). Cloud security projects and industry certifications.">
+    <link rel="canonical" href="https://www.1percentnerd.com/">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%230B1F3A'/%3E%3Ctext x='50' y='68' font-family='Georgia, serif' font-size='48' font-weight='700' fill='white' text-anchor='middle'%3E1%3C/text%3E%3C/svg%3E">
+    <meta property="og:title" content="Ezekiel A. Obeisun Jr. | Cybersecurity, Policy and Risk">
+    <meta property="og:description" content="Cybersecurity professional admitted to Georgia Tech M.S. in Cybersecurity, Policy track (spring 2027). Independent technical work and writing on security, policy and risk.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.nerdpioneer.com/">
-    <meta property="og:image" content="https://www.nerdpioneer.com/public/images/og-card.jpg">
+    <meta property="og:url" content="https://www.1percentnerd.com/">
+    <meta property="og:image" content="https://www.1percentnerd.com/public/images/og-card.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Ezekiel A. Obeisun Jr - NerdPioneer portfolio image">
-    <meta property="og:site_name" content="NerdPioneer - Portfolio">
+    <meta property="og:site_name" content="Ezekiel A. Obeisun Jr.">
     <meta property="og:locale" content="en_US">
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@nerdpioneer">
-    <meta name="twitter:creator" content="@nerdpioneer">
-    <meta name="twitter:title" content="Ezekiel A. Obeisun Jr | Cybersecurity Professional | NerdPioneer">
-    <meta name="twitter:description" content="Cybersecurity professional. B.S. Cloud Computing (WGU). Accepted to Georgia Tech M.S. in Cybersecurity (Spring 2027). Cloud security projects and industry certifications.">
-    <meta name="twitter:image" content="https://www.nerdpioneer.com/public/images/og-card.jpg">
-    <meta name="twitter:image:alt" content="Ezekiel A. Obeisun Jr - NerdPioneer portfolio image">
-
-    <!-- LinkedIn / Profile metadata -->
-    <meta property="article:author" content="https://www.linkedin.com/in/ezekielobeisun/">
-    <meta property="profile:first_name" content="Ezekiel">
-    <meta property="profile:last_name" content="Obeisun">
-    <meta property="profile:middle_name" content="A">
-    <meta property="profile:username" content="ezekielobeisun">
-
-    <!-- Geographic SEO -->
-    <meta name="geo.region" content="US">
-    <meta name="geo.placename" content="United States">
-
-    <!-- Schema.org JSON-LD -->
+    <meta name="twitter:title" content="Ezekiel A. Obeisun Jr. | Cybersecurity, Policy and Risk">
+    <meta name="twitter:description" content="Cybersecurity professional admitted to Georgia Tech M.S. in Cybersecurity, Policy track (spring 2027).">
+    <meta name="twitter:image" content="https://www.1percentnerd.com/public/images/og-card.jpg">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "NerdPioneer",
-      "alternateName": ["Ezekiel A. Obeisun Jr", "Ezekiel A Obeisun Jr", "Ezekiel Obeisun Jr", "Ezekiel Obeisun", "Ezekiel Akin Obeisun", "Akin Obeisun", "Akin", "Obeisun"],
-      "givenName": "Ezekiel",
-      "familyName": "Obeisun",
-      "additionalName": ["Jr", "A"],
-      "middleName": "A",
-      "nickname": "NerdPioneer",
-      "brand": "NerdPioneer",
-      "url": "https://www.nerdpioneer.com/",
-      "image": "https://www.nerdpioneer.com/public/images/profile_1.jpg",
+      "name": "Ezekiel A. Obeisun Jr.",
+      "url": "https://www.1percentnerd.com/",
+      "image": "https://www.1percentnerd.com/public/images/profile_1.jpg",
       "sameAs": [
         "https://www.linkedin.com/in/ezekielobeisun/",
         "https://github.com/NerdPioneer",
+        "https://nerdpioneer.substack.com/",
         "https://medium.com/@nerdpioneer"
       ],
       "jobTitle": "Cybersecurity Professional",
-      "alumniOf": [
-        {
-          "@type": "CollegeOrUniversity",
-          "name": "Western Governors University"
-        }
-      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Western Governors University"
+      },
       "knowsAbout": [
         "Cybersecurity",
-        "Security Operations",
-        "Cloud Security",
-        "Amazon Web Services",
-        "AWS Security",
-        "Python",
-        "Identity and Access Management",
-        "Network Security",
-        "Microsoft Azure",
-        "Threat Analysis",
-        "Linux Administration"
+        "Cybersecurity governance",
+        "Technology policy",
+        "Risk management",
+        "Cloud security",
+        "Identity and Access Management"
       ],
-      "description": "Cybersecurity professional with a B.S. in Cloud Computing (WGU). Accepted to the Georgia Institute of Technology M.S. in Cybersecurity, policy track (Spring 2027).",
-      "slogan": "1% Better Every Day",
-      "hasOccupation": {
-        "@type": "Occupation",
-        "name": "Cybersecurity Professional",
-        "description": "Cloud security, security operations, identity and access, and continuous professional development toward leadership in cybersecurity."
-      },
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "Degree",
-          "name": "Bachelor of Science in Cloud Computing",
-          "recognizedBy": {
-            "@type": "CollegeOrUniversity",
-            "name": "Western Governors University"
-          },
-          "educationalLevel": "Bachelor's Degree",
-          "inLanguage": "en-US"
-        },
-        {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "Degree",
-          "name": "Master of Science in Cybersecurity (Accepted)",
-          "recognizedBy": {
-            "@type": "CollegeOrUniversity",
-            "name": "Georgia Institute of Technology"
-          },
-          "educationalLevel": "Master's Degree",
-          "inLanguage": "en-US"
-        }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "US"
-      },
-      "nationality": "American",
-      "gender": "Male"
+      "description": "Cybersecurity professional with a B.S. in Cloud Computing from Western Governors University; admitted to Georgia Institute of Technology M.S. in Cybersecurity, Policy track, beginning spring 2027."
     }
     </script>
-    
-    <!-- Website Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "NerdPioneer - Portfolio",
-      "alternateName": "NerdPioneer",
-      "url": "https://www.nerdpioneer.com/",
-      "description": "Professional site of Ezekiel A. Obeisun Jr (NerdPioneer): cybersecurity professional; B.S. Cloud Computing; accepted to Georgia Tech M.S. in Cybersecurity; certifications and applied security projects.",
-      "author": {
-        "@type": "Person",
-        "name": "Ezekiel A. Obeisun Jr",
-        "alternateName": ["Ezekiel A Obeisun Jr", "Ezekiel Obeisun Jr", "Ezekiel Obeisun", "Ezekiel Akin Obeisun", "Akin Obeisun", "NerdPioneer", "1PercentNerd", "Obeisun"]
-      },
-      "publisher": {
-        "@type": "Person",
-        "name": "Ezekiel A. Obeisun Jr"
-      }
-    }
-    </script>
-    
-    <!-- Educational Program Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalProgram",
-      "name": "Cloud Computing Bachelor's Degree",
-      "provider": {
-        "@type": "CollegeOrUniversity",
-        "name": "Western Governors University",
-        "url": "https://www.wgu.edu"
-      },
-      "description": "Bachelor's degree program in Cloud Computing with emphasis on cloud security, networking, IAM, IT operations, and automation.",
-      "educationalLevel": "Bachelor's Degree",
-      "inLanguage": "en-US",
-      "timeRequired": "P4Y",
-      "teaches": [
-        "Cloud Computing",
-        "Network Engineering",
-        "Routing and Switching",
-        "Cyber Security",
-        "IT Operations",
-        "AWS",
-        "Microsoft Azure",
-        "Linux Administration",
-        "Python Programming"
-      ]
-    }
-    </script>
-    
-    <!-- Organization Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "NerdPioneer",
-      "alternateName": "NerdPioneer",
-      "url": "https://www.nerdpioneer.com/",
-      "logo": "https://www.nerdpioneer.com/public/images/profile_1.jpg",
-      "description": "Personal brand of Ezekiel A. Obeisun Jr (NerdPioneer): cybersecurity professional; cloud security focus; Georgia Tech M.S. in Cybersecurity (accepted, Spring 2027).",
-      "founder": {
-        "@type": "Person",
-        "name": "NerdPioneer",
-        "alternateName": "Ezekiel A. Obeisun Jr"
-      },
-      "slogan": "1% Better Every Day"
-    }
-    </script>
-    
-    <!-- Profile Page Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfilePage",
-      "name": "Ezekiel A. Obeisun Jr Portfolio Profile",
-      "url": "https://www.nerdpioneer.com/",
-      "description": "Professional portfolio for Ezekiel A. Obeisun Jr (NerdPioneer): cybersecurity professional; B.S. Cloud Computing; accepted to Georgia Tech M.S. in Cybersecurity; CySA+, Security+, AWS Security Specialty and related credentials.",
-      "mainEntity": {
-        "@type": "Person",
-        "name": "Ezekiel A. Obeisun Jr",
-        "alternateName": "NerdPioneer",
-        "jobTitle": "Cybersecurity Professional",
-        "alumniOf": {
-          "@type": "CollegeOrUniversity",
-          "name": "Western Governors University"
-        },
-        "knowsAbout": [
-          "Cybersecurity",
-          "Security Operations",
-          "Cloud Security",
-          "Amazon Web Services",
-          "Python",
-          "Identity and Access Management",
-          "Microsoft Azure"
-        ],
-        "url": "https://www.nerdpioneer.com/"
-      },
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "NerdPioneer - Portfolio",
-        "url": "https://www.nerdpioneer.com/"
-      }
-    }
-    </script>
-    
-    <!-- Enhanced Resource Hints -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="./dist/styles.css" as="style">
-    <link rel="preload" href="./src/js/main.js" as="script">
     <link rel="preload" href="./public/images/profile_1.webp" as="image" type="image/webp">
-    
-    <!-- Critical CSS -->
-    <style>
-        :root{--primary-color:#2563eb;--primary-600:#2563eb}
-        
-        /* Keep document scaling at default to avoid scroll/whitespace artifacts */
-        html, body {
-            width: 100%;
-            height: auto;
-        }
-        
-        /* Safari and cross-browser normalization */
-        * {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-        
-        body{
-            font-family:'Inter',sans-serif;
-            margin:0;
-            background:#FFFFFF;
-            color:#000000;
-            -webkit-font-smoothing:antialiased;
-            -moz-osx-font-smoothing:grayscale;
-            text-rendering:optimizeLegibility;
-            overflow-x:hidden;
-            -webkit-overflow-scrolling:touch;
-            overscroll-behavior:none;
-            -webkit-overscroll-behavior:none;
-            -ms-overflow-style: -ms-autohiding-scrollbar;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Sora', sans-serif;
-        }
-        
-        html{
-            scroll-behavior:smooth;
-            -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-            -moz-text-size-adjust: 100%;
-        }
-        
-        /* Safari smooth scrolling fallback */
-        @media screen and (-webkit-min-device-pixel-ratio:0) {
-            html { scroll-behavior: auto; }
-        }
-        
-        *{scroll-behavior:smooth}
-        
-        .loading-overlay{
-            position:fixed;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            background:#000000;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            z-index:10000;
-            transition:opacity 0.5s ease;
-            -webkit-transition:opacity 0.5s ease;
-            -moz-transition:opacity 0.5s ease;
-        }
-        
-        .loading-hidden{opacity:0;pointer-events:none}
-        
-        .hero{
-            min-height:100vh;
-            min-height:-webkit-fill-available;
-            min-height:-moz-available;
-            min-height:fill-available;
-            display:flex;
-            display:-webkit-flex;
-            display:-moz-flex;
-            align-items:center;
-            -webkit-align-items:center;
-            -moz-align-items:center;
-            background:#FFFFFF;
-            /* Clear fixed navbar; mobile media queries refine this further */
-            padding-top:6rem;
-        }
-        
-        .container{max-width:1200px;margin:0 auto;padding:0 1rem}
-        
-        /* Mobile scroll fixes - Safari specific */
-        @supports (-webkit-appearance: none) {
-            body, .desktop-nav {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0);
-                -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
-            }
-        }
-        
-        /* iOS Safari viewport fixes */
-        @supports (-webkit-touch-callout: none) {
-            .hero {
-                min-height: -webkit-fill-available;
-            }
-        }
-        
-        /* Prevent scroll when mobile menu is open */
-        body.menu-open {
-            position: fixed !important;
-            width: 100% !important;
-            overflow: hidden !important;
-            -webkit-overflow-scrolling: auto !important;
-        }
-        
-        /* Mobile touch improvements - Safari optimized */
-        button, a {
-            -webkit-tap-highlight-color: transparent;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            touch-action: manipulation;
-            -webkit-touch-callout: none;
-        }
-        
-        /* Hardware acceleration for smooth animations */
-        .hero-description-dropdown, .nav-menu, .carousel-container {
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            will-change: transform, opacity, max-height;
-            -webkit-perspective: 1000px;
-            perspective: 1000px;
-        }
-        
-        /* Cross-browser button styling */
-        button {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            border: none;
-            background: none;
-            cursor: pointer;
-        }
-        
-        /* Safari form input fixes */
-        input, textarea, select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            border-radius: 0;
-            -webkit-border-radius: 0;
-            -moz-border-radius: 0;
-        }
-        
-        @media (min-width:768px){
-            .container{padding:0 2rem}
-            .hero{padding-top:6rem}
-        }
-        @media (min-width:1024px){
-            .hero{padding-top:7rem}
-        }
-        
-        /* Glitch Effect */
-        .glitch-effect {
-            position: relative;
-            animation: glitch 3s infinite;
-        }
-        .glitch-effect:before,
-        .glitch-effect:after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.8;
-        }
-        .glitch-effect:before {
-            animation: glitch-1 0.3s infinite;
-            color: #ff0000;
-            z-index: -1;
-        }
-        .glitch-effect:after {
-            animation: glitch-2 0.3s infinite;
-            color: #00ff00;
-            z-index: -2;
-        }
-        @keyframes glitch {
-            0%, 99% { transform: translate(0); }
-            1% { transform: translate(2px, -1px); }
-            2% { transform: translate(-1px, 2px); }
-            3% { transform: translate(0); }
-        }
-        @keyframes glitch-1 {
-            0%, 99% { transform: translate(0); }
-            1% { transform: translate(-2px, 1px); }
-            2% { transform: translate(2px, -1px); }
-            3% { transform: translate(0); }
-        }
-        @keyframes glitch-2 {
-            0%, 99% { transform: translate(0); }
-            1% { transform: translate(1px, -2px); }
-            2% { transform: translate(-1px, 2px); }
-            3% { transform: translate(0); }
-        }
-
-        /* Respect system motion preference — chromatic glitch is decorative */
-        @media (prefers-reduced-motion: reduce) {
-            .glitch-effect {
-                animation: none !important;
-            }
-            .glitch-effect::before,
-            .glitch-effect::after {
-                content: none !important;
-                display: none !important;
-            }
-        }
-        
-        /* Carousel Auto-rotation */
-        .carousel-slide {
-            transition: opacity 0.8s ease-in-out;
-            opacity: 0;
-        }
-        .carousel-slide.active {
-            opacity: 1;
-        }
-        
-        /* Carousel dots styling */
-        .carousel-dot {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .carousel-dot.active {
-            background-color: white !important;
-            transform: scale(1.2);
-        }
-        
-        .carousel-dot:hover {
-            background-color: white !important;
-            transform: scale(1.1);
-        }
-        
-        /* Hero headline — weight from font-black; avoid multi-offset text-shadow
-           at large sizes (can read as horizontal “cuts” on some displays). */
-        .hero-title {
-            font-weight: 900 !important;
-            letter-spacing: -0.035em;
-            -webkit-font-smoothing: antialiased;
-            text-shadow: none;
-        }
-        
-        /* About closing tagline — smaller type, extra visual weight */
-        .about-closing-tagline span {
-            font-weight: 900 !important;
-            -webkit-font-smoothing: antialiased;
-            text-shadow:
-                0.4px 0 0 currentColor,
-                -0.4px 0 0 currentColor,
-                0 0.3px 0 currentColor,
-                0 -0.3px 0 currentColor,
-                0.65px 0 0 currentColor,
-                -0.65px 0 0 currentColor;
-        }
-
-        /* About — plain prose (aligned with Education/Projects section headers) */
-        .about-copy {
-            font-size: 1.125rem;
-            line-height: 1.75;
-            color: #374151;
-        }
-        .about-copy p + p {
-            margin-top: 1rem;
-        }
-        .about-verse {
-            margin-top: 1.5rem;
-            font-size: 0.875rem;
-            line-height: 1.6;
-            color: #6B7280;
-            font-style: italic;
-        }
-        @media (max-width: 640px) {
-            .about-copy {
-                font-size: 1rem;
-                line-height: 1.7;
-            }
-        }
-
-        
-        /* Responsive Grid Fixes */
-        @media (max-width: 768px) {
-            .hero-buttons {
-                width: 100%;
-            }
-            .hero-buttons a {
-                width: 100%;
-                max-width: 280px;
-            }
-            .hero-title {
-                line-height: 1.12;
-                letter-spacing: -0.02em;
-                text-wrap: balance;
-            }
-            .hero-description {
-                font-size: 0.95rem;
-            }
-        }
-        
-        /* Mobile hero: clear fixed nav, keep photo fully visible and centered */
-        @media (max-width: 1023px) {
-            .hero {
-                /* Nav is fixed (~4.5–5rem). Extra air so the photo is clearly below it. */
-                padding-top: 7.25rem;
-                padding-bottom: 2.5rem;
-                align-items: flex-start;
-                justify-content: flex-start;
-            }
-            .hero-grid {
-                min-height: auto;
-                width: 100%;
-                gap: 1.5rem !important;
-                padding-top: 0.25rem;
-            }
-            .hero-left, .hero-right {
-                position: relative;
-                z-index: 10;
-                width: 100%;
-            }
-            .hero-image-container {
-                padding-top: 0 !important;
-                width: 100%;
-            }
-            .profile-carousel {
-                margin-left: auto;
-                margin-right: auto;
-                margin-bottom: 0.25rem;
-            }
-            .carousel-container {
-                width: 100% !important;
-                max-width: 280px;
-                height: auto !important;
-                aspect-ratio: 1 / 1 !important;
-                margin: 0 auto;
-                box-shadow: 0 16px 28px -8px rgba(0, 0, 0, 0.18);
-                border: 3px solid rgba(255, 255, 255, 0.85);
-            }
-            .aspect-square {
-                aspect-ratio: 1 / 1 !important;
-            }
-            .hero-title {
-                margin-bottom: 0.75rem !important;
-                letter-spacing: -0.015em;
-                text-wrap: balance;
-            }
-            .hero-subtitle {
-                margin-bottom: 0 !important;
-            }
-            .floating-icons {
-                z-index: 1;
-            }
-            .floating-icon {
-                opacity: 0.18 !important;
-                font-size: 1rem !important;
-            }
-            .notes-card {
-                display: flex !important;
-                visibility: visible !important;
-                opacity: 1 !important;
-            }
-            #notes .grid {
-                display: grid !important;
-                grid-template-columns: 1fr !important;
-                gap: 2rem !important;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .hero {
-                padding-top: 7rem;
-                padding-bottom: 2rem;
-            }
-            .hero-grid {
-                gap: 1.25rem !important;
-                padding-top: 0.25rem;
-            }
-            .carousel-container {
-                max-width: 240px;
-            }
-            .hero-buttons {
-                gap: 0.75rem !important;
-                margin-top: 1.5rem !important;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero {
-                padding-top: 6.75rem;
-                min-height: 100dvh;
-            }
-            
-            .carousel-container {
-                max-width: 220px;
-            }
-            
-            .hero-title {
-                margin-bottom: 0.75rem !important;
-            }
-            
-            .hero-subtitle .normal-case {
-                text-transform: none !important;
-            }
-            
-            
-            .notes-card {
-                padding: 1.5rem !important;
-            }
-            
-            /* Mobile text sizing for notes cards */
-            .notes-card h3 {
-                font-size: 1.5rem !important;
-            }
-            
-            .notes-card .text-base {
-                font-size: 0.9375rem !important;
-                line-height: 1.6 !important;
-            }
-
-            #notes .substack-accent-card {
-                padding: 1.25rem !important;
-            }
-
-            #notes .substack-accent-card h3 {
-                font-size: 1.375rem !important;
-                line-height: 1.25 !important;
-            }
-        }
-        
-        /* Enhanced floating icons animation and positioning */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg) scale(1); }
-            10% { transform: translateY(-8px) translateX(5px) rotate(2deg) scale(1.05); }
-            20% { transform: translateY(-12px) translateX(-3px) rotate(-1deg) scale(0.98); }
-            30% { transform: translateY(-6px) translateX(8px) rotate(3deg) scale(1.02); }
-            40% { transform: translateY(-15px) translateX(-5px) rotate(-2deg) scale(0.95); }
-            50% { transform: translateY(-10px) translateX(3px) rotate(1deg) scale(1.03); }
-            60% { transform: translateY(-18px) translateX(-8px) rotate(-3deg) scale(0.97); }
-            70% { transform: translateY(-8px) translateX(6px) rotate(2deg) scale(1.04); }
-            80% { transform: translateY(-14px) translateX(-4px) rotate(-1deg) scale(0.99); }
-            90% { transform: translateY(-5px) translateX(7px) rotate(2deg) scale(1.01); }
-        }
-        
-        /* Additional movement patterns for variety */
-        @keyframes float2 {
-            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg) scale(1); }
-            15% { transform: translateY(-10px) translateX(-6px) rotate(-2deg) scale(1.03); }
-            30% { transform: translateY(-16px) translateX(4px) rotate(1deg) scale(0.96); }
-            45% { transform: translateY(-7px) translateX(-8px) rotate(3deg) scale(1.05); }
-            60% { transform: translateY(-13px) translateX(5px) rotate(-1deg) scale(0.98); }
-            75% { transform: translateY(-9px) translateX(-7px) rotate(2deg) scale(1.02); }
-            90% { transform: translateY(-17px) translateX(3px) rotate(-2deg) scale(0.97); }
-        }
-        
-        @keyframes float3 {
-            0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg) scale(1); }
-            20% { transform: translateY(-11px) translateX(7px) rotate(1deg) scale(1.04); }
-            40% { transform: translateY(-19px) translateX(-4px) rotate(-3deg) scale(0.95); }
-            60% { transform: translateY(-6px) translateX(9px) rotate(2deg) scale(1.06); }
-            80% { transform: translateY(-14px) translateX(-6px) rotate(-1deg) scale(0.98); }
-        }
-        
-        .floating-icon {
-            animation: float 8s ease-in-out infinite;
-        }
-        
-        /* Stagger animation delays and different patterns for variety */
-        .floating-icon:nth-child(3n) {
-            animation: float2 9s ease-in-out infinite;
-        }
-        
-        .floating-icon:nth-child(3n+1) {
-            animation: float3 7s ease-in-out infinite;
-        }
-        
-        .floating-icon:nth-child(3n+2) {
-            animation: float 10s ease-in-out infinite;
-        }
-        
-        /* Make icons more visible on mobile */
-        @media (max-width: 768px) {
-            .floating-icon {
-                opacity: 0.3 !important;
-                font-size: 1.5rem !important;
-            }
-            
-            /* Pin a few icons to predictable corner positions on mobile.
-               Only target the first 6 children — beyond that we let the
-               desktop positions ride so additions/removals don't desync. */
-            .floating-icons div:nth-child(1) { top: 10% !important; left: 15% !important; }
-            .floating-icons div:nth-child(2) { top: 20% !important; right: 10% !important; }
-            .floating-icons div:nth-child(3) { top: 75% !important; left: 10% !important; }
-            .floating-icons div:nth-child(4) { top: 80% !important; right: 15% !important; }
-            .floating-icons div:nth-child(5) { top: 30% !important; right: 5% !important; }
-            .floating-icons div:nth-child(6) { top: 85% !important; left: 20% !important; }
-        }
-        
-        /* Browser-specific theme color fallbacks */
-        @supports not (color: var(--primary-color)) {
-            .bg-primary-600 { background-color: #2563eb !important; }
-            .text-primary-600 { color: #2563eb !important; }
-            .border-primary-600 { border-color: #2563eb !important; }
-        }
-        
-        /* Safari mobile image loading fixes */
-        .carousel-slide img {
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-        }
-        
-        /* Back to Top Button Styles */
-        .back-to-top {
-            position: fixed !important;
-            bottom: 20px !important;
-            right: 20px !important;
-            width: 50px !important;
-            height: 50px !important;
-            border-radius: 50% !important;
-            background-color: #ffffff !important;
-            color: #000000 !important;
-            border: 2px solid #e5e7eb !important;
-            font-size: 24px !important;
-            cursor: pointer !important;
-            opacity: 0 !important;
-            visibility: hidden !important;
-            transform: translateY(20px) scale(0.8) !important;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-            z-index: 1000 !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            font-weight: bold !important;
-        }
-        
-        .back-to-top:hover {
-            background-color: #f9fafb !important;
-            transform: translateY(0) scale(1.1) !important;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
-            border-color: #d1d5db !important;
-        }
-        
-        .back-to-top:focus {
-            outline: 2px solid #3b82f6 !important;
-            outline-offset: 2px !important;
-        }
-        
-        /* Ensure button is visible when scrolled */
-        .back-to-top.show {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transform: translateY(0) scale(1) !important;
-        }
-        
-        /* Desktop-specific visibility */
-        @media (min-width: 768px) {
-            .back-to-top {
-                opacity: 1 !important;
-                visibility: visible !important;
-                transform: translateY(0) scale(1) !important;
-            }
-        }
-        
-        /* Force hardware acceleration on Safari */
-        .carousel-container {
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-            will-change: transform;
-        }
-        
-        /* Inspirational Quote Styling with Static/Ghost Effect */
-        .quote-section {
-            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
-        }
-        
-        .inspirational-quote {
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.5s forwards;
-        }
-        
-        .quote-mark {
-            opacity: 0.6;
-            font-family: Georgia, serif;
-            user-select: none;
-            pointer-events: none;
-        }
-        
-        .quote-divider {
-            opacity: 0;
-            animation: expandWidth 0.8s ease-out 1.5s forwards;
-            transform-origin: center;
-        }
-        
-        /* Static/Ghost Effect for Quote - Smooth and Gentle */
-        .ghost-quote {
-            position: relative;
-            animation: ghostFlicker 8s ease-in-out infinite;
-        }
-        
-        .ghost-quote::before {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            color: rgba(59, 130, 246, 0.15);
-            z-index: -1;
-            animation: staticNoise 6s ease-in-out infinite;
-            filter: blur(0.8px);
-            transform: translateX(0.5px) translateY(-0.5px);
-        }
-        
-        .ghost-quote::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            color: rgba(147, 197, 253, 0.1);
-            z-index: -2;
-            animation: staticNoise 8s ease-in-out infinite reverse;
-            filter: blur(0.6px);
-            transform: translateX(-0.5px) translateY(0.5px);
-        }
-        
-        @keyframes ghostFlicker {
-            0%, 100% { opacity: 1; }
-            5% { opacity: 0.98; }
-            10% { opacity: 1; }
-            15% { opacity: 0.99; }
-            20% { opacity: 1; }
-            25% { opacity: 0.97; }
-            30% { opacity: 1; }
-            35% { opacity: 0.98; }
-            40% { opacity: 1; }
-            45% { opacity: 0.99; }
-            50% { opacity: 1; }
-            55% { opacity: 0.98; }
-            60% { opacity: 1; }
-            65% { opacity: 0.99; }
-            70% { opacity: 1; }
-            75% { opacity: 0.97; }
-            80% { opacity: 1; }
-            85% { opacity: 0.98; }
-            90% { opacity: 1; }
-            95% { opacity: 0.99; }
-        }
-        
-        @keyframes staticNoise {
-            0% { transform: translateX(0.5px) translateY(-0.5px) scaleX(1); }
-            10% { transform: translateX(-0.3px) translateY(0.3px) scaleX(0.999); }
-            20% { transform: translateX(0px) translateY(0px) scaleX(1); }
-            30% { transform: translateX(0.4px) translateY(-0.4px) scaleX(1.001); }
-            40% { transform: translateX(-0.2px) translateY(0.2px) scaleX(0.999); }
-            50% { transform: translateX(0px) translateY(-0.3px) scaleX(1); }
-            60% { transform: translateX(0.3px) translateY(0px) scaleX(0.998); }
-            70% { transform: translateX(-0.4px) translateY(-0.2px) scaleX(1.002); }
-            80% { transform: translateX(0px) translateY(0.4px) scaleX(1); }
-            90% { transform: translateX(0.2px) translateY(-0.3px) scaleX(0.999); }
-            100% { transform: translateX(0px) translateY(0px) scaleX(1); }
-        }
-        
-        /* Enhanced ghost effect for desktop */
-        @media (min-width: 768px) {
-            .ghost-quote::before {
-                color: rgba(99, 102, 241, 0.4);
-                transform: translateX(2px) translateY(-1px);
-                filter: blur(0.7px);
-            }
-            
-            .ghost-quote::after {
-                color: rgba(239, 68, 68, 0.3);
-                transform: translateX(-2px) translateY(1px);
-                filter: blur(0.5px);
-            }
-        }
-        
-        /* Ghost effect for quote marks */
-        .ghost-quote-mark {
-            animation: ghostMarkFlicker 5s ease-in-out infinite;
-            filter: drop-shadow(0 0 2px rgba(99, 102, 241, 0.3));
-        }
-        
-        @keyframes ghostMarkFlicker {
-            0%, 100% { 
-                opacity: 0.5; 
-                filter: drop-shadow(0 0 2px rgba(99, 102, 241, 0.3));
-            }
-            3% { 
-                opacity: 0.3; 
-                filter: drop-shadow(0 0 4px rgba(99, 102, 241, 0.5));
-            }
-            6% { 
-                opacity: 0.5; 
-                filter: drop-shadow(0 0 2px rgba(99, 102, 241, 0.3));
-            }
-            12% { 
-                opacity: 0.4; 
-                filter: drop-shadow(0 0 3px rgba(239, 68, 68, 0.4));
-            }
-            18% { 
-                opacity: 0.5; 
-                filter: drop-shadow(0 0 2px rgba(99, 102, 241, 0.3));
-            }
-            85% { 
-                opacity: 0.5; 
-                filter: drop-shadow(0 0 2px rgba(99, 102, 241, 0.3));
-            }
-            88% { 
-                opacity: 0.35; 
-                filter: drop-shadow(0 0 5px rgba(99, 102, 241, 0.6));
-            }
-            92% { 
-                opacity: 0.5; 
-                filter: drop-shadow(0 0 2px rgba(99, 102, 241, 0.3));
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes expandWidth {
-            from {
-                opacity: 0;
-                width: 0;
-            }
-            to {
-                opacity: 1;
-                width: 4rem;
-            }
-        }
-        
-        /* Enhanced Subtle Ghost/Static Effect for Quote */
-        .ghost-effect {
-            position: relative;
-            animation: ghostFlicker 6s ease-in-out infinite;
-            text-shadow: 
-                0 0 8px rgba(59, 130, 246, 0.4),
-                0 0 16px rgba(147, 197, 253, 0.3),
-                0 0 24px rgba(191, 219, 254, 0.2);
-        }
-        
-        .ghost-effect::before,
-        .ghost-effect::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        .ghost-effect::before {
-            animation: ghostGlitch1 4s ease-in-out infinite;
-            color: rgba(59, 130, 246, 0.2);
-            opacity: 0.6;
-            text-shadow: 
-                1px 0 rgba(59, 130, 246, 0.3),
-                0 0 15px rgba(59, 130, 246, 0.4),
-                0 0 30px rgba(147, 197, 253, 0.3);
-            filter: blur(0.8px) brightness(1.1);
-        }
-        
-        .ghost-effect::after {
-            animation: ghostGlitch2 5s ease-in-out infinite;
-            color: rgba(147, 197, 253, 0.15);
-            opacity: 0.5;
-            text-shadow: 
-                -1px 0 rgba(147, 197, 253, 0.2),
-                0 0 15px rgba(147, 197, 253, 0.3),
-                0 0 30px rgba(191, 219, 254, 0.2);
-            filter: blur(0.6px) brightness(1.05);
-        }
-        
-        @keyframes ghostFlicker {
-            0%, 100% {
-                opacity: 1;
-                text-shadow: 
-                    0 0 8px rgba(59, 130, 246, 0.6),
-                    0 0 16px rgba(147, 197, 253, 0.4),
-                    0 0 24px rgba(191, 219, 254, 0.3);
-                filter: contrast(1.1) brightness(1.05) saturate(1.1);
-                transform: translateX(0) scaleX(1);
-            }
-            25% {
-                opacity: 0.95;
-                text-shadow: 
-                    0 0 12px rgba(59, 130, 246, 0.7),
-                    0 0 24px rgba(147, 197, 253, 0.5),
-                    0 0 36px rgba(191, 219, 254, 0.4);
-                filter: contrast(1.2) brightness(1.1) saturate(1.15);
-                transform: translateX(0.5px) scaleX(1.002);
-            }
-            50% {
-                opacity: 0.98;
-                transform: skew(-0.2deg, 0.1deg) translateX(-0.3px);
-                text-shadow: 
-                    0 0 10px rgba(59, 130, 246, 0.5),
-                    0 0 20px rgba(147, 197, 253, 0.3),
-                    0 0 30px rgba(191, 219, 254, 0.2);
-                filter: contrast(1.05) brightness(1.02) saturate(1.05);
-            }
-            75% {
-                opacity: 0.97;
-                text-shadow: 
-                    0 0 14px rgba(59, 130, 246, 0.8),
-                    0 0 28px rgba(147, 197, 253, 0.6),
-                    0 0 42px rgba(191, 219, 254, 0.5);
-                filter: contrast(1.15) brightness(1.08) saturate(1.12);
-                transform: translateX(-0.2px) scaleX(0.999);
-            }
-        }
-        
-        @keyframes ghostGlitch1 {
-            0%, 100% { 
-                transform: translate(0);
-                opacity: 0.6;
-            }
-            20% { 
-                transform: translate(-1px, 0.5px) skew(0.5deg) scale(1.005);
-                opacity: 0.4;
-            }
-            40% { 
-                transform: translate(1px, -0.5px) skew(-0.3deg) scale(0.998);
-                opacity: 0.7;
-            }
-            60% { 
-                transform: translate(-0.5px, 0.8px) scale(1.002) rotate(0.2deg);
-                opacity: 0.3;
-            }
-            80% { 
-                transform: translate(0.8px, -0.3px) skew(0.2deg) scale(0.999);
-                opacity: 0.6;
-            }
-        }
-        
-        @keyframes ghostGlitch2 {
-            0%, 100% { 
-                transform: translate(0);
-                opacity: 0.5;
-            }
-            25% { 
-                transform: translate(1px, -0.5px) skew(-0.4deg) scale(1.003);
-                opacity: 0.7;
-            }
-            50% { 
-                transform: translate(-0.8px, 0.6px) skew(0.6deg) scale(0.997);
-                opacity: 0.3;
-            }
-            75% { 
-                transform: translate(0.6px, 0.4px) scale(1.001) rotate(-0.3deg);
-                opacity: 0.6;
-            }
-        }
-
-        /* Enhanced Subtle Ghost Quote Marks */
-        .ghost-quote-mark {
-            animation: quoteMarkGhost 4s ease-in-out infinite;
-            text-shadow: 
-                0 0 8px rgba(59, 130, 246, 0.5),
-                0 0 16px rgba(147, 197, 253, 0.3),
-                0 0 24px rgba(191, 219, 254, 0.2);
-            filter: brightness(1.1) contrast(1.1);
-        }
-        
-        @keyframes quoteMarkGhost {
-            0%, 100% {
-                opacity: 0.6;
-                transform: scale(1) rotate(0deg);
-                text-shadow: 
-                    0 0 8px rgba(59, 130, 246, 0.4),
-                    0 0 16px rgba(147, 197, 253, 0.3);
-                filter: brightness(1) contrast(1);
-            }
-            25% {
-                opacity: 0.8;
-                transform: scale(1.02) rotate(0.5deg);
-                text-shadow: 
-                    0 0 12px rgba(59, 130, 246, 0.6),
-                    0 0 24px rgba(147, 197, 253, 0.4),
-                    0 0 36px rgba(191, 219, 254, 0.3);
-                filter: brightness(1.15) contrast(1.1) saturate(1.1);
-            }
-            50% {
-                opacity: 0.7;
-                transform: scale(0.98) rotate(-0.3deg);
-                text-shadow: 
-                    0 0 10px rgba(59, 130, 246, 0.3),
-                    0 0 20px rgba(147, 197, 253, 0.2);
-                filter: brightness(0.95) contrast(0.95);
-            }
-            75% {
-                opacity: 0.85;
-                transform: scale(1.01) rotate(0.2deg) skew(0.2deg);
-                text-shadow: 
-                    0 0 14px rgba(59, 130, 246, 0.7),
-                    0 0 28px rgba(147, 197, 253, 0.5);
-                filter: brightness(1.1) contrast(1.05);
-            }
-        }
-        
-        /* Ensure quote effects work on all devices */
-        .ghost-quote {
-            will-change: transform, opacity, filter;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-        }
-        
-        .ghost-effect {
-            will-change: transform, opacity, filter, text-shadow;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-        }
-        
-        /* Mobile quote effect optimizations */
-        @media (max-width: 768px) {
-            .ghost-quote::before,
-            .ghost-quote::after {
-                animation-duration: 4s !important;
-            }
-            
-            .ghost-effect::before,
-            .ghost-effect::after {
-                animation-duration: 2s !important;
-            }
-            
-            .ghost-quote-mark {
-                animation-duration: 5s !important;
-            }
-        }
-
-        /* Enhanced mobile quote visibility and styling */
-        @media (max-width: 640px) {
-            .inspirational-quote p {
-                font-size: 1rem;
-                line-height: 1.6;
-                padding: 0 2rem;
-            }
-            
-            .quote-mark {
-                font-size: 3rem;
-            }
-            
-            .quote-mark:first-child {
-                top: -1rem;
-                left: 0;
-            }
-            
-            .quote-mark:last-child {
-                bottom: -1rem;
-                right: 0;
-            }
-            
-            /* Ensure quote section is always visible on mobile */
-            #contact .mt-16 {
-                margin-top: 3rem !important;
-                margin-bottom: 2rem !important;
-                padding: 1rem !important;
-                min-height: 120px;
-                display: block !important;
-                visibility: visible !important;
-            }
-            
-            /* Mobile-specific quote styling */
-            .notes-quote-mobile {
-                background: #f9fafb !important;
-                border: 2px solid #e5e7eb !important;
-                border-radius: 12px !important;
-                padding: 1.5rem !important;
-                margin: 1rem auto !important;
-                max-width: 90% !important;
-                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
-            }
-            
-            .notes-quote-mobile p {
-                color: #1f2937 !important;
-                font-weight: 500 !important;
-                font-size: 0.95rem !important;
-                line-height: 1.6 !important;
-                margin-bottom: 0.75rem !important;
-            }
-            
-            .notes-quote-mobile footer {
-                color: #6b7280 !important;
-                font-size: 0.825rem !important;
-                font-weight: 400 !important;
-            }
-        }
-        
-        /* Enhanced Notes Cards Styling */
-        .notes-card {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
-            backdrop-filter: blur(10px);
-        }
-        
-        .notes-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #10b981, #059669, #047857);
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-        
-        .notes-card:hover::before {
-            opacity: 1;
-        }
-        
-        .notes-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
-            border-color: rgba(16, 185, 129, 0.2);
-        }
-        
-        /* Medium Card Specific Styling */
-        .notes-card:nth-child(1) {
-            background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
-        }
-        
-        .notes-card:nth-child(1):hover {
-            background: linear-gradient(135deg, #ffffff 0%, #ecfdf5 100%);
-            border-color: rgba(16, 185, 129, 0.3);
-        }
-        
-        .notes-card:nth-child(1)::before {
-            background: linear-gradient(90deg, #10b981, #059669, #047857);
-        }
-        
-        /* Terminal Card Specific Styling */
-        .notes-card:nth-child(2) {
-            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
-        }
-        
-        .notes-card:nth-child(2):hover {
-            background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
-            border-color: rgba(0, 0, 0, 0.3);
-        }
-        
-        .notes-card:nth-child(2)::before {
-            background: linear-gradient(90deg, #000000, #1f2937, #374151);
-        }
-        
-        /* GitHub Card Specific Styling */
-        .notes-card:nth-child(3) {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-        }
-        
-        .notes-card:nth-child(3):hover {
-            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
-            border-color: rgba(31, 41, 55, 0.3);
-        }
-        
-        .notes-card:nth-child(3)::before {
-            background: linear-gradient(90deg, #374151, #1f2937, #111827);
-        }
-        
-        /* Icon Container Enhancements */
-        .notes-card .w-14 {
-            position: relative;
-            transition: transform 0.2s ease;
-        }
-        
-        .notes-card:hover .w-14 {
-            transform: scale(1.1) rotate(5deg);
-        }
-        
-        .notes-card .w-14::after {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-        
-        .notes-card:hover .w-14::after {
-            opacity: 1;
-        }
-        
-        /* Feature List Enhancements */
-        .notes-card .space-y-3 > div {
-            position: relative;
-            padding-left: 1rem;
-            transition: transform 0.15s ease, color 0.15s ease;
-        }
-        
-        .notes-card .space-y-3 > div:hover {
-            transform: translateX(4px);
-            color: #374151;
-        }
-        
-        .notes-card .space-y-3 > div .w-2 {
-            transition: transform 0.15s ease;
-        }
-        
-        .notes-card:hover .space-y-3 > div .w-2 {
-            transform: scale(1.2);
-        }
-        
-        /* Button Enhancements */
-        .notes-card a {
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-        }
-        
-        .notes-card a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.2s ease;
-        }
-        
-        .notes-card a:hover::before {
-            left: 100%;
-        }
-        
-        .notes-card a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Text Enhancements */
-        .notes-card h3 {
-            background: linear-gradient(135deg, #1f2937, #374151);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            transition: background 0.2s ease;
-        }
-        
-        .notes-card:hover h3 {
-            background: linear-gradient(135deg, #111827, #1f2937);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* Subtle Animation on Load */
-        @keyframes cardSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .notes-card {
-            animation: cardSlideIn 0.6s ease-out;
-        }
-        
-        .notes-card:last-child {
-            animation-delay: 0.2s;
-        }
-
-        .substack-cta-button {
-            transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
-        }
-
-        .substack-cta-button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 10px 20px -14px rgba(194, 65, 12, 0.45);
-        }
-
-        .substack-copy strong {
-            font-weight: 700;
-            color: #111827;
-        }
-
-        @media (max-width: 640px) {
-            #certifications .credentials-surface,
-            #projects .projects-surface {
-                border-radius: 0.85rem;
-            }
-
-            #certifications .credentials-surface,
-            #projects .projects-surface {
-                padding: 1rem !important;
-            }
-
-            #projects .project-case > summary {
-                padding: 0.85rem 0.9rem;
-            }
-
-            #projects .project-details-panel {
-                padding-left: 0.9rem !important;
-                padding-right: 0.9rem !important;
-            }
-        }
-
-        .section-header-strong {
-            font-weight: 900 !important;
-            letter-spacing: 0.02em;
-            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
-        }
-
-        /* GitHub contribution chart — do not rely on Tailwind responsive display utilities here:
-           compiled dist/styles.css may omit md:block, leaving hidden forever. */
-        .github-chart-card {
-            margin-top: 1rem;
-            box-sizing: border-box;
-            width: 100%;
-            max-width: 100%;
-            min-width: 0;
-            background: #ffffff;
-            border-radius: 0.75rem;
-            border: 1px solid #e5e7eb;
-            padding: 0.75rem;
-            overflow-x: auto;
-            overflow-y: hidden;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        @media (min-width: 768px) {
-            .github-chart-card {
-                padding: 1rem;
-            }
-        }
-
-        .github-chart-card img {
-            display: block;
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            border-radius: 0.5rem;
-            border: 1px solid #e5e7eb;
-        }
-
-        .substack-accent-card {
-            border-color: rgba(255, 91, 0, 0.35) !important;
-            background: linear-gradient(135deg, #ffffff 0%, #fff4ee 100%);
-            border-left: 3px solid #ff5b00 !important;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-
-        .substack-banner-layout {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-        }
-
-        .substack-banner-content {
-            flex: 1 1 auto;
-            min-width: 0;
-        }
-
-        .substack-banner-cta {
-            flex: 0 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            .substack-banner-layout {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .substack-banner-cta a {
-                width: 100%;
-            }
-        }
-
-        /* Credentials (dark grouped layout) */
-        #certifications {
-            background: #f8f7f4 !important;
-        }
-
-        .credentials-surface {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 16px 36px -24px rgba(15, 23, 42, 0.25);
-        }
-
-        .credential-card {
-            position: relative;
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-            overflow: hidden;
-        }
-
-        .credential-card::after {
-            content: "";
-            position: absolute;
-            inset: -40% -20%;
-            background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.06) 40%, transparent 70%);
-            transform: translateX(-40%) rotate(6deg);
-            opacity: 0;
-            transition: opacity 0.25s ease, transform 0.35s ease;
-            pointer-events: none;
-        }
-
-        .credential-card:hover {
-            transform: translateY(-2px);
-            border-color: #d1d5db;
-            box-shadow: 0 16px 32px -20px rgba(15, 23, 42, 0.28);
-        }
-
-        .credential-card.credential-accent-comptia:hover { background: #f4f8ff; }
-        .credential-card.credential-accent-aws:hover { background: #fffbf2; }
-        .credential-card.credential-accent-governance:hover { background: #f2fbf7; }
-        .credential-card.credential-accent-progress:hover { background: #f2f7ff; }
-
-        .credential-card:hover::after {
-            opacity: 1;
-            transform: translateX(25%) rotate(6deg);
-        }
-
-        .credential-accent-comptia { border-left: 4px solid #ff5b00; }
-        .credential-accent-aws { border-left: 4px solid #f59e0b; }
-        .credential-accent-governance { border-left: 4px solid #10b981; }
-        .credential-accent-progress { border-left: 4px solid #3b82f6; }
-
-        /* High-contrast category badges (light mode) */
-        .badge-comptia {
-            background: #fee8e0 !important;
-            color: #92260a !important;
-            border-color: #fbc9b9 !important;
-        }
-
-        .badge-aws {
-            background: #fef3c7 !important;
-            color: #78350f !important;
-            border-color: #f6dd8e !important;
-        }
-
-        .badge-governance {
-            background: #d1fae5 !important;
-            color: #064e3b !important;
-            border-color: #99efc9 !important;
-        }
-
-        .badge-progress {
-            background: #dbeafe !important;
-            color: #1e3a5f !important;
-            border-color: #b9d6fc !important;
-        }
-
-        .badge-iam {
-            background: #ede9fe !important;
-            color: #3b1d8a !important;
-            border-color: #d6cdfb !important;
-        }
-
-        @media (max-width: 480px) {
-            #certifications .credential-card {
-                padding: 1.1rem !important;
-            }
-        }
-        
-        /* Projects (dark case-study layout) */
-        #projects {
-            background: #f8f7f4 !important;
-        }
-
-        .projects-surface {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 16px 36px -24px rgba(15, 23, 42, 0.25);
-        }
-
-        .project-case {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            overflow: hidden;
-        }
-
-        .project-case > summary {
-            list-style: none;
-            cursor: pointer;
-            padding: 1rem 1.15rem;
-        }
-
-        .project-case > summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .project-case summary:hover {
-            background: #f8fafc;
-        }
-
-        .project-case.project-accent-blue summary:hover { background: #f2f7ff; }
-        .project-case.project-accent-amber summary:hover { background: #fffbf2; }
-        .project-case.project-accent-green summary:hover { background: #f2fbf7; }
-
-        .project-accent-blue { border-left: 4px solid #3b82f6; }
-        .project-accent-amber { border-left: 4px solid #f59e0b; }
-        .project-accent-green { border-left: 4px solid #10b981; }
-
-        .project-open-icon {
-            transition: transform 0.2s ease;
-        }
-
-        .project-case[open] .project-open-icon {
-            transform: rotate(180deg);
-        }
-
-        .project-tag {
-            background: #f8fafc;
-            border: 1px solid #d1d5db;
-            color: #475569;
-        }
-
-        .project-details-panel {
-            border-top: 1px solid #e5e7eb;
-            background: #fafafa;
-        }
-
-        #certifications .text-white,
-        #projects .text-white {
-            color: #111827 !important;
-        }
-
-        #certifications .text-slate-400,
-        #projects .text-slate-400 {
-            color: #6b7280 !important;
-        }
-
-        #certifications .text-slate-300,
-        #projects .text-slate-300,
-        #certifications .text-slate-200,
-        #projects .text-slate-200 {
-            color: #4b5563 !important;
-        }
-
-        #certifications .bg-white\/5,
-        #projects .bg-white\/5 {
-            background-color: #f8fafc !important;
-        }
-
-        #certifications .border-white\/10,
-        #projects .border-white\/10 {
-            border-color: #e5e7eb !important;
-        }
-        
-        @media (max-width: 768px) {
-            .projects-grid {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            .projects-grid .project-card {
-                width: 100% !important;
-                height: auto !important;
-                min-height: 400px;
-            }
-        }
-        
-        /* Mobile Optimizations */
-        @media (max-width: 768px) {
-            .notes-card:hover {
-                transform: translateY(-4px) scale(1.01);
-            }
-            
-            .notes-card .w-14 {
-                width: 3rem;
-                height: 3rem;
-            }
-            
-            .notes-card .w-7 {
-                width: 1.5rem;
-                height: 1.5rem;
-            }
-        }
-
-        /* ── Active nav link (current section) ── */
-        .nav-link.active {
-            color: #ff5b00;
-        }
-        /* Mobile drawer items get a softer background fill so the active state
-           reads at a glance even without color contrast assistance. */
-        .nav-menu .nav-link.active {
-            background-color: rgba(255, 91, 0, 0.10);
-            color: #ff5b00;
-        }
-
-        /* ── Masters Degree (Georgia Tech — Accepted) ── */
-        .masters-card {
-            background: #003057;
-            border: 1.5px solid #B3A369;
-            border-radius: 12px;
-            padding: 1.25rem 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 1.5rem;
-            transition: border-color 0.3s ease, background-color 0.3s ease;
-        }
-
-        @media (hover: hover) {
-            .masters-card:hover {
-                border-color: #C4B57A;
-                background: #003a6b;
-            }
-        }
-
-        .masters-lock-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: rgba(179, 163, 105, 0.15);
-            border: 1px solid rgba(179, 163, 105, 0.45);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #B3A369;
-            flex-shrink: 0;
-            position: relative;
-            z-index: 1;
-            font-family: 'Sora', 'Inter', system-ui, sans-serif;
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 0.02em;
-        }
-
-        .masters-body {
-            flex: 1;
-            min-width: 0;
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .masters-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            background: rgba(179, 163, 105, 0.12);
-            border: 0.5px solid rgba(179, 163, 105, 0.4);
-            color: #B3A369;
-            font-size: 9px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 3px 9px;
-            border-radius: 999px;
-            width: fit-content;
-        }
-
-        .masters-title {
-            font-family: 'Sora', 'Inter', system-ui, sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            color: #FFFFFF;
-            line-height: 1.2;
-            margin: 0;
-        }
-
-        .masters-sub {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.72);
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        .masters-right {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 8px;
-            position: relative;
-            z-index: 1;
-            flex-shrink: 0;
-        }
-
-        .masters-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(179, 163, 105, 0.18);
-            border: 0.5px solid rgba(179, 163, 105, 0.55);
-            color: #F5E6B8;
-            font-size: 9px;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 4px 10px;
-            border-radius: 999px;
-            white-space: nowrap;
-        }
-
-        .masters-pulse-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #B3A369;
-            flex-shrink: 0;
-        }
-
-        .masters-term {
-            font-size: 11px;
-            font-weight: 600;
-            color: #B3A369;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-
-        @media (max-width: 640px) {
-            .masters-card {
-                flex-wrap: wrap;
-                padding: 1rem 1.25rem;
-                gap: 12px;
-            }
-            .masters-lock-icon {
-                width: 40px;
-                height: 40px;
-                border-radius: 10px;
-                font-size: 11px;
-            }
-            .masters-body {
-                flex: 1 1 calc(100% - 52px);
-            }
-            .masters-right {
-                flex: 1 1 100%;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                gap: 12px;
-            }
-            .masters-title {
-                font-size: 14px;
-            }
-            .masters-sub {
-                font-size: 11px;
-            }
-        }
-    </style>
-    
-    <link rel="stylesheet" href="./dist/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <!-- Hero layout must load after Tailwind so mobile padding/alignment win over utility classes -->
     <style>
-        .hero {
-            align-items: center;
-            padding-top: 6rem;
-        }
-        @media (min-width: 768px) {
-            .hero { padding-top: 5.5rem; }
-        }
-        @media (min-width: 1024px) {
-            .hero { padding-top: 7rem; }
-        }
-        @media (max-width: 1023px) {
-            .hero {
-                align-items: flex-start !important;
-                padding-top: 8.5rem !important;
-                padding-bottom: 2.5rem !important;
-            }
-            .hero-grid {
-                min-height: 0 !important;
-                padding-top: 0.75rem;
-                gap: 1.5rem !important;
-            }
-            .carousel-container {
-                width: 100% !important;
-                max-width: 260px !important;
-                height: auto !important;
-                aspect-ratio: 1 / 1 !important;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-        @media (max-width: 640px) {
-            .hero {
-                padding-top: 8.25rem !important;
-            }
-            .carousel-container {
-                max-width: 236px !important;
-            }
-        }
-        @media (max-width: 480px) {
-            .hero {
-                padding-top: 8rem !important;
-            }
-            .carousel-container {
-                max-width: 220px !important;
-            }
-        }
+:root {
+  --ink: #0B1F3A;
+  --body: #3D4A5C;
+  --muted: #5A6678;
+  --page: #F7F8FA;
+  --rule: #DCE1E8;
+  --gold: #B3A369;
+  --dark-gold: #7A6A2F;
+  --footer-muted: #B8C1CF;
+  --max: 1120px;
+  --pad-x: 80px;
+  --section-y: 72px;
+  --gap: 56px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--body);
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 16.5px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: var(--ink); text-underline-offset: 3px; }
+a:hover { color: var(--dark-gold); }
+a:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--ink);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  z-index: 100;
+}
+.skip-link:focus { left: 1rem; top: 1rem; }
+
+/* —— Nav (kept dark; sentence case) —— */
+.desktop-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(11, 31, 58, 0.96);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.9rem var(--pad-x);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.nav-brand a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.nav-brand a:hover { color: #fff; opacity: 0.85; }
+.nav-links {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.25rem;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.82);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.45rem 0.7rem;
+  border-radius: 4px;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+.nav-cta {
+  display: none;
+  color: var(--ink) !important;
+  background: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 0.9rem;
+  border-radius: 4px;
+}
+.nav-cta:hover { background: #eef1f5; color: var(--ink) !important; }
+.nav-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+.hamburger-line {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  margin: 3px auto;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav-menu {
+  display: none;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  background: rgba(11, 31, 58, 0.98);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.nav-menu.open {
+  display: block;
+  max-height: 480px;
+  opacity: 1;
+}
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem var(--pad-x) 1.25rem;
+}
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.6rem 0.4rem;
+  border-radius: 4px;
+}
+.nav-menu a:hover,
+.nav-menu a.active { background: rgba(255,255,255,0.08); }
+body.menu-open {
+  position: fixed !important;
+  width: 100% !important;
+  overflow: hidden !important;
+}
+@media (min-width: 1024px) {
+  .nav-links { display: flex; }
+  .nav-cta { display: inline-flex; }
+  .nav-toggle { display: none; }
+  .nav-menu { display: none !important; }
+}
+
+/* —— Hero (layout preserved) —— */
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  background: var(--page);
+  overflow: hidden;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+}
+.hero-grid {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+  width: 100%;
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    min-height: 70vh;
+  }
+  .hero { padding-top: 7rem; }
+}
+.hero-left { text-align: center; }
+.hero-right { display: flex; justify-content: center; }
+@media (max-width: 1023px) {
+  .hero-right { order: -1; }
+}
+@media (min-width: 1024px) {
+  .hero-left { text-align: left; }
+  .hero-right { order: 2; }
+}
+.hero-title {
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 5vw, 3.75rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 1rem;
+  text-wrap: balance;
+}
+.hero-name {
+  font-family: Inter, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 0.65rem;
+}
+.hero-role,
+.hero-program {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 1rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+.hero-program { margin-top: 0.25rem; }
+.profile-carousel { width: 100%; max-width: 280px; }
+@media (min-width: 640px) { .profile-carousel { max-width: 340px; } }
+@media (min-width: 1024px) { .profile-carousel { max-width: 460px; } }
+.carousel-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 3px solid rgba(255,255,255,0.9);
+  background: #fff;
+  box-shadow: 0 16px 40px -18px rgba(11, 31, 58, 0.35);
+}
+.carousel-slides { position: relative; width: 100%; height: 100%; }
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.carousel-slide.active { opacity: 1; z-index: 2; }
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.carousel-dots {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.45rem;
+  z-index: 5;
+}
+.carousel-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+  border: 0;
+  padding: 0;
+  background: rgba(255,255,255,0.65);
+  cursor: pointer;
+}
+.carousel-dot.active { background: #fff; transform: scale(1.15); }
+.carousel-dot:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+.floating-icons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.floating-icon {
+  position: absolute;
+  color: #94a3b8;
+  opacity: 0.16;
+  font-size: 1.1rem;
+}
+@media (max-width: 1023px) {
+  .hero {
+    align-items: flex-start !important;
+    padding-top: 8.25rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  .hero-grid { gap: 1.5rem; }
+  .profile-carousel { max-width: 236px; }
+  .floating-icon { opacity: 0.12; font-size: 0.95rem; }
+}
+@media (max-width: 480px) {
+  .hero { padding-top: 8rem !important; }
+  .profile-carousel { max-width: 220px; }
+}
+
+/* —— Graduate content sections —— */
+.site-main { background: var(--page); }
+.ml-section {
+  padding: var(--section-y) 0;
+  scroll-margin-top: 5.5rem;
+}
+#home {
+  scroll-margin-top: 0;
+}
+.ml-section + .ml-section {
+  border-top: 1px solid var(--rule);
+}
+#about.ml-section { padding-top: 96px; }
+.ml-wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+.ml-grid {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  gap: var(--gap);
+  align-items: start;
+}
+.ml-heading {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0 0 0.65rem;
+}
+.ml-heading--about {
+  font-size: 40px;
+}
+.ml-gold-rule {
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--gold);
+  margin: 0 0 0.85rem;
+  border: 0;
+}
+.ml-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+  max-width: 18rem;
+}
+.ml-lead {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0 0 1.15rem;
+  max-width: 68ch;
+}
+.ml-copy {
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--body);
+  margin: 0 0 1.1rem;
+  max-width: 68ch;
+}
+.ml-copy:last-child { margin-bottom: 0; }
+.ml-item-title {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0 0 0.45rem;
+}
+.ml-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 0.35rem;
+}
+.ml-accent-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark-gold);
+  margin: 0 0 0.35rem;
+}
+
+/* About profile strip */
+.profile-strip {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem 2rem;
+}
+.profile-strip h3 {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+.profile-strip p {
+  margin: 0 0 0.85rem;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--body);
+}
+.profile-strip p:last-child { margin-bottom: 0; }
+.profile-strip strong {
+  display: block;
+  color: var(--ink);
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+.profile-strip ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.profile-strip li {
+  font-size: 15px;
+  color: var(--body);
+  margin: 0 0 0.4rem;
+}
+.profile-strip a {
+  display: inline-block;
+  margin: 0 0 0.45rem;
+  font-weight: 500;
+}
+
+/* Areas of inquiry */
+.inquiry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 2.25rem;
+}
+.inquiry-item .ml-gold-rule {
+  width: 28px;
+  height: 2px;
+  margin-bottom: 0.7rem;
+}
+.inquiry-item p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--body);
+}
+
+/* Selected work */
+.work-list { display: flex; flex-direction: column; }
+.work-item {
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--rule);
+}
+.work-item:first-child {
+  border-top: 2px solid var(--ink);
+  padding-top: 1.35rem;
+}
+.work-item:last-child { padding-bottom: 0; }
+.work-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 1rem 0 1.1rem;
+}
+.work-columns p {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--body);
+}
+.work-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--rule);
+}
+.work-links a { font-weight: 500; font-size: 15px; }
+
+/* Notes / publications */
+.pub-list { display: flex; flex-direction: column; }
+.pub-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.25rem;
+  padding: 1.35rem 0;
+  border-top: 1px solid var(--rule);
+}
+.pub-item:first-child {
+  border-top: 2px solid var(--ink);
+  padding-top: 1.15rem;
+}
+.pub-date {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0.2rem 0 0;
+}
+.pub-item h3 { margin-bottom: 0.35rem; }
+.pub-item h3 a { text-decoration: underline; text-decoration-thickness: 1px; }
+.pub-summary {
+  margin: 0 0 0.35rem;
+  font-size: 16px;
+  color: var(--body);
+}
+.pub-venue {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+.pub-closing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+.pub-closing a { font-weight: 500; }
+
+/* Education */
+.edu-list { display: flex; flex-direction: column; }
+.edu-item {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--rule);
+}
+.edu-item:first-child {
+  border-top: 2px solid var(--ink);
+  padding-top: 1.2rem;
+}
+.edu-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: baseline;
+}
+.edu-school {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--ink);
+  margin: 0 0 0.3rem;
+}
+.edu-degree {
+  margin: 0 0 0.55rem;
+  font-size: 16.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.edu-date {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: right;
+}
+.edu-date--accent { color: var(--dark-gold); }
+.edu-note {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 52rem;
+}
+
+/* Credentials */
+.cred-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.25rem 2.5rem;
+}
+.cred-group h3 {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 600;
+  font-size: 21px;
+  color: var(--ink);
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 2px solid var(--ink);
+}
+.cred-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--rule);
+  font-size: 15.5px;
+}
+.cred-row:first-of-type { border-top: 0; padding-top: 0.15rem; }
+.cred-name { color: var(--ink); font-weight: 600; }
+.cred-issuer { color: var(--muted); text-align: right; }
+
+/* Footer */
+.site-footer {
+  background: var(--ink);
+  color: #fff;
+  padding: 64px 0 36px;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-start;
+}
+.footer-name {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: #fff;
+  margin: 0 0 0.35rem;
+}
+.footer-tag {
+  margin: 0;
+  color: var(--footer-muted);
+  font-size: 15px;
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.35rem;
+}
+.footer-links a {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  font-weight: 500;
+}
+.footer-links a:hover { color: #f0e6c8; }
+.footer-rule {
+  border: 0;
+  height: 1px;
+  background: rgba(179, 163, 105, 0.5);
+  margin: 1.75rem 0 1.15rem;
+}
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  color: var(--footer-muted);
+  font-size: 13.5px;
+}
+.footer-meta em { font-style: italic; }
+
+.back-to-top {
+  position: fixed;
+  right: 1.1rem;
+  bottom: 1.1rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 40;
+}
+.back-to-top.show { opacity: 1; pointer-events: auto; }
+.back-to-top:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+@media (max-width: 859px) {
+  :root {
+    --pad-x: 22px;
+    --section-y: 48px;
+  }
+  .nav-inner { padding: 0.75rem var(--pad-x); }
+  #about.ml-section { padding-top: 48px; }
+  .ml-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .ml-heading { font-size: 28px; }
+  .ml-heading--about { font-size: 34px; }
+  .ml-lead {
+    font-size: 19px;
+    line-height: 1.6;
+  }
+  .ml-desc { max-width: none; }
+  .ml-item-title { font-size: 20px; }
+  .profile-strip {
+    grid-template-columns: 1fr;
+    gap: 1.35rem;
+  }
+  .inquiry-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .work-columns { grid-template-columns: 1fr; gap: 0.9rem; }
+  .pub-item {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+  .edu-top { flex-direction: column; gap: 0.35rem; }
+  .edu-date { text-align: left; }
+  .cred-groups { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-top { flex-direction: column; gap: 1.5rem; }
+  .site-footer { padding-top: 48px; }
+  .footer-meta { flex-direction: column; gap: 0.45rem; }
+}
+
+
+@media (min-width: 768px) {
+  .hero-br { display: none; }
+}
+
+/* Minimal utilities retained for hero markup */
+.absolute { position: absolute; }
+.relative { position: relative; }
+.inset-0 { inset: 0; }
+.z-0 { z-index: 0; }
+.z-10 { z-index: 10; }
+.pointer-events-none { pointer-events: none; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.object-cover { object-fit: cover; }
+.object-center { object-position: center; }
+.bg-white { background: #fff; }
+.opacity-0 { opacity: 0; }
+.text-2xl { font-size: 1.5rem; }
+.text-xl { font-size: 1.25rem; }
+.text-lg { font-size: 1.125rem; }
+@media (min-width: 768px) {
+  .md\:text-3xl { font-size: 1.875rem; }
+  .md\:text-2xl { font-size: 1.5rem; }
+  .md\:text-xl { font-size: 1.25rem; }
+}
+.hero-content-z { position: relative; z-index: 2; }
+.hero-grid { position: relative; z-index: 2; }
     </style>
-    
-    <!-- Umami Analytics - Privacy-first analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="8b3ba511-c136-4ad6-a865-e52377204787"></script>
 </head>
-<body class="bg-gray-50 font-sans">
-    <!-- Loading Overlay -->
-    <div class="loading-overlay loading-hidden" id="loading-overlay">
-        <div class="flex flex-col items-center">
-            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
-            <div class="mt-4 text-primary-600 font-medium">Loading...</div>
-        </div>
-    </div>
-    
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-600 text-white px-4 py-2 rounded-lg z-50">Skip to main content</a>
-    
-    <!-- Desktop Navigation -->
-    <nav class="desktop-nav w-full bg-black transition-all duration-300" id="desktop-nav" role="navigation" aria-label="Main navigation">
-        <div class="container mx-auto px-4 lg:px-6">
-            <div class="flex justify-between items-center py-4">
-                <div class="nav-brand">
-                    <a href="#home" class="flex items-center space-x-2 text-xl md:text-2xl font-bold text-white" aria-label="NerdPioneer — back to top">
-                        <i class="fas fa-brain text-white" aria-hidden="true"></i>
-                    </a>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <ul class="hidden lg:flex space-x-6 xl:space-x-8 nav-links">
-                    <li><a href="#home" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Home</a></li>
-                    <li><a href="#education" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Education</a></li>
-                    <li><a href="#certifications" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Certifications</a></li>
-                    <li><a href="#projects" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Projects</a></li>
-                    <li><a href="#notes" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Notes</a></li>
-                </ul>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-                <!-- Desktop LinkedIn CTA -->
-                <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer"
-                   class="hidden lg:inline-flex items-center px-4 py-2 rounded-lg bg-white text-black hover:bg-gray-200 transition duration-300 font-semibold uppercase tracking-wider text-xs ml-4">
-                    VISIT LINKEDIN
-                </a>
-                
-                <!-- Mobile Menu Button -->
-                <div class="lg:hidden flex items-center gap-2">
-                    <button class="nav-toggle p-3 border border-gray-600 rounded-lg bg-black hover:bg-gray-900 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
-                    <div class="w-6 h-6 flex flex-col justify-center">
-                        <span class="hamburger-line block w-full h-0.5 bg-white mb-1 transition-all duration-300"></span>
-                        <span class="hamburger-line block w-full h-0.5 bg-white mb-1 transition-all duration-300"></span>
-                        <span class="hamburger-line block w-full h-0.5 bg-white transition-all duration-300"></span>
-                    </div>
-                    </button>
-                </div>
+    <nav class="desktop-nav" id="desktop-nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <div class="nav-brand">
+                <a href="#home" aria-label="Ezekiel A. Obeisun Jr. — back to top">Ezekiel A. Obeisun Jr.</a>
             </div>
-            
-            <!-- Mobile Menu -->
-            <div class="nav-menu lg:hidden overflow-hidden transition-all duration-300 ease-in-out" id="primary-navigation" style="max-height: 0;">
-                <div class="border-t border-gray-700 pt-4 pb-4">
-                    <ul class="flex flex-col space-y-1">
-                        <li><a href="#home" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Home</a></li>
-                        <li><a href="#education" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Education</a></li>
-                        <li><a href="#certifications" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Certifications</a></li>
-                        <li><a href="#projects" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Projects</a></li>
-                        <li><a href="#notes" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Notes</a></li>
-                        <li class="pt-2">
-                            <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer"
-                               class="nav-link block text-center px-4 py-3 rounded-lg font-semibold uppercase tracking-wider text-sm"
-                               style="background-color: #ffffff; color: #000000;">
-                                VISIT LINKEDIN
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <ul class="nav-links">
+                <li><a class="nav-link" href="#about">About</a></li>
+                <li><a class="nav-link" href="#work">Work</a></li>
+                <li><a class="nav-link" href="#notes">Notes</a></li>
+                <li><a class="nav-link" href="#education">Education</a></li>
+                <li><a class="nav-link" href="#credentials">Credentials</a></li>
+            </ul>
+            <a class="nav-cta" href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+                <span aria-hidden="true">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </span>
+            </button>
+        </div>
+        <div class="nav-menu" id="primary-navigation">
+            <ul>
+                <li><a class="nav-link" href="#about">About</a></li>
+                <li><a class="nav-link" href="#work">Work</a></li>
+                <li><a class="nav-link" href="#notes">Notes</a></li>
+                <li><a class="nav-link" href="#education">Education</a></li>
+                <li><a class="nav-link" href="#credentials">Credentials</a></li>
+                <li><a class="nav-link" href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            </ul>
         </div>
     </nav>
-    
-    <main id="main-content">
-    <!-- Hero Section -->
-    <section id="home" class="hero min-h-[100dvh] md:min-h-screen flex relative bg-gray-50 overflow-hidden" role="banner">
-        <!-- Floating Technology Icons Background -->
+
+    <main id="main-content" class="site-main">
+    <section id="home" class="hero" role="banner">
+<!-- Floating Technology Icons Background -->
         <div class="floating-icons absolute inset-0 z-0 pointer-events-none">
             <!-- AWS -->
             <div class="floating-icon absolute text-gray-600 opacity-25" style="top: 15%; left: 10%; animation-delay: 0s;">
@@ -2209,599 +991,316 @@
             </div>
         </div>
 
-        <!-- Hero Content -->
-        <div class="container mx-auto px-4 md:px-6 relative z-20">
-            <div class="hero-grid grid lg:grid-cols-2 gap-5 lg:gap-12 items-center lg:min-h-[70vh]">
-                <!-- LEFT SIDE: Content -->
-                <div class="hero-left order-2 lg:order-1 relative z-30 flex min-w-0 flex-col justify-center items-center lg:items-start text-center lg:text-left">
-                    <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-black tracking-tight leading-tight mb-4 md:mb-5 text-balance w-full">
-                        NAVIGATE THE DIGITAL LANDSCAPE<br class="md:hidden" aria-hidden="true"> WITH CONFIDENCE
-                    </h1>
-                    <h2 class="hero-subtitle text-base sm:text-lg md:text-xl text-black mb-6 md:mb-8 font-medium uppercase tracking-wider w-full">
-                        EZEKIEL A. OBEISUN JR
-                    </h2>
-                </div>
-                
-                <!-- RIGHT SIDE: Hero Image -->
-                <div class="hero-right order-1 lg:order-2 relative z-30 flex flex-col items-center justify-center w-full">
-                    <div class="hero-image-container flex flex-col items-center justify-center w-full">
-                        <div class="profile-carousel relative mb-4 md:mb-6 w-full max-w-[260px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[500px]">
-                            <!-- Profile Image Carousel -->
-                            <div class="carousel-container w-full aspect-square relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white/80 bg-white">
-                                <!-- Profile Images -->
-                                <div class="carousel-slides relative w-full h-full">
+        <div class="hero-grid">
+            <div class="hero-left">
+                <h1 class="hero-title">NAVIGATE THE DIGITAL LANDSCAPE<br class="hero-br md-hide" aria-hidden="true"> WITH CONFIDENCE</h1>
+                <p class="hero-name">Ezekiel A. Obeisun Jr.</p>
+                <p class="hero-role">Cybersecurity Professional</p>
+                <p class="hero-program">Incoming M.S. Cybersecurity (Policy), Georgia Tech</p>
+            </div>
+            <div class="hero-right">
+                <div class="profile-carousel">
+                    <div class="carousel-container">
+<div class="carousel-slides relative w-full h-full">
                                     <div class="carousel-slide active absolute inset-0 w-full h-full">
                                         <picture>
                                             <source srcset="./public/images/profile_1.webp" type="image/webp">
                                             <img src="./public/images/profile_1.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 1" class="w-full h-full object-cover object-center bg-white" width="600" height="600" loading="eager" fetchpriority="high">
                                         </picture>
-                                        <div class="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent"></div>
-                                    </div>
+                                                                            </div>
                                     <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                                         <picture>
                                             <source srcset="./public/images/profile_2.webp" type="image/webp">
                                             <img src="./public/images/profile_2.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 2" class="w-full h-full object-cover object-center bg-white" width="600" height="600" loading="lazy">
                                         </picture>
-                                        <div class="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent"></div>
-                                    </div>
+                                                                            </div>
                                     <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                                         <picture>
                                             <source srcset="./public/images/profile_3.webp" type="image/webp">
                                             <img src="./public/images/profile_3.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 3" class="w-full h-full object-cover object-center bg-white" width="600" height="600" loading="lazy">
                                         </picture>
-                                        <div class="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent"></div>
-                                    </div>
+                                                                            </div>
                                     <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                                         <picture>
                                             <source srcset="./public/images/profile_4.webp" type="image/webp">
                                             <img src="./public/images/profile_4.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 4" class="w-full h-full object-cover object-center bg-white" width="600" height="600" loading="lazy">
                                         </picture>
-                                        <div class="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent"></div>
-                                    </div>
+                                                                            </div>
                                 </div>
-                                
-                                <!-- Carousel Navigation Dots -->
-                                <div class="carousel-dots absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-                                    <button class="carousel-dot w-3 h-3 rounded-full bg-white/80 hover:bg-white transition-all duration-300 active shadow-sm" data-slide="0" aria-label="View profile photo 1"></button>
-                                    <button class="carousel-dot w-3 h-3 rounded-full bg-white/80 hover:bg-white transition-all duration-300 shadow-sm" data-slide="1" aria-label="View profile photo 2"></button>
-                                    <button class="carousel-dot w-3 h-3 rounded-full bg-white/80 hover:bg-white transition-all duration-300 shadow-sm" data-slide="2" aria-label="View profile photo 3"></button>
-                                    <button class="carousel-dot w-3 h-3 rounded-full bg-white/80 hover:bg-white transition-all duration-300 shadow-sm" data-slide="3" aria-label="View profile photo 4"></button>
-                                </div>
-                            </div>
-                            
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" data-slide="0" aria-label="View profile photo 1"></button>
+                            <button class="carousel-dot" data-slide="1" aria-label="View profile photo 2"></button>
+                            <button class="carousel-dot" data-slide="2" aria-label="View profile photo 3"></button>
+                            <button class="carousel-dot" data-slide="3" aria-label="View profile photo 4"></button>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
-     
-     <!-- About -->
-     <section id="about" class="section py-8 md:py-14 lg:py-20 bg-white" aria-label="About Ezekiel Obeisun">
-         <div class="container mx-auto px-6">
-             <div class="section-header text-center mb-8 md:mb-10">
-                 <h2 class="section-title section-header-strong text-4xl md:text-5xl text-gray-900 mb-4 uppercase">About</h2>
-                 <p class="section-subtitle text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Focus, direction, and where this career is headed.</p>
-             </div>
 
-             <div class="max-w-3xl mx-auto text-center md:text-left">
-                 <div class="about-copy">
-                     <p>I&apos;m a cybersecurity professional with a B.S. in Cloud Computing from Western Governors University, starting Georgia Tech&apos;s M.S. in Cybersecurity, policy track, in Spring 2027. My focus areas are security operations, cloud security, and identity and access management. Long term, I want to lead in security—pairing technical depth with sound judgment about risk.</p>
-                 </div>
-                 <p class="about-verse">As iron sharpens iron, so one person sharpens another. — Proverbs 27:17</p>
-             </div>
-         </div>
-     </section>
-
-    <!-- Education Section -->
-   <section id="education" class="section py-8 md:py-14 lg:py-20 bg-white">
-       <div class="container mx-auto px-6">
-          <div class="section-header text-center mb-8 md:mb-10">
-               <h2 class="section-title section-header-strong text-4xl md:text-5xl text-gray-900 mb-4 uppercase glitch-effect" data-text="EDUCATION">EDUCATION</h2>
-               <p class="section-subtitle text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Formal education and coursework that support a long-term career in cybersecurity.</p>
-           </div>
-
-           <div class="max-w-6xl mx-auto">
-               <!-- Degree + Study Summary -->
-               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-10">
-                   <div class="relative rounded-2xl p-6 md:p-8 overflow-hidden border border-amber-300/60 shadow-lg"
-                        style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);">
-                       <div class="absolute -top-8 -right-8 w-28 h-28 rounded-full bg-white/12"></div>
-                       <div class="relative z-10">
-                           <div class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-white/15 border border-white/20 text-white font-semibold text-sm mb-8">
-                               <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-                               Western Governors University
-                           </div>
-                           <h4 class="text-3xl md:text-4xl font-black text-white leading-tight mb-2">Bachelor of Science in Cloud Computing</h4>
-                           <p class="text-white/90 text-base mb-6">Specialization in Amazon Web Services (AWS)</p>
-                           <div class="inline-flex items-center px-3 py-1.5 rounded-full bg-white/20 border border-white/30 text-white text-sm font-semibold uppercase tracking-wider">
-                               <i class="fas fa-check mr-2" aria-hidden="true"></i>
-                               Completed January 2026
-                           </div>
-                       </div>
-                   </div>
-
-                   <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 md:p-8">
-                       <p class="text-xs font-bold uppercase tracking-[0.2em] text-gray-600 mb-4">What I Studied</p>
-                       <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
-                           Coursework focused on how computer systems connect and communicate, and how cloud platforms like
-                           <span class="font-semibold text-gray-900">Amazon Web Services</span> and
-                           <span class="font-semibold text-gray-900">Microsoft Azure</span> support real businesses.
-                           I learned the essentials of building reliable networks, protecting data, and creating cloud environments
-                           that keep modern applications running without interruption.
-                       </p>
-                   </div>
-               </div>
-
-               <!-- Masters Degree (Georgia Tech — Accepted) -->
-               <div class="masters-card" role="group" aria-label="Master's Degree — Georgia Tech, accepted">
-                   <div class="masters-lock-icon" aria-hidden="true">GT</div>
-
-                   <div class="masters-body">
-                       <div class="masters-eyebrow">Georgia Institute of Technology</div>
-                       <p class="masters-title">M.S. in Cybersecurity</p>
-                       <p class="masters-sub">Accepted into Georgia Tech&apos;s M.S. in Cybersecurity, policy track. Next step in a serious, long-term security career.</p>
-                   </div>
-
-                   <div class="masters-right">
-                       <span class="masters-status">
-                           <span class="masters-pulse-dot" aria-hidden="true"></span>
-                           Accepted
-                       </span>
-                       <span class="masters-term">Spring 2027</span>
-                   </div>
-               </div>
-
-               <!-- Highlighted Courses -->
-               <div class="mb-10">
-                   <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-gray-500 mb-4">Highlighted Courses</h3>
-                   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                       <div class="course-card bg-white rounded-xl border border-gray-200 border-l-4 border-l-[#ff5b00] shadow-sm p-5">
-                           <div class="flex items-start justify-between gap-3 mb-3">
-                               <div>
-                                   <h4 class="text-2xl font-black text-gray-900 leading-tight mb-1">Introduction to Cryptography</h4>
-                                   <p class="text-sm text-gray-500">Academic Course - WGU</p>
-                               </div>
-                               <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-green-100 text-green-800">PASSED</span>
-                           </div>
-                           <blockquote class="border-l-2 border-gray-200 pl-3 italic text-gray-600 text-sm leading-relaxed bg-gray-50 rounded-r-md py-2">
-                               Learned the basics of how digital security works, including how information is protected when stored or sent, and what makes encryption reliable.
-                           </blockquote>
-                       </div>
-
-                       <div class="course-card bg-white rounded-xl border border-gray-200 border-l-4 border-l-[#ff5b00] shadow-sm p-5">
-                           <div class="flex items-start justify-between gap-3 mb-3">
-                               <div>
-                                   <h4 class="text-2xl font-black text-gray-900 leading-tight mb-1">Python for IT Automation</h4>
-                                   <p class="text-sm text-gray-500">Academic Course - WGU</p>
-                               </div>
-                               <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-green-100 text-green-800">PASSED</span>
-                           </div>
-                           <blockquote class="border-l-2 border-gray-200 pl-3 italic text-gray-600 text-sm leading-relaxed bg-gray-50 rounded-r-md py-2">
-                               Built Python scripts to automate repetitive IT tasks, work with files and structured data, and connect to online services to improve efficiency and consistency.
-                           </blockquote>
-                       </div>
-
-                       <div class="course-card bg-white rounded-xl border border-gray-200 border-l-4 border-l-[#ff5b00] shadow-sm p-5">
-                           <div class="flex items-start justify-between gap-3 mb-3">
-                               <div>
-                                   <h4 class="text-2xl font-black text-gray-900 leading-tight mb-1">Network and Security Foundations</h4>
-                                   <p class="text-sm text-gray-500">Academic Course - WGU</p>
-                               </div>
-                               <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-green-100 text-green-800">PASSED</span>
-                           </div>
-                           <blockquote class="border-l-2 border-gray-200 pl-3 italic text-gray-600 text-sm leading-relaxed bg-gray-50 rounded-r-md py-2">
-                               Learned how computer networks function and how organizations manage security risk, including common threats, baseline controls, and practical security best practices.
-                           </blockquote>
-                       </div>
-
-                       <div class="course-card bg-white rounded-xl border border-gray-200 border-l-4 border-l-[#ff5b00] shadow-sm p-5">
-                           <div class="flex items-start justify-between gap-3 mb-3">
-                               <div>
-                                   <h4 class="text-2xl font-black text-gray-900 leading-tight mb-1">Scripting and Automation (PowerShell)</h4>
-                                   <p class="text-sm text-gray-500">Academic Course - WGU</p>
-                               </div>
-                               <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold bg-green-100 text-green-800">PASSED</span>
-                           </div>
-                           <blockquote class="border-l-2 border-gray-200 pl-3 italic text-gray-600 text-sm leading-relaxed bg-gray-50 rounded-r-md py-2">
-                               Developed PowerShell scripts to automate routine system tasks, validate inputs, handle failures cleanly, and generate clear output so work is repeatable and easy to audit.
-                           </blockquote>
-                       </div>
-                   </div>
-               </div>
-
-               <!-- Slim GitHub strip -->
-               <div class="rounded-2xl px-5 md:px-7 py-5 border border-slate-800 bg-gradient-to-r from-[#0b1220] to-[#111827] text-slate-200">
-                   <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                       <div class="flex items-center gap-3">
-                           <div class="w-11 h-11 rounded-xl border border-slate-700 bg-slate-900/80 flex items-center justify-center">
-                               <i class="fab fa-github text-slate-200 text-lg"></i>
-                           </div>
-                           <div>
-                               <p class="text-2xl font-semibold text-white">GitHub Activity</p>
-                               <p class="text-sm text-slate-400">Development contributions and coding activity</p>
-                           </div>
-                       </div>
-                       <div class="flex flex-wrap items-center justify-center md:justify-end gap-4 md:gap-6 text-center">
-                           <div>
-                               <p class="text-3xl font-black text-white">150+</p>
-                               <p class="text-xs uppercase tracking-wider text-slate-400">Contributions</p>
-                           </div>
-                           <div class="hidden sm:block h-10 w-px bg-slate-700"></div>
-                           <div>
-                               <p class="text-3xl font-black text-white">365</p>
-                               <p class="text-xs uppercase tracking-wider text-slate-400">Days Tracked</p>
-                           </div>
-                           <a href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer"
-                              class="inline-flex items-center px-5 py-2.5 rounded-full border border-slate-600 text-slate-200 hover:bg-slate-700/60 transition duration-300">
-                               <i class="fab fa-github mr-2"></i>
-                               View Profile
-                           </a>
-                       </div>
-                   </div>
-               </div>
-
-               <!-- GitHub contribution chart (visual activity timeline) -->
-               <div class="github-chart-card" role="region" aria-label="GitHub contribution activity chart">
-                   <img src="https://ghchart.rshah.org/NerdPioneer"
-                        alt="GitHub contribution chart for NerdPioneer"
-                        loading="lazy"
-                        decoding="async"
-                        onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                   <div class="text-center py-10" style="display:none;">
-                       <i class="fab fa-github text-4xl text-gray-400 mb-3"></i>
-                       <p class="text-gray-600 mb-1">GitHub activity chart unavailable right now.</p>
-                       <a href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer" class="text-primary-600 hover:underline text-sm">View activity on GitHub</a>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="section py-10 md:py-16 lg:py-20 md:mt-6 lg:mt-10">
-        <div class="container mx-auto px-6">
-            <div class="credentials-surface rounded-3xl p-6 md:p-10 lg:p-12 max-w-6xl mx-auto">
-                <div class="flex flex-col items-center text-center mb-10">
-                    <h2 class="section-header-strong text-3xl md:text-4xl text-white uppercase tracking-wide mb-2">Credentials</h2>
-                    <p class="text-sm md:text-base text-slate-300 max-w-3xl">
-                        Industry certifications I have earned across security, cloud, networking, and operations.
-                    </p>
-                </div>
-
-                <!-- COMPTIA -->
-                <div class="mb-10">
-                    <div class="inline-flex items-center px-3 py-1 rounded-md border text-xs font-semibold uppercase tracking-[0.25em] mb-4 badge-comptia">CompTIA</div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="credential-card credential-accent-comptia rounded-2xl p-5">
-                            <div class="text-white font-semibold">A+</div>
-                            <div class="text-sm text-slate-300 mt-1">Hardware &amp; Software Fundamentals</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-comptia rounded-2xl p-5">
-                            <div class="text-white font-semibold">Network+</div>
-                            <div class="text-sm text-slate-300 mt-1">Networking Infrastructure</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-comptia rounded-2xl p-5">
-                            <div class="text-white font-semibold">Security+</div>
-                            <div class="text-sm text-slate-300 mt-1">Cybersecurity Fundamentals</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-comptia rounded-2xl p-5">
-                            <div class="text-white font-semibold">CySA+</div>
-                            <div class="text-sm text-slate-300 mt-1">Cybersecurity Analyst</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-comptia rounded-2xl p-5">
-                            <div class="text-white font-semibold">Project+</div>
-                            <div class="text-sm text-slate-300 mt-1">Project Management</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-comptia rounded-2xl p-5">
-                            <div class="text-white font-semibold">Cloud+</div>
-                            <div class="text-sm text-slate-300 mt-1">Cloud Infrastructure</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- AMAZON WEB SERVICES -->
-                <div class="mb-10">
-                    <div class="inline-flex items-center px-3 py-1 rounded-md border text-xs font-semibold uppercase tracking-[0.25em] mb-4 badge-aws">Amazon Web Services</div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="credential-card credential-accent-aws rounded-2xl p-5">
-                            <div class="text-white font-semibold">Developer Associate</div>
-                            <div class="text-sm text-slate-300 mt-1">Cloud Development &amp; Deployment</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-aws rounded-2xl p-5">
-                            <div class="text-white font-semibold">SysOps Administrator</div>
-                            <div class="text-sm text-slate-300 mt-1">Operations &amp; Management</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-aws rounded-2xl p-5">
-                            <div class="text-white font-semibold">Security Specialty</div>
-                            <div class="text-sm text-slate-300 mt-1">Cloud Security &amp; Compliance</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- GOVERNANCE & OPERATIONS -->
-                <div class="mb-10">
-                    <div class="inline-flex items-center px-3 py-1 rounded-md border text-xs font-semibold uppercase tracking-[0.25em] mb-4 badge-governance">Governance &amp; Operations</div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="credential-card credential-accent-governance rounded-2xl p-5">
-                            <div class="text-white font-semibold">ITIL 4 Foundation</div>
-                            <div class="text-sm text-slate-300 mt-1">IT Service Management</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-governance rounded-2xl p-5">
-                            <div class="text-white font-semibold">MITRE ATT&amp;CK</div>
-                            <div class="text-sm text-slate-300 mt-1">Threat Intelligence Framework</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-10 pt-8 border-t border-white/10 flex justify-center">
-                    <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 text-sm transition duration-300">
-                        <i class="fab fa-linkedin text-slate-200"></i>
-                        View credentials on LinkedIn
-                    </a>
-                </div>
-            </div>
+    <!-- About -->
+    <section id="about" class="ml-section" aria-label="About">
+      <div class="ml-wrap ml-grid">
+        <div>
+          <span class="ml-gold-rule" aria-hidden="true"></span>
+          <h2 class="ml-heading ml-heading--about">About</h2>
         </div>
+        <div>
+          <p class="ml-lead">My technical foundation is grounded in cloud computing, information technology, and cybersecurity. My interests increasingly extend to the intersection of technological infrastructure, institutional governance, and organizational risk, particularly how security principles translate into enforceable policies and accountable decision-making.</p>
+          <p class="ml-copy">I earned my B.S. in Cloud Computing from Western Governors University and have been admitted to Georgia Institute of Technology&apos;s M.S. in Cybersecurity, Policy track, beginning in spring 2027.</p>
+          <p class="ml-copy">Through this website, I document independent technical work, examine emerging challenges in cybersecurity, and publish perspectives informed by continued learning and critical inquiry.</p>
+
+          <div class="profile-strip">
+            <div>
+              <h3>Education</h3>
+              <p><strong>M.S. Cybersecurity, Policy</strong>Georgia Tech, admitted; begins spring 2027</p>
+              <p><strong>B.S. Cloud Computing</strong>Western Governors University, 2026</p>
+            </div>
+            <div>
+              <h3>Interests</h3>
+              <ul>
+                <li>Cybersecurity governance</li>
+                <li>Technology policy</li>
+                <li>Risk management</li>
+                <li>Cloud security</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Elsewhere</h3>
+              <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer">LinkedIn</a><br>
+              <a href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer">GitHub</a><br>
+              <a href="https://nerdpioneer.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section projects py-10 md:py-16 lg:py-20 md:mt-6 lg:mt-10">
-        <div class="container mx-auto px-6">
-            <div class="projects-surface rounded-3xl p-6 md:p-10 lg:p-12 max-w-6xl mx-auto">
-                <div class="text-center mb-10">
-                    <h2 class="section-header-strong text-3xl md:text-4xl text-white mb-3 uppercase tracking-wide">Projects</h2>
-                    <p class="text-base md:text-lg text-slate-300 max-w-3xl mx-auto">Applied security work that shows how I approach problems, document decisions, and build for reuse.</p>
-                </div>
-
-                <div class="projects-grid flex flex-col gap-4">
-                    <details class="project-case project-accent-blue rounded-2xl" open>
-                        <summary>
-                            <div class="flex items-start justify-between gap-3 mb-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-md border text-[11px] font-semibold uppercase tracking-wider badge-comptia">Security Operations</span>
-                                <span class="inline-flex items-center text-slate-300 text-sm">Details <i class="project-open-icon fas fa-chevron-down ml-2 text-xs"></i></span>
-                            </div>
-                            <h3 class="text-xl md:text-2xl font-black text-white mb-2">Python Security Triage &amp; Analytics</h3>
-                            <p class="text-slate-300 text-base leading-relaxed mb-3">A Python workflow that reduces noise in security events, prioritizes what needs review, and produces clear handoff-ready findings.</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">Python</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">Triage</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">Analytics</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">Log Parsing</span>
-                            </div>
-                        </summary>
-                        <div class="project-details-panel px-5 md:px-6 py-4 text-slate-300">
-                            <p class="text-sm uppercase tracking-wider text-slate-400 mb-2">Focus</p>
-                            <ul class="list-disc list-inside text-sm leading-relaxed space-y-1">
-                                <li>Filters false positives so review time goes to real signals.</li>
-                                <li>Prioritizes remaining events for faster triage.</li>
-                                <li>Exports short summaries that are easy to document and share.</li>
-                                <li>Structured for readability, testing, and future updates.</li>
-                            </ul>
-                        </div>
-                    </details>
-
-                    <details class="project-case project-accent-amber rounded-2xl">
-                        <summary>
-                            <div class="flex items-start justify-between gap-3 mb-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-md border text-[11px] font-semibold uppercase tracking-wider badge-aws">Cloud Security</span>
-                                <span class="inline-flex items-center text-slate-300 text-sm">Details <i class="project-open-icon fas fa-chevron-down ml-2 text-xs"></i></span>
-                            </div>
-                            <h3 class="text-xl md:text-2xl font-black text-white mb-2">AWS EC2 Security Hardening</h3>
-                            <p class="text-slate-300 text-base leading-relaxed mb-3">Practical hardening for EC2 environments: tighter access, stronger logging, and repeatable checks that catch misconfigurations early.</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">AWS</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">EC2</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">IAM</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">Hardening</span>
-                            </div>
-                        </summary>
-                        <div class="project-details-panel px-5 md:px-6 py-4 text-slate-300">
-                            <p class="text-sm uppercase tracking-wider text-slate-400 mb-2">Focus</p>
-                            <ul class="list-disc list-inside text-sm leading-relaxed space-y-1">
-                                <li>Restricted network access to necessary traffic only.</li>
-                                <li>Applied least privilege and IAM roles instead of long-lived keys.</li>
-                                <li>Enabled logging so activity leaves an audit trail.</li>
-                                <li>Validated configuration against a documented baseline.</li>
-                            </ul>
-                        </div>
-                    </details>
-
-                    <details class="project-case project-accent-green rounded-2xl">
-                        <summary>
-                            <div class="flex items-start justify-between gap-3 mb-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-md border text-[11px] font-semibold uppercase tracking-wider badge-iam">Identity &amp; Access</span>
-                                <span class="inline-flex items-center text-slate-300 text-sm">Details <i class="project-open-icon fas fa-chevron-down ml-2 text-xs"></i></span>
-                            </div>
-                            <h3 class="text-xl md:text-2xl font-black text-white mb-2">PowerShell IAM Access Audit</h3>
-                            <p class="text-slate-300 text-base leading-relaxed mb-3">PowerShell automation that inventories users, groups, and permissions—producing clean evidence for access review and RBAC consistency.</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">PowerShell</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">IAM</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">RBAC</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">Audit</span>
-                            </div>
-                        </summary>
-                        <div class="project-details-panel px-5 md:px-6 py-4 text-slate-300">
-                            <p class="text-sm uppercase tracking-wider text-slate-400 mb-2">Focus</p>
-                            <ul class="list-disc list-inside text-sm leading-relaxed space-y-1">
-                                <li>Collects identity and permission details for audit readiness.</li>
-                                <li>Produces reports that support review and remediation tracking.</li>
-                                <li>Includes error handling and logging for imperfect data.</li>
-                                <li>Documented so another administrator can rerun it confidently.</li>
-                            </ul>
-                        </div>
-                    </details>
-                </div>
-            </div>
+    <!-- Areas of inquiry -->
+    <section id="inquiry" class="ml-section" aria-label="Areas of inquiry">
+      <div class="ml-wrap ml-grid">
+        <div>
+          <h2 class="ml-heading">Areas of inquiry</h2>
+          <p class="ml-desc">The questions guiding my study and writing.</p>
         </div>
+        <div class="inquiry-grid">
+          <article class="inquiry-item">
+            <span class="ml-gold-rule" aria-hidden="true"></span>
+            <h3 class="ml-item-title">Cybersecurity governance</h3>
+            <p>How frameworks such as NIST CSF 2.0 structure security decisions, accountability and oversight.</p>
+          </article>
+          <article class="inquiry-item">
+            <span class="ml-gold-rule" aria-hidden="true"></span>
+            <h3 class="ml-item-title">Risk management</h3>
+            <p>Assessing technical risk and communicating it in terms leadership can act on.</p>
+          </article>
+          <article class="inquiry-item">
+            <span class="ml-gold-rule" aria-hidden="true"></span>
+            <h3 class="ml-item-title">Cloud security policy</h3>
+            <p>Turning the realities of cloud architecture into controls an organization can enforce.</p>
+          </article>
+          <article class="inquiry-item">
+            <span class="ml-gold-rule" aria-hidden="true"></span>
+            <h3 class="ml-item-title">Technology policy</h3>
+            <p>How institutions and regulators respond to emerging technologies, including AI.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- Notes Section -->
-    <section id="notes" class="section py-10 md:py-16 lg:py-20 bg-gray-50 md:mt-6 lg:mt-10">
-        <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto text-center">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-gray-900 uppercase tracking-wide animate-fade-in glitch-effect break-words" data-text="NOTES FROM THE CLIMB">NOTES FROM THE CLIMB</h2>
-                <p class="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
-                    Writing and code that document how I learn and work in cybersecurity.
-                </p>
-                
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Medium Column -->
-                <div class="notes-card bg-white rounded-2xl p-6 md:p-10 flex flex-col h-full shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 min-h-[320px]">
-                    <div class="flex items-start mb-8">
-                        <div class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center mr-5 flex-shrink-0">
-                            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
-                            </svg>
-                        </div>
-                        <div class="text-left">
-                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Medium</h3>
-                            <p class="text-sm text-gray-500 tracking-wider font-medium">Writing</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex-grow mb-8">
-                        <p class="text-gray-600 text-left mb-6 leading-relaxed text-sm md:text-base">
-                            Articles on <strong>cybersecurity</strong>, <strong>cloud</strong>, and professional growth—clear takeaways from study and practice.
-                        </p>
-                    </div>
-                    
-                    <div class="mt-auto">
-                        <a href="https://medium.com/@nerdpioneer" target="_blank" rel="noopener noreferrer" 
-                           class="inline-flex items-center text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-medium transition duration-300 text-sm w-full justify-center"
-                           style="background-color:#16A34A;">
-                            <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
-                            </svg>
-                            Read on Medium
-                        </a>
-                    </div>
-                </div>
-
-                <!-- GitHub Column -->
-                <div class="notes-card bg-white rounded-2xl p-6 md:p-10 flex flex-col h-full shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 min-h-[320px]">
-                    <div class="flex items-start mb-8">
-                        <div class="w-14 h-14 bg-gray-800 rounded-full flex items-center justify-center mr-5 flex-shrink-0">
-                            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </div>
-                        <div class="text-left">
-                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">GitHub</h3>
-                            <p class="text-sm text-gray-500 tracking-wider font-medium">Code &amp; Projects</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex-grow mb-8">
-                        <p class="text-gray-600 text-left mb-6 leading-relaxed text-sm md:text-base">
-                            Repositories focused on <strong>Python</strong>, <strong>AWS</strong>, <strong>PowerShell</strong>, and <strong>identity &amp; access</strong> work.
-                        </p>
-                    </div>
-                    
-                    <div class="mt-auto">
-                        <a href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer" 
-                           class="inline-flex items-center bg-gray-800 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-medium hover:bg-gray-900 transition duration-300 text-sm w-full justify-center">
-                            <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                            View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="mt-8 md:mt-10 max-w-4xl mx-auto">
-                <div class="education-card substack-accent-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-6 md:p-10 border border-gray-100 text-left">
-                    <div class="substack-banner-layout">
-                        <div class="substack-banner-content">
-                            <div class="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" style="background-color:#fff0e8;color:#ff5b00;border:1px solid #ffd1bd;">
-                                <i class="fas fa-newspaper" aria-hidden="true"></i>
-                                Substack
-                            </div>
-                            <h3 class="text-2xl md:text-3xl font-black text-gray-900 mb-3 tracking-tight">
-                                NerdPioneer on Substack
-                            </h3>
-                            <p class="substack-copy text-sm md:text-base text-gray-700 leading-relaxed max-w-4xl mb-0">
-                                Occasional notes on cybersecurity concepts, career lessons, and what I am learning along the way.
-                            </p>
-                        </div>
-
-                        <div class="substack-banner-cta">
-                            <a href="https://substack.com/@nerdpioneer?utm_source=global-search" target="_blank" rel="noopener noreferrer"
-                               class="substack-cta-button inline-flex items-center justify-center px-6 py-3.5 min-h-[48px] rounded-full text-white font-semibold text-sm md:text-base w-full sm:w-auto whitespace-nowrap" style="background-color:#ff5b00;">
-                                Follow on Substack
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Inspirational Quote Section - Centered -->
-            <div class="w-full flex justify-center mt-6 md:mt-8 mb-0">
-                <div class="max-w-2xl px-4">
-                    <!-- Decorative line above quote -->
-                    <div class="w-16 h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent mx-auto mb-4 md:mb-6"></div>
-                    
-                    <div class="rotating-quotes-container bg-gray-50 rounded-lg p-6 border-l-4 border-blue-600 relative overflow-hidden">
-                        <!-- Quote content with smooth transitions -->
-                        <div class="quote-content-wrapper relative">
-                            <blockquote class="text-center quote-block transition-all duration-500 ease-in-out opacity-100 transform translate-y-0" id="quote-block" role="region" aria-live="polite" aria-label="Inspirational quotes">
-                                <p class="text-lg text-gray-700 italic mb-2 min-h-[3rem] flex items-center justify-center leading-relaxed" id="quote-text">
-                                    "But seek first his kingdom and his righteousness, and all these things will be given to you as well."
-                                </p>
-                                <footer class="text-sm text-gray-600 min-h-[1.25rem] flex items-center justify-center" id="quote-author">
-                                    — Matthew 6:33
-                                </footer>
-                            </blockquote>
-                        </div>
-                        
-                        <!-- Quote navigation dots -->
-                        <div class="flex justify-center mt-4 space-x-2" role="tablist" aria-label="Quote navigation">
-                            <button class="quote-dot w-2 h-2 rounded-full bg-blue-500 transition-all duration-300 hover:scale-125 focus:outline-none focus:ring-2 focus:ring-blue-300" data-quote="0" aria-label="Show quote 1" role="tab" aria-selected="true" tabindex="0"></button>
-                            <button class="quote-dot w-2 h-2 rounded-full bg-gray-600 hover:bg-gray-400 hover:scale-125 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300" data-quote="1" aria-label="Show quote 2" role="tab" aria-selected="false" tabindex="-1"></button>
-                            <button class="quote-dot w-2 h-2 rounded-full bg-gray-600 hover:bg-gray-400 hover:scale-125 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300" data-quote="2" aria-label="Show quote 3" role="tab" aria-selected="false" tabindex="-1"></button>
-                            <button class="quote-dot w-2 h-2 rounded-full bg-gray-600 hover:bg-gray-400 hover:scale-125 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300" data-quote="3" aria-label="Show quote 4" role="tab" aria-selected="false" tabindex="-1"></button>
-                            <button class="quote-dot w-2 h-2 rounded-full bg-gray-600 hover:bg-gray-400 hover:scale-125 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300" data-quote="4" aria-label="Show quote 5" role="tab" aria-selected="false" tabindex="-1"></button>
-                        </div>
-                    </div>
-                    
-                    <!-- Decorative line below quote -->
-                    <div class="w-16 h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent mx-auto mt-4"></div>
-                </div>
-            </div>
-            </div>
+    <!-- Selected work -->
+    <section id="work" class="ml-section" aria-label="Selected work">
+      <div class="ml-wrap ml-grid">
+        <div>
+          <h2 class="ml-heading">Selected work</h2>
+          <p class="ml-desc">Independent projects, each written up as a short case study.</p>
         </div>
+        <div class="work-list">
+          <article class="work-item">
+            <p class="ml-accent-label">Security operations</p>
+            <h3 class="ml-item-title">Python security triage tool</h3>
+            <div class="work-columns">
+              <div>
+                <p class="ml-label">Problem</p>
+                <p>High volumes of false positives slow down incident review.</p>
+              </div>
+              <div>
+                <p class="ml-label">Approach</p>
+                <p>Python parsing and rules that filter known false positives and rank the remaining events.</p>
+              </div>
+              <div>
+                <p class="ml-label">Outcome</p>
+                <p>Prioritized, handoff-ready findings with short written summaries.</p>
+              </div>
+            </div>
+            <div class="work-links">
+              <a href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer">View the code</a>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <p class="ml-accent-label">Cloud security</p>
+            <h3 class="ml-item-title">AWS EC2 security hardening</h3>
+            <div class="work-columns">
+              <div>
+                <p class="ml-label">Problem</p>
+                <p>Default cloud configurations leave gaps in access control and logging.</p>
+              </div>
+              <div>
+                <p class="ml-label">Approach</p>
+                <p>Restricted network access, IAM roles in place of long-lived keys, logging and baseline checks.</p>
+              </div>
+              <div>
+                <p class="ml-label">Outcome</p>
+                <p>A repeatable, documented security baseline for EC2 instances.</p>
+              </div>
+            </div>
+            <div class="work-links">
+              <a href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer">View the code</a>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <p class="ml-accent-label">Identity and access</p>
+            <h3 class="ml-item-title">PowerShell access audit</h3>
+            <div class="work-columns">
+              <div>
+                <p class="ml-label">Problem</p>
+                <p>Access reviews depend on slow, manual evidence gathering.</p>
+              </div>
+              <div>
+                <p class="ml-label">Approach</p>
+                <p>Automation that collects users, groups and permissions into review-ready reports.</p>
+              </div>
+              <div>
+                <p class="ml-label">Outcome</p>
+                <p>Audit-ready evidence and consistent role-based access.</p>
+              </div>
+            </div>
+            <div class="work-links">
+              <a href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer">View the code</a>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
+    <!-- Notes from the climb -->
+    <section id="notes" class="ml-section" aria-label="Notes from the climb">
+      <div class="ml-wrap ml-grid">
+        <div>
+          <h2 class="ml-heading">Notes from the climb</h2>
+          <p class="ml-desc">Essays on cybersecurity, policy and technology.</p>
+        </div>
+        <div>
+          <div class="pub-list">
+            <article class="pub-item">
+              <p class="pub-date">Jun 2026</p>
+              <div>
+                <h3 class="ml-item-title"><a href="https://nerdpioneer.substack.com/p/everyone-cant-have-an-iron-man-suit" target="_blank" rel="noopener noreferrer">Everyone Can&apos;t Have an Iron Man Suit</a></h3>
+                <p class="pub-summary">What do you actually do when anyone can build anything?</p>
+                <p class="pub-venue">Substack</p>
+              </div>
+            </article>
+          </div>
+          <div class="pub-closing">
+            <a href="https://nerdpioneer.substack.com/" target="_blank" rel="noopener noreferrer">All essays on Substack</a>
+            <a href="https://medium.com/@nerdpioneer" target="_blank" rel="noopener noreferrer">Earlier writing on Medium</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="ml-section" aria-label="Education">
+      <div class="ml-wrap ml-grid">
+        <div>
+          <h2 class="ml-heading">Education</h2>
+          <p class="ml-desc">Graduate study in policy, built on a technical degree.</p>
+        </div>
+        <div class="edu-list">
+          <article class="edu-item">
+            <div class="edu-top">
+              <div>
+                <h3 class="edu-school">Georgia Institute of Technology</h3>
+                <p class="edu-degree">M.S. Cybersecurity, Policy track</p>
+              </div>
+              <p class="edu-date edu-date--accent">Admitted; begins spring 2027</p>
+            </div>
+            <p class="edu-note">Track coursework includes information security policy, information policy and management, and privacy.</p>
+          </article>
+          <article class="edu-item">
+            <div class="edu-top">
+              <div>
+                <h3 class="edu-school">Western Governors University</h3>
+                <p class="edu-degree">B.S. Cloud Computing, AWS specialization</p>
+              </div>
+              <p class="edu-date">2026</p>
+            </div>
+            <p class="edu-note">Selected coursework: Introduction to Cryptography; Network and Security Foundations; Python for IT Automation; Scripting and Automation (PowerShell).</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Credentials -->
+    <section id="credentials" class="ml-section" aria-label="Credentials">
+      <div class="ml-wrap ml-grid">
+        <div>
+          <h2 class="ml-heading">Credentials</h2>
+          <p class="ml-desc">Industry certifications earned across security, cloud and IT governance.</p>
+        </div>
+        <div class="cred-groups">
+          <div class="cred-group">
+            <h3>Security</h3>
+            <div class="cred-row"><span class="cred-name">CySA+</span><span class="cred-issuer">CompTIA</span></div>
+            <div class="cred-row"><span class="cred-name">Security+</span><span class="cred-issuer">CompTIA</span></div>
+            <div class="cred-row"><span class="cred-name">Network+</span><span class="cred-issuer">CompTIA</span></div>
+            <div class="cred-row"><span class="cred-name">A+</span><span class="cred-issuer">CompTIA</span></div>
+            <div class="cred-row"><span class="cred-name">MITRE ATT&amp;CK</span><span class="cred-issuer">AttackIQ</span></div>
+          </div>
+          <div class="cred-group">
+            <h3>Cloud</h3>
+            <div class="cred-row"><span class="cred-name">Security – Specialty</span><span class="cred-issuer">AWS</span></div>
+            <div class="cred-row"><span class="cred-name">SysOps Administrator</span><span class="cred-issuer">AWS</span></div>
+            <div class="cred-row"><span class="cred-name">Developer – Associate</span><span class="cred-issuer">AWS</span></div>
+            <div class="cred-row"><span class="cred-name">Cloud+</span><span class="cred-issuer">CompTIA</span></div>
+          </div>
+          <div class="cred-group">
+            <h3>IT governance and delivery</h3>
+            <div class="cred-row"><span class="cred-name">ITIL 4 Foundation</span><span class="cred-issuer">PeopleCert</span></div>
+            <div class="cred-row"><span class="cred-name">Project+</span><span class="cred-issuer">CompTIA</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
     </main>
-    <!-- Footer -->
-    <footer class="footer bg-gray-50 text-gray-900 pt-4 pb-0 border-t border-gray-200 mb-0" role="contentinfo">
-        <div class="container mx-auto px-6">
-            <div class="text-center">
-                <p class="text-gray-700 font-medium uppercase tracking-wider">&copy; <span id="copyright-year">2026</span> NerdPioneer (Ezekiel A. Obeisun Jr) All rights reserved.</p>
-                <script>document.getElementById('copyright-year').textContent=new Date().getFullYear();</script>
-            </div>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="ml-wrap">
+        <div class="footer-top">
+          <div>
+            <p class="footer-name">Ezekiel A. Obeisun Jr.</p>
+            <p class="footer-tag">Cybersecurity, policy and risk</p>
+          </div>
+          <div class="footer-links">
+            <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://nerdpioneer.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
+            <a href="https://medium.com/@nerdpioneer" target="_blank" rel="noopener noreferrer">Medium</a>
+          </div>
         </div>
+        <hr class="footer-rule">
+        <div class="footer-meta">
+          <span>&copy; <span id="copyright-year">2026</span> Ezekiel A. Obeisun Jr.</span>
+          <em>As iron sharpens iron, so one person sharpens another. Proverbs 27:17</em>
+          <span>Last updated November 2026</span>
+        </div>
+      </div>
+      <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
     </footer>
+
     <script src="./src/js/main.js" defer></script>
 </body>
 </html>
-
-
-
-
-
