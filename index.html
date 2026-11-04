@@ -363,7 +363,8 @@
             -webkit-align-items:center;
             -moz-align-items:center;
             background:#FFFFFF;
-            padding-top:5rem;
+            /* Clear fixed navbar; mobile media queries refine this further */
+            padding-top:6rem;
         }
         
         .container{max-width:1200px;margin:0 auto;padding:0 1rem}
@@ -589,103 +590,104 @@
             }
         }
         
-        /* Better mobile spacing and visibility fixes */
-        @media (max-width: 640px) {
+        /* Mobile hero: clear fixed nav, keep photo fully visible and centered */
+        @media (max-width: 1023px) {
             .hero {
-                padding-top: 2rem;
-                padding-bottom: 1rem;
+                /* Nav is fixed (~4.5–5rem). Pad enough that the photo never sits under it. */
+                padding-top: 6rem;
+                padding-bottom: 2.5rem;
+                align-items: flex-start;
+                justify-content: flex-start;
             }
-            /* Tighter stack spacing on mobile */
-            .hero .grid {
-                gap: 0.75rem !important;
+            .hero-grid {
+                min-height: auto;
+                width: 100%;
+                gap: 1.25rem !important;
+                padding-top: 0.75rem;
+            }
+            .hero-left, .hero-right {
+                position: relative;
+                z-index: 10;
+                width: 100%;
+            }
+            .hero-image-container {
+                padding-top: 0 !important;
+                width: 100%;
+            }
+            .profile-carousel {
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 0.25rem;
+            }
+            .carousel-container {
+                width: 100% !important;
+                max-width: 280px;
+                height: auto !important;
+                aspect-ratio: 1 / 1 !important;
+                margin: 0 auto;
+                box-shadow: 0 16px 28px -8px rgba(0, 0, 0, 0.18);
+                border: 3px solid rgba(255, 255, 255, 0.85);
+            }
+            .aspect-square {
+                aspect-ratio: 1 / 1 !important;
             }
             .hero-title {
-                margin-bottom: 0.5rem !important;
+                margin-bottom: 0.75rem !important;
                 letter-spacing: -0.015em;
                 text-wrap: balance;
             }
             .hero-subtitle {
-                margin-bottom: 0.75rem !important;
+                margin-bottom: 0 !important;
             }
-            
-            /* Improve floating icons visibility on mobile */
             .floating-icons {
                 z-index: 1;
             }
-            
             .floating-icon {
-                opacity: 0.25 !important;
-                font-size: 1.2rem !important;
+                opacity: 0.18 !important;
+                font-size: 1rem !important;
             }
-            
-            /* Ensure hero content is above background */
-            .hero-left, .hero-right {
-                position: relative;
-                z-index: 10;
-            }
-            
-            /* Mobile profile carousel fixes */
-            .carousel-container {
-                width: 300px !important;
-                height: 420px !important; /* Taller portrait on mobile */
-                margin: 0 auto;
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-                border: 3px solid rgba(255, 255, 255, 0.8);
-            }
-            /* Override square ratio on mobile so height can exceed width */
-            .aspect-square { aspect-ratio: auto !important; }
-            
-            .profile-carousel {
-                margin-bottom: 0.5rem; /* Remove extra gap below photo */
-            }
-            .hero-image-container {
-                padding-top: 0.5rem !important; /* Reduce top spacing above photo */
-            }
-            
-            /* Better mobile button spacing */
-            .hero-buttons {
-                gap: 0.75rem !important;
-                margin-top: 1.5rem !important;
-            }
-            
-            /* Mobile hero description improvements */
-            .hero-description-mobile {
-                margin-bottom: 2rem !important;
-            }
-            
-            /* Ensure terminal button and notes cards are visible on mobile */
             .notes-card {
                 display: flex !important;
                 visibility: visible !important;
                 opacity: 1 !important;
             }
-            
-            
-            /* Ensure grid items stack properly on mobile */
             #notes .grid {
                 display: grid !important;
                 grid-template-columns: 1fr !important;
                 gap: 2rem !important;
             }
         }
+
+        @media (max-width: 640px) {
+            .hero {
+                padding-top: 5.75rem;
+                padding-bottom: 2rem;
+            }
+            .hero-grid {
+                gap: 1rem !important;
+                padding-top: 0.5rem;
+            }
+            .carousel-container {
+                max-width: 240px;
+            }
+            .hero-buttons {
+                gap: 0.75rem !important;
+                margin-top: 1.5rem !important;
+            }
+        }
         
         @media (max-width: 480px) {
             .hero {
-                padding-top: 2rem;
-                min-height: calc(100vh - 80px);
+                padding-top: 5.5rem;
+                min-height: 100dvh;
             }
             
             .carousel-container {
-                width: 280px !important;
-                height: 380px !important; /* Maintain taller portrait on very small screens */
+                max-width: 220px;
             }
             
             .hero-title {
-                margin-bottom: 1rem !important;
-            }
-            
-            .hero-subtitle {
-                margin-bottom: 1.5rem !important;
+                margin-bottom: 0.75rem !important;
             }
             
             .hero-subtitle .normal-case {
@@ -2032,7 +2034,7 @@
     
     <main id="main-content">
     <!-- Hero Section -->
-    <section id="home" class="hero min-h-[100dvh] md:min-h-screen flex items-center relative pt-8 md:pt-20 lg:pt-32 bg-gray-50 overflow-hidden" role="banner">
+    <section id="home" class="hero min-h-[100dvh] md:min-h-screen flex items-center relative pt-24 md:pt-20 lg:pt-32 bg-gray-50 overflow-hidden" role="banner">
         <!-- Floating Technology Icons Background -->
         <div class="floating-icons absolute inset-0 z-0 pointer-events-none">
             <!-- AWS -->
@@ -2160,24 +2162,21 @@
 
         <!-- Hero Content -->
         <div class="container mx-auto px-4 md:px-6 relative z-20">
-            <div class="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center min-h-[80dvh] lg:min-h-[70vh]">
+            <div class="hero-grid grid lg:grid-cols-2 gap-5 lg:gap-12 items-center lg:min-h-[70vh]">
                 <!-- LEFT SIDE: Content -->
                 <div class="hero-left order-2 lg:order-1 relative z-30 flex min-w-0 flex-col justify-center items-center lg:items-start text-center lg:text-left">
                     <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-black tracking-tight leading-tight mb-4 md:mb-5 text-balance w-full">
                         NAVIGATE THE DIGITAL LANDSCAPE<br class="md:hidden" aria-hidden="true"> WITH CONFIDENCE
                     </h1>
-                    <h2 class="hero-subtitle text-base sm:text-lg md:text-xl text-black mb-2 md:mb-3 font-medium uppercase tracking-wider w-full">
+                    <h2 class="hero-subtitle text-base sm:text-lg md:text-xl text-black mb-6 md:mb-8 font-medium uppercase tracking-wider w-full">
                         EZEKIEL A. OBEISUN JR
                     </h2>
-                    <p class="text-sm sm:text-base text-gray-600 font-medium tracking-wide w-full max-w-xl mb-6 md:mb-8">
-                        Cybersecurity Professional · B.S. Cloud Computing · Georgia Tech M.S. (Accepted)
-                    </p>
                 </div>
                 
                 <!-- RIGHT SIDE: Hero Image -->
-                <div class="hero-right order-1 lg:order-2 relative z-30 flex flex-col items-center justify-center">
-                    <div class="hero-image-container flex flex-col items-center w-full">
-                        <div class="profile-carousel relative mb-4 md:mb-6 w-full max-w-[280px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[500px]">
+                <div class="hero-right order-1 lg:order-2 relative z-30 flex flex-col items-center justify-center w-full">
+                    <div class="hero-image-container flex flex-col items-center justify-center w-full">
+                        <div class="profile-carousel relative mb-4 md:mb-6 w-full max-w-[260px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[500px]">
                             <!-- Profile Image Carousel -->
                             <div class="carousel-container w-full aspect-square relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white/80 bg-white">
                                 <!-- Profile Images -->
