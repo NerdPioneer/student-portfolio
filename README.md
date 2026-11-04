@@ -1,14 +1,14 @@
-# Student Portfolio
+# NerdPioneer Portfolio
 
-Public portfolio site for **Ezekiel A. Obeisun Jr** (NerdPioneer).
+Professional site for **Ezekiel A. Obeisun Jr** (NerdPioneer) — cybersecurity professional.
 
 This repo is intentionally simple: one `index.html`, a Tailwind build for CSS, and a lightweight local dev server.
 
 ## What this site highlights
 
-- **Projects**: hands-on security + cloud work with clear outcomes
-- **Credentials & education**: the timeline and proof points
-- **Writing & code links**: Medium + GitHub
+- **Education**: B.S. Cloud Computing (WGU) and Georgia Tech M.S. in Cybersecurity (accepted)
+- **Credentials & projects**: security and cloud proof points
+- **Writing & code links**: Medium, Substack, and GitHub
 
 ## Run it locally
 
