@@ -621,15 +621,12 @@
             }
             .carousel-container {
                 width: 100% !important;
-                max-width: 280px;
+                max-width: 288px;
                 height: auto !important;
-                aspect-ratio: 1 / 1 !important;
+                aspect-ratio: 3 / 4 !important;
                 margin: 0 auto;
-                box-shadow: 0 16px 28px -8px rgba(0, 0, 0, 0.18);
-                border: 3px solid rgba(255, 255, 255, 0.85);
-            }
-            .aspect-square {
-                aspect-ratio: 1 / 1 !important;
+                box-shadow: 0 18px 36px -14px rgba(11, 31, 58, 0.28);
+                border: 2px solid rgba(255, 255, 255, 0.92);
             }
             .hero-title {
                 margin-bottom: 0.75rem !important;
@@ -668,7 +665,7 @@
                 padding-top: 0.25rem;
             }
             .carousel-container {
-                max-width: 240px;
+                max-width: 270px;
             }
             .hero-buttons {
                 gap: 0.75rem !important;
@@ -679,11 +676,11 @@
         @media (max-width: 480px) {
             .hero {
                 padding-top: 6.75rem;
-                min-height: 100dvh;
+                min-height: auto;
             }
             
             .carousel-container {
-                max-width: 220px;
+                max-width: 255px;
             }
             
             .hero-title {
@@ -2455,19 +2452,81 @@
             letter-spacing: 0.07em !important;
             margin-bottom: 0 !important;
         }
+        /* Portrait hero photo — taller vertical frame, balanced with copy */
         .hero .profile-carousel {
-            max-width: 280px;
+            max-width: 288px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0;
+        }
+        .hero .carousel-container {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            border-radius: 1.15rem;
+            border: 2px solid rgba(255, 255, 255, 0.95);
+            box-shadow:
+                0 22px 44px -18px rgba(11, 31, 58, 0.32),
+                0 0 0 1px rgba(11, 31, 58, 0.04);
+            background: #fff;
+        }
+        .hero .carousel-container img {
+            object-fit: cover;
+            object-position: center 16%;
         }
         @media (min-width: 640px) {
-            .hero .profile-carousel { max-width: 340px; }
-        }
-        @media (min-width: 1024px) {
-            .hero .profile-carousel { max-width: 460px; }
-            .hero { padding-top: 7rem; }
-            .hero-grid { gap: 3rem !important; }
+            .hero .profile-carousel { max-width: 320px; }
         }
         @media (min-width: 768px) {
             .hero { padding-top: 5.5rem; }
+            .hero .profile-carousel { max-width: 360px; }
+        }
+        @media (min-width: 1024px) {
+            .hero {
+                padding-top: 6rem;
+                padding-bottom: 2.5rem;
+                min-height: 100vh;
+            }
+            .hero-grid {
+                gap: 2.75rem !important;
+                min-height: calc(100vh - 8.5rem) !important;
+                max-width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+                align-items: center !important;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+            }
+            .hero-left,
+            .hero-right {
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                height: 100%;
+                min-height: 0;
+            }
+            .hero-left {
+                align-items: flex-start !important;
+                text-align: left !important;
+            }
+            .hero-right {
+                align-items: center !important;
+            }
+            .hero .profile-carousel {
+                max-width: 440px;
+                width: 100%;
+            }
+            .hero .carousel-container {
+                max-width: 440px;
+            }
+        }
+        @media (min-width: 1280px) {
+            .hero .profile-carousel,
+            .hero .carousel-container {
+                max-width: 480px;
+            }
+            .hero-grid {
+                gap: 3.25rem !important;
+                max-width: 1280px;
+            }
         }
         /* Hero icons ~12–15pp more visible */
         .hero .floating-icon {
@@ -2477,31 +2536,44 @@
         @media (max-width: 1023px) {
             .hero {
                 align-items: flex-start !important;
-                padding-top: 8.5rem !important;
-                padding-bottom: 2.5rem !important;
+                padding-top: 7.5rem !important;
+                padding-bottom: 2rem !important;
+                min-height: auto !important;
             }
             .hero-grid {
                 min-height: 0 !important;
-                padding-top: 0.75rem;
-                gap: 1.5rem !important;
+                padding-top: 0.15rem;
+                gap: 1.25rem !important;
             }
             .hero .floating-icon { opacity: 0.28 !important; }
-            .carousel-container {
+            .hero .profile-carousel {
+                max-width: 288px;
+            }
+            .hero .carousel-container {
                 width: 100% !important;
-                max-width: 260px !important;
+                max-width: 288px !important;
                 height: auto !important;
-                aspect-ratio: 1 / 1 !important;
+                aspect-ratio: 3 / 4 !important;
                 margin-left: auto;
                 margin-right: auto;
             }
         }
         @media (max-width: 640px) {
-            .hero { padding-top: 8.25rem !important; }
-            .carousel-container { max-width: 236px !important; }
+            .hero { padding-top: 7.25rem !important; }
+            .hero .profile-carousel,
+            .hero .carousel-container {
+                max-width: 270px !important;
+            }
         }
         @media (max-width: 480px) {
-            .hero { padding-top: 8rem !important; }
-            .carousel-container { max-width: 220px !important; }
+            .hero {
+                padding-top: 7rem !important;
+                min-height: auto !important;
+            }
+            .hero .profile-carousel,
+            .hero .carousel-container {
+                max-width: 255px !important;
+            }
         }
     </style>
     
@@ -2714,55 +2786,50 @@
                     </p>
                 </div>
                 
-                <!-- RIGHT SIDE: Hero Image -->
+                <!-- RIGHT SIDE: Hero Image (portrait frame) -->
                 <div class="hero-right order-1 lg:order-2 relative z-30 flex flex-col items-center justify-center w-full">
                     <div class="hero-image-container flex flex-col items-center justify-center w-full">
-                        <div class="profile-carousel relative mb-4 md:mb-6 w-full max-w-[260px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[500px]">
-                            <!-- Profile Image Carousel -->
-                            <div class="carousel-container w-full aspect-square relative overflow-hidden rounded-2xl shadow-2xl border-4 border-white/80 bg-white">
-                                <!-- Profile Images -->
+                        <div class="profile-carousel relative w-full">
+                            <div class="carousel-container relative overflow-hidden">
                                 <div class="carousel-slides relative w-full h-full">
                                     <div class="carousel-slide active absolute inset-0 w-full h-full">
                                         <picture>
                                             <source srcset="./public/images/profile_1.webp" type="image/webp">
-                                            <img src="./public/images/profile_1.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 1" class="w-full h-full object-cover object-center bg-white" width="600" height="600" loading="eager" fetchpriority="high">
+                                            <img src="./public/images/profile_1.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 1" class="w-full h-full object-cover bg-white" width="600" height="800" loading="eager" fetchpriority="high">
                                         </picture>
-                                        <div class="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/18 to-transparent"></div>
                                     </div>
                                     <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                                         <picture>
                                             <source srcset="./public/images/profile_2.webp" type="image/webp">
-                                            <img src="./public/images/profile_2.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 2" class="w-full h-full object-cover object-center bg-white" width="600" height="600" loading="lazy">
+                                            <img src="./public/images/profile_2.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 2" class="w-full h-full object-cover bg-white" width="600" height="800" loading="lazy">
                                         </picture>
-                                        <div class="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/18 to-transparent"></div>
                                     </div>
                                     <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                                         <picture>
                                             <source srcset="./public/images/profile_3.webp" type="image/webp">
-                                            <img src="./public/images/profile_3.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 3" class="w-full h-full object-cover object-center bg-white" width="600" height="600" loading="lazy">
+                                            <img src="./public/images/profile_3.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 3" class="w-full h-full object-cover bg-white" width="600" height="800" loading="lazy">
                                         </picture>
-                                        <div class="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/18 to-transparent"></div>
                                     </div>
                                     <div class="carousel-slide absolute inset-0 w-full h-full opacity-0">
                                         <picture>
                                             <source srcset="./public/images/profile_4.webp" type="image/webp">
-                                            <img src="./public/images/profile_4.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 4" class="w-full h-full object-cover object-center bg-white" width="600" height="600" loading="lazy">
+                                            <img src="./public/images/profile_4.jpg" alt="Ezekiel A. Obeisun Jr - Profile Photo 4" class="w-full h-full object-cover bg-white" width="600" height="800" loading="lazy">
                                         </picture>
-                                        <div class="absolute inset-0 bg-gradient-to-t from-primary-600/20 to-transparent"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/18 to-transparent"></div>
                                     </div>
                                 </div>
                                 
-                                <!-- Carousel Navigation Dots -->
                                 <div class="carousel-dots absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-                                    <button class="carousel-dot w-3 h-3 rounded-full bg-white/80 hover:bg-white transition-all duration-300 active shadow-sm" data-slide="0" aria-label="View profile photo 1"></button>
-                                    <button class="carousel-dot w-3 h-3 rounded-full bg-white/80 hover:bg-white transition-all duration-300 shadow-sm" data-slide="1" aria-label="View profile photo 2"></button>
-                                    <button class="carousel-dot w-3 h-3 rounded-full bg-white/80 hover:bg-white transition-all duration-300 shadow-sm" data-slide="2" aria-label="View profile photo 3"></button>
-                                    <button class="carousel-dot w-3 h-3 rounded-full bg-white/80 hover:bg-white transition-all duration-300 shadow-sm" data-slide="3" aria-label="View profile photo 4"></button>
+                                    <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/85 hover:bg-white transition-all duration-300 active shadow-sm" data-slide="0" aria-label="View profile photo 1"></button>
+                                    <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/85 hover:bg-white transition-all duration-300 shadow-sm" data-slide="1" aria-label="View profile photo 2"></button>
+                                    <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/85 hover:bg-white transition-all duration-300 shadow-sm" data-slide="2" aria-label="View profile photo 3"></button>
+                                    <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/85 hover:bg-white transition-all duration-300 shadow-sm" data-slide="3" aria-label="View profile photo 4"></button>
                                 </div>
                             </div>
-                            
                         </div>
-
                     </div>
                 </div>
             </div>
