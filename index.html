@@ -1814,8 +1814,42 @@
             box-shadow: none;
             border-color: rgba(196, 163, 90, 0.45);
         }
+        #notes.notes-panel .notes-card-head {
+            display: flex;
+            align-items: center;
+            gap: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        #notes.notes-panel .notes-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.15rem;
+            height: 3.15rem;
+            flex-shrink: 0;
+            border-radius: 14px;
+            border: 1px solid rgba(196, 163, 90, 0.7);
+            background:
+                radial-gradient(120% 120% at 30% 20%, rgba(196, 163, 90, 0.28) 0%, transparent 60%),
+                rgba(196, 163, 90, 0.12);
+            color: #F5E6B8;
+            font-size: 1.35rem;
+            box-shadow: 0 0 18px rgba(196, 163, 90, 0.22);
+        }
+        #notes.notes-panel .notes-icon i,
+        #notes.notes-panel .notes-icon .notes-icon-svg {
+            line-height: 1;
+            display: block;
+        }
+        #notes.notes-panel .sw-cta .notes-cta-svg {
+            display: block;
+            flex-shrink: 0;
+        }
+        #notes.notes-panel .notes-card-head-copy {
+            min-width: 0;
+        }
         #notes.notes-panel .notes-meta {
-            margin: 0 0 0.55rem;
+            margin: 0 0 0.28rem;
             color: var(--sw-gold);
             font-size: 0.75rem;
             font-weight: 700;
@@ -1830,20 +1864,20 @@
             font-size: clamp(1.25rem, 2.2vw, 1.5rem);
             line-height: 1.25;
             color: #fff !important;
-            margin: 0 0 0.85rem;
+            margin: 0;
             background: none !important;
             -webkit-background-clip: border-box !important;
             background-clip: border-box !important;
             -webkit-text-fill-color: #fff !important;
         }
-        #notes.notes-panel .notes-card p {
+        #notes.notes-panel .notes-card > p {
             margin: 0 0 1.25rem;
             color: rgba(244, 247, 251, 0.88);
             font-size: 0.95rem;
             line-height: 1.6;
             flex-grow: 1;
         }
-        #notes.notes-panel .notes-card p strong {
+        #notes.notes-panel .notes-card > p strong {
             color: #fff;
             font-weight: 600;
         }
@@ -1867,13 +1901,11 @@
                 gap: 1.5rem;
             }
         }
-        #notes.notes-panel .notes-substack .notes-meta {
-            margin-bottom: 0.45rem;
+        #notes.notes-panel .notes-substack .notes-card-head {
+            margin-bottom: 0.85rem;
         }
-        #notes.notes-panel .notes-substack .notes-card-title {
-            margin-bottom: 0.55rem;
-        }
-        #notes.notes-panel .notes-substack p {
+        #notes.notes-panel .notes-substack > p,
+        #notes.notes-panel .notes-substack .notes-substack-copy {
             margin: 0;
             color: rgba(244, 247, 251, 0.88);
             font-size: 0.95rem;
@@ -1884,7 +1916,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.45rem;
+            gap: 0.5rem;
             min-height: 44px;
             padding: 0.65rem 1.25rem;
             border-radius: 999px;
@@ -1896,6 +1928,10 @@
             background: transparent;
             transition: background 0.15s ease, border-color 0.15s ease;
             white-space: nowrap;
+        }
+        #notes.notes-panel .sw-cta i {
+            font-size: 0.95rem;
+            opacity: 0.95;
         }
         #notes.notes-panel .sw-cta:hover {
             background: rgba(255, 255, 255, 0.08);
@@ -3386,27 +3422,57 @@
 
             <div class="notes-grid">
                 <article class="notes-card">
-                    <p class="notes-meta">Writing</p>
-                    <h3 class="notes-card-title">Medium</h3>
+                    <div class="notes-card-head">
+                        <span class="notes-icon" aria-hidden="true"><i class="fab fa-medium"></i></span>
+                        <div class="notes-card-head-copy">
+                            <p class="notes-meta">Writing</p>
+                            <h3 class="notes-card-title">Medium</h3>
+                        </div>
+                    </div>
                     <p>Articles on <strong>cybersecurity</strong>, <strong>cloud</strong>, and professional growth—clear takeaways from study and practice.</p>
-                    <a class="sw-cta" href="https://medium.com/@nerdpioneer" target="_blank" rel="noopener noreferrer">Read on Medium</a>
+                    <a class="sw-cta" href="https://medium.com/@nerdpioneer" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-medium" aria-hidden="true"></i>
+                        Read on Medium
+                    </a>
                 </article>
 
                 <article class="notes-card">
-                    <p class="notes-meta">Code &amp; Projects</p>
-                    <h3 class="notes-card-title">GitHub</h3>
+                    <div class="notes-card-head">
+                        <span class="notes-icon" aria-hidden="true"><i class="fab fa-github"></i></span>
+                        <div class="notes-card-head-copy">
+                            <p class="notes-meta">Code &amp; Projects</p>
+                            <h3 class="notes-card-title">GitHub</h3>
+                        </div>
+                    </div>
                     <p>Repositories focused on <strong>Python</strong>, <strong>Amazon Web Services</strong>, <strong>PowerShell</strong>, and <strong>identity &amp; access</strong> work.</p>
-                    <a class="sw-cta" href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    <a class="sw-cta" href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        View on GitHub
+                    </a>
                 </article>
             </div>
 
             <div class="notes-substack">
                 <div>
-                    <p class="notes-meta">Substack</p>
-                    <h3 class="notes-card-title">NerdPioneer on Substack</h3>
-                    <p>Occasional notes on cybersecurity concepts, career lessons, and what I am learning along the way.</p>
+                    <div class="notes-card-head">
+                        <span class="notes-icon" aria-hidden="true">
+                            <svg class="notes-icon-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" focusable="false">
+                                <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+                            </svg>
+                        </span>
+                        <div class="notes-card-head-copy">
+                            <p class="notes-meta">Newsletter</p>
+                            <h3 class="notes-card-title">NerdPioneer on Substack</h3>
+                        </div>
+                    </div>
+                    <p class="notes-substack-copy">Occasional notes on cybersecurity concepts, career lessons, and what I am learning along the way.</p>
                 </div>
-                <a class="sw-cta" href="https://substack.com/@nerdpioneer?utm_source=global-search" target="_blank" rel="noopener noreferrer">Follow on Substack</a>
+                <a class="sw-cta" href="https://substack.com/@nerdpioneer?utm_source=global-search" target="_blank" rel="noopener noreferrer">
+                    <svg class="notes-cta-svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false">
+                        <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+                    </svg>
+                    Follow on Substack
+                </a>
             </div>
 
             <div class="notes-quote rotating-quotes-container">
