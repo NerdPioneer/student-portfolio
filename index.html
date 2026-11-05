@@ -2909,7 +2909,7 @@
     </style>
     
     <link rel="stylesheet" href="./dist/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Header + hero overrides (load after Tailwind) -->
     <style>
@@ -3026,8 +3026,17 @@
                 margin-right: 0;
             }
         }
+        .hero-brand {
+            margin: 0 0 0.45rem;
+            font-family: "Source Serif 4", Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(1.2rem, 2.3vw, 1.65rem);
+            line-height: 1.2;
+            color: var(--hero-navy);
+            letter-spacing: -0.01em;
+        }
         .hero-kicker {
-            margin: 0 0 0.65rem;
+            margin: 0 0 1rem;
             color: var(--hero-gold);
             font-size: 0.78rem;
             font-weight: 700;
@@ -3036,21 +3045,19 @@
         }
         .hero-title {
             font-family: "Source Serif 4", Georgia, serif !important;
-            font-weight: 600 !important;
+            font-weight: 700 !important;
             color: var(--hero-navy) !important;
-            font-size: clamp(2.15rem, 5.4vw, 3.85rem) !important;
-            line-height: 1.12 !important;
-            letter-spacing: -0.02em !important;
-            margin: 0 0 0.85rem !important;
+            font-size: clamp(2.55rem, 7vw, 4.65rem) !important;
+            line-height: 1.05 !important;
+            letter-spacing: -0.025em !important;
+            margin: 0 0 1.35rem !important;
             text-transform: none !important;
+            max-width: 11.5ch;
         }
-        .hero-tagline {
-            margin: 0 0 1.15rem;
-            max-width: 28rem;
-            color: var(--hero-muted);
-            font-size: clamp(1.02rem, 2vw, 1.2rem);
-            line-height: 1.55;
-            font-weight: 500;
+        @media (min-width: 1024px) {
+            .hero-title {
+                max-width: 12ch;
+            }
         }
         .hero-cta-row {
             display: flex;
@@ -3205,7 +3212,13 @@
                 margin-right: auto;
             }
             .hero-title {
-                font-size: clamp(1.95rem, 8.2vw, 2.55rem) !important;
+                font-size: clamp(2.15rem, 9vw, 2.85rem) !important;
+                max-width: 14ch;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            .hero-brand {
+                font-size: clamp(1.15rem, 4.5vw, 1.35rem);
             }
         }
         @media (max-width: 640px) {
@@ -3325,13 +3338,11 @@
                 <!-- LEFT SIDE: Content -->
                 <div class="hero-left order-2 lg:order-1 relative z-30 flex min-w-0 flex-col justify-center items-center lg:items-start text-center lg:text-left">
                     <span class="hero-gold-rule" aria-hidden="true"></span>
+                    <p class="hero-brand">Ezekiel A. Obeisun Jr.</p>
                     <p class="hero-kicker">Cybersecurity Professional</p>
                     <h1 class="hero-title text-balance w-full">
-                        Ezekiel A. Obeisun Jr.
+                        Navigate the digital landscape with confidence.
                     </h1>
-                    <p class="hero-tagline w-full">
-                        Navigate the digital landscape with confidence—security operations, cloud, and sound judgment about risk.
-                    </p>
                     <div class="hero-cta-row">
                         <a class="hero-cta hero-cta--primary" href="#projects">View Selected Work</a>
                         <a class="hero-cta hero-cta--ghost" href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer">
@@ -3397,7 +3408,7 @@
              <span class="sw-gold-rule" aria-hidden="true"></span>
              <h2 class="sw-heading">About</h2>
 
-             <p class="about-lead">I am a cybersecurity professional who likes technology, works well with people, and finishes what I start. My foundation is cloud computing, IT, and security—and I care about how those systems hold up when real risk, policy, and teams are involved.</p>
+             <p class="about-lead">I am a cybersecurity professional who likes technology, works well with people, and finishes what I start. My foundation is cloud computing, IT, and security—and I bring sound judgment about risk when policy, teams, and real systems are on the line.</p>
              <p class="about-body">I earned my B.S. in Cloud Computing from Western Governors University and begin Georgia Institute of Technology&apos;s M.S. in Cybersecurity, Policy track, in Spring 2027. Alongside graduate study, I am building depth in networking with the CCNA path in view.</p>
              <p class="about-body">On this site you will find independent projects and writing that show how I learn, collaborate, and deliver—clear work, completed end to end.</p>
 
