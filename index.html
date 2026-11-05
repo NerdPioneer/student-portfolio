@@ -1804,15 +1804,58 @@
             line-height: 1.4;
         }
         #about.about-panel .about-strip-card li:last-child { margin-bottom: 0; }
-        #about.about-panel .about-strip-card a {
-            display: inline-block;
-            margin: 0 0 0.45rem;
-            color: #fff !important;
-            font-weight: 500;
-            font-size: 0.92rem;
-            text-underline-offset: 3px;
+        #about.about-panel .about-elsewhere {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
         }
-        #about.about-panel .about-strip-card a:hover { color: var(--sw-gold) !important; }
+        #about.about-panel .about-platform {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            width: 100%;
+            min-height: 44px;
+            padding: 0.55rem 0.8rem;
+            border-radius: 999px;
+            border: 1px solid rgba(196, 163, 90, 0.45);
+            background: rgba(196, 163, 90, 0.1);
+            color: #fff !important;
+            text-decoration: none !important;
+            font-weight: 600;
+            font-size: 0.9rem;
+            line-height: 1.2;
+            transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+        }
+        #about.about-panel .about-platform:hover {
+            background: rgba(196, 163, 90, 0.2);
+            border-color: var(--sw-gold);
+            color: #fff !important;
+            transform: translateY(-1px);
+        }
+        #about.about-panel .about-platform:focus-visible {
+            outline: 2px solid var(--sw-gold);
+            outline-offset: 2px;
+        }
+        #about.about-panel .about-platform-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.7rem;
+            height: 1.7rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--sw-gold);
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+        #about.about-panel .about-platform-label {
+            flex: 1;
+            text-align: left;
+        }
+        #about.about-panel .about-platform-arrow {
+            color: rgba(244, 247, 251, 0.55);
+            font-size: 0.75rem;
+        }
         #about.about-panel .about-verse {
             margin: 1.35rem 0 0;
             color: var(--sw-muted);
@@ -2672,11 +2715,25 @@
                          <li>Leadership &amp; collaboration</li>
                      </ul>
                  </div>
-                 <div class="about-strip-card">
+                 <div class="about-strip-card about-strip-card--elsewhere">
                      <h3>Elsewhere</h3>
-                     <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer">LinkedIn</a><br>
-                     <a href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer">GitHub</a><br>
-                     <a href="https://nerdpioneer.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
+                     <div class="about-elsewhere">
+                         <a class="about-platform" href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer">
+                             <span class="about-platform-icon" aria-hidden="true"><i class="fab fa-linkedin-in"></i></span>
+                             <span class="about-platform-label">LinkedIn</span>
+                             <span class="about-platform-arrow" aria-hidden="true"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                         </a>
+                         <a class="about-platform" href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer">
+                             <span class="about-platform-icon" aria-hidden="true"><i class="fab fa-github"></i></span>
+                             <span class="about-platform-label">GitHub</span>
+                             <span class="about-platform-arrow" aria-hidden="true"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                         </a>
+                         <a class="about-platform" href="https://nerdpioneer.substack.com/" target="_blank" rel="noopener noreferrer">
+                             <span class="about-platform-icon" aria-hidden="true"><i class="fas fa-bookmark"></i></span>
+                             <span class="about-platform-label">Substack</span>
+                             <span class="about-platform-arrow" aria-hidden="true"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                         </a>
+                     </div>
                  </div>
              </div>
 
