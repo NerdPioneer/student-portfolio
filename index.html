@@ -1680,6 +1680,140 @@
             border-color: #e5e7eb !important;
         }
 
+        /* Shared navy panel tokens (About + Selected Work) */
+        #about.about-panel,
+        #projects.selected-work {
+            --sw-bg: #0B1F3A;
+            --sw-card: #102744;
+            --sw-border: rgba(255, 255, 255, 0.14);
+            --sw-gold: #C4A35A;
+            --sw-muted: #A8B3C4;
+            --sw-text: #F4F7FB;
+        }
+
+        /* About — compact navy panel */
+        #about.about-panel {
+            background: var(--sw-bg) !important;
+            color: var(--sw-text);
+            padding: 4rem 0 3.5rem !important;
+            margin-top: 0 !important;
+        }
+        #about.about-panel .sw-wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        #about.about-panel .sw-gold-rule {
+            display: block;
+            width: 42px;
+            height: 3px;
+            background: var(--sw-gold);
+            margin: 0 0 0.9rem;
+            border: 0;
+        }
+        #about.about-panel .sw-heading {
+            font-family: "Source Serif 4", Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(2rem, 4vw, 2.6rem);
+            line-height: 1.15;
+            color: #fff;
+            margin: 0 0 1.15rem;
+        }
+        #about.about-panel .about-lead {
+            font-family: "Source Serif 4", Georgia, serif;
+            font-weight: 400;
+            font-size: clamp(1.15rem, 2.2vw, 1.3rem);
+            line-height: 1.65;
+            color: #fff;
+            margin: 0 0 1rem;
+            max-width: 62ch;
+        }
+        #about.about-panel .about-body {
+            margin: 0 0 0.9rem;
+            max-width: 62ch;
+            color: rgba(244, 247, 251, 0.88);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        #about.about-panel .about-body:last-of-type {
+            margin-bottom: 0;
+        }
+        #about.about-panel .about-strip {
+            margin-top: 1.75rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--sw-border);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 768px) {
+            #about.about-panel .about-strip {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.15rem;
+            }
+        }
+        #about.about-panel .about-strip-card {
+            background: var(--sw-card);
+            border: 1px solid var(--sw-border);
+            border-radius: 14px;
+            padding: 1.1rem 1.15rem 1.2rem;
+        }
+        #about.about-panel .about-strip-card h3 {
+            margin: 0 0 0.75rem;
+            color: var(--sw-gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        #about.about-panel .about-strip-card p {
+            margin: 0 0 0.85rem;
+            color: rgba(244, 247, 251, 0.88);
+            font-size: 0.92rem;
+            line-height: 1.45;
+        }
+        #about.about-panel .about-strip-card p:last-child { margin-bottom: 0; }
+        #about.about-panel .about-strip-card strong {
+            display: block;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 0.15rem;
+        }
+        #about.about-panel .about-strip-card ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        #about.about-panel .about-strip-card li {
+            margin: 0 0 0.4rem;
+            color: rgba(244, 247, 251, 0.88);
+            font-size: 0.92rem;
+            line-height: 1.4;
+        }
+        #about.about-panel .about-strip-card li:last-child { margin-bottom: 0; }
+        #about.about-panel .about-strip-card a {
+            display: inline-block;
+            margin: 0 0 0.45rem;
+            color: #fff !important;
+            font-weight: 500;
+            font-size: 0.92rem;
+            text-underline-offset: 3px;
+        }
+        #about.about-panel .about-strip-card a:hover { color: var(--sw-gold) !important; }
+        #about.about-panel .about-verse {
+            margin: 1.35rem 0 0;
+            color: var(--sw-muted);
+            font-size: 0.88rem;
+            font-style: italic;
+            line-height: 1.55;
+        }
+        @media (max-width: 640px) {
+            #about.about-panel {
+                padding: 3.1rem 0 2.75rem !important;
+            }
+            #about.about-panel .sw-wrap { padding: 0 1.15rem; }
+        }
+
         /* Selected Work — navy case-study layout */
         #projects.selected-work {
             --sw-bg: #0B1F3A;
@@ -2501,19 +2635,39 @@
     </section>
      
      <!-- About -->
-     <section id="about" class="section py-8 md:py-14 lg:py-20 bg-white" aria-label="About Ezekiel Obeisun">
-         <div class="container mx-auto px-6">
-             <div class="section-header text-center mb-8 md:mb-10">
-                 <h2 class="section-title section-header-strong text-4xl md:text-5xl text-gray-900 mb-4 uppercase">About</h2>
-                 <p class="section-subtitle text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Focus, direction, and where this career is headed.</p>
+     <section id="about" class="section about-panel" aria-label="About">
+         <div class="sw-wrap">
+             <span class="sw-gold-rule" aria-hidden="true"></span>
+             <h2 class="sw-heading">About</h2>
+
+             <p class="about-lead">My technical foundation is grounded in cloud computing, information technology, and cybersecurity. My interests increasingly extend to the intersection of technological infrastructure, institutional governance, and organizational risk, particularly how security principles translate into enforceable policies and accountable decision-making.</p>
+             <p class="about-body">I earned my B.S. in Cloud Computing from Western Governors University and have been admitted to Georgia Institute of Technology&apos;s M.S. in Cybersecurity, Policy track, beginning in spring 2027.</p>
+             <p class="about-body">Through this website, I document independent technical work, examine emerging challenges in cybersecurity, and publish perspectives informed by continued learning and critical inquiry.</p>
+
+             <div class="about-strip">
+                 <div class="about-strip-card">
+                     <h3>Education</h3>
+                     <p><strong>M.S. Cybersecurity, Policy</strong>Georgia Tech, admitted; begins spring 2027</p>
+                     <p><strong>B.S. Cloud Computing</strong>Western Governors University, 2026</p>
+                 </div>
+                 <div class="about-strip-card">
+                     <h3>Interests</h3>
+                     <ul>
+                         <li>Cybersecurity governance</li>
+                         <li>Technology policy</li>
+                         <li>Risk management</li>
+                         <li>Cloud security</li>
+                     </ul>
+                 </div>
+                 <div class="about-strip-card">
+                     <h3>Elsewhere</h3>
+                     <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer">LinkedIn</a><br>
+                     <a href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer">GitHub</a><br>
+                     <a href="https://nerdpioneer.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>
+                 </div>
              </div>
 
-             <div class="max-w-3xl mx-auto text-center md:text-left">
-                 <div class="about-copy">
-                     <p>I&apos;m a cybersecurity professional with a B.S. in Cloud Computing from Western Governors University, starting Georgia Tech&apos;s M.S. in Cybersecurity, policy track, in Spring 2027. My focus areas are security operations, cloud security, and identity and access management. Long term, I want to lead in security—pairing technical depth with sound judgment about risk.</p>
-                 </div>
-                 <p class="about-verse">As iron sharpens iron, so one person sharpens another. — Proverbs 27:17</p>
-             </div>
+             <p class="about-verse">As iron sharpens iron, so one person sharpens another. — Proverbs 27:17</p>
          </div>
      </section>
 
