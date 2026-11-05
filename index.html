@@ -2909,7 +2909,7 @@
     </style>
     
     <link rel="stylesheet" href="./dist/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@600;700;800&family=Sora:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Header + hero overrides (load after Tailwind) -->
     <style>
@@ -3026,38 +3026,68 @@
                 margin-right: 0;
             }
         }
-        .hero-brand {
-            margin: 0 0 0.45rem;
-            font-family: "Source Serif 4", Georgia, serif;
-            font-weight: 600;
-            font-size: clamp(1.2rem, 2.3vw, 1.65rem);
-            line-height: 1.2;
-            color: var(--hero-navy);
-            letter-spacing: -0.01em;
-        }
         .hero-kicker {
-            margin: 0 0 1rem;
+            margin: 0 0 0.65rem;
             color: var(--hero-gold);
             font-size: 0.78rem;
             font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
         }
-        .hero-title {
-            font-family: "Source Serif 4", Georgia, serif !important;
-            font-weight: 700 !important;
-            color: var(--hero-navy) !important;
-            font-size: clamp(2.55rem, 7vw, 4.65rem) !important;
-            line-height: 1.05 !important;
-            letter-spacing: -0.025em !important;
-            margin: 0 0 1.35rem !important;
-            text-transform: none !important;
-            max-width: 11.5ch;
+        .hero-brand {
+            margin: 0 0 1.15rem;
+            font-family: "Source Serif 4", Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(2.15rem, 5.2vw, 3.55rem);
+            line-height: 1.12;
+            color: var(--hero-navy);
+            letter-spacing: -0.02em;
+        }
+        /* Appeal badge — sleek Montserrat statement */
+        .hero-appeal-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            max-width: min(100%, 34rem);
+            margin: 0 0 0.7rem;
+            padding: 0.8rem 1.2rem;
+            border-radius: 14px;
+            border: 1.5px solid rgba(196, 163, 90, 0.9);
+            background:
+                linear-gradient(180deg, rgba(196, 163, 90, 0.16) 0%, rgba(196, 163, 90, 0.07) 100%);
+            box-shadow:
+                0 12px 30px -18px rgba(11, 31, 58, 0.38),
+                inset 0 1px 0 rgba(255, 255, 255, 0.55);
+            color: var(--hero-navy);
+            font-family: Montserrat, "Segoe UI", sans-serif;
+            font-weight: 800;
+            font-size: clamp(0.78rem, 1.65vw, 0.98rem);
+            letter-spacing: 0.09em;
+            line-height: 1.4;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .hero-left .hero-appeal-badge {
+            margin-left: auto;
+            margin-right: auto;
         }
         @media (min-width: 1024px) {
-            .hero-title {
-                max-width: 12ch;
+            .hero-left .hero-appeal-badge {
+                margin-left: 0;
+                margin-right: 0;
+                text-align: left;
+                justify-content: flex-start;
             }
+        }
+        .hero-support {
+            margin: 0 0 1.35rem;
+            color: #7B8794;
+            font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+            line-height: 1.5;
+            font-weight: 500;
+            text-transform: capitalize;
+            letter-spacing: 0.01em;
         }
         .hero-cta-row {
             display: flex;
@@ -3211,14 +3241,17 @@
                 margin-left: auto;
                 margin-right: auto;
             }
-            .hero-title {
-                font-size: clamp(2.15rem, 9vw, 2.85rem) !important;
-                max-width: 14ch;
-                margin-left: auto !important;
-                margin-right: auto !important;
-            }
             .hero-brand {
-                font-size: clamp(1.15rem, 4.5vw, 1.35rem);
+                font-size: clamp(1.85rem, 8vw, 2.35rem);
+            }
+            .hero-appeal-badge {
+                font-size: clamp(0.68rem, 3.1vw, 0.78rem);
+                padding: 0.65rem 0.95rem;
+                letter-spacing: 0.06em;
+                line-height: 1.4;
+            }
+            .hero-support {
+                margin-bottom: 1.2rem;
             }
         }
         @media (max-width: 640px) {
@@ -3338,11 +3371,12 @@
                 <!-- LEFT SIDE: Content -->
                 <div class="hero-left order-2 lg:order-1 relative z-30 flex min-w-0 flex-col justify-center items-center lg:items-start text-center lg:text-left">
                     <span class="hero-gold-rule" aria-hidden="true"></span>
-                    <p class="hero-brand">Ezekiel A. Obeisun Jr.</p>
                     <p class="hero-kicker">Cybersecurity Professional</p>
-                    <h1 class="hero-title text-balance w-full">
-                        Navigate the digital landscape with confidence.
-                    </h1>
+                    <h1 class="hero-brand">Ezekiel A. Obeisun Jr.</h1>
+                    <p class="hero-appeal-badge">
+                        Navigate the digital landscape with confidence
+                    </p>
+                    <p class="hero-support">Sound judgment about risk</p>
                     <div class="hero-cta-row">
                         <a class="hero-cta hero-cta--primary" href="#projects">View Selected Work</a>
                         <a class="hero-cta hero-cta--ghost" href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer">
