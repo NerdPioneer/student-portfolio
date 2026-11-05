@@ -729,55 +729,67 @@
         }
         
         /* Back to Top Button Styles */
+        /* Back to top — navy/gold control, appears after leaving the hero */
         .back-to-top {
             position: fixed !important;
-            bottom: 20px !important;
-            right: 20px !important;
-            width: 50px !important;
-            height: 50px !important;
-            border-radius: 50% !important;
-            background-color: #ffffff !important;
-            color: #000000 !important;
-            border: 2px solid #e5e7eb !important;
-            font-size: 24px !important;
-            cursor: pointer !important;
-            opacity: 0 !important;
-            visibility: hidden !important;
-            transform: translateY(20px) scale(0.8) !important;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-            z-index: 1000 !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            font-weight: bold !important;
+            bottom: max(1.15rem, env(safe-area-inset-bottom, 0px)) !important;
+            right: max(1.15rem, env(safe-area-inset-right, 0px)) !important;
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 12px;
+            background: #0B1F3A;
+            color: #F5E6B8;
+            border: 1px solid rgba(196, 163, 90, 0.7);
+            font-size: 0.95rem;
+            line-height: 1;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translateY(12px);
+            transition:
+                opacity 0.22s ease,
+                transform 0.22s ease,
+                background 0.15s ease,
+                border-color 0.15s ease,
+                color 0.15s ease,
+                box-shadow 0.15s ease;
+            z-index: 80;
+            box-shadow:
+                0 12px 28px -14px rgba(11, 31, 58, 0.55),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            -webkit-appearance: none;
+            appearance: none;
         }
-        
+        .back-to-top i {
+            pointer-events: none;
+        }
         .back-to-top:hover {
-            background-color: #f9fafb !important;
-            transform: translateY(0) scale(1.1) !important;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
-            border-color: #d1d5db !important;
+            background: #102744;
+            border-color: #C4A35A;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow:
+                0 16px 32px -14px rgba(11, 31, 58, 0.6),
+                0 0 0 1px rgba(196, 163, 90, 0.25);
         }
-        
-        .back-to-top:focus {
-            outline: 2px solid #3b82f6 !important;
-            outline-offset: 2px !important;
+        .back-to-top:focus-visible {
+            outline: 2px solid #C4A35A;
+            outline-offset: 3px;
         }
-        
-        /* Ensure button is visible when scrolled */
         .back-to-top.show {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transform: translateY(0) scale(1) !important;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
         }
-        
-        /* Desktop-specific visibility */
-        @media (min-width: 768px) {
+        @media (prefers-reduced-motion: reduce) {
             .back-to-top {
-                opacity: 1 !important;
-                visibility: visible !important;
-                transform: translateY(0) scale(1) !important;
+                transition: opacity 0.01ms linear;
             }
         }
         
@@ -2643,15 +2655,13 @@
             }
         }
 
-        /* ── Active nav link (current section) ── */
+        /* ── Active nav link (current section) — gold, not orange ── */
         .nav-link.active {
-            color: #ff5b00;
+            color: #F5E6B8;
         }
-        /* Mobile drawer items get a softer background fill so the active state
-           reads at a glance even without color contrast assistance. */
         .nav-menu .nav-link.active {
-            background-color: rgba(255, 91, 0, 0.10);
-            color: #ff5b00;
+            background-color: rgba(196, 163, 90, 0.14);
+            color: #F5E6B8;
         }
 
         /* ── Masters Degree (Georgia Tech) — standout hero card ── */
@@ -2848,20 +2858,30 @@
             left: 0;
             right: 0;
             z-index: 50;
-            background: rgba(11, 31, 58, 0.97) !important;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            background: rgba(11, 31, 58, 0.96) !important;
+            border-bottom: 1px solid rgba(196, 163, 90, 0.22);
+            box-shadow: 0 10px 28px -20px rgba(11, 31, 58, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+        .desktop-nav.is-scrolled {
+            background: rgba(11, 31, 58, 0.99) !important;
+            border-bottom-color: rgba(196, 163, 90, 0.42);
+            box-shadow: 0 14px 34px -18px rgba(11, 31, 58, 0.78);
         }
         .nav-brand-link {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            background: rgba(255, 255, 255, 0.06);
+            width: 2.55rem;
+            height: 2.55rem;
+            border-radius: 11px;
+            border: 1px solid rgba(196, 163, 90, 0.45);
+            background: rgba(255, 255, 255, 0.05);
             color: #fff !important;
             text-decoration: none;
             transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
@@ -2873,49 +2893,98 @@
         }
         .nav-brand-link:hover {
             background: rgba(196, 163, 90, 0.18);
-            border-color: rgba(196, 163, 90, 0.65);
+            border-color: rgba(196, 163, 90, 0.85);
             color: #fff !important;
         }
         .nav-brand-link:focus-visible {
             outline: 2px solid #C4A35A;
             outline-offset: 3px;
         }
+        .desktop-nav .nav-links {
+            gap: 0.15rem;
+        }
         .desktop-nav .nav-link {
-            color: rgba(255, 255, 255, 0.84) !important;
+            position: relative;
+            color: rgba(255, 255, 255, 0.82) !important;
             text-decoration: none;
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 0.08em;
+            font-family: Montserrat, "Segoe UI", sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            padding: 0.45rem 0.7rem;
-            border-radius: 4px;
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
             display: inline-flex;
             align-items: center;
             min-height: 40px;
+            background: transparent;
+            transition: color 0.15s ease, background 0.15s ease;
         }
-        .desktop-nav .nav-link:hover,
-        .desktop-nav .nav-link.active {
+        .desktop-nav .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0.8rem;
+            right: 0.8rem;
+            bottom: 0.28rem;
+            height: 2px;
+            border-radius: 999px;
+            background: #C4A35A;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.18s ease;
+        }
+        .desktop-nav .nav-link:hover {
             color: #fff !important;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .desktop-nav .nav-link:hover::after,
+        .desktop-nav .nav-link.active::after {
+            transform: scaleX(1);
+        }
+        .desktop-nav .nav-link.active {
+            color: #F5E6B8 !important;
+            background: rgba(196, 163, 90, 0.1);
+        }
+        .desktop-nav .nav-link:focus-visible {
+            outline: 2px solid #C4A35A;
+            outline-offset: 2px;
         }
         .nav-cta {
-            color: #0B1F3A !important;
-            background: #fff !important;
+            color: #F5E6B8 !important;
+            background: transparent !important;
+            border: 1px solid rgba(196, 163, 90, 0.75);
             text-decoration: none;
-            font-size: 0.75rem;
+            font-family: Montserrat, "Segoe UI", sans-serif;
+            font-size: 0.72rem;
             font-weight: 700;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            padding: 0.5rem 0.95rem;
-            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
             align-items: center;
+            transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
         }
-        .nav-cta:hover { background: #eef1f5 !important; color: #0B1F3A !important; }
+        .nav-cta:hover {
+            background: #C4A35A !important;
+            border-color: #C4A35A;
+            color: #0B1F3A !important;
+        }
+        .nav-cta:focus-visible {
+            outline: 2px solid #C4A35A;
+            outline-offset: 3px;
+        }
         .nav-cta--mobile {
             width: 100%;
             justify-content: center;
             min-height: 44px;
             display: flex;
+            background: #C4A35A !important;
+            color: #0B1F3A !important;
+            border-color: #C4A35A;
+        }
+        .nav-cta--mobile:hover {
+            background: #d4b56e !important;
+            color: #0B1F3A !important;
         }
         .nav-toggle {
             display: flex;
@@ -2924,22 +2993,53 @@
             justify-content: center;
             width: 44px;
             height: 44px;
-            border: 1px solid rgba(255, 255, 255, 0.28);
-            border-radius: 6px;
-            background: transparent;
+            border: 1px solid rgba(196, 163, 90, 0.45);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
             cursor: pointer;
             padding: 0;
             gap: 0;
+            transition: background 0.15s ease, border-color 0.15s ease;
+        }
+        .nav-toggle:hover,
+        .nav-toggle[aria-expanded="true"] {
+            background: rgba(196, 163, 90, 0.16);
+            border-color: rgba(196, 163, 90, 0.8);
+        }
+        .nav-toggle:focus-visible {
+            outline: 2px solid #C4A35A;
+            outline-offset: 3px;
         }
         .nav-toggle .hamburger-line {
             display: block;
             width: 18px;
             height: 2px;
-            background: #fff;
+            background: #F5E6B8;
             margin: 2.5px 0;
+            border-radius: 999px;
+            transition: transform 0.25s ease, opacity 0.2s ease;
         }
         .desktop-nav .nav-menu {
             background: rgba(11, 31, 58, 0.99);
+        }
+        .desktop-nav .nav-menu .nav-link {
+            color: rgba(255, 255, 255, 0.88) !important;
+            font-family: Montserrat, "Segoe UI", sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.75rem 0.85rem;
+            border-radius: 8px;
+            min-height: 44px;
+        }
+        .desktop-nav .nav-menu .nav-link:hover {
+            background: rgba(255, 255, 255, 0.07);
+            color: #fff !important;
+        }
+        .desktop-nav .nav-menu .nav-link.active {
+            background: rgba(196, 163, 90, 0.14);
+            color: #F5E6B8 !important;
         }
 
         /* Hero — match site navy/gold/serif language; keep portrait */
