@@ -1050,7 +1050,7 @@ function toggleMoreSkills() {
 // menu items.
 
 function initActiveSection() {
-    const sectionIds = ['home', 'education', 'certifications', 'projects', 'notes'];
+    const sectionIds = ['home', 'about', 'projects', 'notes', 'education', 'certifications'];
     const sections = sectionIds
         .map((id) => document.getElementById(id))
         .filter(Boolean);

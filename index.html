@@ -2078,19 +2078,132 @@
     </style>
     
     <link rel="stylesheet" href="./dist/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    <!-- Hero layout must load after Tailwind so mobile padding/alignment win over utility classes -->
+    <!-- Header + hero overrides (load after Tailwind) -->
     <style>
+        .desktop-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: rgba(11, 31, 58, 0.97) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .nav-brand-link {
+            color: #fff !important;
+            text-decoration: none;
+            font-family: "Source Serif 4", Georgia, serif;
+            font-weight: 600;
+            font-size: 1.05rem;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        .nav-brand-link:hover { opacity: 0.88; color: #fff !important; }
+        .desktop-nav .nav-link {
+            color: rgba(255, 255, 255, 0.84) !important;
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.45rem 0.7rem;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            min-height: 40px;
+        }
+        .desktop-nav .nav-link:hover,
+        .desktop-nav .nav-link.active {
+            color: #fff !important;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .nav-cta {
+            color: #0B1F3A !important;
+            background: #fff !important;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.5rem 0.95rem;
+            border-radius: 4px;
+            align-items: center;
+        }
+        .nav-cta:hover { background: #eef1f5 !important; color: #0B1F3A !important; }
+        .nav-cta--mobile {
+            width: 100%;
+            justify-content: center;
+            min-height: 44px;
+            display: flex;
+        }
+        .nav-toggle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 6px;
+            background: transparent;
+            cursor: pointer;
+            padding: 0;
+            gap: 0;
+        }
+        .nav-toggle .hamburger-line {
+            display: block;
+            width: 18px;
+            height: 2px;
+            background: #fff;
+            margin: 2.5px 0;
+        }
+        .desktop-nav .nav-menu {
+            background: rgba(11, 31, 58, 0.99);
+        }
+
         .hero {
             align-items: center;
             padding-top: 6rem;
+            background: #F7F8FA !important;
+        }
+        .hero-title {
+            font-family: Inter, system-ui, sans-serif !important;
+            font-weight: 800 !important;
+            color: #0B1F3A !important;
+            font-size: clamp(1.85rem, 5.2vw, 3.75rem) !important;
+            line-height: 1.1 !important;
+            letter-spacing: -0.03em !important;
+        }
+        .hero-subtitle {
+            font-family: Inter, system-ui, sans-serif !important;
+            font-weight: 700 !important;
+            color: #0B1F3A !important;
+            font-size: clamp(1rem, 2.2vw, 1.25rem) !important;
+            letter-spacing: 0.07em !important;
+            margin-bottom: 0 !important;
+        }
+        .hero .profile-carousel {
+            max-width: 280px;
+        }
+        @media (min-width: 640px) {
+            .hero .profile-carousel { max-width: 340px; }
+        }
+        @media (min-width: 1024px) {
+            .hero .profile-carousel { max-width: 460px; }
+            .hero { padding-top: 7rem; }
+            .hero-grid { gap: 3rem !important; }
         }
         @media (min-width: 768px) {
             .hero { padding-top: 5.5rem; }
         }
-        @media (min-width: 1024px) {
-            .hero { padding-top: 7rem; }
+        /* Hero icons ~12–15pp more visible */
+        .hero .floating-icon {
+            color: #64748b !important;
+            opacity: 0.34 !important;
         }
         @media (max-width: 1023px) {
             .hero {
@@ -2103,6 +2216,7 @@
                 padding-top: 0.75rem;
                 gap: 1.5rem !important;
             }
+            .hero .floating-icon { opacity: 0.28 !important; }
             .carousel-container {
                 width: 100% !important;
                 max-width: 260px !important;
@@ -2113,20 +2227,12 @@
             }
         }
         @media (max-width: 640px) {
-            .hero {
-                padding-top: 8.25rem !important;
-            }
-            .carousel-container {
-                max-width: 236px !important;
-            }
+            .hero { padding-top: 8.25rem !important; }
+            .carousel-container { max-width: 236px !important; }
         }
         @media (max-width: 480px) {
-            .hero {
-                padding-top: 8rem !important;
-            }
-            .carousel-container {
-                max-width: 220px !important;
-            }
+            .hero { padding-top: 8rem !important; }
+            .carousel-container { max-width: 220px !important; }
         }
     </style>
     
@@ -2145,56 +2251,51 @@
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-600 text-white px-4 py-2 rounded-lg z-50">Skip to main content</a>
     
     <!-- Desktop Navigation -->
-    <nav class="desktop-nav w-full bg-black transition-all duration-300" id="desktop-nav" role="navigation" aria-label="Main navigation">
+    <nav class="desktop-nav w-full transition-all duration-300" id="desktop-nav" role="navigation" aria-label="Main navigation">
         <div class="container mx-auto px-4 lg:px-6">
-            <div class="flex justify-between items-center py-4">
+            <div class="flex justify-between items-center py-3.5">
                 <div class="nav-brand">
-                    <a href="#home" class="flex items-center space-x-2 text-xl md:text-2xl font-bold text-white" aria-label="NerdPioneer — back to top">
-                        <i class="fas fa-brain text-white" aria-hidden="true"></i>
-                    </a>
+                    <a href="#home" class="nav-brand-link" aria-label="Ezekiel A. Obeisun Jr. — back to top">Ezekiel A. Obeisun Jr.</a>
                 </div>
                 
                 <!-- Desktop Menu -->
-                <ul class="hidden lg:flex space-x-6 xl:space-x-8 nav-links">
-                    <li><a href="#home" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Home</a></li>
-                    <li><a href="#education" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Education</a></li>
-                    <li><a href="#certifications" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Certifications</a></li>
-                    <li><a href="#projects" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Work</a></li>
-                    <li><a href="#notes" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Notes</a></li>
+                <ul class="hidden lg:flex items-center gap-1 nav-links">
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#projects" class="nav-link">Work</a></li>
+                    <li><a href="#notes" class="nav-link">Notes</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#certifications" class="nav-link">Credentials</a></li>
                 </ul>
 
                 <!-- Desktop LinkedIn CTA -->
                 <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer"
-                   class="hidden lg:inline-flex items-center px-4 py-2 rounded-lg bg-white text-black hover:bg-gray-200 transition duration-300 font-semibold uppercase tracking-wider text-xs ml-4">
-                    VISIT LINKEDIN
+                   class="nav-cta hidden lg:inline-flex">
+                    LinkedIn
                 </a>
                 
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden flex items-center gap-2">
-                    <button class="nav-toggle p-3 border border-gray-600 rounded-lg bg-black hover:bg-gray-900 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
-                    <div class="w-6 h-6 flex flex-col justify-center">
-                        <span class="hamburger-line block w-full h-0.5 bg-white mb-1 transition-all duration-300"></span>
-                        <span class="hamburger-line block w-full h-0.5 bg-white mb-1 transition-all duration-300"></span>
-                        <span class="hamburger-line block w-full h-0.5 bg-white transition-all duration-300"></span>
-                    </div>
+                    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
                     </button>
                 </div>
             </div>
             
             <!-- Mobile Menu -->
             <div class="nav-menu lg:hidden overflow-hidden transition-all duration-300 ease-in-out" id="primary-navigation" style="max-height: 0;">
-                <div class="border-t border-gray-700 pt-4 pb-4">
+                <div class="border-t border-white/10 pt-3 pb-4">
                     <ul class="flex flex-col space-y-1">
-                        <li><a href="#home" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Home</a></li>
-                        <li><a href="#education" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Education</a></li>
-                        <li><a href="#certifications" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Certifications</a></li>
-                        <li><a href="#projects" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Work</a></li>
-                        <li><a href="#notes" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Notes</a></li>
+                        <li><a href="#about" class="nav-link block">About</a></li>
+                        <li><a href="#projects" class="nav-link block">Work</a></li>
+                        <li><a href="#notes" class="nav-link block">Notes</a></li>
+                        <li><a href="#education" class="nav-link block">Education</a></li>
+                        <li><a href="#certifications" class="nav-link block">Credentials</a></li>
                         <li class="pt-2">
                             <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer"
-                               class="nav-link block text-center px-4 py-3 rounded-lg font-semibold uppercase tracking-wider text-sm"
-                               style="background-color: #ffffff; color: #000000;">
-                                VISIT LINKEDIN
+                               class="nav-cta nav-cta--mobile block text-center">
+                                LinkedIn
                             </a>
                         </li>
                     </ul>
@@ -2339,9 +2440,9 @@
                     <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-black tracking-tight leading-tight mb-4 md:mb-5 text-balance w-full">
                         NAVIGATE THE DIGITAL LANDSCAPE<br class="md:hidden" aria-hidden="true"> WITH CONFIDENCE
                     </h1>
-                    <h2 class="hero-subtitle text-base sm:text-lg md:text-xl text-black mb-6 md:mb-8 font-medium uppercase tracking-wider w-full">
-                        EZEKIEL A. OBEISUN JR
-                    </h2>
+                    <p class="hero-subtitle uppercase tracking-wider w-full">
+                        Ezekiel A. Obeisun Jr.
+                    </p>
                 </div>
                 
                 <!-- RIGHT SIDE: Hero Image -->
