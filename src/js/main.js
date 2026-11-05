@@ -712,19 +712,12 @@ function initRotatingQuotes() {
 
     function updateDots(index) {
         quoteDots.forEach((dot, i) => {
-            if (i === index) {
-                dot.classList.remove('bg-gray-600', 'hover:bg-gray-400');
-                dot.classList.add('bg-blue-500');
-                dot.setAttribute('aria-pressed', 'true');
-                dot.setAttribute('aria-selected', 'true');
-                dot.setAttribute('tabindex', '0');
-            } else {
-                dot.classList.remove('bg-blue-500');
-                dot.classList.add('bg-gray-600', 'hover:bg-gray-400');
-                dot.setAttribute('aria-pressed', 'false');
-                dot.setAttribute('aria-selected', 'false');
-                dot.setAttribute('tabindex', '-1');
-            }
+            const isActive = i === index;
+            dot.classList.toggle('is-active', isActive);
+            dot.classList.remove('bg-blue-500', 'bg-gray-600', 'hover:bg-gray-400');
+            dot.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+            dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            dot.setAttribute('tabindex', isActive ? '0' : '-1');
         });
     }
 
