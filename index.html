@@ -2996,28 +2996,107 @@
             background: rgba(11, 31, 58, 0.99);
         }
 
+        /* Hero — match site navy/gold/serif language; keep portrait */
         .hero {
+            --hero-navy: #0B1F3A;
+            --hero-gold: #C4A35A;
+            --hero-muted: #5B6B7C;
             align-items: center;
             padding-top: 6rem;
-            background: #F7F8FA !important;
+            background:
+                radial-gradient(90% 70% at 100% 0%, rgba(196, 163, 90, 0.08) 0%, transparent 55%),
+                radial-gradient(70% 60% at 0% 100%, rgba(11, 31, 58, 0.05) 0%, transparent 50%),
+                #F7F8FA !important;
+        }
+        .hero-gold-rule {
+            display: block;
+            width: 42px;
+            height: 3px;
+            background: var(--hero-gold);
+            margin: 0 0 1rem;
+            border: 0;
+        }
+        .hero-left .hero-gold-rule {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (min-width: 1024px) {
+            .hero-left .hero-gold-rule {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+        .hero-kicker {
+            margin: 0 0 0.65rem;
+            color: var(--hero-gold);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
         .hero-title {
-            font-family: Inter, system-ui, sans-serif !important;
-            font-weight: 800 !important;
-            color: #0B1F3A !important;
-            font-size: clamp(1.85rem, 5.2vw, 3.75rem) !important;
-            line-height: 1.1 !important;
-            letter-spacing: -0.03em !important;
+            font-family: "Source Serif 4", Georgia, serif !important;
+            font-weight: 600 !important;
+            color: var(--hero-navy) !important;
+            font-size: clamp(2.15rem, 5.4vw, 3.85rem) !important;
+            line-height: 1.12 !important;
+            letter-spacing: -0.02em !important;
+            margin: 0 0 0.85rem !important;
+            text-transform: none !important;
         }
-        .hero-subtitle {
-            font-family: Inter, system-ui, sans-serif !important;
-            font-weight: 700 !important;
-            color: #0B1F3A !important;
-            font-size: clamp(1rem, 2.2vw, 1.25rem) !important;
-            letter-spacing: 0.07em !important;
-            margin-bottom: 0 !important;
+        .hero-tagline {
+            margin: 0 0 1.15rem;
+            max-width: 28rem;
+            color: var(--hero-muted);
+            font-size: clamp(1.02rem, 2vw, 1.2rem);
+            line-height: 1.55;
+            font-weight: 500;
         }
-        /* Portrait hero photo — taller vertical frame, balanced with copy */
+        .hero-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            justify-content: center;
+        }
+        @media (min-width: 1024px) {
+            .hero-cta-row { justify-content: flex-start; }
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            min-height: 44px;
+            padding: 0.65rem 1.2rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+        }
+        .hero-cta--primary {
+            background: var(--hero-navy);
+            border: 1px solid var(--hero-navy);
+            color: #fff !important;
+        }
+        .hero-cta--primary:hover {
+            background: #102744;
+            border-color: #102744;
+            color: #fff !important;
+        }
+        .hero-cta--ghost {
+            background: transparent;
+            border: 1px solid rgba(11, 31, 58, 0.28);
+            color: var(--hero-navy) !important;
+        }
+        .hero-cta--ghost:hover {
+            border-color: var(--hero-navy);
+            background: rgba(11, 31, 58, 0.04);
+        }
+        .hero-cta:focus-visible {
+            outline: 2px solid var(--hero-gold);
+            outline-offset: 3px;
+        }
         .hero .profile-carousel {
             max-width: 288px;
             margin-left: auto;
@@ -3028,10 +3107,10 @@
             width: 100%;
             aspect-ratio: 3 / 4;
             border-radius: 1.15rem;
-            border: 2px solid rgba(255, 255, 255, 0.95);
+            border: 2px solid rgba(255, 255, 255, 0.96);
             box-shadow:
                 0 22px 44px -18px rgba(11, 31, 58, 0.32),
-                0 0 0 1px rgba(11, 31, 58, 0.04);
+                0 0 0 1px rgba(196, 163, 90, 0.28);
             background: #fff;
         }
         .hero .carousel-container img {
@@ -3058,7 +3137,7 @@
                 margin-left: auto;
                 margin-right: auto;
                 align-items: center !important;
-                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+                grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr) !important;
             }
             .hero-left,
             .hero-right {
@@ -3093,24 +3172,27 @@
                 max-width: 1280px;
             }
         }
-        /* Hero icons ~12–15pp more visible */
+        /* Quiet atmosphere icons — sparse, not busy */
+        .hero .floating-icons {
+            opacity: 1;
+        }
         .hero .floating-icon {
-            color: #64748b !important;
-            opacity: 0.34 !important;
+            color: #0B1F3A !important;
+            opacity: 0.08 !important;
         }
         @media (max-width: 1023px) {
             .hero {
                 align-items: flex-start !important;
-                padding-top: 7.5rem !important;
+                padding-top: 7.35rem !important;
                 padding-bottom: 2rem !important;
                 min-height: auto !important;
             }
             .hero-grid {
                 min-height: 0 !important;
                 padding-top: 0.15rem;
-                gap: 1.25rem !important;
+                gap: 1.2rem !important;
             }
-            .hero .floating-icon { opacity: 0.28 !important; }
+            .hero .floating-icon { opacity: 0.06 !important; }
             .hero .profile-carousel {
                 max-width: 288px;
             }
@@ -3122,22 +3204,36 @@
                 margin-left: auto;
                 margin-right: auto;
             }
+            .hero-title {
+                font-size: clamp(1.95rem, 8.2vw, 2.55rem) !important;
+            }
         }
         @media (max-width: 640px) {
-            .hero { padding-top: 7.25rem !important; }
+            .hero { padding-top: 7.1rem !important; }
             .hero .profile-carousel,
             .hero .carousel-container {
                 max-width: 270px !important;
             }
+            .hero-cta-row {
+                width: 100%;
+            }
+            .hero-cta {
+                flex: 1 1 auto;
+            }
         }
         @media (max-width: 480px) {
             .hero {
-                padding-top: 7rem !important;
+                padding-top: 6.85rem !important;
                 min-height: auto !important;
             }
             .hero .profile-carousel,
             .hero .carousel-container {
                 max-width: 255px !important;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .hero .floating-icon {
+                animation: none !important;
             }
         }
     </style>
@@ -3212,130 +3308,15 @@
     
     <main id="main-content">
     <!-- Hero Section -->
-    <section id="home" class="hero min-h-[100dvh] md:min-h-screen flex relative bg-gray-50 overflow-hidden" role="banner">
-        <!-- Floating Technology Icons Background -->
-        <div class="floating-icons absolute inset-0 z-0 pointer-events-none">
-            <!-- AWS -->
-            <div class="floating-icon absolute text-gray-600 opacity-25" style="top: 15%; left: 10%; animation-delay: 0s;">
-                <i class="fab fa-aws text-2xl md:text-3xl"></i>
-            </div>
-            <!-- Microsoft Azure -->
-            <div class="floating-icon absolute text-gray-600 opacity-25" style="top: 25%; right: 15%; animation-delay: 2s;">
-                <i class="fab fa-microsoft text-xl md:text-2xl"></i>
-            </div>
-            <!-- Docker -->
-            <div class="floating-icon absolute text-gray-600 opacity-25" style="top: 40%; left: 5%; animation-delay: 4s;">
-                <i class="fab fa-docker text-xl md:text-2xl"></i>
-            </div>
-            <!-- Kubernetes (using server icon as alternative) -->
-            <div class="floating-icon absolute text-gray-600 opacity-25" style="top: 60%; right: 20%; animation-delay: 1s;">
-                <i class="fas fa-server text-lg md:text-xl"></i>
-            </div>
-            <!-- Red Hat / Ansible -->
-            <div class="floating-icon absolute text-gray-600 opacity-25" style="top: 35%; right: 8%; animation-delay: 3s;">
-                <i class="fab fa-redhat text-xl md:text-2xl"></i>
-            </div>
-            <!-- Cloud Icons -->
-            <div class="floating-icon absolute text-gray-600 opacity-20" style="top: 20%; left: 60%; animation-delay: 1.5s;">
-                <i class="fas fa-cloud text-lg md:text-xl"></i>
-            </div>
-            <div class="floating-icon absolute text-gray-600 opacity-20" style="top: 50%; left: 70%; animation-delay: 4.5s;">
-                <i class="fas fa-cloud text-xl md:text-2xl"></i>
-            </div>
-            <div class="floating-icon absolute text-gray-600 opacity-20" style="top: 80%; right: 25%; animation-delay: 2.5s;">
-                <i class="fas fa-cloud text-lg md:text-xl"></i>
-            </div>
-            <!-- Additional Tech Icons -->
-            <div class="floating-icon absolute text-gray-600 opacity-23" style="top: 10%; right: 35%; animation-delay: 6s;">
-                <i class="fas fa-cog text-xl md:text-2xl"></i>
-            </div>
-            <div class="floating-icon absolute text-gray-600 opacity-23" style="top: 85%; left: 8%; animation-delay: 3.5s;">
-                <i class="fas fa-network-wired text-xl md:text-2xl"></i>
-            </div>
-            <div class="floating-icon absolute text-gray-600 opacity-23" style="top: 45%; left: 25%; animation-delay: 5.5s;">
-                <i class="fas fa-database text-lg md:text-xl"></i>
-            </div>
-            <!-- Additional rotating icons for variety -->
-            <div class="floating-icon absolute text-gray-600 opacity-23" style="top: 55%; right: 5%; animation-delay: 7s;">
-                <i class="fab fa-linux text-xl md:text-2xl"></i>
-            </div>
-            <div class="floating-icon absolute text-gray-600 opacity-23" style="top: 30%; left: 40%; animation-delay: 8s;">
-                <i class="fas fa-shield-alt text-lg md:text-xl"></i>
-            </div>
-            <div class="floating-icon absolute text-gray-600 opacity-23" style="top: 75%; right: 40%; animation-delay: 9s;">
-                <i class="fas fa-code text-xl md:text-2xl"></i>
-            </div>
-            
-            <!-- Additional Layer of Icons for More Visibility -->
-            <!-- Jenkins/CI-CD -->
-            <div class="floating-icon absolute text-gray-600 opacity-21" style="top: 12%; left: 30%; animation-delay: 10s;">
-                <i class="fas fa-cogs text-lg md:text-xl"></i>
-            </div>
-            <!-- Terraform/IaC -->
-            <div class="floating-icon absolute text-gray-600 opacity-21" style="top: 28%; left: 75%; animation-delay: 11s;">
-                <i class="fas fa-cube text-lg md:text-xl"></i>
-            </div>
-            <!-- Python -->
-            <div class="floating-icon absolute text-gray-600 opacity-21" style="top: 42%; right: 35%; animation-delay: 12s;">
-                <i class="fab fa-python text-xl md:text-2xl"></i>
-            </div>
-            <!-- Git -->
-            <div class="floating-icon absolute text-gray-600 opacity-21" style="top: 58%; left: 35%; animation-delay: 13s;">
-                <i class="fab fa-git-alt text-lg md:text-xl"></i>
-            </div>
-            <!-- Terminal/CLI -->
-            <div class="floating-icon absolute text-gray-600 opacity-21" style="top: 68%; right: 45%; animation-delay: 14s;">
-                <i class="fas fa-terminal text-lg md:text-xl"></i>
-            </div>
-            
-            <!-- NEW TECH STACK ICONS -->
-            <!-- Ubuntu -->
-            <div class="floating-icon absolute text-gray-600 opacity-22" style="top: 18%; left: 45%; animation-delay: 15s;">
-                <i class="fab fa-ubuntu text-xl md:text-2xl"></i>
-            </div>
-            <!-- Ansible (using automation icon) -->
-            <div class="floating-icon absolute text-gray-600 opacity-22" style="top: 65%; left: 55%; animation-delay: 16s;">
-                <i class="fas fa-robot text-lg md:text-xl"></i>
-            </div>
-            <!-- Cisco (using network icon) -->
-            <div class="floating-icon absolute text-gray-600 opacity-22" style="top: 22%; right: 45%; animation-delay: 17s;">
-                <i class="fas fa-network-wired text-lg md:text-xl"></i>
-            </div>
-            <!-- VMware (using virtualization icon) -->
-            <div class="floating-icon absolute text-gray-600 opacity-22" style="top: 78%; left: 65%; animation-delay: 18s;">
-                <i class="fas fa-layer-group text-lg md:text-xl"></i>
-            </div>
-            
-            <!-- Additional movement variety icons -->
-            <div class="floating-icon absolute text-gray-600 opacity-20" style="top: 15%; left: 80%; animation-delay: 19s;">
-                <i class="fas fa-server text-lg md:text-xl"></i>
-            </div>
-            <div class="floating-icon absolute text-gray-600 opacity-20" style="top: 35%; left: 85%; animation-delay: 20s;">
-                <i class="fas fa-database text-lg md:text-xl"></i>
-            </div>
-            <div class="floating-icon absolute text-gray-600 opacity-20" style="top: 55%; right: 60%; animation-delay: 21s;">
-                <i class="fas fa-cloud text-lg md:text-xl"></i>
-            </div>
-            <div class="floating-icon absolute text-gray-600 opacity-20" style="top: 88%; right: 8%; animation-delay: 22s;">
-                <i class="fas fa-shield-alt text-lg md:text-xl"></i>
-            </div>
-
-            <!-- Security Analyst / SOC identity -->
-            <div class="floating-icon absolute text-gray-600 opacity-21" style="top: 5%; right: 22%; animation-delay: 23s;">
-                <i class="fas fa-user-shield text-lg md:text-xl"></i>
-            </div>
-            <!-- Security hardening / lock -->
-            <div class="floating-icon absolute text-gray-600 opacity-20" style="top: 70%; right: 12%; animation-delay: 24s;">
-                <i class="fas fa-lock text-lg md:text-xl"></i>
-            </div>
-            <!-- Network / system architecture -->
-            <div class="floating-icon absolute text-gray-600 opacity-21" style="top: 25%; left: 20%; animation-delay: 25s;">
-                <i class="fas fa-diagram-project text-lg md:text-xl"></i>
-            </div>
-            <!-- Triage / analysis / investigation -->
-            <div class="floating-icon absolute text-gray-600 opacity-20" style="top: 92%; left: 50%; animation-delay: 26s;">
-                <i class="fas fa-magnifying-glass-chart text-lg md:text-xl"></i>
-            </div>
+    <section id="home" class="hero min-h-[100dvh] md:min-h-screen flex relative overflow-hidden" role="banner">
+        <!-- Sparse atmosphere icons -->
+        <div class="floating-icons absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
+            <div class="floating-icon absolute" style="top: 18%; left: 8%; animation-delay: 0s;"><i class="fas fa-shield-alt text-xl md:text-2xl"></i></div>
+            <div class="floating-icon absolute" style="top: 28%; right: 12%; animation-delay: 2s;"><i class="fab fa-aws text-2xl md:text-3xl"></i></div>
+            <div class="floating-icon absolute" style="top: 72%; left: 10%; animation-delay: 4s;"><i class="fas fa-cloud text-lg md:text-xl"></i></div>
+            <div class="floating-icon absolute" style="top: 78%; right: 18%; animation-delay: 1.5s;"><i class="fas fa-lock text-lg md:text-xl"></i></div>
+            <div class="floating-icon absolute" style="top: 14%; right: 38%; animation-delay: 3s;"><i class="fas fa-network-wired text-lg md:text-xl"></i></div>
+            <div class="floating-icon absolute" style="top: 62%; left: 42%; animation-delay: 5s;"><i class="fas fa-terminal text-lg md:text-xl"></i></div>
         </div>
 
         <!-- Hero Content -->
@@ -3343,12 +3324,21 @@
             <div class="hero-grid grid lg:grid-cols-2 gap-5 lg:gap-12 items-center lg:min-h-[70vh]">
                 <!-- LEFT SIDE: Content -->
                 <div class="hero-left order-2 lg:order-1 relative z-30 flex min-w-0 flex-col justify-center items-center lg:items-start text-center lg:text-left">
-                    <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-black tracking-tight leading-tight mb-4 md:mb-5 text-balance w-full">
-                        NAVIGATE THE DIGITAL LANDSCAPE<br class="md:hidden" aria-hidden="true"> WITH CONFIDENCE
-                    </h1>
-                    <p class="hero-subtitle uppercase tracking-wider w-full">
+                    <span class="hero-gold-rule" aria-hidden="true"></span>
+                    <p class="hero-kicker">Cybersecurity Professional</p>
+                    <h1 class="hero-title text-balance w-full">
                         Ezekiel A. Obeisun Jr.
+                    </h1>
+                    <p class="hero-tagline w-full">
+                        Navigate the digital landscape with confidence—security operations, cloud, and sound judgment about risk.
                     </p>
+                    <div class="hero-cta-row">
+                        <a class="hero-cta hero-cta--primary" href="#projects">View Selected Work</a>
+                        <a class="hero-cta hero-cta--ghost" href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            LinkedIn
+                        </a>
+                    </div>
                 </div>
                 
                 <!-- RIGHT SIDE: Hero Image (portrait frame) -->
