@@ -1492,23 +1492,9 @@
         }
 
         @media (max-width: 640px) {
-            #certifications .credentials-surface,
-            #projects .projects-surface {
+            #certifications .credentials-surface {
                 border-radius: 0.85rem;
-            }
-
-            #certifications .credentials-surface,
-            #projects .projects-surface {
                 padding: 1rem !important;
-            }
-
-            #projects .project-case > summary {
-                padding: 0.85rem 0.9rem;
-            }
-
-            #projects .project-details-panel {
-                padding-left: 0.9rem !important;
-                padding-right: 0.9rem !important;
             }
         }
 
@@ -1672,101 +1658,237 @@
             }
         }
         
-        /* Projects (dark case-study layout) */
-        #projects {
-            background: #f8f7f4 !important;
-        }
-
-        .projects-surface {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 16px 36px -24px rgba(15, 23, 42, 0.25);
-        }
-
-        .project-case {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            overflow: hidden;
-        }
-
-        .project-case > summary {
-            list-style: none;
-            cursor: pointer;
-            padding: 1rem 1.15rem;
-        }
-
-        .project-case > summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .project-case summary:hover {
-            background: #f8fafc;
-        }
-
-        .project-case.project-accent-blue summary:hover { background: #f2f7ff; }
-        .project-case.project-accent-amber summary:hover { background: #fffbf2; }
-        .project-case.project-accent-green summary:hover { background: #f2fbf7; }
-
-        .project-accent-blue { border-left: 4px solid #3b82f6; }
-        .project-accent-amber { border-left: 4px solid #f59e0b; }
-        .project-accent-green { border-left: 4px solid #10b981; }
-
-        .project-open-icon {
-            transition: transform 0.2s ease;
-        }
-
-        .project-case[open] .project-open-icon {
-            transform: rotate(180deg);
-        }
-
-        .project-tag {
-            background: #f8fafc;
-            border: 1px solid #d1d5db;
-            color: #475569;
-        }
-
-        .project-details-panel {
-            border-top: 1px solid #e5e7eb;
-            background: #fafafa;
-        }
-
-        #certifications .text-white,
-        #projects .text-white {
+        /* Certifications text overrides (projects uses its own dark theme below) */
+        #certifications .text-white {
             color: #111827 !important;
         }
 
-        #certifications .text-slate-400,
-        #projects .text-slate-400 {
+        #certifications .text-slate-400 {
             color: #6b7280 !important;
         }
 
         #certifications .text-slate-300,
-        #projects .text-slate-300,
-        #certifications .text-slate-200,
-        #projects .text-slate-200 {
+        #certifications .text-slate-200 {
             color: #4b5563 !important;
         }
 
-        #certifications .bg-white\/5,
-        #projects .bg-white\/5 {
+        #certifications .bg-white\/5 {
             background-color: #f8fafc !important;
         }
 
-        #certifications .border-white\/10,
-        #projects .border-white\/10 {
+        #certifications .border-white\/10 {
             border-color: #e5e7eb !important;
         }
-        
-        @media (max-width: 768px) {
-            .projects-grid {
-                flex-direction: column;
+
+        /* Selected Work — navy case-study layout */
+        #projects.selected-work {
+            --sw-bg: #0B1F3A;
+            --sw-card: #102744;
+            --sw-border: rgba(255, 255, 255, 0.14);
+            --sw-gold: #C4A35A;
+            --sw-muted: #A8B3C4;
+            --sw-text: #F4F7FB;
+            background: var(--sw-bg) !important;
+            color: var(--sw-text);
+            padding: 4.5rem 0 4rem !important;
+            margin-top: 0 !important;
+        }
+
+        #projects.selected-work .sw-wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        #projects.selected-work .sw-gold-rule {
+            display: block;
+            width: 42px;
+            height: 3px;
+            background: var(--sw-gold);
+            margin: 0 0 0.9rem;
+            border: 0;
+        }
+
+        #projects.selected-work .sw-heading {
+            font-family: "Source Serif 4", Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            line-height: 1.15;
+            color: #fff;
+            margin: 0 0 0.65rem;
+        }
+
+        #projects.selected-work .sw-subhead {
+            margin: 0 0 2.25rem;
+            max-width: 40rem;
+            color: var(--sw-muted);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        #projects.selected-work .sw-featured {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin-bottom: 2.75rem;
+        }
+
+        @media (min-width: 900px) {
+            #projects.selected-work .sw-featured {
+                grid-template-columns: 1fr 1fr;
                 gap: 1.5rem;
             }
-            
-            .projects-grid .project-card {
-                width: 100% !important;
-                height: auto !important;
-                min-height: 400px;
+        }
+
+        #projects.selected-work .sw-card {
+            background: var(--sw-card);
+            border: 1px solid var(--sw-border);
+            border-radius: 14px;
+            padding: 1.4rem 1.45rem 1.35rem;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+
+        #projects.selected-work .sw-meta {
+            margin: 0 0 0.7rem;
+            color: var(--sw-gold);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            line-height: 1.4;
+        }
+
+        #projects.selected-work .sw-card-title {
+            font-family: "Source Serif 4", Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+            line-height: 1.25;
+            color: #fff;
+            margin: 0 0 1.1rem;
+        }
+
+        #projects.selected-work .sw-block {
+            margin: 0 0 0.95rem;
+        }
+
+        #projects.selected-work .sw-block:last-of-type {
+            margin-bottom: 1.15rem;
+        }
+
+        #projects.selected-work .sw-label {
+            display: block;
+            margin: 0 0 0.28rem;
+            color: var(--sw-gold);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        #projects.selected-work .sw-block p {
+            margin: 0;
+            color: rgba(244, 247, 251, 0.9);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        #projects.selected-work .sw-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-top: auto;
+            padding-top: 0.35rem;
+        }
+
+        #projects.selected-work .sw-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.28rem 0.7rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            color: rgba(244, 247, 251, 0.88);
+            font-size: 0.72rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        #projects.selected-work .sw-more-heading {
+            font-family: "Source Serif 4", Georgia, serif;
+            font-weight: 600;
+            font-size: 1.55rem;
+            color: #fff;
+            margin: 0 0 1.15rem;
+        }
+
+        #projects.selected-work .sw-more {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            #projects.selected-work .sw-more {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.15rem;
+            }
+        }
+
+        #projects.selected-work .sw-more-card {
+            background: var(--sw-card);
+            border: 1px solid var(--sw-border);
+            border-radius: 14px;
+            padding: 1.15rem 1.2rem 1.25rem;
+        }
+
+        #projects.selected-work .sw-more-card .sw-card-title {
+            font-size: 1.15rem;
+            margin-bottom: 0.65rem;
+        }
+
+        #projects.selected-work .sw-more-card p {
+            margin: 0;
+            color: rgba(244, 247, 251, 0.86);
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+
+        #projects.selected-work .sw-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0.65rem 1.25rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            color: #fff !important;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: transparent;
+            transition: background 0.15s ease, border-color 0.15s ease;
+        }
+
+        #projects.selected-work .sw-cta:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #fff;
+            color: #fff !important;
+        }
+
+        #projects.selected-work .sw-cta:focus-visible {
+            outline: 2px solid var(--sw-gold);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 640px) {
+            #projects.selected-work {
+                padding: 3.25rem 0 3rem !important;
+            }
+            #projects.selected-work .sw-wrap {
+                padding: 0 1.15rem;
+            }
+            #projects.selected-work .sw-card,
+            #projects.selected-work .sw-more-card {
+                padding: 1.15rem 1.1rem 1.2rem;
             }
         }
         
@@ -1956,7 +2078,7 @@
     </style>
     
     <link rel="stylesheet" href="./dist/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <!-- Hero layout must load after Tailwind so mobile padding/alignment win over utility classes -->
     <style>
@@ -2037,7 +2159,7 @@
                     <li><a href="#home" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Home</a></li>
                     <li><a href="#education" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Education</a></li>
                     <li><a href="#certifications" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Certifications</a></li>
-                    <li><a href="#projects" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Projects</a></li>
+                    <li><a href="#projects" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Work</a></li>
                     <li><a href="#notes" class="nav-link px-3 xl:px-4 py-2 text-white hover:text-gray-300 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Notes</a></li>
                 </ul>
 
@@ -2066,7 +2188,7 @@
                         <li><a href="#home" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Home</a></li>
                         <li><a href="#education" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Education</a></li>
                         <li><a href="#certifications" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Certifications</a></li>
-                        <li><a href="#projects" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Projects</a></li>
+                        <li><a href="#projects" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Work</a></li>
                         <li><a href="#notes" class="nav-link block px-4 py-3 text-white hover:text-gray-300 hover:bg-gray-800 transition duration-300 rounded-lg font-medium uppercase tracking-wider text-sm">Notes</a></li>
                         <li class="pt-2">
                             <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer"
@@ -2558,94 +2680,80 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section projects py-10 md:py-16 lg:py-20 md:mt-6 lg:mt-10">
-        <div class="container mx-auto px-6">
-            <div class="projects-surface rounded-3xl p-6 md:p-10 lg:p-12 max-w-6xl mx-auto">
-                <div class="text-center mb-10">
-                    <h2 class="section-header-strong text-3xl md:text-4xl text-white mb-3 uppercase tracking-wide">Projects</h2>
-                    <p class="text-base md:text-lg text-slate-300 max-w-3xl mx-auto">Applied security work that shows how I approach problems, document decisions, and build for reuse.</p>
-                </div>
+    <section id="projects" class="section selected-work" aria-label="Selected Work">
+        <div class="sw-wrap">
+            <span class="sw-gold-rule" aria-hidden="true"></span>
+            <h2 class="sw-heading">Selected Work</h2>
+            <p class="sw-subhead">Independent projects in security operations, secure access, cloud and automation.</p>
 
-                <div class="projects-grid flex flex-col gap-4">
-                    <details class="project-case project-accent-blue rounded-2xl" open>
-                        <summary>
-                            <div class="flex items-start justify-between gap-3 mb-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-md border text-[11px] font-semibold uppercase tracking-wider badge-comptia">Security Operations</span>
-                                <span class="inline-flex items-center text-slate-300 text-sm">Details <i class="project-open-icon fas fa-chevron-down ml-2 text-xs"></i></span>
-                            </div>
-                            <h3 class="text-xl md:text-2xl font-black text-white mb-2">Python Security Triage &amp; Analytics</h3>
-                            <p class="text-slate-300 text-base leading-relaxed mb-3">A Python workflow that reduces noise in security events, prioritizes what needs review, and produces clear handoff-ready findings.</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">Python</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">Triage</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">Analytics</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">Log Parsing</span>
-                            </div>
-                        </summary>
-                        <div class="project-details-panel px-5 md:px-6 py-4 text-slate-300">
-                            <p class="text-sm uppercase tracking-wider text-slate-400 mb-2">Focus</p>
-                            <ul class="list-disc list-inside text-sm leading-relaxed space-y-1">
-                                <li>Filters false positives so review time goes to real signals.</li>
-                                <li>Prioritizes remaining events for faster triage.</li>
-                                <li>Exports short summaries that are easy to document and share.</li>
-                                <li>Structured for readability, testing, and future updates.</li>
-                            </ul>
-                        </div>
-                    </details>
+            <div class="sw-featured">
+                <article class="sw-card">
+                    <p class="sw-meta">Security Operations · Python · WGU · 2025</p>
+                    <h3 class="sw-card-title">Security Log Analysis and Incident Response Tool</h3>
+                    <div class="sw-block">
+                        <span class="sw-label">Problem</span>
+                        <p>Security event data arrives from several sources in inconsistent formats, which slows investigation.</p>
+                    </div>
+                    <div class="sw-block">
+                        <span class="sw-label">Approach</span>
+                        <p>A Python parser that ingests logs, normalizes timestamps into a single timeline, and extracts indicators of compromise: IP addresses, domains, file hashes and usernames.</p>
+                    </div>
+                    <div class="sw-block">
+                        <span class="sw-label">Outcome</span>
+                        <p>A chronological, SIEM-ready view of an incident, validated against sample datasets, with edge cases and limitations documented.</p>
+                    </div>
+                    <div class="sw-tags">
+                        <span class="sw-tag">Python</span>
+                        <span class="sw-tag">Log Parsing</span>
+                        <span class="sw-tag">IOC Extraction</span>
+                        <span class="sw-tag">SIEM</span>
+                    </div>
+                </article>
 
-                    <details class="project-case project-accent-amber rounded-2xl">
-                        <summary>
-                            <div class="flex items-start justify-between gap-3 mb-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-md border text-[11px] font-semibold uppercase tracking-wider badge-aws">Cloud Security</span>
-                                <span class="inline-flex items-center text-slate-300 text-sm">Details <i class="project-open-icon fas fa-chevron-down ml-2 text-xs"></i></span>
-                            </div>
-                            <h3 class="text-xl md:text-2xl font-black text-white mb-2">AWS EC2 Security Hardening</h3>
-                            <p class="text-slate-300 text-base leading-relaxed mb-3">Practical hardening for EC2 environments: tighter access, stronger logging, and repeatable checks that catch misconfigurations early.</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">AWS</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">EC2</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">IAM</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">Hardening</span>
-                            </div>
-                        </summary>
-                        <div class="project-details-panel px-5 md:px-6 py-4 text-slate-300">
-                            <p class="text-sm uppercase tracking-wider text-slate-400 mb-2">Focus</p>
-                            <ul class="list-disc list-inside text-sm leading-relaxed space-y-1">
-                                <li>Restricted network access to necessary traffic only.</li>
-                                <li>Applied least privilege and IAM roles instead of long-lived keys.</li>
-                                <li>Enabled logging so activity leaves an audit trail.</li>
-                                <li>Validated configuration against a documented baseline.</li>
-                            </ul>
-                        </div>
-                    </details>
-
-                    <details class="project-case project-accent-green rounded-2xl">
-                        <summary>
-                            <div class="flex items-start justify-between gap-3 mb-2">
-                                <span class="inline-flex items-center px-3 py-1 rounded-md border text-[11px] font-semibold uppercase tracking-wider badge-iam">Identity &amp; Access</span>
-                                <span class="inline-flex items-center text-slate-300 text-sm">Details <i class="project-open-icon fas fa-chevron-down ml-2 text-xs"></i></span>
-                            </div>
-                            <h3 class="text-xl md:text-2xl font-black text-white mb-2">PowerShell IAM Access Audit</h3>
-                            <p class="text-slate-300 text-base leading-relaxed mb-3">PowerShell automation that inventories users, groups, and permissions—producing clean evidence for access review and RBAC consistency.</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">PowerShell</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">IAM</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">RBAC</span>
-                                <span class="project-tag inline-flex px-3 py-1 rounded-full text-xs font-medium">Audit</span>
-                            </div>
-                        </summary>
-                        <div class="project-details-panel px-5 md:px-6 py-4 text-slate-300">
-                            <p class="text-sm uppercase tracking-wider text-slate-400 mb-2">Focus</p>
-                            <ul class="list-disc list-inside text-sm leading-relaxed space-y-1">
-                                <li>Collects identity and permission details for audit readiness.</li>
-                                <li>Produces reports that support review and remediation tracking.</li>
-                                <li>Includes error handling and logging for imperfect data.</li>
-                                <li>Documented so another administrator can rerun it confidently.</li>
-                            </ul>
-                        </div>
-                    </details>
-                </div>
+                <article class="sw-card">
+                    <p class="sw-meta">Secure Remote Access · AWS · Lab · 2022</p>
+                    <h3 class="sw-card-title">AWS Client VPN with Directory Authentication</h3>
+                    <div class="sw-block">
+                        <span class="sw-label">Problem</span>
+                        <p>Remote users need encrypted access to private cloud resources without exposing those resources to the internet.</p>
+                    </div>
+                    <div class="sw-block">
+                        <span class="sw-label">Approach</span>
+                        <p>A Client VPN endpoint with certificate-based TLS authentication, Active Directory for identity, and scoped routes and security groups.</p>
+                    </div>
+                    <div class="sw-block">
+                        <span class="sw-label">Outcome</span>
+                        <p>A tested, encrypted remote-access path in which every connection is tied to a verified identity.</p>
+                    </div>
+                    <div class="sw-tags">
+                        <span class="sw-tag">AWS Client VPN</span>
+                        <span class="sw-tag">VPC</span>
+                        <span class="sw-tag">Active Directory</span>
+                        <span class="sw-tag">PKI</span>
+                    </div>
+                </article>
             </div>
+
+            <h3 class="sw-more-heading">More Projects</h3>
+            <div class="sw-more">
+                <article class="sw-more-card">
+                    <p class="sw-meta">Automation · PowerShell · WGU · 2025</p>
+                    <h3 class="sw-card-title">PowerShell Administration Toolkit</h3>
+                    <p>A menu-driven tool that lets junior administrators run health checks, monitor processes and resources, and generate file reports safely, without editing scripts.</p>
+                </article>
+                <article class="sw-more-card">
+                    <p class="sw-meta">DevOps · AWS · 2022</p>
+                    <h3 class="sw-card-title">CI/CD Pipeline on AWS</h3>
+                    <p>Automated build, container packaging and deployment from commit to running service, using CodeCommit, CodeBuild, ECR, ECS on Fargate and CodePipeline.</p>
+                </article>
+                <article class="sw-more-card">
+                    <p class="sw-meta">Cloud Infrastructure · AWS · WGU</p>
+                    <h3 class="sw-card-title">Hardened Web Server on EC2</h3>
+                    <p>Ubuntu and Apache on EC2 with TLS, restricted security groups, an Elastic IP and a regular patching routine.</p>
+                </article>
+            </div>
+
+            <a class="sw-cta" href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer">View All Code on GitHub</a>
         </div>
     </section>
 
