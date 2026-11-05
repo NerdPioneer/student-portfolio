@@ -1730,15 +1730,313 @@
             }
         }
 
-        /* Shared navy panel tokens (About + Selected Work) */
+        /* Shared navy panel tokens */
         #about.about-panel,
-        #projects.selected-work {
+        #projects.selected-work,
+        #notes.notes-panel,
+        .site-footer {
             --sw-bg: #0B1F3A;
             --sw-card: #102744;
             --sw-border: rgba(255, 255, 255, 0.14);
             --sw-gold: #C4A35A;
             --sw-muted: #A8B3C4;
             --sw-text: #F4F7FB;
+        }
+
+        /* Notes from the Climb — navy delta panel */
+        #notes.notes-panel {
+            background: var(--sw-bg) !important;
+            color: var(--sw-text);
+            padding: 4.5rem 0 3.75rem !important;
+            margin-top: 0 !important;
+        }
+        #notes.notes-panel .sw-wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        #notes.notes-panel .sw-gold-rule {
+            display: block;
+            width: 42px;
+            height: 3px;
+            background: var(--sw-gold);
+            margin: 0 0 0.9rem;
+            border: 0;
+        }
+        #notes.notes-panel .sw-heading {
+            font-family: "Source Serif 4", Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            line-height: 1.15;
+            color: #fff;
+            margin: 0 0 0.65rem;
+        }
+        #notes.notes-panel .sw-subhead {
+            margin: 0 0 2.25rem;
+            max-width: 40rem;
+            color: var(--sw-muted);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        #notes.notes-panel .notes-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.15rem;
+            margin-bottom: 1.25rem;
+        }
+        @media (min-width: 768px) {
+            #notes.notes-panel .notes-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.35rem;
+            }
+        }
+        #notes.notes-panel .notes-card {
+            background: var(--sw-card);
+            border: 1px solid var(--sw-border);
+            border-radius: 14px;
+            padding: 1.35rem 1.4rem 1.4rem;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            box-shadow: none;
+            transform: none;
+            overflow: visible;
+            backdrop-filter: none;
+        }
+        #notes.notes-panel .notes-card::before {
+            display: none;
+        }
+        #notes.notes-panel .notes-card:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: rgba(196, 163, 90, 0.45);
+        }
+        #notes.notes-panel .notes-card-head {
+            display: flex;
+            align-items: center;
+            gap: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        #notes.notes-panel .notes-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.15rem;
+            height: 3.15rem;
+            flex-shrink: 0;
+            border-radius: 14px;
+            border: 1px solid rgba(196, 163, 90, 0.7);
+            background:
+                radial-gradient(120% 120% at 30% 20%, rgba(196, 163, 90, 0.28) 0%, transparent 60%),
+                rgba(196, 163, 90, 0.12);
+            color: #F5E6B8;
+            font-size: 1.35rem;
+            box-shadow: 0 0 18px rgba(196, 163, 90, 0.22);
+        }
+        #notes.notes-panel .notes-icon i,
+        #notes.notes-panel .notes-icon .notes-icon-svg {
+            line-height: 1;
+            display: block;
+        }
+        #notes.notes-panel .sw-cta .notes-cta-svg {
+            display: block;
+            flex-shrink: 0;
+        }
+        #notes.notes-panel .notes-card-head-copy {
+            min-width: 0;
+        }
+        #notes.notes-panel .notes-meta {
+            margin: 0 0 0.28rem;
+            color: var(--sw-gold);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        #notes.notes-panel .notes-card-title,
+        #notes.notes-panel .notes-card h3,
+        #notes.notes-panel .notes-card:hover h3 {
+            font-family: "Source Serif 4", Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+            line-height: 1.25;
+            color: #fff !important;
+            margin: 0;
+            background: none !important;
+            -webkit-background-clip: border-box !important;
+            background-clip: border-box !important;
+            -webkit-text-fill-color: #fff !important;
+        }
+        #notes.notes-panel .notes-card > p {
+            margin: 0 0 1.25rem;
+            color: rgba(244, 247, 251, 0.88);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        #notes.notes-panel .notes-card > p strong {
+            color: #fff;
+            font-weight: 600;
+        }
+        #notes.notes-panel .notes-card .sw-cta {
+            align-self: flex-start;
+            margin-top: auto;
+        }
+        #notes.notes-panel .notes-substack {
+            background: var(--sw-card);
+            border: 1px solid rgba(196, 163, 90, 0.4);
+            border-radius: 14px;
+            padding: 1.35rem 1.4rem 1.4rem;
+            margin-bottom: 2rem;
+            display: grid;
+            gap: 1.1rem;
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            #notes.notes-panel .notes-substack {
+                grid-template-columns: 1fr auto;
+                gap: 1.5rem;
+            }
+        }
+        #notes.notes-panel .notes-substack .notes-card-head {
+            margin-bottom: 0.85rem;
+        }
+        #notes.notes-panel .notes-substack > p,
+        #notes.notes-panel .notes-substack .notes-substack-copy {
+            margin: 0;
+            color: rgba(244, 247, 251, 0.88);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            max-width: 46rem;
+        }
+        #notes.notes-panel .sw-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            min-height: 44px;
+            padding: 0.65rem 1.25rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            color: #fff !important;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: transparent;
+            transition: background 0.15s ease, border-color 0.15s ease;
+            white-space: nowrap;
+        }
+        #notes.notes-panel .sw-cta i {
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+        #notes.notes-panel .sw-cta:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #fff;
+            color: #fff !important;
+        }
+        #notes.notes-panel .sw-cta:focus-visible {
+            outline: 2px solid var(--sw-gold);
+            outline-offset: 3px;
+        }
+        #notes.notes-panel .notes-quote {
+            max-width: 40rem;
+            margin: 0 auto;
+            text-align: center;
+            padding: 1.35rem 1.25rem 1.2rem;
+            background: rgba(16, 39, 68, 0.75);
+            border: 1px solid var(--sw-border);
+            border-radius: 14px;
+        }
+        #notes.notes-panel .notes-quote #quote-text {
+            margin: 0 0 0.65rem;
+            color: rgba(244, 247, 251, 0.92);
+            font-family: "Source Serif 4", Georgia, serif;
+            font-size: 1.05rem;
+            font-style: italic;
+            line-height: 1.65;
+            min-height: 3rem;
+        }
+        #notes.notes-panel .notes-quote #quote-author {
+            margin: 0;
+            color: var(--sw-gold);
+            font-size: 0.85rem;
+            font-style: normal;
+            min-height: 1.25rem;
+        }
+        #notes.notes-panel .notes-quote .quote-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.45rem;
+            margin-top: 1rem;
+        }
+        #notes.notes-panel .notes-quote .quote-dot {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.28);
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            transition: background 0.15s ease, transform 0.15s ease;
+        }
+        #notes.notes-panel .notes-quote .quote-dot[aria-selected="true"],
+        #notes.notes-panel .notes-quote .quote-dot.active,
+        #notes.notes-panel .notes-quote .quote-dot.bg-blue-500 {
+            background: var(--sw-gold);
+        }
+        #notes.notes-panel .notes-quote .quote-dot:hover {
+            background: rgba(255, 255, 255, 0.55);
+            transform: scale(1.12);
+        }
+        #notes.notes-panel .notes-quote .quote-dot:focus-visible {
+            outline: 2px solid var(--sw-gold);
+            outline-offset: 3px;
+        }
+        @media (max-width: 640px) {
+            #notes.notes-panel {
+                padding: 3.25rem 0 3rem !important;
+            }
+            #notes.notes-panel .sw-wrap {
+                padding: 0 1.15rem;
+            }
+            #notes.notes-panel .notes-card,
+            #notes.notes-panel .notes-substack {
+                padding: 1.15rem 1.1rem 1.2rem;
+            }
+        }
+
+        /* Footer — matching navy close */
+        .site-footer {
+            background: #081628 !important;
+            color: var(--sw-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.65rem 0 1.5rem !important;
+            margin: 0 !important;
+        }
+        .site-footer .sw-wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            text-align: center;
+        }
+        .site-footer p {
+            margin: 0;
+            color: var(--sw-muted);
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            line-height: 1.5;
+        }
+        @media (max-width: 640px) {
+            .site-footer .sw-wrap {
+                padding: 0 1.15rem;
+            }
+            .site-footer p {
+                font-size: 0.75rem;
+                letter-spacing: 0.04em;
+            }
         }
 
         /* About — compact navy panel */
@@ -3183,151 +3481,91 @@
     </section>
 
     <!-- Notes Section -->
-    <section id="notes" class="section py-10 md:py-16 lg:py-20 bg-gray-50 md:mt-6 lg:mt-10">
-        <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto text-center">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4 text-gray-900 uppercase tracking-wide animate-fade-in glitch-effect break-words" data-text="NOTES FROM THE CLIMB">NOTES FROM THE CLIMB</h2>
-                <p class="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">
-                    Writing and code that document how I learn and work in cybersecurity.
-                </p>
-                
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Medium Column -->
-                <div class="notes-card bg-white rounded-2xl p-6 md:p-10 flex flex-col h-full shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 min-h-[320px]">
-                    <div class="flex items-start mb-8">
-                        <div class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center mr-5 flex-shrink-0">
-                            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
-                            </svg>
-                        </div>
-                        <div class="text-left">
-                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Medium</h3>
-                            <p class="text-sm text-gray-500 tracking-wider font-medium">Writing</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex-grow mb-8">
-                        <p class="text-gray-600 text-left mb-6 leading-relaxed text-sm md:text-base">
-                            Articles on <strong>cybersecurity</strong>, <strong>cloud</strong>, and professional growth—clear takeaways from study and practice.
-                        </p>
-                    </div>
-                    
-                    <div class="mt-auto">
-                        <a href="https://medium.com/@nerdpioneer" target="_blank" rel="noopener noreferrer" 
-                           class="inline-flex items-center text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-medium transition duration-300 text-sm w-full justify-center"
-                           style="background-color:#16A34A;">
-                            <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
-                            </svg>
-                            Read on Medium
-                        </a>
-                    </div>
-                </div>
+    <section id="notes" class="section notes-panel" aria-label="Notes from the Climb">
+        <div class="sw-wrap">
+            <span class="sw-gold-rule" aria-hidden="true"></span>
+            <h2 class="sw-heading">Notes from the Climb</h2>
+            <p class="sw-subhead">Writing and code that document how I learn and work in cybersecurity.</p>
 
-                <!-- GitHub Column -->
-                <div class="notes-card bg-white rounded-2xl p-6 md:p-10 flex flex-col h-full shadow-lg hover:shadow-xl transition duration-300 border border-gray-100 min-h-[320px]">
-                    <div class="flex items-start mb-8">
-                        <div class="w-14 h-14 bg-gray-800 rounded-full flex items-center justify-center mr-5 flex-shrink-0">
-                            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                        </div>
-                        <div class="text-left">
-                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">GitHub</h3>
-                            <p class="text-sm text-gray-500 tracking-wider font-medium">Code &amp; Projects</p>
+            <div class="notes-grid">
+                <article class="notes-card">
+                    <div class="notes-card-head">
+                        <span class="notes-icon" aria-hidden="true"><i class="fab fa-medium"></i></span>
+                        <div class="notes-card-head-copy">
+                            <p class="notes-meta">Writing</p>
+                            <h3 class="notes-card-title">Medium</h3>
                         </div>
                     </div>
-                    
-                    <div class="flex-grow mb-8">
-                        <p class="text-gray-600 text-left mb-6 leading-relaxed text-sm md:text-base">
-                            Repositories focused on <strong>Python</strong>, <strong>AWS</strong>, <strong>PowerShell</strong>, and <strong>identity &amp; access</strong> work.
-                        </p>
-                    </div>
-                    
-                    <div class="mt-auto">
-                        <a href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer" 
-                           class="inline-flex items-center bg-gray-800 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-medium hover:bg-gray-900 transition duration-300 text-sm w-full justify-center">
-                            <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                            View on GitHub
-                        </a>
-                    </div>
-                </div>
+                    <p>Articles on <strong>cybersecurity</strong>, <strong>cloud</strong>, and professional growth—clear takeaways from study and practice.</p>
+                    <a class="sw-cta" href="https://medium.com/@nerdpioneer" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-medium" aria-hidden="true"></i>
+                        Read on Medium
+                    </a>
+                </article>
 
+                <article class="notes-card">
+                    <div class="notes-card-head">
+                        <span class="notes-icon" aria-hidden="true"><i class="fab fa-github"></i></span>
+                        <div class="notes-card-head-copy">
+                            <p class="notes-meta">Code &amp; Projects</p>
+                            <h3 class="notes-card-title">GitHub</h3>
+                        </div>
+                    </div>
+                    <p>Repositories focused on <strong>Python</strong>, <strong>Amazon Web Services</strong>, <strong>PowerShell</strong>, and <strong>identity &amp; access</strong> work.</p>
+                    <a class="sw-cta" href="https://github.com/NerdPioneer" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        View on GitHub
+                    </a>
+                </article>
             </div>
 
-            <div class="mt-8 md:mt-10 max-w-4xl mx-auto">
-                <div class="education-card substack-accent-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 p-6 md:p-10 border border-gray-100 text-left">
-                    <div class="substack-banner-layout">
-                        <div class="substack-banner-content">
-                            <div class="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider" style="background-color:#fff0e8;color:#ff5b00;border:1px solid #ffd1bd;">
-                                <i class="fas fa-newspaper" aria-hidden="true"></i>
-                                Substack
-                            </div>
-                            <h3 class="text-2xl md:text-3xl font-black text-gray-900 mb-3 tracking-tight">
-                                NerdPioneer on Substack
-                            </h3>
-                            <p class="substack-copy text-sm md:text-base text-gray-700 leading-relaxed max-w-4xl mb-0">
-                                Occasional notes on cybersecurity concepts, career lessons, and what I am learning along the way.
-                            </p>
-                        </div>
-
-                        <div class="substack-banner-cta">
-                            <a href="https://substack.com/@nerdpioneer?utm_source=global-search" target="_blank" rel="noopener noreferrer"
-                               class="substack-cta-button inline-flex items-center justify-center px-6 py-3.5 min-h-[48px] rounded-full text-white font-semibold text-sm md:text-base w-full sm:w-auto whitespace-nowrap" style="background-color:#ff5b00;">
-                                Follow on Substack
-                            </a>
+            <div class="notes-substack">
+                <div>
+                    <div class="notes-card-head">
+                        <span class="notes-icon" aria-hidden="true">
+                            <svg class="notes-icon-svg" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" focusable="false">
+                                <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+                            </svg>
+                        </span>
+                        <div class="notes-card-head-copy">
+                            <p class="notes-meta">Newsletter</p>
+                            <h3 class="notes-card-title">NerdPioneer on Substack</h3>
                         </div>
                     </div>
+                    <p class="notes-substack-copy">Occasional notes on cybersecurity concepts, career lessons, and what I am learning along the way.</p>
                 </div>
+                <a class="sw-cta" href="https://substack.com/@nerdpioneer?utm_source=global-search" target="_blank" rel="noopener noreferrer">
+                    <svg class="notes-cta-svg" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false">
+                        <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+                    </svg>
+                    Follow on Substack
+                </a>
             </div>
 
-            <!-- Inspirational Quote Section - Centered -->
-            <div class="w-full flex justify-center mt-6 md:mt-8 mb-0">
-                <div class="max-w-2xl px-4">
-                    <!-- Decorative line above quote -->
-                    <div class="w-16 h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent mx-auto mb-4 md:mb-6"></div>
-                    
-                    <div class="rotating-quotes-container bg-gray-50 rounded-lg p-6 border-l-4 border-blue-600 relative overflow-hidden">
-                        <!-- Quote content with smooth transitions -->
-                        <div class="quote-content-wrapper relative">
-                            <blockquote class="text-center quote-block transition-all duration-500 ease-in-out opacity-100 transform translate-y-0" id="quote-block" role="region" aria-live="polite" aria-label="Inspirational quotes">
-                                <p class="text-lg text-gray-700 italic mb-2 min-h-[3rem] flex items-center justify-center leading-relaxed" id="quote-text">
-                                    "But seek first his kingdom and his righteousness, and all these things will be given to you as well."
-                                </p>
-                                <footer class="text-sm text-gray-600 min-h-[1.25rem] flex items-center justify-center" id="quote-author">
-                                    — Matthew 6:33
-                                </footer>
-                            </blockquote>
-                        </div>
-                        
-                        <!-- Quote navigation dots -->
-                        <div class="flex justify-center mt-4 space-x-2" role="tablist" aria-label="Quote navigation">
-                            <button class="quote-dot w-2 h-2 rounded-full bg-blue-500 transition-all duration-300 hover:scale-125 focus:outline-none focus:ring-2 focus:ring-blue-300" data-quote="0" aria-label="Show quote 1" role="tab" aria-selected="true" tabindex="0"></button>
-                            <button class="quote-dot w-2 h-2 rounded-full bg-gray-600 hover:bg-gray-400 hover:scale-125 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300" data-quote="1" aria-label="Show quote 2" role="tab" aria-selected="false" tabindex="-1"></button>
-                            <button class="quote-dot w-2 h-2 rounded-full bg-gray-600 hover:bg-gray-400 hover:scale-125 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300" data-quote="2" aria-label="Show quote 3" role="tab" aria-selected="false" tabindex="-1"></button>
-                            <button class="quote-dot w-2 h-2 rounded-full bg-gray-600 hover:bg-gray-400 hover:scale-125 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300" data-quote="3" aria-label="Show quote 4" role="tab" aria-selected="false" tabindex="-1"></button>
-                            <button class="quote-dot w-2 h-2 rounded-full bg-gray-600 hover:bg-gray-400 hover:scale-125 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-300" data-quote="4" aria-label="Show quote 5" role="tab" aria-selected="false" tabindex="-1"></button>
-                        </div>
-                    </div>
-                    
-                    <!-- Decorative line below quote -->
-                    <div class="w-16 h-px bg-gradient-to-r from-transparent via-gray-400 to-transparent mx-auto mt-4"></div>
+            <div class="notes-quote rotating-quotes-container">
+                <blockquote class="quote-block transition-all duration-500 ease-in-out opacity-100" id="quote-block" role="region" aria-live="polite" aria-label="Inspirational quotes">
+                    <p id="quote-text">
+                        &ldquo;But seek first his kingdom and his righteousness, and all these things will be given to you as well.&rdquo;
+                    </p>
+                    <p id="quote-author">— Matthew 6:33</p>
+                </blockquote>
+                <div class="quote-dots" role="tablist" aria-label="Quote navigation">
+                    <button class="quote-dot bg-blue-500" data-quote="0" aria-label="Show quote 1" role="tab" aria-selected="true" tabindex="0"></button>
+                    <button class="quote-dot" data-quote="1" aria-label="Show quote 2" role="tab" aria-selected="false" tabindex="-1"></button>
+                    <button class="quote-dot" data-quote="2" aria-label="Show quote 3" role="tab" aria-selected="false" tabindex="-1"></button>
+                    <button class="quote-dot" data-quote="3" aria-label="Show quote 4" role="tab" aria-selected="false" tabindex="-1"></button>
+                    <button class="quote-dot" data-quote="4" aria-label="Show quote 5" role="tab" aria-selected="false" tabindex="-1"></button>
                 </div>
-            </div>
             </div>
         </div>
     </section>
 
     </main>
     <!-- Footer -->
-    <footer class="footer bg-gray-50 text-gray-900 pt-4 pb-0 border-t border-gray-200 mb-0" role="contentinfo">
-        <div class="container mx-auto px-6">
-            <div class="text-center">
-                <p class="text-gray-700 font-medium uppercase tracking-wider">&copy; <span id="copyright-year">2026</span> NerdPioneer (Ezekiel A. Obeisun Jr) All rights reserved.</p>
-                <script>document.getElementById('copyright-year').textContent=new Date().getFullYear();</script>
-            </div>
+    <footer class="footer site-footer" role="contentinfo">
+        <div class="sw-wrap">
+            <p>&copy; <span id="copyright-year">2026</span> NerdPioneer (Ezekiel A. Obeisun Jr) All rights reserved.</p>
+            <script>document.getElementById('copyright-year').textContent=new Date().getFullYear();</script>
         </div>
     </footer>
     <script src="./src/js/main.js" defer></script>
