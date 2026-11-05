@@ -3076,7 +3076,7 @@
             outline-offset: 3px;
         }
         .hero .profile-carousel {
-            max-width: 346px;
+            max-width: 288px;
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 0;
@@ -3096,12 +3096,13 @@
             object-position: center 16%;
         }
         @media (min-width: 640px) {
-            .hero .profile-carousel { max-width: 384px; }
+            .hero .profile-carousel { max-width: 320px; }
         }
         @media (min-width: 768px) {
             .hero { padding-top: 5.5rem; }
-            .hero .profile-carousel { max-width: 432px; }
+            .hero .profile-carousel { max-width: 360px; }
         }
+        /* Desktop portrait — restore pre-+20% “normal” size (mobile keeps its own fit rules) */
         @media (min-width: 1024px) {
             .hero {
                 padding-top: 6rem;
@@ -3133,17 +3134,17 @@
                 align-items: center !important;
             }
             .hero .profile-carousel {
-                max-width: 528px;
+                max-width: 440px;
                 width: 100%;
             }
             .hero .carousel-container {
-                max-width: 528px;
+                max-width: 440px;
             }
         }
         @media (min-width: 1280px) {
             .hero .profile-carousel,
             .hero .carousel-container {
-                max-width: 576px;
+                max-width: 480px;
             }
             .hero-grid {
                 gap: 3.25rem !important;
