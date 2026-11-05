@@ -39,7 +39,7 @@
     <meta name="msapplication-TileColor" content="#2563eb">
 
     <title>Ezekiel A. Obeisun Jr | Cybersecurity Professional | NerdPioneer</title>
-    <meta name="description" content="Ezekiel A. Obeisun Jr (NerdPioneer): Cybersecurity professional. B.S. Cloud Computing (WGU). Accepted to Georgia Tech M.S. in Cybersecurity, policy track (Spring 2027). Focus: security operations, cloud security, and IAM.">
+    <meta name="description" content="Ezekiel A. Obeisun Jr (NerdPioneer): Cybersecurity professional. B.S. Cloud Computing (WGU). Georgia Tech M.S. in Cybersecurity, Policy track (Spring 2027). Focus: security operations, cloud security, and IAM.">
     <meta name="author" content="Ezekiel A. Obeisun Jr">
     <meta name="application-name" content="NerdPioneer Portfolio">
     <meta name="robots" content="index, follow">
@@ -57,7 +57,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="Ezekiel A. Obeisun Jr | Cybersecurity Professional | NerdPioneer">
-    <meta property="og:description" content="Cybersecurity professional. B.S. Cloud Computing (WGU). Accepted to Georgia Tech M.S. in Cybersecurity (Spring 2027). Cloud security projects and industry certifications.">
+    <meta property="og:description" content="Cybersecurity professional. B.S. Cloud Computing (WGU). Georgia Tech M.S. in Cybersecurity (Spring 2027). Cloud security projects and industry certifications.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.nerdpioneer.com/">
     <meta property="og:image" content="https://www.nerdpioneer.com/public/images/og-card.jpg">
@@ -72,7 +72,7 @@
     <meta name="twitter:site" content="@nerdpioneer">
     <meta name="twitter:creator" content="@nerdpioneer">
     <meta name="twitter:title" content="Ezekiel A. Obeisun Jr | Cybersecurity Professional | NerdPioneer">
-    <meta name="twitter:description" content="Cybersecurity professional. B.S. Cloud Computing (WGU). Accepted to Georgia Tech M.S. in Cybersecurity (Spring 2027). Cloud security projects and industry certifications.">
+    <meta name="twitter:description" content="Cybersecurity professional. B.S. Cloud Computing (WGU). Georgia Tech M.S. in Cybersecurity (Spring 2027). Cloud security projects and industry certifications.">
     <meta name="twitter:image" content="https://www.nerdpioneer.com/public/images/og-card.jpg">
     <meta name="twitter:image:alt" content="Ezekiel A. Obeisun Jr - NerdPioneer portfolio image">
 
@@ -127,7 +127,7 @@
         "Threat Analysis",
         "Linux Administration"
       ],
-      "description": "Cybersecurity professional with a B.S. in Cloud Computing (WGU). Accepted to the Georgia Institute of Technology M.S. in Cybersecurity, policy track (Spring 2027).",
+      "description": "Cybersecurity professional with a B.S. in Cloud Computing (WGU). Georgia Institute of Technology M.S. in Cybersecurity, Policy track (Spring 2027).",
       "slogan": "1% Better Every Day",
       "hasOccupation": {
         "@type": "Occupation",
@@ -149,7 +149,7 @@
         {
           "@type": "EducationalOccupationalCredential",
           "credentialCategory": "Degree",
-          "name": "Master of Science in Cybersecurity (Accepted)",
+          "name": "Master of Science in Cybersecurity (Spring 2027)",
           "recognizedBy": {
             "@type": "CollegeOrUniversity",
             "name": "Georgia Institute of Technology"
@@ -175,7 +175,7 @@
       "name": "NerdPioneer - Portfolio",
       "alternateName": "NerdPioneer",
       "url": "https://www.nerdpioneer.com/",
-      "description": "Professional site of Ezekiel A. Obeisun Jr (NerdPioneer): cybersecurity professional; B.S. Cloud Computing; accepted to Georgia Tech M.S. in Cybersecurity; certifications and applied security projects.",
+      "description": "Professional site of Ezekiel A. Obeisun Jr: cybersecurity professional; B.S. Cloud Computing; Georgia Tech M.S. in Cybersecurity (Spring 2027); certifications and applied security projects.",
       "author": {
         "@type": "Person",
         "name": "Ezekiel A. Obeisun Jr",
@@ -226,7 +226,7 @@
       "alternateName": "NerdPioneer",
       "url": "https://www.nerdpioneer.com/",
       "logo": "https://www.nerdpioneer.com/public/images/profile_1.jpg",
-      "description": "Personal brand of Ezekiel A. Obeisun Jr (NerdPioneer): cybersecurity professional; cloud security focus; Georgia Tech M.S. in Cybersecurity (accepted, Spring 2027).",
+      "description": "Personal brand of Ezekiel A. Obeisun Jr (NerdPioneer): cybersecurity professional; cloud security focus; Georgia Tech M.S. in Cybersecurity (Spring 2027).",
       "founder": {
         "@type": "Person",
         "name": "NerdPioneer",
@@ -243,7 +243,7 @@
       "@type": "ProfilePage",
       "name": "Ezekiel A. Obeisun Jr Portfolio Profile",
       "url": "https://www.nerdpioneer.com/",
-      "description": "Professional portfolio for Ezekiel A. Obeisun Jr (NerdPioneer): cybersecurity professional; B.S. Cloud Computing; accepted to Georgia Tech M.S. in Cybersecurity; CySA+, Security+, AWS Security Specialty and related credentials.",
+      "description": "Professional portfolio for Ezekiel A. Obeisun Jr: cybersecurity professional; B.S. Cloud Computing; Georgia Tech M.S. in Cybersecurity (Spring 2027); CySA+, Security+, AWS Security Specialty and related credentials.",
       "mainEntity": {
         "@type": "Person",
         "name": "Ezekiel A. Obeisun Jr",
@@ -1491,13 +1491,6 @@
             color: #111827;
         }
 
-        @media (max-width: 640px) {
-            #certifications .credentials-surface {
-                border-radius: 0.85rem;
-                padding: 1rem !important;
-            }
-        }
-
         .section-header-strong {
             font-weight: 900 !important;
             letter-spacing: 0.02em;
@@ -1570,114 +1563,129 @@
             }
         }
 
-        /* Credentials (dark grouped layout) */
-        #certifications {
-            background: #f8f7f4 !important;
+        /* Credentials — clean navy panel */
+        #certifications.credentials-panel {
+            --sw-bg: #0B1F3A;
+            --sw-card: #102744;
+            --sw-border: rgba(255, 255, 255, 0.14);
+            --sw-gold: #C4A35A;
+            --sw-muted: #A8B3C4;
+            --sw-text: #F4F7FB;
+            background: var(--sw-bg) !important;
+            color: var(--sw-text);
+            padding: 4.25rem 0 3.75rem !important;
+            margin-top: 0 !important;
         }
-
-        .credentials-surface {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 16px 36px -24px rgba(15, 23, 42, 0.25);
+        #certifications.credentials-panel .sw-wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
-
-        .credential-card {
-            position: relative;
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-            overflow: hidden;
+        #certifications.credentials-panel .sw-gold-rule {
+            display: block;
+            width: 42px;
+            height: 3px;
+            background: var(--sw-gold);
+            margin: 0 0 0.9rem;
+            border: 0;
         }
-
-        .credential-card::after {
-            content: "";
-            position: absolute;
-            inset: -40% -20%;
-            background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.06) 40%, transparent 70%);
-            transform: translateX(-40%) rotate(6deg);
-            opacity: 0;
-            transition: opacity 0.25s ease, transform 0.35s ease;
-            pointer-events: none;
+        #certifications.credentials-panel .sw-heading {
+            font-family: "Source Serif 4", Georgia, serif;
+            font-weight: 600;
+            font-size: clamp(2rem, 4vw, 2.6rem);
+            line-height: 1.15;
+            color: #fff;
+            margin: 0 0 0.55rem;
         }
-
-        .credential-card:hover {
-            transform: translateY(-2px);
-            border-color: #d1d5db;
-            box-shadow: 0 16px 32px -20px rgba(15, 23, 42, 0.28);
+        #certifications.credentials-panel .sw-subhead {
+            margin: 0 0 2rem;
+            max-width: 36rem;
+            color: var(--sw-muted);
+            font-size: 1.02rem;
+            line-height: 1.55;
         }
-
-        .credential-card.credential-accent-comptia:hover { background: #f4f8ff; }
-        .credential-card.credential-accent-aws:hover { background: #fffbf2; }
-        .credential-card.credential-accent-governance:hover { background: #f2fbf7; }
-        .credential-card.credential-accent-progress:hover { background: #f2f7ff; }
-
-        .credential-card:hover::after {
-            opacity: 1;
-            transform: translateX(25%) rotate(6deg);
+        #certifications.credentials-panel .cred-groups {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.15rem 1.35rem;
         }
-
-        .credential-accent-comptia { border-left: 4px solid #ff5b00; }
-        .credential-accent-aws { border-left: 4px solid #f59e0b; }
-        .credential-accent-governance { border-left: 4px solid #10b981; }
-        .credential-accent-progress { border-left: 4px solid #3b82f6; }
-
-        /* High-contrast category badges (light mode) */
-        .badge-comptia {
-            background: #fee8e0 !important;
-            color: #92260a !important;
-            border-color: #fbc9b9 !important;
-        }
-
-        .badge-aws {
-            background: #fef3c7 !important;
-            color: #78350f !important;
-            border-color: #f6dd8e !important;
-        }
-
-        .badge-governance {
-            background: #d1fae5 !important;
-            color: #064e3b !important;
-            border-color: #99efc9 !important;
-        }
-
-        .badge-progress {
-            background: #dbeafe !important;
-            color: #1e3a5f !important;
-            border-color: #b9d6fc !important;
-        }
-
-        .badge-iam {
-            background: #ede9fe !important;
-            color: #3b1d8a !important;
-            border-color: #d6cdfb !important;
-        }
-
-        @media (max-width: 480px) {
-            #certifications .credential-card {
-                padding: 1.1rem !important;
+        @media (min-width: 860px) {
+            #certifications.credentials-panel .cred-groups {
+                grid-template-columns: 1fr 1fr;
             }
         }
-        
-        /* Certifications text overrides (projects uses its own dark theme below) */
-        #certifications .text-white {
-            color: #111827 !important;
+        #certifications.credentials-panel .cred-group {
+            background: var(--sw-card);
+            border: 1px solid var(--sw-border);
+            border-radius: 14px;
+            padding: 1.15rem 1.2rem 1.05rem;
         }
-
-        #certifications .text-slate-400 {
-            color: #6b7280 !important;
+        #certifications.credentials-panel .cred-group h3 {
+            margin: 0 0 0.75rem;
+            padding-bottom: 0.55rem;
+            border-bottom: 1px solid rgba(196, 163, 90, 0.45);
+            color: var(--sw-gold);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
-
-        #certifications .text-slate-300,
-        #certifications .text-slate-200 {
-            color: #4b5563 !important;
+        #certifications.credentials-panel .cred-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 1rem;
+            padding: 0.62rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.95rem;
         }
-
-        #certifications .bg-white\/5 {
-            background-color: #f8fafc !important;
+        #certifications.credentials-panel .cred-row:first-of-type {
+            border-top: 0;
+            padding-top: 0.15rem;
         }
-
-        #certifications .border-white\/10 {
-            border-color: #e5e7eb !important;
+        #certifications.credentials-panel .cred-name {
+            color: #fff;
+            font-weight: 600;
+        }
+        #certifications.credentials-panel .cred-issuer {
+            color: var(--sw-muted);
+            text-align: right;
+            font-size: 0.88rem;
+            white-space: nowrap;
+        }
+        #certifications.credentials-panel .cred-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            margin-top: 1.75rem;
+            min-height: 44px;
+            padding: 0.55rem 1.15rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            color: #fff !important;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: transparent;
+            transition: background 0.15s ease, border-color 0.15s ease;
+        }
+        #certifications.credentials-panel .cred-cta:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #fff;
+            color: #fff !important;
+        }
+        #certifications.credentials-panel .cred-cta:focus-visible {
+            outline: 2px solid var(--sw-gold);
+            outline-offset: 3px;
+        }
+        @media (max-width: 640px) {
+            #certifications.credentials-panel {
+                padding: 3.1rem 0 2.85rem !important;
+            }
+            #certifications.credentials-panel .sw-wrap { padding: 0 1.15rem; }
+            #certifications.credentials-panel .cred-issuer {
+                white-space: normal;
+            }
         }
 
         /* Shared navy panel tokens (About + Selected Work) */
@@ -2110,7 +2118,7 @@
             color: #ff5b00;
         }
 
-        /* ── Masters Degree (Georgia Tech — Accepted) ── */
+        /* ── Masters Degree (Georgia Tech) ── */
         .masters-card {
             background: #003057;
             border: 1.5px solid #B3A369;
@@ -2697,13 +2705,13 @@
              <h2 class="sw-heading">About</h2>
 
              <p class="about-lead">I am a cybersecurity professional who likes technology, works well with people, and finishes what I start. My foundation is cloud computing, IT, and security—and I care about how those systems hold up when real risk, policy, and teams are involved.</p>
-             <p class="about-body">I earned my B.S. in Cloud Computing from Western Governors University and have been admitted to Georgia Institute of Technology&apos;s M.S. in Cybersecurity, Policy track, beginning in spring 2027. Alongside graduate study, I am building depth in networking with the CCNA path in view.</p>
+             <p class="about-body">I earned my B.S. in Cloud Computing from Western Governors University and begin Georgia Institute of Technology&apos;s M.S. in Cybersecurity, Policy track, in Spring 2027. Alongside graduate study, I am building depth in networking with the CCNA path in view.</p>
              <p class="about-body">On this site you will find independent projects and writing that show how I learn, collaborate, and deliver—clear work, completed end to end.</p>
 
              <div class="about-strip">
                  <div class="about-strip-card">
                      <h3>Education</h3>
-                     <p><strong>M.S. Cybersecurity, Policy</strong>Georgia Tech, admitted; begins spring 2027</p>
+                     <p><strong>M.S. Cybersecurity, Policy</strong>Georgia Tech · Spring 2027</p>
                      <p><strong>B.S. Cloud Computing</strong>Western Governors University, 2026</p>
                  </div>
                  <div class="about-strip-card about-strip-card--focus">
@@ -2781,21 +2789,17 @@
                    </div>
                </div>
 
-               <!-- Masters Degree (Georgia Tech — Accepted) -->
-               <div class="masters-card" role="group" aria-label="Master's Degree — Georgia Tech, accepted">
+               <!-- Masters Degree (Georgia Tech) -->
+               <div class="masters-card" role="group" aria-label="Master's Degree — Georgia Tech, Spring 2027">
                    <div class="masters-lock-icon" aria-hidden="true">GT</div>
 
                    <div class="masters-body">
                        <div class="masters-eyebrow">Georgia Institute of Technology</div>
                        <p class="masters-title">M.S. in Cybersecurity</p>
-                       <p class="masters-sub">Accepted into Georgia Tech&apos;s M.S. in Cybersecurity, policy track. Next step in a serious, long-term security career.</p>
+                       <p class="masters-sub">Policy track. Next step in a serious, long-term security career.</p>
                    </div>
 
                    <div class="masters-right">
-                       <span class="masters-status">
-                           <span class="masters-pulse-dot" aria-hidden="true"></span>
-                           Accepted
-                       </span>
                        <span class="masters-term">Spring 2027</span>
                    </div>
                </div>
@@ -2906,101 +2910,40 @@
        </div>
    </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="section py-10 md:py-16 lg:py-20 md:mt-6 lg:mt-10">
-        <div class="container mx-auto px-6">
-            <div class="credentials-surface rounded-3xl p-6 md:p-10 lg:p-12 max-w-6xl mx-auto">
-                <div class="flex flex-col items-center text-center mb-10">
-                    <h2 class="section-header-strong text-3xl md:text-4xl text-white uppercase tracking-wide mb-2">Credentials</h2>
-                    <p class="text-sm md:text-base text-slate-300 max-w-3xl">
-                        Industry certifications I have earned across security, cloud, networking, and operations.
-                    </p>
-                </div>
+    <!-- Credentials -->
+    <section id="certifications" class="section credentials-panel" aria-label="Credentials">
+        <div class="sw-wrap">
+            <span class="sw-gold-rule" aria-hidden="true"></span>
+            <h2 class="sw-heading">Credentials</h2>
+            <p class="sw-subhead">Industry certifications across security, cloud, and IT governance.</p>
 
-                <!-- COMPTIA -->
-                <div class="mb-10">
-                    <div class="inline-flex items-center px-3 py-1 rounded-md border text-xs font-semibold uppercase tracking-[0.25em] mb-4 badge-comptia">CompTIA</div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="credential-card credential-accent-comptia rounded-2xl p-5">
-                            <div class="text-white font-semibold">A+</div>
-                            <div class="text-sm text-slate-300 mt-1">Hardware &amp; Software Fundamentals</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-comptia rounded-2xl p-5">
-                            <div class="text-white font-semibold">Network+</div>
-                            <div class="text-sm text-slate-300 mt-1">Networking Infrastructure</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-comptia rounded-2xl p-5">
-                            <div class="text-white font-semibold">Security+</div>
-                            <div class="text-sm text-slate-300 mt-1">Cybersecurity Fundamentals</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-comptia rounded-2xl p-5">
-                            <div class="text-white font-semibold">CySA+</div>
-                            <div class="text-sm text-slate-300 mt-1">Cybersecurity Analyst</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-comptia rounded-2xl p-5">
-                            <div class="text-white font-semibold">Project+</div>
-                            <div class="text-sm text-slate-300 mt-1">Project Management</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-comptia rounded-2xl p-5">
-                            <div class="text-white font-semibold">Cloud+</div>
-                            <div class="text-sm text-slate-300 mt-1">Cloud Infrastructure</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                    </div>
+            <div class="cred-groups">
+                <div class="cred-group">
+                    <h3>Security</h3>
+                    <div class="cred-row"><span class="cred-name">CySA+</span><span class="cred-issuer">CompTIA</span></div>
+                    <div class="cred-row"><span class="cred-name">Security+</span><span class="cred-issuer">CompTIA</span></div>
+                    <div class="cred-row"><span class="cred-name">Network+</span><span class="cred-issuer">CompTIA</span></div>
+                    <div class="cred-row"><span class="cred-name">A+</span><span class="cred-issuer">CompTIA</span></div>
+                    <div class="cred-row"><span class="cred-name">MITRE ATT&amp;CK</span><span class="cred-issuer">AttackIQ</span></div>
                 </div>
-
-                <!-- AMAZON WEB SERVICES -->
-                <div class="mb-10">
-                    <div class="inline-flex items-center px-3 py-1 rounded-md border text-xs font-semibold uppercase tracking-[0.25em] mb-4 badge-aws">Amazon Web Services</div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="credential-card credential-accent-aws rounded-2xl p-5">
-                            <div class="text-white font-semibold">Developer Associate</div>
-                            <div class="text-sm text-slate-300 mt-1">Cloud Development &amp; Deployment</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-aws rounded-2xl p-5">
-                            <div class="text-white font-semibold">SysOps Administrator</div>
-                            <div class="text-sm text-slate-300 mt-1">Operations &amp; Management</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-aws rounded-2xl p-5">
-                            <div class="text-white font-semibold">Security Specialty</div>
-                            <div class="text-sm text-slate-300 mt-1">Cloud Security &amp; Compliance</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                    </div>
+                <div class="cred-group">
+                    <h3>Cloud</h3>
+                    <div class="cred-row"><span class="cred-name">Security – Specialty</span><span class="cred-issuer">AWS</span></div>
+                    <div class="cred-row"><span class="cred-name">SysOps Administrator</span><span class="cred-issuer">AWS</span></div>
+                    <div class="cred-row"><span class="cred-name">Developer – Associate</span><span class="cred-issuer">AWS</span></div>
+                    <div class="cred-row"><span class="cred-name">Cloud+</span><span class="cred-issuer">CompTIA</span></div>
                 </div>
-
-                <!-- GOVERNANCE & OPERATIONS -->
-                <div class="mb-10">
-                    <div class="inline-flex items-center px-3 py-1 rounded-md border text-xs font-semibold uppercase tracking-[0.25em] mb-4 badge-governance">Governance &amp; Operations</div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="credential-card credential-accent-governance rounded-2xl p-5">
-                            <div class="text-white font-semibold">ITIL 4 Foundation</div>
-                            <div class="text-sm text-slate-300 mt-1">IT Service Management</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                        <div class="credential-card credential-accent-governance rounded-2xl p-5">
-                            <div class="text-white font-semibold">MITRE ATT&amp;CK</div>
-                            <div class="text-sm text-slate-300 mt-1">Threat Intelligence Framework</div>
-                            <div class="mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-300 border border-emerald-500/25">EARNED</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-10 pt-8 border-t border-white/10 flex justify-center">
-                    <a href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-slate-200 text-sm transition duration-300">
-                        <i class="fab fa-linkedin text-slate-200"></i>
-                        View credentials on LinkedIn
-                    </a>
+                <div class="cred-group">
+                    <h3>IT governance</h3>
+                    <div class="cred-row"><span class="cred-name">ITIL 4 Foundation</span><span class="cred-issuer">PeopleCert</span></div>
+                    <div class="cred-row"><span class="cred-name">Project+</span><span class="cred-issuer">CompTIA</span></div>
                 </div>
             </div>
+
+            <a class="cred-cta" href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                View on LinkedIn
+            </a>
         </div>
     </section>
 
