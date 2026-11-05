@@ -1653,11 +1653,56 @@
             font-size: 0.88rem;
             white-space: nowrap;
         }
+        #certifications.credentials-panel .cred-explainers {
+            margin-top: 1.75rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.9rem;
+        }
+        @media (min-width: 768px) {
+            #certifications.credentials-panel .cred-explainers {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.1rem;
+            }
+        }
+        #certifications.credentials-panel .cred-explainer {
+            background: rgba(16, 39, 68, 0.85);
+            border: 1px solid rgba(196, 163, 90, 0.35);
+            border-radius: 14px;
+            padding: 1.05rem 1.15rem 1.1rem;
+        }
+        #certifications.credentials-panel .cred-explainer h3 {
+            margin: 0 0 0.45rem;
+            color: var(--sw-gold);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+        }
+        #certifications.credentials-panel .cred-explainer p {
+            margin: 0 0 0.7rem;
+            color: rgba(244, 247, 251, 0.88);
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+        #certifications.credentials-panel .cred-explainer a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #fff !important;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        #certifications.credentials-panel .cred-explainer a:hover {
+            color: var(--sw-gold) !important;
+        }
         #certifications.credentials-panel .cred-cta {
             display: inline-flex;
             align-items: center;
             gap: 0.55rem;
-            margin-top: 1.75rem;
+            margin-top: 1.5rem;
             min-height: 44px;
             padding: 0.55rem 1.15rem;
             border-radius: 999px;
@@ -2118,45 +2163,79 @@
             color: #ff5b00;
         }
 
-        /* ── Masters Degree (Georgia Tech) ── */
+        /* ── Masters Degree (Georgia Tech) — standout hero card ── */
         .masters-card {
-            background: #003057;
-            border: 1.5px solid #B3A369;
-            border-radius: 12px;
-            padding: 1.25rem 1.5rem;
+            background:
+                radial-gradient(120% 140% at 0% 0%, rgba(196, 163, 90, 0.28) 0%, transparent 55%),
+                linear-gradient(135deg, #002447 0%, #003057 48%, #0B1F3A 100%);
+            border: 2px solid #C4A35A;
+            border-radius: 18px;
+            padding: 1.65rem 1.75rem;
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 1.15rem;
             position: relative;
             overflow: hidden;
-            margin-bottom: 1.5rem;
-            transition: border-color 0.3s ease, background-color 0.3s ease;
+            margin-bottom: 1.75rem;
+            box-shadow:
+                0 0 0 1px rgba(196, 163, 90, 0.25),
+                0 12px 40px -12px rgba(0, 48, 87, 0.65),
+                0 0 36px rgba(196, 163, 90, 0.28);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .masters-card::before {
+            content: "";
+            position: absolute;
+            inset: -30% auto auto -10%;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: rgba(196, 163, 90, 0.16);
+            filter: blur(8px);
+            pointer-events: none;
+        }
+        .masters-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.08) 50%, transparent 65%);
+            transform: translateX(-60%);
+            pointer-events: none;
         }
 
         @media (hover: hover) {
             .masters-card:hover {
-                border-color: #C4B57A;
-                background: #003a6b;
+                border-color: #E2C27A;
+                transform: translateY(-2px);
+                box-shadow:
+                    0 0 0 1px rgba(226, 194, 122, 0.35),
+                    0 18px 44px -12px rgba(0, 48, 87, 0.7),
+                    0 0 48px rgba(196, 163, 90, 0.4);
+            }
+            .masters-card:hover::after {
+                transform: translateX(60%);
+                transition: transform 0.7s ease;
             }
         }
 
         .masters-lock-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: rgba(179, 163, 105, 0.15);
-            border: 1px solid rgba(179, 163, 105, 0.45);
+            width: 58px;
+            height: 58px;
+            border-radius: 14px;
+            background: rgba(196, 163, 90, 0.2);
+            border: 1px solid rgba(196, 163, 90, 0.65);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #B3A369;
+            color: #F5E6B8;
             flex-shrink: 0;
             position: relative;
             z-index: 1;
             font-family: 'Sora', 'Inter', system-ui, sans-serif;
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 800;
             letter-spacing: 0.02em;
+            box-shadow: 0 0 18px rgba(196, 163, 90, 0.35);
         }
 
         .masters-body {
@@ -2166,39 +2245,41 @@
             z-index: 1;
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 0.45rem;
         }
 
         .masters-eyebrow {
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            background: rgba(179, 163, 105, 0.12);
-            border: 0.5px solid rgba(179, 163, 105, 0.4);
-            color: #B3A369;
-            font-size: 9px;
-            font-weight: 600;
+            background: rgba(196, 163, 90, 0.18);
+            border: 0.5px solid rgba(196, 163, 90, 0.55);
+            color: #F5E6B8;
+            font-size: 10px;
+            font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            padding: 3px 9px;
+            padding: 4px 10px;
             border-radius: 999px;
             width: fit-content;
         }
 
         .masters-title {
             font-family: 'Sora', 'Inter', system-ui, sans-serif;
-            font-size: 16px;
-            font-weight: 700;
+            font-size: clamp(1.35rem, 2.8vw, 2rem);
+            font-weight: 800;
             color: #FFFFFF;
-            line-height: 1.2;
+            line-height: 1.15;
             margin: 0;
+            text-shadow: 0 0 24px rgba(196, 163, 90, 0.35);
         }
 
         .masters-sub {
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.82);
             margin: 0;
             line-height: 1.5;
+            max-width: 40rem;
         }
 
         .masters-right {
@@ -2211,66 +2292,56 @@
             flex-shrink: 0;
         }
 
-        .masters-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(179, 163, 105, 0.18);
-            border: 0.5px solid rgba(179, 163, 105, 0.55);
-            color: #F5E6B8;
-            font-size: 9px;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 4px 10px;
-            border-radius: 999px;
-            white-space: nowrap;
-        }
-
-        .masters-pulse-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #B3A369;
-            flex-shrink: 0;
-        }
-
         .masters-term {
-            font-size: 11px;
-            font-weight: 600;
-            color: #B3A369;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #0B1F3A;
             letter-spacing: 0.06em;
             text-transform: uppercase;
             white-space: nowrap;
+            background: #E2C27A;
+            border: 1px solid #F5E6B8;
+            border-radius: 999px;
+            padding: 0.45rem 0.85rem;
+            box-shadow: 0 0 18px rgba(226, 194, 122, 0.45);
         }
 
         @media (max-width: 640px) {
             .masters-card {
                 flex-wrap: wrap;
-                padding: 1rem 1.25rem;
-                gap: 12px;
+                padding: 1.25rem 1.2rem;
+                gap: 14px;
             }
             .masters-lock-icon {
-                width: 40px;
-                height: 40px;
-                border-radius: 10px;
-                font-size: 11px;
+                width: 48px;
+                height: 48px;
+                border-radius: 12px;
+                font-size: 13px;
             }
             .masters-body {
-                flex: 1 1 calc(100% - 52px);
+                flex: 1 1 calc(100% - 60px);
             }
             .masters-right {
                 flex: 1 1 100%;
                 flex-direction: row;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: flex-start;
                 gap: 12px;
             }
             .masters-title {
-                font-size: 14px;
+                font-size: 1.35rem;
             }
             .masters-sub {
-                font-size: 11px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .masters-card,
+            .masters-card:hover,
+            .masters-card::after {
+                transition: none !important;
+                transform: none !important;
             }
         }
     </style>
@@ -2758,7 +2829,22 @@
            </div>
 
            <div class="max-w-6xl mx-auto">
-               <!-- Degree + Study Summary -->
+               <!-- Masters Degree (Georgia Tech) — featured first -->
+               <div class="masters-card" role="group" aria-label="Master's Degree — Georgia Tech, Spring 2027">
+                   <div class="masters-lock-icon" aria-hidden="true">GT</div>
+
+                   <div class="masters-body">
+                       <div class="masters-eyebrow">Georgia Institute of Technology</div>
+                       <p class="masters-title">M.S. in Cybersecurity</p>
+                       <p class="masters-sub">Policy track. The graduate path that signals serious, long-term work in security, risk, and technology leadership.</p>
+                   </div>
+
+                   <div class="masters-right">
+                       <span class="masters-term">Spring 2027</span>
+                   </div>
+               </div>
+
+               <!-- Bachelor + study summary -->
                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-10">
                    <div class="relative rounded-2xl p-6 md:p-8 overflow-hidden border border-amber-300/60 shadow-lg"
                         style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);">
@@ -2769,7 +2855,7 @@
                                Western Governors University
                            </div>
                            <h4 class="text-3xl md:text-4xl font-black text-white leading-tight mb-2">Bachelor of Science in Cloud Computing</h4>
-                           <p class="text-white/90 text-base mb-6">Specialization in Amazon Web Services (AWS)</p>
+                           <p class="text-white/90 text-base mb-6">Specialization in Amazon Web Services</p>
                            <div class="inline-flex items-center px-3 py-1.5 rounded-full bg-white/20 border border-white/30 text-white text-sm font-semibold uppercase tracking-wider">
                                <i class="fas fa-check mr-2" aria-hidden="true"></i>
                                Completed January 2026
@@ -2786,21 +2872,6 @@
                            I learned the essentials of building reliable networks, protecting data, and creating cloud environments
                            that keep modern applications running without interruption.
                        </p>
-                   </div>
-               </div>
-
-               <!-- Masters Degree (Georgia Tech) -->
-               <div class="masters-card" role="group" aria-label="Master's Degree — Georgia Tech, Spring 2027">
-                   <div class="masters-lock-icon" aria-hidden="true">GT</div>
-
-                   <div class="masters-body">
-                       <div class="masters-eyebrow">Georgia Institute of Technology</div>
-                       <p class="masters-title">M.S. in Cybersecurity</p>
-                       <p class="masters-sub">Policy track. Next step in a serious, long-term security career.</p>
-                   </div>
-
-                   <div class="masters-right">
-                       <span class="masters-term">Spring 2027</span>
                    </div>
                </div>
 
@@ -2928,9 +2999,9 @@
                 </div>
                 <div class="cred-group">
                     <h3>Cloud</h3>
-                    <div class="cred-row"><span class="cred-name">Security – Specialty</span><span class="cred-issuer">AWS</span></div>
-                    <div class="cred-row"><span class="cred-name">SysOps Administrator</span><span class="cred-issuer">AWS</span></div>
-                    <div class="cred-row"><span class="cred-name">Developer – Associate</span><span class="cred-issuer">AWS</span></div>
+                    <div class="cred-row"><span class="cred-name">Security – Specialty</span><span class="cred-issuer">Amazon Web Services</span></div>
+                    <div class="cred-row"><span class="cred-name">SysOps Administrator</span><span class="cred-issuer">Amazon Web Services</span></div>
+                    <div class="cred-row"><span class="cred-name">Developer – Associate</span><span class="cred-issuer">Amazon Web Services</span></div>
                     <div class="cred-row"><span class="cred-name">Cloud+</span><span class="cred-issuer">CompTIA</span></div>
                 </div>
                 <div class="cred-group">
@@ -2938,6 +3009,25 @@
                     <div class="cred-row"><span class="cred-name">ITIL 4 Foundation</span><span class="cred-issuer">PeopleCert</span></div>
                     <div class="cred-row"><span class="cred-name">Project+</span><span class="cred-issuer">CompTIA</span></div>
                 </div>
+            </div>
+
+            <div class="cred-explainers" aria-label="What these organizations are">
+                <article class="cred-explainer">
+                    <h3>What is CompTIA?</h3>
+                    <p>CompTIA is a well-known nonprofit that creates vendor-neutral IT and cybersecurity certifications. Employers worldwide use them as a trusted signal that someone has proven technical skills—not just a job title.</p>
+                    <a href="https://www.comptia.org/certifications" target="_blank" rel="noopener noreferrer">
+                        CompTIA certifications
+                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    </a>
+                </article>
+                <article class="cred-explainer">
+                    <h3>What is Amazon Web Services?</h3>
+                    <p>Amazon Web Services (AWS) is the world&apos;s largest cloud computing platform—the infrastructure many companies use to run websites, apps, and data securely online. AWS certifications are widely recognized proof of real cloud skill.</p>
+                    <a href="https://aws.amazon.com/certification/" target="_blank" rel="noopener noreferrer">
+                        Amazon Web Services certifications
+                        <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                    </a>
+                </article>
             </div>
 
             <a class="cred-cta" href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer">
