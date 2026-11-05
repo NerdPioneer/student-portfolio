@@ -2981,7 +2981,7 @@
             text-transform: uppercase;
         }
         .hero-brand {
-            margin: 0 0 1.15rem;
+            margin: 0 0 0.7rem;
             font-family: "Source Serif 4", Georgia, serif;
             font-weight: 600;
             font-size: clamp(2.15rem, 5.2vw, 3.55rem);
@@ -2989,30 +2989,28 @@
             color: var(--hero-navy);
             letter-spacing: -0.02em;
         }
-        /* Appeal badge — sleek Montserrat statement */
+        /* Clean one-line statement under the name — no badge / peel chrome */
         .hero-appeal-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
+            display: block;
             width: fit-content;
-            max-width: min(100%, 34rem);
-            margin: 0 0 0.7rem;
-            padding: 0.8rem 1.2rem;
-            border-radius: 14px;
-            border: 1.5px solid rgba(196, 163, 90, 0.9);
-            background:
-                linear-gradient(180deg, rgba(196, 163, 90, 0.16) 0%, rgba(196, 163, 90, 0.07) 100%);
-            box-shadow:
-                0 12px 30px -18px rgba(11, 31, 58, 0.38),
-                inset 0 1px 0 rgba(255, 255, 255, 0.55);
-            color: var(--hero-navy);
-            font-family: Montserrat, "Segoe UI", sans-serif;
-            font-weight: 800;
-            font-size: clamp(0.78rem, 1.65vw, 0.98rem);
-            letter-spacing: 0.09em;
-            line-height: 1.4;
-            text-transform: uppercase;
+            max-width: 100%;
+            margin: 0 0 1.35rem;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            background: none;
+            box-shadow: none;
+            color: var(--hero-muted);
+            font-family: "Source Serif 4", Georgia, serif;
+            font-weight: 400;
+            font-style: italic;
+            font-optical-sizing: auto;
+            font-size: clamp(0.92rem, 1.55vw + 0.55rem, 1.4rem);
+            letter-spacing: 0.005em;
+            line-height: 1.35;
+            text-transform: none;
             text-align: center;
+            white-space: nowrap;
         }
         .hero-left .hero-appeal-badge {
             margin-left: auto;
@@ -3023,11 +3021,10 @@
                 margin-left: 0;
                 margin-right: 0;
                 text-align: left;
-                justify-content: flex-start;
             }
         }
         .hero-appeal-badge + .hero-cta-row {
-            margin-top: 0.35rem;
+            margin-top: 0.15rem;
         }
         .hero-cta-row {
             display: flex;
@@ -3168,7 +3165,7 @@
             .hero {
                 --hero-nav: 4.25rem;
                 /* Room for copy + CTAs + even top/bottom breathing room */
-                --hero-copy-reserve: 17.5rem;
+                --hero-copy-reserve: 16.25rem;
                 --hero-portrait-cap: 15.5rem;
                 box-sizing: border-box !important;
                 display: flex !important;
@@ -3258,12 +3255,14 @@
                 line-height: 1.12 !important;
             }
             .hero-appeal-badge {
-                margin: 0 auto 0.4rem !important;
-                padding: 0.48rem 0.75rem !important;
-                font-size: clamp(0.58rem, 2.5vw, 0.68rem) !important;
-                letter-spacing: 0.055em !important;
+                margin: 0 auto 0.7rem !important;
+                padding: 0 !important;
+                /* One readable line under the name on phones */
+                font-size: clamp(0.84rem, 3.45vw, 1.05rem) !important;
+                letter-spacing: 0 !important;
                 line-height: 1.3 !important;
-                max-width: min(100%, 21.5rem) !important;
+                max-width: none !important;
+                white-space: nowrap !important;
             }
             .hero-appeal-badge + .hero-cta-row {
                 margin-top: 0 !important;
@@ -3320,8 +3319,9 @@
                 margin-bottom: 0.3rem !important;
             }
             .hero-appeal-badge {
-                padding: 0.38rem 0.6rem !important;
-                font-size: 0.56rem !important;
+                padding: 0 !important;
+                font-size: clamp(0.8rem, 3.2vw, 0.95rem) !important;
+                margin-bottom: 0.5rem !important;
             }
             .hero-cta {
                 min-height: 36px;
@@ -3435,9 +3435,7 @@
                     <span class="hero-gold-rule" aria-hidden="true"></span>
                     <p class="hero-kicker">Cybersecurity Professional</p>
                     <h1 class="hero-brand">Ezekiel A. Obeisun Jr.</h1>
-                    <p class="hero-appeal-badge">
-                        Navigate the digital landscape with confidence
-                    </p>
+                    <p class="hero-appeal-badge">Navigate the digital landscape with confidence</p>
                     <div class="hero-cta-row">
                         <a class="hero-cta hero-cta--primary" href="#projects">View Selected Work</a>
                         <a class="hero-cta hero-cta--ghost" href="https://www.linkedin.com/in/ezekielobeisun/" target="_blank" rel="noopener noreferrer">
