@@ -111,9 +111,19 @@ function unlockBodyScroll() {
 // ==============================================
 
 function initNavbar() {
+    const desktopNav = document.querySelector('.desktop-nav');
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const hamburgerLines = document.querySelectorAll('.hamburger-line');
+
+    // Tighten the bar chrome once the page is scrolled past the hero fold
+    if (desktopNav) {
+        const syncNavScrollState = () => {
+            desktopNav.classList.toggle('is-scrolled', window.scrollY > 16);
+        };
+        window.addEventListener('scroll', syncNavScrollState, { passive: true });
+        syncNavScrollState();
+    }
 
     if (!navToggle || !navMenu) {
         return;
@@ -404,65 +414,37 @@ function initSmoothScrolling() {
 // ==============================================
 
 function initBackToTop() {
+    if (document.querySelector('.back-to-top')) return;
+
     const backToTopBtn = document.createElement('button');
-    backToTopBtn.innerHTML = '▲';
+    backToTopBtn.type = 'button';
     backToTopBtn.className = 'back-to-top';
     backToTopBtn.setAttribute('aria-label', 'Back to top');
-    
-    // Style the button - minimal inline styles, rest handled by CSS
-    Object.assign(backToTopBtn.style, {
-        position: 'fixed',
-        bottom: '20px',
-        right: '20px',
-        width: '50px',
-        height: '50px',
-        zIndex: '1000'
-    });
-    
-    // Hover effects now handled by CSS
-    
-    // Add click functionality
+    backToTopBtn.innerHTML = '<i class="fas fa-arrow-up" aria-hidden="true"></i>';
+
     backToTopBtn.addEventListener('click', () => {
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.scrollTo({
             top: 0,
-            behavior: 'smooth'
+            behavior: prefersReduced ? 'auto' : 'smooth'
         });
     });
-    
-    // Add focus styles
-    backToTopBtn.addEventListener('focus', () => {
-        backToTopBtn.style.outline = '2px solid #60a5fa';
-        backToTopBtn.style.outlineOffset = '2px';
-    });
-    
-    backToTopBtn.addEventListener('blur', () => {
-        backToTopBtn.style.outline = 'none';
-    });
-    
-    // Initialize button state
-    toggleBackToTop();
-    
-    // Add scroll listener
+
+    // Append to <html>, not <body>: body uses translateZ(0) for Safari scroll
+    // which turns position:fixed into position:absolute relative to the document.
+    document.documentElement.appendChild(backToTopBtn);
     window.addEventListener('scroll', toggleBackToTop, { passive: true });
-    
-    // Add button to DOM
-    document.body.appendChild(backToTopBtn);
+    toggleBackToTop();
 }
 
 function toggleBackToTop() {
     const backToTopBtn = document.querySelector('.back-to-top');
     if (!backToTopBtn) return;
-    
+
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
-    
-    // Show button when scrolled down and there's more content below
-    if (scrollTop > windowHeight && scrollTop + windowHeight < documentHeight - 100) {
-        backToTopBtn.classList.add('show');
-    } else {
-        backToTopBtn.classList.remove('show');
-    }
+    // Appear once the user has left most of the hero — stay available the rest of the way
+    const threshold = Math.min(420, Math.round(window.innerHeight * 0.55));
+    backToTopBtn.classList.toggle('show', scrollTop > threshold);
 }
 
 // ==============================================
