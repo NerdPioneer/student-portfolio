@@ -1,7 +1,7 @@
 {
   "name": "student-portfolio",
   "version": "1.0.0",
-  "description": "Graduate-level cybersecurity portfolio for Ezekiel A. Obeisun Jr.",
+  "description": "A modern student portfolio website",
   "main": "index.html",
   "scripts": {
     "dev": "npm run watch:css & live-server --port=3000",
@@ -16,17 +16,17 @@
   },
   "keywords": [
     "portfolio",
-    "cybersecurity",
-    "graduate",
+    "tailwindcss",
+    "student",
     "website"
   ],
-  "author": "Ezekiel A. Obeisun Jr.",
+  "author": "NerdPioneer",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/NerdPioneer/Student-Portfolio.git"
   },
-  "homepage": "https://www.1percentnerd.com",
+  "homepage": "https://www.nerdpioneer.com",
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",

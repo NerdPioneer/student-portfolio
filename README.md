@@ -1,18 +1,64 @@
-# Ezekiel A. Obeisun Jr. — Portfolio
+# NerdPioneer Portfolio
 
-Graduate-level personal site for a cybersecurity professional admitted to Georgia Tech’s M.S. in Cybersecurity (Policy track).
+Professional site for **Ezekiel A. Obeisun Jr** (NerdPioneer) — cybersecurity professional.
 
-Static HTML site hosted on GitHub Pages.
+This repo is intentionally simple: one `index.html`, a Tailwind build for CSS, and a lightweight local dev server.
 
-## Run locally
+## What this site highlights
+
+- **Education**: B.S. Cloud Computing (WGU) and Georgia Tech M.S. in Cybersecurity (accepted)
+- **Credentials & projects**: security and cloud proof points
+- **Writing & code links**: Medium, Substack, and GitHub
+
+## Run it locally
+
+### Prerequisites
+
+- Node.js (any recent LTS is fine)
+
+### Install + start
 
 ```bash
-# Optional: any static server
-python3 -m http.server 3000
+git clone https://github.com/NerdPioneer/Student-Portfolio.git
+cd Student-Portfolio
+npm install
+npm run build:css
+npm start
 ```
 
-Open `http://localhost:3000`.
+Then open the URL printed in your terminal (defaults to `http://localhost:3000`).
 
-## Deploy
+## Common commands
 
-Push to `main` publishes via GitHub Pages.
+```bash
+# Rebuild production CSS (writes to dist/styles.css)
+npm run build:css
+
+# Watch CSS changes while editing (Tailwind --watch)
+npm run watch:css
+
+# Local server only (no CSS watch)
+npm start
+```
+
+## Repo layout (quick map)
+
+```
+index.html          # Main site (content + small scoped CSS)
+src/input.css       # Tailwind input (source)
+src/js/main.js      # Client-side interactions
+dist/styles.css     # Built CSS output (used by the site)
+public/images/      # Images and graphics
+```
+
+## Analytics
+
+Uses [Umami](https://umami.is) for privacy-first analytics (no personal data collection—just basic traffic metrics).
+
+## Deployment
+
+Hosted on GitHub Pages. Pushing to `main` publishes updates automatically.
+
+## License
+
+MIT — feel free to reuse with attribution.
