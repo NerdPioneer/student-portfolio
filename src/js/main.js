@@ -470,80 +470,51 @@ function toggleBackToTop() {
 // ==============================================
 
 function initIntersectionObserver() {
-    // Elements to animate on scroll
-    const animatedElements = document.querySelectorAll('.section, .project-card, .project-case, .education-card, .skill-group');
-    
-    if (animatedElements.length === 0) {
-        return;
-    }
-    
-    // Animation options
-    const animationOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    // Create intersection observer
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-                
-                // Add staggered animation for child elements
-                const children = entry.target.querySelectorAll('.animate-child');
-                children.forEach((child, index) => {
-                    setTimeout(() => {
-                        child.classList.add('animate-in');
-                    }, index * 100);
-                });
-                
-                // Unobserve after animation
-                observer.unobserve(entry.target);
-            }
-        });
-    }, animationOptions);
-    
-    // Observe all animated elements
-    animatedElements.forEach(element => {
-        // Add initial state
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-        
-        // Add animation class
-        element.classList.add('scroll-animate');
-        
-        observer.observe(element);
-    });
-    
-    // Add CSS for animations
+    // Professional scroll reveals: animate feature cards, never blank out whole sections.
+    // Hiding tall .section blocks caused long empty stretches on mobile while waiting
+    // for IntersectionObserver — especially Education / Selected Work.
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
     const style = document.createElement('style');
     style.textContent = `
-        .scroll-animate.animate-in {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-        
-        .animate-child {
+        .scroll-animate {
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translate3d(0, 18px, 0);
+            transition:
+                opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: opacity, transform;
         }
-        
-        .animate-child.animate-in {
+        .scroll-animate.animate-in {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate3d(0, 0, 0);
+            will-change: auto;
         }
-        
-        /* Rotating quotes enhancements */
-        .rotating-quotes-container {
-            min-height: 120px; /* Prevent layout shift */
+        @media (max-width: 768px) {
+            .scroll-animate {
+                transform: translate3d(0, 10px, 0);
+                transition:
+                    opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+            }
         }
-        
-        .quote-block {
-            will-change: opacity, transform; /* Optimize for animations */
+        @media (prefers-reduced-motion: reduce) {
+            .scroll-animate,
+            .scroll-animate.animate-in {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+                will-change: auto !important;
+            }
+            .quote-block,
+            .quote-dot {
+                transition: none !important;
+            }
         }
-        
+
+        .rotating-quotes-container { min-height: 120px; }
+        .quote-block { will-change: opacity; }
         .quote-dot {
             cursor: pointer;
             border: none;
@@ -551,107 +522,107 @@ function initIntersectionObserver() {
             padding: 0;
             margin: 0;
         }
-        
-        .quote-dot:focus {
-            outline: 2px solid #60a5fa;
-            outline-offset: 2px;
-        }
-        
-        .quote-dot:focus:not(:focus-visible) {
-            outline: none;
-        }
-        
-        /* Mobile optimizations */
+        .quote-dot:focus { outline: 2px solid #C4A35A; outline-offset: 2px; }
+        .quote-dot:focus:not(:focus-visible) { outline: none; }
+
         @media (max-width: 768px) {
             .rotating-quotes-container {
-                min-height: 120px;
+                min-height: 110px;
                 padding: 1rem !important;
-                margin: 0 0.5rem;
             }
-            
             .quote-block p {
                 font-size: 1rem !important;
                 line-height: 1.6 !important;
-                padding: 0 0.5rem;
                 word-wrap: break-word;
-                hyphens: auto;
             }
-            
-            .quote-block footer {
-                font-size: 0.875rem !important;
-                margin-top: 0.5rem !important;
-            }
-            
-            /* Larger touch targets for mobile */
             .quote-dot {
                 width: 12px !important;
                 height: 12px !important;
                 margin: 0 4px !important;
             }
-            
-            /* Better spacing for mobile */
-            .quote-content-wrapper {
-                padding: 0.5rem 0;
-            }
-            
-            /* Ensure proper text wrapping */
             .quote-block {
                 word-break: break-word;
                 overflow-wrap: break-word;
             }
         }
-        
-        /* Extra small mobile devices */
         @media (max-width: 480px) {
             .rotating-quotes-container {
-                min-height: 100px;
-                padding: 0.75rem !important;
-                margin: 0 0.25rem;
+                min-height: 96px;
+                padding: 0.85rem !important;
             }
-            
             .quote-block p {
-                font-size: 0.9rem !important;
-                line-height: 1.5 !important;
-                padding: 0 0.25rem;
+                font-size: 0.92rem !important;
+                line-height: 1.55 !important;
             }
-            
-            .quote-block footer {
-                font-size: 0.8rem !important;
-            }
-            
-            /* Smaller dots for very small screens */
             .quote-dot {
                 width: 10px !important;
                 height: 10px !important;
                 margin: 0 3px !important;
             }
         }
-        
-        /* Landscape mobile orientation */
-        @media (max-width: 768px) and (orientation: landscape) {
-            .rotating-quotes-container {
-                min-height: 80px;
-                padding: 0.5rem !important;
-            }
-            
-            .quote-block p {
-                font-size: 0.9rem !important;
-                line-height: 1.4 !important;
-            }
-        }
-        
-        /* Reduced motion support */
-        @media (prefers-reduced-motion: reduce) {
-            .quote-block {
-                transition: none !important;
-            }
-            
-            .quote-dot {
-                transition: none !important;
-            }
-        }
     `;
     document.head.appendChild(style);
+
+    if (reduceMotion) {
+        return;
+    }
+
+    const selectors = [
+        '#about .about-lead',
+        '#about .about-body',
+        '#about .about-strip-card',
+        '#about .about-verse',
+        '#education .masters-card',
+        '#education .max-w-6xl > .grid',
+        '#education .course-card',
+        '#education .edu-github-strip',
+        '#education .github-chart-card',
+        '#certifications .cred-group',
+        '#certifications .cred-explainer',
+        '#certifications .cred-cta',
+        '#projects .sw-card',
+        '#projects .sw-more-card',
+        '#projects .sw-cta',
+        '#notes .notes-card',
+        '#notes .notes-substack',
+        '#notes .notes-quote'
+    ];
+
+    const animatedElements = document.querySelectorAll(selectors.join(', '));
+    if (animatedElements.length === 0) {
+        return;
+    }
+
+    const staggerMs = isMobile ? 45 : 70;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const delay = Number(el.dataset.revealDelay || 0);
+            if (delay > 0) {
+                window.setTimeout(() => el.classList.add('animate-in'), delay);
+            } else {
+                el.classList.add('animate-in');
+            }
+            observer.unobserve(el);
+        });
+    }, {
+        // Start the reveal slightly before the card is fully on screen so mobile
+        // never scrolls through blank/invisible content.
+        threshold: isMobile ? 0.06 : 0.12,
+        rootMargin: isMobile ? '0px 0px 18% 0px' : '0px 0px 8% 0px'
+    });
+
+    // Stagger siblings within a shared parent for a polished cascade.
+    const delayCounters = new WeakMap();
+    animatedElements.forEach((element) => {
+        const parent = element.parentElement;
+        const index = parent ? (delayCounters.get(parent) || 0) : 0;
+        if (parent) delayCounters.set(parent, index + 1);
+        element.dataset.revealDelay = String(Math.min(index, 5) * staggerMs);
+        element.classList.add('scroll-animate');
+        observer.observe(element);
+    });
 }
 
 // ==============================================

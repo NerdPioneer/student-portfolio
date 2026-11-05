@@ -1496,8 +1496,29 @@
 
         /* GitHub contribution chart — do not rely on Tailwind responsive display utilities here:
            compiled dist/styles.css may omit md:block, leaving hidden forever. */
+        /* Education — tighter vertical rhythm (keep white, cut empty air) */
+        #education.education-section {
+            padding: 2.35rem 0 2.5rem !important;
+        }
+        @media (min-width: 768px) {
+            #education.education-section {
+                padding: 3rem 0 3.15rem !important;
+            }
+        }
+        @media (min-width: 1024px) {
+            #education.education-section {
+                padding: 3.5rem 0 3.6rem !important;
+            }
+        }
+        #education .masters-card {
+            margin-bottom: 1.15rem;
+        }
+        #education .edu-github-strip {
+            margin-bottom: 0.85rem;
+        }
+
         .github-chart-card {
-            margin-top: 1rem;
+            margin-top: 0;
             box-sizing: border-box;
             width: 100%;
             max-width: 100%;
@@ -1505,7 +1526,7 @@
             background: #ffffff;
             border-radius: 0.75rem;
             border: 1px solid #e5e7eb;
-            padding: 0.75rem;
+            padding: 0.65rem;
             overflow-x: auto;
             overflow-y: hidden;
             -webkit-overflow-scrolling: touch;
@@ -1570,7 +1591,7 @@
             --sw-text: #F4F7FB;
             background: var(--sw-bg) !important;
             color: var(--sw-text);
-            padding: 4.25rem 0 3.75rem !important;
+            padding: 3.5rem 0 3.15rem !important;
             margin-top: 0 !important;
         }
         #certifications.credentials-panel .sw-wrap {
@@ -1651,7 +1672,7 @@
             white-space: nowrap;
         }
         #certifications.credentials-panel .cred-explainers {
-            margin-top: 1.75rem;
+            margin-top: 1.25rem;
             display: grid;
             grid-template-columns: 1fr;
             gap: 0.9rem;
@@ -1699,7 +1720,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.55rem;
-            margin-top: 1.5rem;
+            margin-top: 1.15rem;
             min-height: 44px;
             padding: 0.55rem 1.15rem;
             border-radius: 999px;
@@ -1722,7 +1743,7 @@
         }
         @media (max-width: 640px) {
             #certifications.credentials-panel {
-                padding: 3.1rem 0 2.85rem !important;
+                padding: 2.65rem 0 2.4rem !important;
             }
             #certifications.credentials-panel .sw-wrap { padding: 0 1.15rem; }
             #certifications.credentials-panel .cred-issuer {
@@ -1747,7 +1768,7 @@
         #notes.notes-panel {
             background: var(--sw-bg) !important;
             color: var(--sw-text);
-            padding: 4.5rem 0 3.75rem !important;
+            padding: 3.5rem 0 3.15rem !important;
             margin-top: 0 !important;
         }
         #notes.notes-panel .sw-wrap {
@@ -1772,7 +1793,7 @@
             margin: 0 0 0.65rem;
         }
         #notes.notes-panel .sw-subhead {
-            margin: 0 0 2.25rem;
+            margin: 0 0 1.65rem;
             max-width: 40rem;
             color: var(--sw-muted);
             font-size: 1.05rem;
@@ -1995,7 +2016,7 @@
         }
         @media (max-width: 640px) {
             #notes.notes-panel {
-                padding: 3.25rem 0 3rem !important;
+                padding: 2.65rem 0 2.4rem !important;
             }
             #notes.notes-panel .sw-wrap {
                 padding: 0 1.15rem;
@@ -2043,7 +2064,7 @@
         #about.about-panel {
             background: var(--sw-bg) !important;
             color: var(--sw-text);
-            padding: 4rem 0 3.5rem !important;
+            padding: 3.35rem 0 2.9rem !important;
             margin-top: 0 !important;
         }
         #about.about-panel .sw-wrap {
@@ -2213,7 +2234,7 @@
         }
         @media (max-width: 640px) {
             #about.about-panel {
-                padding: 3.1rem 0 2.75rem !important;
+                padding: 2.55rem 0 2.25rem !important;
             }
             #about.about-panel .sw-wrap { padding: 0 1.15rem; }
         }
@@ -2228,7 +2249,7 @@
             --sw-text: #F4F7FB;
             background: var(--sw-bg) !important;
             color: var(--sw-text);
-            padding: 4.5rem 0 4rem !important;
+            padding: 3.5rem 0 3.15rem !important;
             margin-top: 0 !important;
         }
 
@@ -2257,7 +2278,7 @@
         }
 
         #projects.selected-work .sw-subhead {
-            margin: 0 0 2.25rem;
+            margin: 0 0 1.65rem;
             max-width: 40rem;
             color: var(--sw-muted);
             font-size: 1.05rem;
@@ -2267,8 +2288,8 @@
         #projects.selected-work .sw-featured {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.25rem;
-            margin-bottom: 2.75rem;
+            gap: 1.15rem;
+            margin-bottom: 2rem;
         }
 
         @media (min-width: 900px) {
@@ -2361,7 +2382,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.35rem;
         }
 
         @media (min-width: 768px) {
@@ -2419,7 +2440,7 @@
 
         @media (max-width: 640px) {
             #projects.selected-work {
-                padding: 3.25rem 0 3rem !important;
+                padding: 2.65rem 0 2.4rem !important;
             }
             #projects.selected-work .sw-wrap {
                 padding: 0 1.15rem;
@@ -2471,7 +2492,7 @@
             gap: 1.15rem;
             position: relative;
             overflow: hidden;
-            margin-bottom: 1.75rem;
+            margin-bottom: 1.15rem;
             box-shadow:
                 0 0 0 1px rgba(196, 163, 90, 0.25),
                 0 12px 40px -12px rgba(0, 48, 87, 0.65),
@@ -3186,10 +3207,10 @@
      </section>
 
     <!-- Education Section -->
-   <section id="education" class="section py-8 md:py-14 lg:py-20 bg-white">
+   <section id="education" class="section education-section bg-white">
        <div class="container mx-auto px-6">
-          <div class="section-header text-center mb-8 md:mb-10">
-               <h2 class="section-title section-header-strong text-4xl md:text-5xl text-gray-900 mb-4 uppercase glitch-effect" data-text="EDUCATION">EDUCATION</h2>
+          <div class="section-header text-center mb-6 md:mb-8">
+               <h2 class="section-title section-header-strong text-4xl md:text-5xl text-gray-900 mb-3 uppercase glitch-effect" data-text="EDUCATION">EDUCATION</h2>
                <p class="section-subtitle text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Formal education and coursework that support a long-term career in cybersecurity.</p>
            </div>
 
@@ -3210,17 +3231,17 @@
                </div>
 
                <!-- Bachelor + study summary -->
-               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-10">
-                   <div class="relative rounded-2xl p-6 md:p-8 overflow-hidden border border-amber-300/60 shadow-lg"
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 mb-6 md:mb-8">
+                   <div class="relative rounded-2xl p-5 md:p-7 overflow-hidden border border-amber-300/60 shadow-lg"
                         style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);">
                        <div class="absolute -top-8 -right-8 w-28 h-28 rounded-full bg-white/12"></div>
                        <div class="relative z-10">
-                           <div class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-white/15 border border-white/20 text-white font-semibold text-sm mb-8">
+                           <div class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-white/15 border border-white/20 text-white font-semibold text-sm mb-5">
                                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                                Western Governors University
                            </div>
                            <h4 class="text-3xl md:text-4xl font-black text-white leading-tight mb-2">Bachelor of Science in Cloud Computing</h4>
-                           <p class="text-white/90 text-base mb-6">Specialization in Amazon Web Services</p>
+                           <p class="text-white/90 text-base mb-4">Specialization in Amazon Web Services</p>
                            <div class="inline-flex items-center px-3 py-1.5 rounded-full bg-white/20 border border-white/30 text-white text-sm font-semibold uppercase tracking-wider">
                                <i class="fas fa-check mr-2" aria-hidden="true"></i>
                                Completed January 2026
@@ -3228,9 +3249,9 @@
                        </div>
                    </div>
 
-                   <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 md:p-8">
-                       <p class="text-xs font-bold uppercase tracking-[0.2em] text-gray-600 mb-4">What I Studied</p>
-                       <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                   <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-5 md:p-7">
+                       <p class="text-xs font-bold uppercase tracking-[0.2em] text-gray-600 mb-3">What I Studied</p>
+                       <p class="text-base md:text-lg text-gray-700 leading-relaxed">
                            Coursework focused on how computer systems connect and communicate, and how cloud platforms like
                            <span class="font-semibold text-gray-900">Amazon Web Services</span> and
                            <span class="font-semibold text-gray-900">Microsoft Azure</span> support real businesses.
@@ -3241,8 +3262,8 @@
                </div>
 
                <!-- Highlighted Courses -->
-               <div class="mb-10">
-                   <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-gray-500 mb-4">Highlighted Courses</h3>
+               <div class="mb-6 md:mb-8">
+                   <h3 class="text-sm font-bold uppercase tracking-[0.2em] text-gray-500 mb-3">Highlighted Courses</h3>
                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                        <div class="course-card bg-white rounded-xl border border-gray-200 border-l-4 border-l-[#ff5b00] shadow-sm p-5">
                            <div class="flex items-start justify-between gap-3 mb-3">
@@ -3299,7 +3320,7 @@
                </div>
 
                <!-- Slim GitHub strip -->
-               <div class="rounded-2xl px-5 md:px-7 py-5 border border-slate-800 bg-gradient-to-r from-[#0b1220] to-[#111827] text-slate-200">
+               <div class="edu-github-strip rounded-2xl px-5 md:px-7 py-5 border border-slate-800 bg-gradient-to-r from-[#0b1220] to-[#111827] text-slate-200">
                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                        <div class="flex items-center gap-3">
                            <div class="w-11 h-11 rounded-xl border border-slate-700 bg-slate-900/80 flex items-center justify-center">
