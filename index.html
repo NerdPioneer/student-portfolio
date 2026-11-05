@@ -621,7 +621,7 @@
             }
             .carousel-container {
                 width: 100% !important;
-                max-width: 288px;
+                max-width: 346px;
                 height: auto !important;
                 aspect-ratio: 3 / 4 !important;
                 margin: 0 auto;
@@ -665,7 +665,7 @@
                 padding-top: 0.25rem;
             }
             .carousel-container {
-                max-width: 270px;
+                max-width: 324px;
             }
             .hero-buttons {
                 gap: 0.75rem !important;
@@ -680,7 +680,7 @@
             }
             
             .carousel-container {
-                max-width: 255px;
+                max-width: 306px;
             }
             
             .hero-title {
@@ -2925,15 +2925,32 @@
             -webkit-backdrop-filter: blur(8px);
         }
         .nav-brand-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.06);
             color: #fff !important;
             text-decoration: none;
-            font-family: "Source Serif 4", Georgia, serif;
-            font-weight: 600;
-            font-size: 1.05rem;
-            line-height: 1.2;
-            white-space: nowrap;
+            transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
         }
-        .nav-brand-link:hover { opacity: 0.88; color: #fff !important; }
+        .nav-brand-link i {
+            font-size: 1.15rem;
+            line-height: 1;
+            color: #F5E6B8;
+        }
+        .nav-brand-link:hover {
+            background: rgba(196, 163, 90, 0.18);
+            border-color: rgba(196, 163, 90, 0.65);
+            color: #fff !important;
+        }
+        .nav-brand-link:focus-visible {
+            outline: 2px solid #C4A35A;
+            outline-offset: 3px;
+        }
         .desktop-nav .nav-link {
             color: rgba(255, 255, 255, 0.84) !important;
             text-decoration: none;
@@ -3130,7 +3147,7 @@
             outline-offset: 3px;
         }
         .hero .profile-carousel {
-            max-width: 288px;
+            max-width: 346px;
             margin-left: auto;
             margin-right: auto;
             margin-bottom: 0;
@@ -3150,11 +3167,11 @@
             object-position: center 16%;
         }
         @media (min-width: 640px) {
-            .hero .profile-carousel { max-width: 320px; }
+            .hero .profile-carousel { max-width: 384px; }
         }
         @media (min-width: 768px) {
             .hero { padding-top: 5.5rem; }
-            .hero .profile-carousel { max-width: 360px; }
+            .hero .profile-carousel { max-width: 432px; }
         }
         @media (min-width: 1024px) {
             .hero {
@@ -3187,17 +3204,17 @@
                 align-items: center !important;
             }
             .hero .profile-carousel {
-                max-width: 440px;
+                max-width: 528px;
                 width: 100%;
             }
             .hero .carousel-container {
-                max-width: 440px;
+                max-width: 528px;
             }
         }
         @media (min-width: 1280px) {
             .hero .profile-carousel,
             .hero .carousel-container {
-                max-width: 480px;
+                max-width: 576px;
             }
             .hero-grid {
                 gap: 3.25rem !important;
@@ -3226,11 +3243,11 @@
             }
             .hero .floating-icon { opacity: 0.06 !important; }
             .hero .profile-carousel {
-                max-width: 288px;
+                max-width: 346px;
             }
             .hero .carousel-container {
                 width: 100% !important;
-                max-width: 288px !important;
+                max-width: 346px !important;
                 height: auto !important;
                 aspect-ratio: 3 / 4 !important;
                 margin-left: auto;
@@ -3250,7 +3267,7 @@
             .hero { padding-top: 7.1rem !important; }
             .hero .profile-carousel,
             .hero .carousel-container {
-                max-width: 270px !important;
+                max-width: 324px !important;
             }
             .hero-cta-row {
                 width: 100%;
@@ -3266,7 +3283,7 @@
             }
             .hero .profile-carousel,
             .hero .carousel-container {
-                max-width: 255px !important;
+                max-width: 306px !important;
             }
         }
         @media (prefers-reduced-motion: reduce) {
@@ -3295,7 +3312,9 @@
         <div class="container mx-auto px-4 lg:px-6">
             <div class="flex justify-between items-center py-3.5">
                 <div class="nav-brand">
-                    <a href="#home" class="nav-brand-link" aria-label="Ezekiel A. Obeisun Jr. — back to top">Ezekiel A. Obeisun Jr.</a>
+                    <a href="#home" class="nav-brand-link" aria-label="NerdPioneer — back to top">
+                        <i class="fas fa-brain" aria-hidden="true"></i>
+                    </a>
                 </div>
                 
                 <!-- Desktop Menu -->
