@@ -459,7 +459,7 @@ section[id] {
     top: -8px;
     left: 16px;
     font-size: 3rem;
-    color: #3b82f6;
+    color: #C4A35A;
     opacity: 0.3;
     font-family: serif;
   }
@@ -744,12 +744,12 @@ section[id] {
   }
   
   progress::-webkit-progress-value {
-    background: linear-gradient(to right, #3b82f6, #2563eb);
+    background: linear-gradient(to right, #C4A35A, #0B1F3A);
     border-radius: 9999px;
   }
   
   progress::-moz-progress-bar {
-    background: linear-gradient(to right, #3b82f6, #2563eb);
+    background: linear-gradient(to right, #C4A35A, #0B1F3A);
     border-radius: 9999px;
   }
   
@@ -1046,13 +1046,13 @@ section[id] {
     @apply text-purple-600;
   }
   
-  /* Secondary Skills - Muted Blue (Active, not Disabled) */
+  /* Secondary Skills — muted navy */
   .skill-chip-secondary {
-    @apply bg-blue-50 text-blue-600 border border-blue-200 hover:bg-blue-100 hover:border-blue-300;
+    @apply bg-primary-50 text-primary-600 border border-primary-200 hover:bg-primary-100 hover:border-primary-300;
   }
   
   .skill-chip-secondary i {
-    @apply text-blue-500;
+    @apply text-primary-500;
   }
   
   /* AWS Special Highlight - Orange */
@@ -1566,15 +1566,15 @@ section[id] {
   }
 }
 
-/* Typography refresh: Inter body + Sora headings */
+/* Typography: Montserrat body + Source Serif headings */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: Montserrat, "Segoe UI", system-ui, sans-serif;
 }
 
 /* Projects cards typography spec (current layout) */
 #projects .project-case h3,
 #projects .project-title {
-  font-family: 'Sora', sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
   font-size: 15px;
   font-weight: 600;
   line-height: 1.3;
@@ -1583,7 +1583,7 @@ body {
 #projects .project-case p,
 #projects .project-description,
 #projects .project-case li {
-  font-family: 'Inter', sans-serif;
+  font-family: Montserrat, "Segoe UI", system-ui, sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 1.65;
@@ -1591,7 +1591,7 @@ body {
 
 #projects .project-case .project-tag,
 #projects .project-case summary span {
-  font-family: 'Inter', sans-serif;
+  font-family: Montserrat, "Segoe UI", system-ui, sans-serif;
   font-size: 11px;
 }
 
@@ -1600,7 +1600,7 @@ body {
 .course-card h4,
 .notes-card h3,
 .project-case h3 {
-  font-family: 'Sora', sans-serif;
+  font-family: "Source Serif 4", Georgia, serif;
 }
 
 .credential-card p,
@@ -1612,5 +1612,5 @@ body {
 .project-case p,
 .project-case li,
 .project-case span {
-  font-family: 'Inter', sans-serif;
+  font-family: Montserrat, "Segoe UI", system-ui, sans-serif;
 }
