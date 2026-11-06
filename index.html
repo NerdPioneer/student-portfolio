@@ -9,7 +9,7 @@
       if (location.protocol === 'https:' || location.protocol === 'file:') return;
       var h = location.hostname;
       if (h === 'localhost' || h === '127.0.0.1' || h === '[::1]') return;
-      if (!/(^|\.)nerdpioneer\.com$/i.test(h)) return;
+      if (!/(^|\.)(nerdpioneer|1percentnerd)\.com$/i.test(h)) return;
       location.replace('https://' + h + location.pathname + location.search + location.hash);
     })();
     </script>
@@ -48,40 +48,39 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
-    <!-- Canonical -->
-    <link rel="canonical" href="https://www.nerdpioneer.com/">
-    <link rel="alternate" href="https://www.nerdpioneer.com/" hreflang="en" />
+    <!-- Canonical — primary public host is 1percentnerd.com (GitHub Pages CNAME) -->
+    <link rel="canonical" href="https://1percentnerd.com/">
+    <link rel="alternate" href="https://1percentnerd.com/" hreflang="en" />
 
     <!-- Favicon - "1% Better Every Day" themed -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='number-grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230B1F3A;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23102744;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='45' fill='url(%23number-grad)' stroke='%23C4A35A' stroke-width='3'/%3E%3Ctext x='50' y='70' font-family='Arial Black, sans-serif' font-size='60' font-weight='900' fill='%23F5E6B8' text-anchor='middle' dominant-baseline='middle'%3E1%3C/text%3E%3C/svg%3E">
 
-    <!-- Open Graph -->
+    <!-- Open Graph / LinkedIn share preview -->
     <meta property="og:title" content="Ezekiel A. Obeisun Jr | Cybersecurity Professional | NerdPioneer">
-    <meta property="og:description" content="Cybersecurity professional. B.S. Cloud Computing (WGU). Georgia Tech M.S. in Cybersecurity (Spring 2027). Cloud security projects and industry certifications.">
+    <meta property="og:description" content="Cybersecurity professional. B.S. Cloud Computing (WGU). Georgia Tech M.S. in Cybersecurity (Spring 2027). Focus: security operations, cloud security, and IAM.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.nerdpioneer.com/">
-    <meta property="og:image" content="https://www.nerdpioneer.com/public/images/og-card.jpg">
+    <meta property="og:url" content="https://1percentnerd.com/">
+    <meta property="og:image" content="https://1percentnerd.com/public/images/og-card.jpg?v=20261106">
+    <meta property="og:image:secure_url" content="https://1percentnerd.com/public/images/og-card.jpg?v=20261106">
+    <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Ezekiel A. Obeisun Jr - NerdPioneer portfolio image">
-    <meta property="og:site_name" content="NerdPioneer - Portfolio">
+    <meta property="og:image:alt" content="Ezekiel A. Obeisun Jr — Cybersecurity Professional · NerdPioneer">
+    <meta property="og:site_name" content="NerdPioneer">
     <meta property="og:locale" content="en_US">
+    <meta property="og:updated_time" content="2026-11-06T04:20:00Z">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@nerdpioneer">
     <meta name="twitter:creator" content="@nerdpioneer">
     <meta name="twitter:title" content="Ezekiel A. Obeisun Jr | Cybersecurity Professional | NerdPioneer">
-    <meta name="twitter:description" content="Cybersecurity professional. B.S. Cloud Computing (WGU). Georgia Tech M.S. in Cybersecurity (Spring 2027). Cloud security projects and industry certifications.">
-    <meta name="twitter:image" content="https://www.nerdpioneer.com/public/images/og-card.jpg">
-    <meta name="twitter:image:alt" content="Ezekiel A. Obeisun Jr - NerdPioneer portfolio image">
+    <meta name="twitter:description" content="Cybersecurity professional. B.S. Cloud Computing (WGU). Georgia Tech M.S. in Cybersecurity (Spring 2027). Focus: security operations, cloud security, and IAM.">
+    <meta name="twitter:image" content="https://1percentnerd.com/public/images/og-card.jpg?v=20261106">
+    <meta name="twitter:image:alt" content="Ezekiel A. Obeisun Jr — Cybersecurity Professional · NerdPioneer">
 
-    <!-- LinkedIn / Profile metadata -->
+    <!-- Author -->
     <meta property="article:author" content="https://www.linkedin.com/in/ezekielobeisun/">
-    <meta property="profile:first_name" content="Ezekiel">
-    <meta property="profile:last_name" content="Obeisun">
-    <meta property="profile:middle_name" content="A">
-    <meta property="profile:username" content="ezekielobeisun">
 
     <!-- Geographic SEO -->
     <meta name="geo.region" content="US">
@@ -100,8 +99,8 @@
       "middleName": "A",
       "nickname": "NerdPioneer",
       "brand": "NerdPioneer",
-      "url": "https://www.nerdpioneer.com/",
-      "image": "https://www.nerdpioneer.com/public/images/profile_1.jpg",
+      "url": "https://1percentnerd.com/",
+      "image": "https://1percentnerd.com/public/images/profile_1.jpg",
       "sameAs": [
         "https://www.linkedin.com/in/ezekielobeisun/",
         "https://github.com/NerdPioneer",
@@ -174,7 +173,7 @@
       "@type": "WebSite",
       "name": "NerdPioneer - Portfolio",
       "alternateName": "NerdPioneer",
-      "url": "https://www.nerdpioneer.com/",
+      "url": "https://1percentnerd.com/",
       "description": "Professional site of Ezekiel A. Obeisun Jr: cybersecurity professional; B.S. Cloud Computing; Georgia Tech M.S. in Cybersecurity (Spring 2027); certifications and applied security projects.",
       "author": {
         "@type": "Person",
@@ -224,8 +223,8 @@
       "@type": "Organization",
       "name": "NerdPioneer",
       "alternateName": "NerdPioneer",
-      "url": "https://www.nerdpioneer.com/",
-      "logo": "https://www.nerdpioneer.com/public/images/profile_1.jpg",
+      "url": "https://1percentnerd.com/",
+      "logo": "https://1percentnerd.com/public/images/profile_1.jpg",
       "description": "Personal brand of Ezekiel A. Obeisun Jr (NerdPioneer): cybersecurity professional; cloud security focus; Georgia Tech M.S. in Cybersecurity (Spring 2027).",
       "founder": {
         "@type": "Person",
@@ -242,7 +241,7 @@
       "@context": "https://schema.org",
       "@type": "ProfilePage",
       "name": "Ezekiel A. Obeisun Jr Portfolio Profile",
-      "url": "https://www.nerdpioneer.com/",
+      "url": "https://1percentnerd.com/",
       "description": "Professional portfolio for Ezekiel A. Obeisun Jr: cybersecurity professional; B.S. Cloud Computing; Georgia Tech M.S. in Cybersecurity (Spring 2027); CySA+, Security+, AWS Security Specialty and related credentials.",
       "mainEntity": {
         "@type": "Person",
@@ -262,12 +261,12 @@
           "Identity and Access Management",
           "Microsoft Azure"
         ],
-        "url": "https://www.nerdpioneer.com/"
+        "url": "https://1percentnerd.com/"
       },
       "isPartOf": {
         "@type": "WebSite",
         "name": "NerdPioneer - Portfolio",
-        "url": "https://www.nerdpioneer.com/"
+        "url": "https://1percentnerd.com/"
       }
     }
     </script>
